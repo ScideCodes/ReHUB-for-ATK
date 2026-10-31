@@ -13,7 +13,7 @@
 !endif
 
 !macro customInstall
-  ; electron-builder suppresses details while extracting its compressed package.
+  ; Keep a final inventory as well as the live extraction log.
   SetDetailsPrint both
   DetailPrint "Installed ReHUB application and bundled Electron runtime:"
   ${Locate} "$INSTDIR" "/L=F" "RehubInstalledFile"

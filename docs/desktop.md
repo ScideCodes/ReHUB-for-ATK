@@ -16,7 +16,9 @@ The current local build is unsigned. Windows may display an unknown-publisher wa
 
 ## Installation details and removal
 
-During installation, click **Show details** to expand the progress log. After extraction, it lists every installed file, including the bundled runtime and uninstaller. Application code and web assets are bundled in `resources/app.asar`, so they appear as that archive rather than individual source files.
+During installation, click **Show details** to expand the live extraction and installation log. After extraction, it also lists every installed file, including the bundled runtime and uninstaller. Application code and web assets are bundled in `resources/app.asar`, so they appear as that archive rather than individual source files.
+
+The packaging hook in `scripts/installer-details.mjs` enables logging in electron-builder's local NSIS template. It retains the upstream extraction and retry logic, is reapplied after `npm ci`, and fails the build if the expected template changes.
 
 To uninstall, use **Windows Settings > Apps > Installed apps > ReHUB for ATK > Uninstall**, or run `Uninstall ReHUB for ATK.exe` from the installation folder. The uninstaller also has a **Show details** button. Saved profiles and preferences are retained for reinstalling.
 

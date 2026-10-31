@@ -12,6 +12,7 @@ files:
   - package.json
   - LICENSE
 asar: true
+beforePack: scripts/installer-details.mjs
 win:
   target:
     - target: nsis
