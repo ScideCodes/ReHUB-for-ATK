@@ -2,6 +2,12 @@
 
 All notable changes to Re-HUB for ATK. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.4.1] - 2026-10-31
+
+### Fixed
+- **"Open the official ATK web driver" sat at the very edge of the Axial Alignment panel.** The keyboard picture now shrinks to make room, and the buttons keep a clear margin from the panel edge (the same goes for "Start Calibration" in demo mode).
+- **The last "Apply" button in the mouse's Configuration Management** was pushed against the bottom edge on smaller windows. The list now scrolls cleanly inside the panel.
+
 ## [1.4.0] - 2026-10-31
 
 ### Added
@@ -72,6 +78,7 @@ All notable changes to Re-HUB for ATK. The format follows [Keep a Changelog](htt
 ### Added
 - First public release: an unofficial, open-source, local-first WebHID configurator for ATK mice and keyboards, with read-back-verified writes, a demo mode, offline maps, diagnostics, light and dark themes, and a README, launch film, CI and contribution guides.
 
+[1.4.1]: https://github.com/ScideCodes/ReHUB-for-ATK/compare/v1.4.0...v1.4.1
 [1.4.0]: https://github.com/ScideCodes/ReHUB-for-ATK/compare/v1.3.2...v1.4.0
 [1.3.2]: https://github.com/ScideCodes/ReHUB-for-ATK/compare/v1.3.1...v1.3.2
 [1.3.1]: https://github.com/ScideCodes/ReHUB-for-ATK/compare/v1.3.0...v1.3.1
