@@ -2,7 +2,6 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import {
   BatteryFull,
   Cable,
-  CloudUpload,
   Crosshair,
   Disc,
   FileText,
@@ -795,8 +794,8 @@ export function ConfigSection({ onImport, onNew, onExport }: { onImport: () => v
   const [picked, setPicked] = useState<Set<string>>(new Set());
   const slots = [0, 1, 2, 3];
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", height: "100%" }}>
-      <div style={{ padding: "20px 24px", borderRight: "1px solid var(--color-border-8)", overflow: "auto" }}>
+    <div style={{ height: "100%" }}>
+      <div style={{ padding: "20px 24px", overflow: "auto", height: "100%", maxWidth: 900 }}>
         <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 8 }}>
           <h2 className="h-title" style={{ fontSize: 18, flex: "1 1 auto" }}>Local configuration</h2>
           <button type="button" className="h-btn" aria-pressed={batch} onClick={() => (setBatch(!batch), setPicked(new Set()))}>
@@ -822,7 +821,6 @@ export function ConfigSection({ onImport, onNew, onExport }: { onImport: () => v
               {slot === (info.onboardSlot ?? 0) && <span className="hm-applying">Applying</span>}
               <span style={{ flex: 1 }} />
               <FileText size={16} aria-label="Onboard file" />
-              <CloudUpload size={16} aria-label="Cloud upload needs an ATK account" />
             </div>
           </div>
         ))}
@@ -879,22 +877,6 @@ export function ConfigSection({ onImport, onNew, onExport }: { onImport: () => v
             </button>
           </div>
         )}
-      </div>
-      <div style={{ padding: "20px 24px", display: "flex", flexDirection: "column" }}>
-        <div style={{ display: "flex", gap: 12, alignItems: "center", paddingBottom: 16, borderBottom: "1px solid var(--color-border-8)" }}>
-          <h2 className="h-title" style={{ fontSize: 16 }}>Cloud Config</h2>
-          <span style={{ color: "var(--color-text-hint-60)" }}>Config Square</span>
-        </div>
-        <p style={{ margin: "20px 0", color: "var(--color-text-head-100)" }}>
-          Cloud Config <small style={{ color: "var(--color-text-hint-60)", marginLeft: 6 }}>Stored in cloud, accessible from any device</small>
-        </p>
-        <div className="h-grid-bg" style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 14 }}>
-          <span style={{ width: 48, height: 48, borderRadius: 8, border: "1px solid var(--color-border-12)", display: "grid", placeItems: "center", background: "rgb(var(--base-background-color))" }}>
-            <CloudUpload size={20} />
-          </span>
-          Please upload the custom configuration on the left
-          <span style={{ color: "var(--color-text-hint-60)" }}>Cloud configs need an ATK account, so they are not available here.</span>
-        </div>
       </div>
     </div>
   );

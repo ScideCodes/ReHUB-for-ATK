@@ -2558,16 +2558,15 @@ html.dark .h-dd[data-tone="hero"] .h-dd-trigger {
   display: grid;
   place-items: center;
 }
-/* Key labels are 5% larger than the original scale. */
 .hk-board .hk-key {
-  font-size: calc(var(--u, 54px) * 0.1785);
+  font-size: calc(var(--u, 54px) * 0.17);
   line-height: 1.15;
 }
 .hk-board .hk-key .t {
-  font-size: calc(var(--u, 54px) * 0.189);
+  font-size: calc(var(--u, 54px) * 0.18);
 }
 .hk-board .hk-key .b {
-  font-size: calc(var(--u, 54px) * 0.1575);
+  font-size: calc(var(--u, 54px) * 0.15);
 }
 .hk-light,
 .hk-trigger {
@@ -2807,7 +2806,7 @@ html.dark .h-num .spin button + button {
   width: calc(var(--w) * var(--pu) + (var(--w) - 1) * 4px);
   height: min(46px, calc(var(--pu) * 0.82));
   margin-left: calc(var(--g) * (var(--pu) + 4px));
-  font-size: min(13.65px, calc(var(--pu) * 0.252));
+  font-size: min(13px, calc(var(--pu) * 0.24));
 }
 
 /* Quicker entrances so pages feel instant */
@@ -3067,7 +3066,8 @@ html.dark .hub-main.split:has(.hk-light) .hk-board {
   border-radius: 3px;
   background: var(--hk-key-bg);
   color: rgb(var(--base-color));
-  font-size: 9.45px;
+  /* Light tab legends read larger than the original 9px. */
+  font-size: 10.5px;
   line-height: 1.15;
   transition: background-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), border 0.3s cubic-bezier(0.4, 0, 0.2, 1),
     transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -3208,4 +3208,19 @@ button.fd-badge {
 .hub-messages li time {
   font-size: 11px;
   color: var(--color-text-hint-60);
+}
+
+/* Axial Alignment: the legend sits in the flow (not over the keys) and calibrated keys turn green. */
+.hk-axial .hk-legend {
+  position: static;
+  flex-direction: row;
+  align-items: center;
+  align-self: flex-end;
+  gap: 16px;
+  padding: 8px 14px;
+}
+.hk-axial .hk-key[style*="--tint"] {
+  background: var(--tint);
+  border-color: #6fcf8f;
+  color: #0b3d1e;
 }

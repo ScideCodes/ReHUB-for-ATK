@@ -4,7 +4,7 @@ import {
   AlignVerticalSpaceAround,
   ArrowDownToLine,
   CheckCircle2,
-  CloudUpload,
+  ExternalLink,
   Eye,
   FileText,
   Gauge,
@@ -577,23 +577,67 @@ function AdvancedSection({ device, settings, edit, notice, layout }: SectionProp
 }
 
 /* ---------------- Axial Alignment ---------------- */
+// The official driver can recalibrate switches; Re-HUB does not send calibration commands to hardware.
+const OFFICIAL_DRIVER = "https://hub.atk.pro/";
+// Same green as the legend swatch.
+const CALIBRATED = "#b7ebc8";
+
 function AxialSection({ settings, mode, calibrating, onCalibrate, notice, layout }: SectionProps) {
+  const keys = useMemo(() => layoutIndexes(settings, layout).filter((i) => i >= 0), [settings, layout]);
+  const [done, setDone] = useState<ReadonlySet<number>>(new Set());
+  // A new run starts with every key uncalibrated.
+  useEffect(() => {
+    if (calibrating) setDone(new Set());
+  }, [calibrating]);
+  const demo = mode === "mock";
   return (
-    <main className="hub-main" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 40 }}>
+    <main className="hub-main hk-axial" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 24 }}>
       {notice && <p className="hk-notice" role="status">{notice}</p>}
       <div className="hk-legend">
         Calibration Color Legend
         <span><i /> Manual Calibration</span>
       </div>
-      <div style={{ width: "100%", height: 420, display: "flex" }}><Board layout={layout} settings={settings} selected={new Set()} /></div>
-      <button type="button" className="h-btn primary" disabled={mode !== "mock"} title={mode !== "mock" ? "Calibration is available in demo/mock mode only; hardware calibration is not verified" : undefined} onClick={onCalibrate}>
-        {calibrating ? "Finish Calibration" : "Start Calibration"}
-      </button>
-      <p style={{ textAlign: "center", lineHeight: "21px", margin: 0, color: "var(--color-text-head-100)" }}>
-        Please press each keyboard key one by one, fully press to the bottom (can slightly sway up, down, left and right) and release when the key turns green
-        <br />
-        Each key is recommended to be repeated 2-3 times, do not use excessive force, to avoid affecting calibration accuracy
-      </p>
+      <div style={{ width: "100%", height: 420, display: "flex" }}>
+        <Board
+          layout={layout}
+          settings={settings}
+          selected={new Set()}
+          tint={(i) => (done.has(i) ? CALIBRATED : undefined)}
+          onSelect={(i) => calibrating && setDone((set) => new Set(set).add(i))}
+        />
+      </div>
+      {demo ? (
+        <>
+          <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+            <button type="button" className="h-btn primary" onClick={onCalibrate}>
+              {calibrating ? "Finish Calibration" : "Start Calibration"}
+            </button>
+            {calibrating && (
+              <span role="status" aria-live="polite" style={{ color: "var(--color-text-hint-60)" }}>
+                {done.size} / {keys.length} keys calibrated
+              </span>
+            )}
+          </div>
+          <p style={{ textAlign: "center", lineHeight: "21px", margin: 0, color: "var(--color-text-head-100)" }}>
+            {calibrating
+              ? "Demo: click each key on the keyboard above to mark it calibrated, then finish."
+              : "Please press each keyboard key one by one, fully press to the bottom (can slightly sway up, down, left and right) and release when the key turns green"}
+          </p>
+        </>
+      ) : (
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 12, maxWidth: 620, textAlign: "center" }}>
+          <p style={{ margin: 0, lineHeight: "21px", color: "var(--color-text-head-100)" }}>
+            Switch calibration is not available in Re-HUB yet.
+          </p>
+          <p className="h-desc" style={{ margin: 0 }}>
+            Calibration rewrites the travel data stored on the keyboard, and those commands have not been tested on real hardware.
+            Use the official ATK web driver to calibrate, then come back here for your settings. Demo mode lets you try the steps.
+          </p>
+          <a className="h-btn primary hp-link" href={OFFICIAL_DRIVER} target="_blank" rel="noopener noreferrer">
+            Open the official ATK web driver <ExternalLink size={14} />
+          </a>
+        </div>
+      )}
     </main>
   );
 }
@@ -741,8 +785,8 @@ function ConfigSection({ busy, exportMaps, importMaps, layout }: SectionProps) {
   const store = useKeyboardStore();
   const [batch, setBatch] = useState(false);
   return (
-    <main className="hub-main" style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
-      <div style={{ padding: "20px 24px", borderRight: "1px solid var(--color-border-8)", overflow: "auto" }}>
+    <main className="hub-main" style={{ display: "block" }}>
+      <div style={{ padding: "20px 24px", overflow: "auto", height: "100%", maxWidth: 900 }}>
         <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 8 }}>
           <h2 className="h-title" style={{ fontSize: 18, flex: "1 1 auto" }}>Local configuration</h2>
           <button type="button" className="h-btn" aria-pressed={batch} onClick={() => setBatch(!batch)}>{batch ? "Cancel" : "Batch Operation"}</button>
@@ -760,7 +804,6 @@ function ConfigSection({ busy, exportMaps, importMaps, layout }: SectionProps) {
               {slot === 0 && <span className="hm-applying">Applying</span>}
               <span style={{ flex: 1 }} />
               <FileText size={16} />
-              <CloudUpload size={16} />
             </div>
           </div>
         ))}
@@ -785,21 +828,6 @@ function ConfigSection({ busy, exportMaps, importMaps, layout }: SectionProps) {
           </div>
         ))}
         {batch && <button type="button" className="h-btn" onClick={exportMaps}>Export</button>}
-      </div>
-      <div style={{ padding: "20px 24px", display: "flex", flexDirection: "column" }}>
-        <div style={{ display: "flex", gap: 12, alignItems: "center", paddingBottom: 16, borderBottom: "1px solid var(--color-border-8)" }}>
-          <h2 className="h-title" style={{ fontSize: 16 }}>Cloud Config</h2>
-          <span style={{ color: "var(--color-text-hint-60)" }}>Config Square</span>
-        </div>
-        <div className="h-grid-bg" style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 14 }}>
-          <CloudUpload size={22} />
-          Please upload the custom configuration on the left
-          <span style={{ color: "var(--color-text-hint-60)" }}>Cloud configs need an ATK account, so they are not available here.</span>
-        </div>
-        <div style={{ padding: "16px 0 0" }}>
-          <h3 className="h-title">Link Game/App</h3>
-          <p className="h-desc">Automatic config switching per game needs the desktop client.</p>
-        </div>
       </div>
     </main>
   );
