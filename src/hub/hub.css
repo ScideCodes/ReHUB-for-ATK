@@ -1547,13 +1547,22 @@ html[data-ui-font="custom"] .hub {
 }
 .hk-side-actions {
   display: flex;
+  flex: none;
   flex-direction: column;
   gap: 10px;
-  width: 144px;
+  /* Grows with longer translations instead of cutting labels off; the keyboard takes the rest. */
+  width: max-content;
+  min-width: 144px;
+  max-width: 220px;
 }
 .hk-side-actions .h-btn {
   justify-content: flex-start;
-  height: 32px;
+  height: auto;
+  min-height: 32px;
+  padding-block: 6px;
+  white-space: normal;
+  text-align: left;
+  line-height: 1.25;
 }
 .hk-light {
   display: grid;

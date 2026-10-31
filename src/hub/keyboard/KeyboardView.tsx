@@ -400,7 +400,7 @@ function KeysSection({ device, settings, edit, history, notice, layer, setLayer,
       top={
         <>
           <Board layout={layout} settings={settings} layer={layer} selected={new Set([selected])} onSelect={(i) => setSelected(i)} />
-          <div className="hk-side-actions" style={{ width: 120 }}>
+          <div className="hk-side-actions" style={{ minWidth: 120 }}>
             {layers.map((name, i) => (
               <button key={name} type="button" className={`h-btn${layer === i ? " primary" : ""}`} onClick={() => setLayer(i)}>
                 {name}
