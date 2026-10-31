@@ -1,0 +1,26 @@
+name: Hardware test report
+description: Share results from running the checklist on a real device.
+labels: [hardware-test]
+body:
+  - type: markdown
+    attributes:
+      value: Thank you! Follow [HARDWARE_TEST.md](../blob/main/HARDWARE_TEST.md) and back up your settings first.
+  - type: input
+    id: device
+    attributes:
+      label: Device (model and VID:PID)
+      placeholder: e.g. ATK 68 V2 Pro, 373B:1048
+    validations:
+      required: true
+  - type: dropdown
+    id: result
+    attributes:
+      label: Overall result
+      options: [All checks passed, Some checks failed, Could not connect]
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Checks and notes
+      description: Which steps passed or failed, plus the redacted diagnostics report.

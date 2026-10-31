@@ -1,36 +1,135 @@
-# ATK Hub
+<div align="center">
 
-An unofficial, local-first WebHID configurator for ATK mice and keyboards. Built with Vite, React 19, TypeScript, Tailwind, Zustand and Zod.
-It has no backend, service worker or telemetry; everything runs in the browser.
+<a href="docs/media/showcase.mp4"><img src="docs/media/hero.jpg" alt="Re-HUB for ATK: the ATK web driver, rebuilt in the open" width="100%" /></a>
 
-> **Use at your own risk.** The write paths follow the original driver's source and are tested against fake HID devices only.
-> They have **not** been tested on physical hardware. A bad write can leave a device misconfigured. See [Hardware test procedure](HARDWARE_TEST.md).
+# Re-HUB for ATK
 
-## Run
+**The ATK web driver, rebuilt in the open.**<br />
+An unofficial, open-source, local-first configurator for ATK mice and keyboards that runs in your browser over WebHID.
 
-- `npm ci`, then `npm run dev`; open the printed URL in a WebHID-capable Chromium browser (Chrome, Edge, Brave).
-- Choose **Add Device** for hardware, or the demo button in the header for a local mock that never touches hardware.
-- `npm run build` generates the registry projections and builds the static site; `npm run preview` serves it.
+[![CI](https://github.com/ScideCodes/Re-HUB-for-ATK/actions/workflows/ci.yml/badge.svg)](https://github.com/ScideCodes/Re-HUB-for-ATK/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-ff6900.svg)](LICENSE)
+![Tests](https://img.shields.io/badge/tests-699%20passing-2ea44f)
+![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178c6?logo=typescript&logoColor=white)
+![React](https://img.shields.io/badge/React-19-61dafb?logo=react&logoColor=black)
+![Vite](https://img.shields.io/badge/Vite-6-646cff?logo=vite&logoColor=white)
+![WebHID](https://img.shields.io/badge/WebHID-Chromium-111111)
+[![Stars](https://img.shields.io/github/stars/ScideCodes/Re-HUB-for-ATK?style=flat&color=ff6900)](https://github.com/ScideCodes/Re-HUB-for-ATK/stargazers)
 
-## Hardware access
+[**▶ Watch the 36-second film**](docs/media/showcase.mp4) · [Quick start](#-quick-start) · [Features](#-features) · [Why Re-HUB](#-why-re-hub) · [Supported devices](#-supported-devices) · [Safety](#-safety-model)
 
-- Mouse: eight source-compatible models (including ZERO EX wired, 373B:11CC) use the verified settings path; receiver endpoints need a matching runtime CID/MID. Details: [mouse access](MOUSE_ACCESS.md).
-- Keyboard: ATK 68 V2 Pro (373B:1048) writes with first-write consent and mandatory readback; other source-backed families are read-only or opt-in "untested" writes for the current session only. Details: [keyboard protocol](KEYBOARD_PROTOCOL.md).
-- Identity checks, outgoing validation, opcode allowlists, EEPROM verification and write readback are never bypassed. DFU 0x0D stays blocked and FF02 boot endpoints are never offered.
+</div>
 
-## Data
+> [!WARNING]
+> **Unofficial and hardware-untested.** Every write path follows the original driver's source and is verified against fake HID devices. None has been run on physical hardware yet. A bad write can leave a device misconfigured, so use it at your own risk. Real-device testers are very welcome: see [Hardware testing](HARDWARE_TEST.md).
 
-- Device metadata: `src/devices/deviceRegistry.source.json`; `npm run registry:generate` produces the runtime registry.
-- Some generators and parity scripts read the original driver's unpacked source from `../extracted/asar_unpacked`, which is not part of this repository.
-- Maps and settings stay in the browser (localStorage / IndexedDB). Diagnostics reports exclude payloads, personal names and serials.
+## ✨ Why Re-HUB
 
-## Verify
+<img src="docs/media/why.jpg" alt="Why Re-HUB: every write read back, 159 parity scenarios, 699 tests, MIT" width="100%" />
 
-- `npx tsc --noEmit`, `npm test`, `npm run test:devices`, `npm run lint`, `npm run build`, `npm run shots`.
-- `node scripts/audit-browser.mjs`: axe accessibility audit of every demo page at 1440, 1100 and 900 px in both themes.
+| | |
+|---|---|
+| **Every write is read back** | A setting only counts as saved when the device returns the same bytes. There are no acknowledgement-only "success" toasts. |
+| **Matched to the original driver** | 159 parity scenarios replay ATK's own controllers and compare the outgoing HID reports byte for byte. |
+| **Tested like software should be** | 699 automated tests, plus a mock matrix covering 342 device profiles, an accessibility audit and screenshot checks. |
+| **Open source and local** | MIT licensed. No backend, no telemetry, no account: maps and settings stay in your browser's storage. |
+| **Safe by construction** | Identity checks, an outgoing-packet allowlist and EEPROM verification are never bypassed. Firmware/DFU commands are permanently blocked and boot endpoints are never offered. |
+| **Accessible** | Zero axe violations across 90 page states, in light and dark themes. |
 
-## Legal
+## 🎛 Features
 
-This project is not affiliated with, endorsed by or sponsored by ATK. "ATK" and the product names are trademarks of their owners.
-Product images and videos under `public/` are the property of their respective owners and are included only to identify the devices.
+<table>
+<tr>
+<td width="50%"><img src="docs/media/dpi-1.jpg" alt="DPI stages" /><br /><b>DPI stages</b>: per-stage values and colours, with X/Y split where the mouse supports it.</td>
+<td width="50%"><img src="docs/media/poll-8K.jpg" alt="Polling and sensor" /><br /><b>Polling and sensor</b>: 125 Hz to 8K and the sensor sampling modes, offered per model.</td>
+</tr>
+<tr>
+<td width="50%"><img src="docs/media/keys-assigned.jpg" alt="Button remapping" /><br /><b>Button remapping</b>: DPI, config-file, wheel, keyboard and shortcut actions on any button.</td>
+<td width="50%"><img src="docs/media/kb-light.jpg" alt="Keyboard lighting" /><br /><b>Keyboards</b>: lighting, trigger travel and rapid trigger, key remapping and per-key colour, where the family supports them.</td>
+</tr>
+</table>
+
+Also included:
+- **Offline maps:** edit, duplicate, import and export configurations without a device connected.
+- **Demo mode:** try every screen with local mocks; no hardware is touched.
+- **Diagnostics:** frame-level HID history, with redacted copy-to-clipboard reports.
+- **Interface:** light and dark themes, and a colourway picker per device.
+
+## 🚀 Quick start
+
+Requirements: Node.js 20+ and a Chromium-based browser (Chrome, Edge or Brave), because WebHID is Chromium-only.
+
+```bash
+git clone https://github.com/ScideCodes/Re-HUB-for-ATK.git
+cd Re-HUB-for-ATK
+npm ci
+npm run dev
+```
+
+Open the printed `localhost` URL. Choose **Add Device** for hardware, or the demo button in the header to explore safely.
+Close `atk-hub.exe`, hub.atk.pro and any other configurator first, so the HID collection is free.
+
+| Script | What it does |
+|---|---|
+| `npm run dev` | Start the dev server |
+| `npm run build` / `npm run preview` | Build and serve the static site |
+| `npm test` | Unit and integration tests (Vitest) |
+| `npm run test:devices` | Mock matrix across every device profile |
+| `npm run lint` / `npx tsc --noEmit` | Lint and type-check |
+| `npm run shots` | Screenshot regression run (Playwright) |
+| `node scripts/audit-browser.mjs` | axe accessibility audit at three widths, in both themes |
+
+## 🖱 Supported devices
+
+The registry covers **320 ATK endpoints** (190 mouse, 130 keyboard). Access is granted per model, based on what the original driver's source proves.
+
+| Tier | Devices | What you get |
+|---|---|---|
+| **Verified writes** | 8 mouse models on the PAW3950Ultra path (for example ZERO EX, 373B:11CC) and the ATK 68 V2 Pro keyboard (373B:1048) | Full settings, with mandatory readback |
+| **Receivers** | 45 dongle endpoints | Writes only after the paired mouse's CID/MID proves a verified model |
+| **Opt-in untested writes** | 108 keyboard endpoints (RS7, BITYUAN, HFD, BYKB families) | Source-backed writes, enabled per session after explicit consent |
+| **Read-only** | 137 further mouse profiles, ARBITER keyboards | Settings are read; edits stay local |
+
+Details: [mouse access](MOUSE_ACCESS.md) · [keyboard protocol](KEYBOARD_PROTOCOL.md).
+
+## 🛡 Safety model
+
+- **Identity first:** a device must match an exact VID/PID/usage identity (and CID/MID for receivers) before any write path opens.
+- **Allowlisted packets:** every outgoing report passes `validateOutgoing` and per-family frame validators. Unknown commands are refused.
+- **Readback on every write:** EEPROM and setting writes are compared byte for byte, and a mismatch is reported as a failure.
+- **Never dangerous:** firmware update (DFU `0x0D`) is permanently blocked, and boot (`FF02`) endpoints are never offered in the picker.
+- **No silent writes:** opening a device, switching maps or importing files never applies unrelated drafts.
+
+## 🧱 Tech stack
+
+Vite · React 19 · TypeScript (strict) · Tailwind · Zustand · Zod 4 · Vitest · Playwright. It's a static site with no server code.
+
+```
+src/
+  devices/    device registry, layouts, capabilities, parity fixtures
+  protocol/   packet codecs, per-family write planners and validators
+  hid/        WebHID transport, keyboard/mouse clients, diagnostics
+  hub/        the interface (mouse + keyboard workspaces, home, settings)
+  features/   maps, device session, shared settings logic
+  store/      Zustand stores (maps, keyboard, config)
+```
+
+## 🤝 Contributing
+
+Issues and pull requests are welcome, and reports from real hardware are the most valuable. Please read [CONTRIBUTING.md](CONTRIBUTING.md) and report security problems privately as described in [SECURITY.md](SECURITY.md).
+
+## ⚖️ License and disclaimer
+
 The source code is released under the [MIT License](LICENSE).
+
+This project is **not affiliated with, endorsed by or sponsored by ATK**. "ATK" and product names are trademarks of their owners. Product images and videos under `public/` belong to their respective owners and are included only to identify the devices.
+
+## ⭐ Star history
+
+<a href="https://star-history.com/#ScideCodes/Re-HUB-for-ATK&Date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=ScideCodes/Re-HUB-for-ATK&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=ScideCodes/Re-HUB-for-ATK&type=Date" />
+    <img alt="Star history chart" src="https://api.star-history.com/svg?repos=ScideCodes/Re-HUB-for-ATK&type=Date" />
+  </picture>
+</a>
