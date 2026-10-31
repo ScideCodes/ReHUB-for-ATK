@@ -2,6 +2,14 @@
 
 All notable changes to Re-HUB for ATK. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.3.0] - 2026-10-31
+
+### Fixed
+- **"Reading keyboard · 100%" kept flashing** when you opened keyboard settings. After the first read, Re-HUB quietly loads the other tabs in the background, and each of those loads briefly showed the notice. Background loads are now silent, and a tab's own read only shows the notice if it takes longer than half a second.
+
+### Changed
+- **Background blur and brightness now update live** while you drag the slider, instead of only when you let go. Updates are limited to one per screen refresh and only the wallpaper is redrawn, so dragging stays smooth. The value is saved when you release the slider.
+
 ## [1.2.0] - 2026-10-31
 
 ### Fixed
@@ -38,6 +46,7 @@ All notable changes to Re-HUB for ATK. The format follows [Keep a Changelog](htt
 ### Added
 - First public release: an unofficial, open-source, local-first WebHID configurator for ATK mice and keyboards, with read-back-verified writes, a demo mode, offline maps, diagnostics, light and dark themes, and a README, launch film, CI and contribution guides.
 
+[1.3.0]: https://github.com/ScideCodes/ReHUB-for-ATK/compare/v1.2.0...v1.3.0
 [1.2.0]: https://github.com/ScideCodes/ReHUB-for-ATK/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/ScideCodes/ReHUB-for-ATK/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/ScideCodes/ReHUB-for-ATK/releases/tag/v1.0.0

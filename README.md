@@ -9,7 +9,7 @@ An unofficial, open-source, local-first configurator for ATK mice and keyboards 
 
 [![CI](https://github.com/ScideCodes/ReHUB-for-ATK/actions/workflows/ci.yml/badge.svg)](https://github.com/ScideCodes/ReHUB-for-ATK/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-ff6900.svg)](LICENSE)
-![Tests](https://img.shields.io/badge/tests-705%20passing-2ea44f)
+![Tests](https://img.shields.io/badge/tests-707%20passing-2ea44f)
 ![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178c6?logo=typescript&logoColor=white)
 ![React](https://img.shields.io/badge/React-19-61dafb?logo=react&logoColor=black)
 ![Vite](https://img.shields.io/badge/Vite-6-646cff?logo=vite&logoColor=white)
@@ -31,7 +31,7 @@ An unofficial, open-source, local-first configurator for ATK mice and keyboards 
 |---|---|
 | **Every write is read back** | A setting only counts as saved when the device returns the same bytes. There are no acknowledgement-only "success" toasts. |
 | **Matched to the original driver** | 159 parity scenarios replay ATK's own controllers and compare the outgoing HID reports byte for byte. |
-| **Tested like software should be** | 705 automated tests, plus a mock matrix covering 342 device profiles, an accessibility audit and screenshot checks. |
+| **Tested like software should be** | 707 automated tests, plus a mock matrix covering 342 device profiles, an accessibility audit and screenshot checks. |
 | **Open source and local** | MIT licensed. No backend, no telemetry, no account: maps and settings stay in your browser's storage. |
 | **Safe by construction** | Identity checks, an outgoing-packet allowlist and EEPROM verification are never bypassed. Firmware/DFU commands are permanently blocked and boot endpoints are never offered. |
 | **Accessible** | Zero axe violations across 90 page states, in light and dark themes. |
