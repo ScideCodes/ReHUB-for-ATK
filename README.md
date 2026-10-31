@@ -1,6 +1,6 @@
 <div align="center">
 
-<a href="docs/media/showcase.mp4"><img src="docs/media/hero.jpg" alt="Re-HUB for ATK: the ATK web driver, rebuilt in the open" width="100%" /></a>
+<a href="docs/media/showcase.mp4"><img src="docs/media/hero.png" alt="Re-HUB for ATK: the ATK web driver, rebuilt in the open" width="100%" /></a>
 
 # Re-HUB for ATK
 
@@ -25,7 +25,7 @@ An unofficial, open-source, local-first configurator for ATK mice and keyboards 
 
 ## ✨ Why Re-HUB
 
-<img src="docs/media/why.jpg" alt="Why Re-HUB: every write read back, 159 parity scenarios, 699 tests, MIT" width="100%" />
+<img src="docs/media/why.png" alt="Why Re-HUB: every write read back, 159 parity scenarios, 699 tests, MIT" width="100%" />
 
 | | |
 |---|---|
@@ -40,12 +40,12 @@ An unofficial, open-source, local-first configurator for ATK mice and keyboards 
 
 <table>
 <tr>
-<td width="50%"><img src="docs/media/dpi-1.jpg" alt="DPI stages" /><br /><b>DPI stages</b>: per-stage values and colours, with X/Y split where the mouse supports it.</td>
-<td width="50%"><img src="docs/media/poll-8K.jpg" alt="Polling and sensor" /><br /><b>Polling and sensor</b>: 125 Hz to 8K and the sensor sampling modes, offered per model.</td>
+<td width="50%"><img src="docs/media/dpi-1.png" alt="DPI stages" /><br /><b>DPI stages</b>: per-stage values and colours, with X/Y split where the mouse supports it.</td>
+<td width="50%"><img src="docs/media/poll-8K.png" alt="Polling and sensor" /><br /><b>Polling and sensor</b>: 125 Hz to 8K and the sensor sampling modes, offered per model.</td>
 </tr>
 <tr>
-<td width="50%"><img src="docs/media/keys-assigned.jpg" alt="Button remapping" /><br /><b>Button remapping</b>: DPI, config-file, wheel, keyboard and shortcut actions on any button.</td>
-<td width="50%"><img src="docs/media/kb-light.jpg" alt="Keyboard lighting" /><br /><b>Keyboards</b>: lighting, trigger travel and rapid trigger, key remapping and per-key colour, where the family supports them.</td>
+<td width="50%"><img src="docs/media/keys-assigned.png" alt="Button remapping" /><br /><b>Button remapping</b>: DPI, config-file, wheel, keyboard and shortcut actions on any button.</td>
+<td width="50%"><img src="docs/media/kb-light.png" alt="Keyboard lighting" /><br /><b>Keyboards</b>: lighting, trigger travel and rapid trigger, key remapping and per-key colour, where the family supports them.</td>
 </tr>
 </table>
 
