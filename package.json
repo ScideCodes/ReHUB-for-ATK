@@ -5,13 +5,13 @@
   "description": "Unofficial, open-source, local-first WebHID configurator for ATK mice and keyboards.",
   "license": "MIT",
   "author": "Scide",
-  "homepage": "https://github.com/ScideCodes/Re-HUB-for-ATK#readme",
+  "homepage": "https://github.com/ScideCodes/ReHUB-for-ATK#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ScideCodes/Re-HUB-for-ATK.git"
+    "url": "git+https://github.com/ScideCodes/ReHUB-for-ATK.git"
   },
   "bugs": {
-    "url": "https://github.com/ScideCodes/Re-HUB-for-ATK/issues"
+    "url": "https://github.com/ScideCodes/ReHUB-for-ATK/issues"
   },
   "keywords": [
     "atk",

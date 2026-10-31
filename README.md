@@ -1,22 +1,22 @@
 <div align="center">
 
-<a href="docs/media/showcase.mp4"><img src="docs/media/hero.png" alt="Re-HUB for ATK: the ATK web driver, rebuilt in the open" width="100%" /></a>
+<a href="https://www.youtube.com/watch?v=ck-0Ct8F_g4" title="Watch the launch film on YouTube"><img src="docs/media/hero.png" alt="Re-HUB for ATK: the ATK web driver, rebuilt in the open" width="100%" /></a>
 
 # Re-HUB for ATK
 
 **The ATK web driver, rebuilt in the open.**<br />
 An unofficial, open-source, local-first configurator for ATK mice and keyboards that runs in your browser over WebHID.
 
-[![CI](https://github.com/ScideCodes/Re-HUB-for-ATK/actions/workflows/ci.yml/badge.svg)](https://github.com/ScideCodes/Re-HUB-for-ATK/actions/workflows/ci.yml)
+[![CI](https://github.com/ScideCodes/ReHUB-for-ATK/actions/workflows/ci.yml/badge.svg)](https://github.com/ScideCodes/ReHUB-for-ATK/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-ff6900.svg)](LICENSE)
 ![Tests](https://img.shields.io/badge/tests-699%20passing-2ea44f)
 ![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178c6?logo=typescript&logoColor=white)
 ![React](https://img.shields.io/badge/React-19-61dafb?logo=react&logoColor=black)
 ![Vite](https://img.shields.io/badge/Vite-6-646cff?logo=vite&logoColor=white)
 ![WebHID](https://img.shields.io/badge/WebHID-Chromium-111111)
-[![Stars](https://img.shields.io/github/stars/ScideCodes/Re-HUB-for-ATK?style=flat&color=ff6900)](https://github.com/ScideCodes/Re-HUB-for-ATK/stargazers)
+[![Stars](https://img.shields.io/github/stars/ScideCodes/ReHUB-for-ATK?style=flat&color=ff6900)](https://github.com/ScideCodes/ReHUB-for-ATK/stargazers)
 
-[**▶ Watch the 36-second film**](docs/media/showcase.mp4) · [Quick start](#-quick-start) · [Features](#-features) · [Why Re-HUB](#-why-re-hub) · [Supported devices](#-supported-devices) · [Safety](#-safety-model)
+[**▶ Watch the 36-second film on YouTube**](https://www.youtube.com/watch?v=ck-0Ct8F_g4) · [Quick start](#-quick-start) · [Features](#-features) · [Why Re-HUB](#-why-re-hub) · [Supported devices](#-supported-devices) · [Safety](#-safety-model)
 
 </div>
 
@@ -60,8 +60,8 @@ Also included:
 Requirements: Node.js 20+ and a Chromium-based browser (Chrome, Edge or Brave), because WebHID is Chromium-only.
 
 ```bash
-git clone https://github.com/ScideCodes/Re-HUB-for-ATK.git
-cd Re-HUB-for-ATK
+git clone https://github.com/ScideCodes/ReHUB-for-ATK.git
+cd ReHUB-for-ATK
 npm ci
 npm run dev
 ```
@@ -126,10 +126,10 @@ This project is **not affiliated with, endorsed by or sponsored by ATK**. "ATK" 
 
 ## ⭐ Star history
 
-<a href="https://star-history.com/#ScideCodes/Re-HUB-for-ATK&Date">
+<a href="https://star-history.com/#ScideCodes/ReHUB-for-ATK&Date">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=ScideCodes/Re-HUB-for-ATK&type=Date&theme=dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=ScideCodes/Re-HUB-for-ATK&type=Date" />
-    <img alt="Star history chart" src="https://api.star-history.com/svg?repos=ScideCodes/Re-HUB-for-ATK&type=Date" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=ScideCodes/ReHUB-for-ATK&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=ScideCodes/ReHUB-for-ATK&type=Date" />
+    <img alt="Star history chart" src="https://api.star-history.com/svg?repos=ScideCodes/ReHUB-for-ATK&type=Date" />
   </picture>
 </a>

@@ -5,7 +5,7 @@ Re-HUB talks to USB devices, so we take reports seriously, especially anything t
 ## Reporting
 
 Please **do not open a public issue.** Use GitHub's private advisory form instead:
-https://github.com/ScideCodes/Re-HUB-for-ATK/security/advisories/new
+https://github.com/ScideCodes/ReHUB-for-ATK/security/advisories/new
 
 Include steps to reproduce, the affected device family, and the redacted diagnostics report if relevant. You can expect an acknowledgement within a week.
 
