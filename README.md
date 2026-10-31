@@ -178,10 +178,10 @@ This project is **not affiliated with, endorsed by or sponsored by ATK**. "ATK" 
 
 ## ⭐ Star history
 
-<a href="https://star-history.com/#ScideCodes/ReHUB-for-ATK&Date">
+<a href="https://star-history.com/#scidecodes/rehub-for-atk&Date">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=ScideCodes/ReHUB-for-ATK&type=Date&theme=dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=ScideCodes/ReHUB-for-ATK&type=Date" />
-    <img alt="Star history chart" src="https://api.star-history.com/svg?repos=ScideCodes/ReHUB-for-ATK&type=Date" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=scidecodes/rehub-for-atk&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=scidecodes/rehub-for-atk&type=Date" />
+    <img alt="Star history chart" src="https://api.star-history.com/svg?repos=scidecodes/rehub-for-atk&type=Date" />
   </picture>
 </a>
