@@ -794,8 +794,9 @@ export function ConfigSection({ onImport, onNew, onExport }: { onImport: () => v
   const [picked, setPicked] = useState<Set<string>>(new Set());
   const slots = [0, 1, 2, 3];
   return (
-    <div style={{ height: "100%" }}>
-      <div style={{ padding: "20px 24px", overflow: "auto", height: "100%", maxWidth: 900 }}>
+    <div>
+      {/* The panel body scrolls; a second scroll box here would overrun the panel edge. */}
+      <div style={{ padding: "20px 24px", maxWidth: 900 }}>
         <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 8 }}>
           <h2 className="h-title" style={{ fontSize: 18, flex: "1 1 auto" }}>Local configuration</h2>
           <button type="button" className="h-btn" aria-pressed={batch} onClick={() => (setBatch(!batch), setPicked(new Set()))}>

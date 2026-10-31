@@ -591,13 +591,13 @@ function AxialSection({ settings, mode, calibrating, onCalibrate, notice, layout
   }, [calibrating]);
   const demo = mode === "mock";
   return (
-    <main className="hub-main hk-axial" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 24 }}>
+    <main className="hub-main hk-axial">
       {notice && <p className="hk-notice" role="status">{notice}</p>}
       <div className="hk-legend">
         Calibration Color Legend
         <span><i /> Manual Calibration</span>
       </div>
-      <div style={{ width: "100%", height: 420, display: "flex" }}>
+      <div className="hk-axial-board">
         <Board
           layout={layout}
           settings={settings}
