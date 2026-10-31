@@ -16,9 +16,21 @@ export function enableDetails(source) {
 }
 
 export default async function () {
-  const template = path.join(path.dirname(require.resolve('app-builder-lib/package.json')),
-    'templates/nsis/installSection.nsh');
-  const source = fs.readFileSync(template, 'utf8');
-  const updated = enableDetails(source);
-  if (updated !== source) fs.writeFileSync(template, updated);
+  const templates = path.join(path.dirname(require.resolve('app-builder-lib/package.json')), 'templates/nsis');
+  for (const [name, transform] of [['installSection.nsh', enableDetails], ['uninstaller.nsh', enableDataChoice]]) {
+    const template = path.join(templates, name);
+    const source = fs.readFileSync(template, 'utf8');
+    const updated = transform(source);
+    if (updated !== source) fs.writeFileSync(template, updated);
+  }
+}
+
+export function enableDataChoice(source) {
+  const original = '  StrCpy $isDeleteAppData "0"';
+  const replacement = '  StrCpy $isDeleteAppData $rehubRemoveData ; ReHUB uninstall choice';
+  if (source.includes(replacement)) return source;
+  if (source.split(original).length !== 2) {
+    throw new Error('electron-builder uninstall template changed; review data removal choice.');
+  }
+  return source.replace(original, replacement);
 }

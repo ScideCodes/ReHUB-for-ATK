@@ -15,6 +15,8 @@ ReHUB 1.5.0, Electron 45.2.1, Windows x64. Based on public repository commit e57
 
 ## Limits
 
+Setup maintenance follow-up: added install/update and uninstall choices, embedded the current uninstaller for existing installations, and added an unchecked-by-default desktop data removal checkbox. Seven desktop tests and targeted lint passed; NSIS installer/uninstaller compilation passed. UI inspection confirmed the maintenance page and correct installed directory. Further UI automation stopped on a user-input detection; the checkbox screen and actual keep/delete uninstall outcomes remain unverified. No installed app or user data was removed during this check.
+
 Live-details correction: the previous inventory was printed only after extraction, leaving the pane empty during installation. The packaging hook now enables details before extraction. Regression test, six desktop tests, targeted ESLint, NSIS rebuild, and loading/executing the final hook through electron-builder's hook resolver passed. Checksum refreshed. Interactive installer UI verification remains outstanding.
 
 Installer follow-up: enabled the standard **Show details** button for installation and removal, added an installed-file listing and uninstaller path, and rebuilt the NSIS x64 installer successfully. The build generated and bundled its uninstaller. The SHA-256 manifest was refreshed. The installer UI and a full install/uninstall cycle were not exercised.

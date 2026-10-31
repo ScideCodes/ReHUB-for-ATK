@@ -10,3 +10,13 @@ test('enables logging before extraction without changing installation logic', as
   assert.throws(() => enableDetails('changed upstream template'), /template changed/);
   assert.throws(() => enableDetails(source + source), /template changed/);
 });
+
+test('uses the explicit data-removal choice while retaining upstream flag handling', async () => {
+  const { enableDataChoice } = await import('../scripts/installer-details.mjs');
+  const source = '  StrCpy $isDeleteAppData "0"\n  ${GetOptions} $R0 "--delete-app-data" $R1\n';
+  const result = enableDataChoice(source);
+  assert.equal(result, '  StrCpy $isDeleteAppData $rehubRemoveData ; ReHUB uninstall choice\n  ${GetOptions} $R0 "--delete-app-data" $R1\n');
+  assert.equal(enableDataChoice(result), result);
+  assert.throws(() => enableDataChoice('changed upstream template'), /template changed/);
+  assert.throws(() => enableDataChoice(source + source), /template changed/);
+});

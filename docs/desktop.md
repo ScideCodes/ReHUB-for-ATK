@@ -18,9 +18,11 @@ The current local build is unsigned. Windows may display an unknown-publisher wa
 
 During installation, click **Show details** to expand the live extraction and installation log. After extraction, it also lists every installed file, including the bundled runtime and uninstaller. Application code and web assets are bundled in `resources/app.asar`, so they appear as that archive rather than individual source files.
 
-The packaging hook in `scripts/installer-details.mjs` enables logging in electron-builder's local NSIS template. It retains the upstream extraction and retry logic, is reapplied after `npm ci`, and fails the build if the expected template changes.
+The packaging hook in `scripts/installer-details.mjs` enables logging and connects the uninstall data-removal checkbox to electron-builder's existing cleanup logic. It retains the upstream extraction and retry logic, is reapplied after `npm ci`, and fails the build if the expected templates change.
 
-To uninstall, use **Windows Settings > Apps > Installed apps > ReHUB for ATK > Uninstall**, or run `Uninstall ReHUB for ATK.exe` from the installation folder. The uninstaller also has a **Show details** button. Saved profiles and preferences are retained for reinstalling.
+Run Setup again and select **Uninstall ReHUB for ATK**, then **Next**. Setup includes its own uninstaller and detects the installed location; the option is disabled when no installation is found. Alternatively, use **Windows Settings > Apps > Installed apps > ReHUB for ATK > Uninstall**, or run `Uninstall ReHUB for ATK.exe` from the installation folder after installing this build.
+
+The uninstall screen asks whether to **Delete all ReHUB desktop profiles, settings and cached data**. Leave it unchecked to retain settings for reinstalling, or check it to remove them along with the cached installer. Exported files and browser data are not removed. Click **Next** to confirm removal, or **Cancel** to leave the installation unchanged. Automatic updates and silent uninstalls retain settings unless explicitly passed `--delete-app-data`. The uninstaller also has a **Show details** button.
 
 ## Contribute a device report
 
