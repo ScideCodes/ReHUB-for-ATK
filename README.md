@@ -57,6 +57,14 @@ Also included:
 - **Nine languages:** English, 简体中文, 繁體中文, 한국어, 日本語, Deutsch, Français, Русский and Türkçe, remembered between visits.
 - **Interface:** light and dark themes, background wallpapers on every screen, and a colourway picker per device.
 
+## Windows desktop app
+
+The desktop build opens ReHUB in its own window with no Node.js, terminal, browser setup or local server. It includes a device picker, optional close-to-tray and launch-at-login settings, and a manual GitHub update check.
+
+Download `ReHUB-Setup-<version>-x64.exe` from [GitHub Releases](https://github.com/ScideCodes/ReHUB-for-ATK/releases) when a desktop asset is available. If the latest release has no installer yet, use the browser setup below or [build the desktop app from source](docs/desktop.md). Desktop artifacts are also produced by the Windows desktop GitHub Actions workflow.
+
+**Help improve device support:** use **Help support my device** in the header, Settings or Diagnostics. ReHUB collects identifiers and report-layout metadata without sending device commands. Review the report, then download it or open a prefilled public GitHub issue. GitHub sign-in is required; nothing is submitted automatically. [Desktop and device-report guide](docs/desktop.md).
+
 ## 🚀 Quick start
 
 You need two things:

@@ -1,3 +1,4 @@
+import { DeviceReportButton } from '../support/DeviceReportDialog';
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import {
   Bell,
@@ -256,6 +257,7 @@ export function Header({
             </button>
           ))}
         </PopIcon>
+        <DeviceReportButton compact />
         <MessageCenter />
         <div className="hub-tip" data-tip="Settings">
           <button type="button" className="hub-icon-btn" aria-label="Settings" onClick={() => onOpenPage("settings")}>

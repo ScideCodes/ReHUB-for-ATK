@@ -25,5 +25,7 @@ jobs:
         run: npx eslint src
       - name: Unit and integration tests
         run: npm test
+      - name: Desktop policy tests
+        run: npm run test:desktop
       - name: Build
         run: npm run build

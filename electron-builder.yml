@@ -1,0 +1,31 @@
+appId: io.github.scidecodes.rehub
+productName: ReHUB for ATK
+copyright: Copyright © 2026 ReHUB contributors
+directories:
+  output: release
+files:
+  - dist/**/*
+  - electron/*.cjs
+  - '!electron/*.test.cjs'
+  - electron/icon.png
+  - electron/icon.ico
+  - package.json
+  - LICENSE
+asar: true
+win:
+  target:
+    - target: nsis
+      arch: [x64]
+  icon: electron/icon.ico
+  artifactName: ReHUB-Setup-${version}-${arch}.${ext}
+nsis:
+  oneClick: false
+  perMachine: false
+  allowElevation: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: ReHUB for ATK
+  deleteAppDataOnUninstall: false
+  license: LICENSE
+publish: null

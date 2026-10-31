@@ -1,3 +1,5 @@
+import { DesktopSettings } from '../desktop/DesktopControls';
+import { DeviceReportButton } from '../support/DeviceReportDialog';
 import { useRef, useState } from "react";
 import { Check, ChevronLeft, ExternalLink, ImagePlus, Moon, Palette, Sun, Type, Wallpaper as WallpaperIcon } from "lucide-react";
 import { AppearanceLayer } from "../ui/console/Appearance";
@@ -65,6 +67,12 @@ export function SettingsPage({ onBack }: { onBack: () => void }) {
           </div>
         </div>
       </section>
+      <DesktopSettings />
+      <section className="hp-card">
+        <h2>Community device support</h2>
+        <p className="h-desc">Device missing or partly supported? Review and share a device report on GitHub. No data is uploaded automatically.</p>
+        <DeviceReportButton />
+      </section>
       <section className="hp-card">
         <h2>Firmware Tools</h2>
         <p className="h-desc">Firmware updates are not available in Re-HUB.</p>
@@ -80,7 +88,7 @@ export function SettingsPage({ onBack }: { onBack: () => void }) {
       <section className="hp-card">
         <h2>Help</h2>
         <p className="h-desc">
-          Use a 2.4G receiver or a cable connection; Bluetooth is not recognized. Open Chrome, Edge, Brave or Opera for WebHID.
+          Use a 2.4G receiver or a cable connection; Bluetooth is not recognized. The desktop app includes WebHID. For the web version, use Chrome, Edge, Brave or Opera.
         </p>
         <a className="h-btn" href="https://www.yuque.com/yunyanyingraorenjian/atk" target="_blank" rel="noopener noreferrer">
           ATK help center

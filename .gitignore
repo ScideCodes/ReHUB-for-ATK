@@ -5,3 +5,6 @@ audit/
 .superpowers/
 *.local
 .env*
+
+# Desktop installer and smoke output
+release/
