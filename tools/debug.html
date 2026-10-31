@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATK / VXE WebHID Raw Protocol Debugger</title>
+  <style>
+    :root {
+      --bg: #090a10;
+      --card-bg: rgba(22, 27, 46, 0.7);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --accent: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.25);
+      --success: #34d399;
+      --warning: #fbbf24;
+      --danger: #f87171;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --mono: 'JetBrains Mono', 'Fira Code', monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: radial-gradient(circle at 50% 0%, #172554 0%, var(--bg) 70%);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      min-height: 100vh;
+      padding: 24px;
+    }
+    .container { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 24px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      backdrop-filter: blur(20px);
+    }
+    h1 { font-size: 1.4rem; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 10px; }
+    .badge {
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--accent);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+    .grid { display: grid; grid-template-columns: 360px 1fr; gap: 20px; }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 20px;
+      backdrop-filter: blur(20px);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    h2 { font-size: 1rem; color: #cbd5e1; text-transform: uppercase; letter-spacing: 0.05em; }
+    button {
+      background: #1e293b;
+      color: #f8fafc;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-weight: 500;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    button:hover { background: #334155; border-color: rgba(255, 255, 255, 0.25); }
+    button.primary {
+      background: var(--accent);
+      color: #0f172a;
+      border: none;
+      font-weight: 600;
+      box-shadow: 0 4px 14px var(--accent-glow);
+    }
+    button.primary:hover { background: #7dd3fc; }
+    .btn-group { display: flex; flex-direction: column; gap: 8px; }
+    .status-box {
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 12px;
+      font-size: 0.82rem;
+      font-family: var(--mono);
+      line-height: 1.5;
+    }
+    .status-online { color: var(--success); }
+    .status-offline { color: var(--danger); }
+    .input-row { display: flex; gap: 8px; }
+    input[type="text"] {
+      flex: 1;
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      color: #fff;
+      padding: 8px 12px;
+      font-family: var(--mono);
+      font-size: 0.85rem;
+    }
+    input[type="text"]:focus { outline: none; border-color: var(--accent); }
+    .log-panel {
+      flex: 1;
+      height: 600px;
+      background: rgba(0, 0, 0, 0.45);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 16px;
+      font-family: var(--mono);
+      font-size: 0.82rem;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .log-entry {
+      display: flex;
+      gap: 12px;
+      padding: 4px 6px;
+      border-radius: 4px;
+      word-break: break-all;
+    }
+    .log-entry:hover { background: rgba(255, 255, 255, 0.04); }
+    .log-time { color: var(--text-muted); flex-shrink: 0; }
+    .log-dir { font-weight: 700; flex-shrink: 0; width: 42px; }
+    .log-dir.tx { color: var(--accent); }
+    .log-dir.rx { color: var(--success); }
+    .log-dir.err { color: var(--danger); }
+    .log-dir.info { color: var(--warning); }
+    .log-data { color: #e2e8f0; }
+    .log-parsed { color: #94a3b8; font-size: 0.76rem; }
+    .toolbar { display: flex; justify-content: space-between; align-items: center; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>ATK / VXE WebHID Raw Protocol Debugger <span class="badge">Compx 16-Byte Engine</span></h1>
+        <p style="color: var(--text-muted); font-size: 0.82rem; margin-top: 4px;">Target Device: ATK ZERO EX (VID: 0x373B, PID: 0x11CC/0x11D8, Report ID: 0x08)</p>
+      </div>
+      <div style="display: flex; gap: 10px;">
+        <button id="btnConnect" class="primary">⚡ Connect ATK Device</button>
+        <button id="btnConnectAny">🔍 Connect Any HID</button>
+      </div>
+    </header>
+
+    <div class="grid">
+      <!-- Left Controls -->
+      <div class="card">
+        <h2>Device Status</h2>
+        <div id="statusBox" class="status-box">
+          Status: <span class="status-offline">Disconnected</span><br>
+          Device: None<br>
+          VID / PID: -<br>
+          Model: -
+        </div>
+
+        <h2>Pre-built Diagnostics</h2>
+        <div class="btn-group">
+          <button id="btnQueryId">🔍 1. Query CID, MID & Serial (0x10)</button>
+          <button id="btnQueryBattery">🔋 2. Query Battery Status (0x04)</button>
+          <button id="btnQueryMouseVer">🏷️ 3. Query Mouse Firmware (0x12)</button>
+          <button id="btnQueryDongleVer">📡 4. Query Dongle Firmware (0x1D)</button>
+          <button id="btnQueryOnline">📶 5. Query Wireless RF Status (0x03)</button>
+          <button id="btnReadReportRate">⚡ 6. Read Polling Rate & DPI (EEPROM 0)</button>
+          <button id="btnReadLOD">📏 7. Read LOD / Silent Height (EEPROM 10)</button>
+          <button id="btnReadDebounce">⏱️ 8. Read Stabilization & Debounce (EEPROM 169)</button>
+        </div>
+
+        <h2>Custom Packet Sender</h2>
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <label style="font-size: 0.78rem; color: var(--text-muted);">Payload Hex (15 bytes without checksum):</label>
+          <div class="input-row">
+            <input type="text" id="customHex" value="10 00 00 00 00 00 00 00 00 00 00 00 00 00 00">
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem;">
+            <span>Computed Checksum: <b id="lblChecksum" style="color: var(--accent);">--</b></span>
+            <button id="btnSendCustom" style="padding: 6px 12px;">Send 0x08</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Log Panel -->
+      <div class="card">
+        <div class="toolbar">
+          <h2>HID Traffic Log</h2>
+          <div style="display: flex; gap: 8px;">
+            <button id="btnAutoScroll" style="padding: 4px 8px; font-size: 0.75rem;">Auto-scroll: ON</button>
+            <button id="btnClearLog" style="padding: 4px 8px; font-size: 0.75rem;">Clear Log</button>
+          </div>
+        </div>
+        <div id="logPanel" class="log-panel">
+          <div class="log-entry">
+            <span class="log-time">00:00:00</span>
+            <span class="log-dir info">[INFO]</span>
+            <span class="log-data">WebHID debug console ready. Click "Connect ATK Device" to begin.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let activeDevice = null;
+    let autoScroll = true;
+
+    const FILTERS = [
+      { vendorId: 0x373b, usagePage: 0xff04, usage: 0x0002 },
+      { vendorId: 0x3554, usagePage: 0xff04, usage: 0x0002 }
+    ];
+
+    const OPCODES = {
+      0x01: 'DownLoadData',
+      0x02: 'DownLoadDriverStatus',
+      0x03: 'GetWirelessMouseOnline',
+      0x04: 'GetBatteryLevel',
+      0x05: 'SetWirelessDonglePair',
+      0x06: 'GetWirelessDonglePairResult',
+      0x07: 'SetEEPROM',
+      0x08: 'GetEEPROM',
+      0x09: 'RestoreFactory',
+      0x0A: 'ReportMouseStatus',
+      0x0E: 'GetCurrentConfig',
+      0x0F: 'SetCurrentConfig',
+      0x10: 'GetMouseCIDMID',
+      0x12: 'GetMouseVersion',
+      0x14: 'Set4KRGBMode',
+      0x15: 'Get4KRGBMode',
+      0x16: 'SetFarDistanceMode',
+      0x17: 'GetFarDistanceMode',
+      0x18: 'SetDongleLightMode',
+      0x19: 'GetDongleLightMode',
+      0x1D: 'GetDongleVersion'
+    };
+
+    function log(dir, text, parsed = '') {
+      const panel = document.getElementById('logPanel');
+      const now = new Date().toTimeString().split(' ')[0];
+      const entry = document.createElement('div');
+      entry.className = 'log-entry';
+      entry.innerHTML = `
+        <span class="log-time">${now}</span>
+        <span class="log-dir ${dir.toLowerCase()}">[${dir}]</span>
+        <div>
+          <div class="log-data">${text}</div>
+          ${parsed ? `<div class="log-parsed">${parsed}</div>` : ''}
+        </div>
+      `;
+      panel.appendChild(entry);
+      if (autoScroll) panel.scrollTop = panel.scrollHeight;
+    }
+
+    function calcChecksum(reportId, data15) {
+      let sum = reportId;
+      for (let i = 0; i < 15; i++) {
+        sum += data15[i] ?? 0;
+      }
+      return (0x55 - (sum & 0xff)) & 0xff;
+    }
+
+    function buildPacket(commandId, eepromAddress = 0, validLen = 0, data = []) {
+      const buf = new Uint8Array(16);
+      buf[0] = commandId;
+      buf[1] = 0x00;
+      buf[2] = (eepromAddress >> 8) & 0xff;
+      buf[3] = eepromAddress & 0xff;
+      buf[4] = validLen;
+      for (let i = 0; i < data.length && i < 10; i++) {
+        buf[5 + i] = data[i];
+      }
+      buf[15] = calcChecksum(0x08, buf.subarray(0, 15));
+      return buf;
+    }
+
+    function toHex(buf) {
+      return Array.from(new Uint8Array(buf))
+        .map(b => b.toString(16).padStart(2, '0').toUpperCase())
+        .join(' ');
+    }
+
+    async function sendPacket(packet) {
+      if (!activeDevice || !activeDevice.opened) {
+        log('ERR', 'Device not connected');
+        return;
+      }
+      try {
+        log('TX', `ReportId: 0x08 | ${toHex(packet)}`, `Opcode: ${OPCODES[packet[0]] || '0x' + packet[0].toString(16)} (validLen=${packet[4]})`);
+        await activeDevice.sendReport(0x08, packet);
+      } catch (err) {
+        log('ERR', `Send failed: ${err.message}`);
+      }
+    }
+
+    function handleInputReport(e) {
+      const data = new Uint8Array(e.data.buffer);
+      const opcode = data[0];
+      const status = data[1];
+      let parsed = `Opcode: ${OPCODES[opcode] || '0x' + opcode.toString(16)} | Status: ${status === 0 ? 'OK' : 'Code ' + status}`;
+
+      if (opcode === 0x10) {
+        const cid = data[5];
+        const mid = data[6];
+        const serial = [data[11], data[12], data[13], data[14]].map(b => b.toString(16).padStart(2, '0').toUpperCase()).join('.');
+        parsed += ` | CID=${cid}, MID=${mid} (Model: ${cid===1 && mid===4 ? 'ATK ZERO EX' : 'Other'}) | Serial: ${serial}`;
+      } else if (opcode === 0x04) {
+        const bat = data[5];
+        const charging = data[6];
+        const mv = (data[7] << 8) | data[8];
+        parsed += ` | Battery: ${bat}% | State: ${charging === 1 ? 'Charging' : 'Discharging'} | Voltage: ${mv} mV`;
+      } else if (opcode === 0x12 || opcode === 0x1D) {
+        const ver = `${data[5].toString(16)}.${data[6].toString(16).padStart(2, '0')}`;
+        parsed += ` | Firmware: v${ver}`;
+      } else if (opcode === 0x03) {
+        parsed += ` | Wireless Mouse: ${data[5] === 1 ? 'ONLINE / ACTIVE' : 'OFFLINE / ASLEEP'}`;
+      } else if (opcode === 0x08) {
+        parsed += ` | Read Data: ${Array.from(data.slice(5, 15)).map(b => '0x' + b.toString(16).padStart(2, '0')).join(' ')}`;
+      } else if (opcode === 0x0A) {
+        const mask = data[5];
+        parsed += ` | Push Event: ${mask & 1 ? 'DPI ' : ''}${mask & 2 ? 'ReportRate ' : ''}${mask & 4 ? 'Profile ' : ''}${mask & 64 ? 'Battery' : ''}`;
+      }
+
+      log('RX', `ReportId: 0x${e.reportId.toString(16).padStart(2, '0')} | ${toHex(data)}`, parsed);
+    }
+
+    async function connect(filters) {
+      try {
+        if (!navigator.hid) {
+          alert('WebHID is not supported in this browser. Please use Chrome, Edge, or Brave.');
+          return;
+        }
+        const devices = await navigator.hid.requestDevice({ filters: filters || [] });
+        if (!devices || devices.length === 0) return;
+        const dev = devices[0];
+        if (!dev.opened) await dev.open();
+        activeDevice = dev;
+        activeDevice.oninputreport = handleInputReport;
+
+        const isDongle = dev.productId === 0x11D8;
+        const statusBox = document.getElementById('statusBox');
+        statusBox.innerHTML = `
+          Status: <span class="status-online">Connected</span><br>
+          Product: ${dev.productName || 'ATK Device'}<br>
+          VID: 0x${dev.vendorId.toString(16).toUpperCase()} | PID: 0x${dev.productId.toString(16).toUpperCase()} (${isDongle ? '8K Dongle-H' : 'Mouse Wired'})<br>
+          Collections: ${dev.collections.length} (Active: 0xFF04 / Usage 2)
+        `;
+        log('INFO', `Connected to ${dev.productName} (0x${dev.vendorId.toString(16)}:0x${dev.productId.toString(16)})`);
+      } catch (err) {
+        log('ERR', `Connection failed: ${err.message}`);
+      }
+    }
+
+    // Auto reconnect on page load
+    window.addEventListener('DOMContentLoaded', async () => {
+      if (!navigator.hid) return;
+      const devices = await navigator.hid.getDevices();
+      const match = devices.find(d => d.vendorId === 0x373b && d.collections.some(c => c.usagePage === 0xff04));
+      if (match) {
+        if (!match.opened) await match.open();
+        activeDevice = match;
+        activeDevice.oninputreport = handleInputReport;
+        log('INFO', `Auto-reconnected to ${match.productName}`);
+      }
+    });
+
+    document.getElementById('btnConnect').onclick = () => connect(FILTERS);
+    document.getElementById('btnConnectAny').onclick = () => connect([]);
+    document.getElementById('btnClearLog').onclick = () => { document.getElementById('logPanel').innerHTML = ''; };
+    document.getElementById('btnAutoScroll').onclick = (e) => {
+      autoScroll = !autoScroll;
+      e.target.innerText = `Auto-scroll: ${autoScroll ? 'ON' : 'OFF'}`;
+    };
+
+    // Diagnostic queries
+    document.getElementById('btnQueryId').onclick = () => sendPacket(buildPacket(0x10));
+    document.getElementById('btnQueryBattery').onclick = () => sendPacket(buildPacket(0x04));
+    document.getElementById('btnQueryMouseVer').onclick = () => sendPacket(buildPacket(0x12));
+    document.getElementById('btnQueryDongleVer').onclick = () => sendPacket(buildPacket(0x1D));
+    document.getElementById('btnQueryOnline').onclick = () => sendPacket(buildPacket(0x03));
+    document.getElementById('btnReadReportRate').onclick = () => sendPacket(buildPacket(0x08, 0, 10));
+    document.getElementById('btnReadLOD').onclick = () => sendPacket(buildPacket(0x08, 10, 2));
+    document.getElementById('btnReadDebounce').onclick = () => sendPacket(buildPacket(0x08, 169, 10));
+
+    // Custom packet sender
+    const txtHex = document.getElementById('customHex');
+    const lblChecksum = document.getElementById('lblChecksum');
+
+    function updateCustomChecksum() {
+      const parts = txtHex.value.trim().split(/\s+/).map(h => parseInt(h, 16) || 0);
+      const c = calcChecksum(0x08, parts);
+      lblChecksum.innerText = '0x' + c.toString(16).padStart(2, '0').toUpperCase();
+    }
+    txtHex.addEventListener('input', updateCustomChecksum);
+    updateCustomChecksum();
+
+    document.getElementById('btnSendCustom').onclick = () => {
+      const parts = txtHex.value.trim().split(/\s+/).map(h => parseInt(h, 16) || 0);
+      const packet = new Uint8Array(16);
+      for (let i = 0; i < 15; i++) packet[i] = parts[i] || 0;
+      packet[15] = calcChecksum(0x08, packet.subarray(0, 15));
+      sendPacket(packet);
+    };
+  </script>
+</body>
+</html>

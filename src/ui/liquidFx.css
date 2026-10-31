@@ -1,0 +1,444 @@
+/* Liquid motion layer: livelier backdrop, entrances, hover/press feedback, spotlight, parallax. */
+.lg-backdrop {
+  inset: -80px;
+  contain: strict;
+  translate: calc((var(--fx-x, 0.5) - 0.5) * -44px)
+    calc((var(--fx-y, 0.5) - 0.5) * -32px);
+  transition: translate 900ms var(--ease-hub);
+  will-change: translate;
+}
+.lg-backdrop > span:nth-child(n) {
+  contain: strict;
+  will-change: transform;
+  backface-visibility: hidden;
+  animation:
+    fx-drift 26s ease-in-out infinite alternate,
+    fx-breathe 8s ease-in-out infinite alternate;
+}
+.lg-backdrop > span:nth-child(2) {
+  animation-duration: 34s, 11s;
+  animation-direction: alternate-reverse, alternate;
+}
+.lg-backdrop > span:nth-child(3) {
+  animation-duration: 30s, 9s;
+}
+.lg-backdrop > span:nth-child(4) {
+  animation-duration: 22s, 13s;
+  animation-direction: alternate-reverse, alternate;
+}
+@keyframes fx-drift {
+  from {
+    transform: translate3d(-8%, -6%, 0) scale3d(1, 1, 1);
+  }
+  to {
+    transform: translate3d(10%, 8%, 0) scale3d(1.14, 1.14, 1);
+  }
+}
+@keyframes fx-breathe {
+  from {
+    opacity: 0.62;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fx-rise {
+  from {
+    opacity: 0;
+    translate: 0 12px;
+    scale: 0.985;
+    will-change: transform, opacity;
+  }
+}
+.lg-editor-scroll,
+.lg-device-scroll,
+.lg-map-list {
+  contain: content;
+}
+.lg-editor-scroll > * {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 200px;
+}
+.lg-editor-scroll > *,
+.lg-device-scroll > *,
+.lg-map-list > * {
+  animation: fx-rise 420ms var(--ease-hub) backwards;
+}
+.lg-editor-scroll > *:nth-child(2),
+.lg-device-scroll > *:nth-child(2),
+.lg-map-list > *:nth-child(2) {
+  animation-delay: 40ms;
+}
+.lg-editor-scroll > *:nth-child(3),
+.lg-device-scroll > *:nth-child(3),
+.lg-map-list > *:nth-child(3) {
+  animation-delay: 80ms;
+}
+.lg-editor-scroll > *:nth-child(4),
+.lg-device-scroll > *:nth-child(4),
+.lg-map-list > *:nth-child(4) {
+  animation-delay: 120ms;
+}
+.lg-editor-scroll > *:nth-child(5),
+.lg-device-scroll > *:nth-child(5),
+.lg-map-list > *:nth-child(5) {
+  animation-delay: 160ms;
+}
+.lg-editor-scroll > *:nth-child(n + 6),
+.lg-device-scroll > *:nth-child(n + 6),
+.lg-map-list > *:nth-child(n + 6) {
+  animation-delay: 200ms;
+}
+.lg-stage-strip > * {
+  animation: fx-rise 420ms var(--ease-hub) backwards;
+}
+.lg-stage-strip > *:nth-child(2) {
+  animation-delay: 50ms;
+}
+.lg-stage-strip > *:nth-child(3) {
+  animation-delay: 100ms;
+}
+.lg-stage-strip > *:nth-child(4) {
+  animation-delay: 150ms;
+}
+.lg-stage-strip > *:nth-child(n + 5) {
+  animation-delay: 200ms;
+}
+.hub-button {
+  transition:
+    transform 160ms var(--ease-hub),
+    opacity 160ms var(--ease-hub),
+    scale 160ms var(--ease-hub),
+    background-color 160ms var(--ease-hub);
+}
+.hub-button:not(:disabled):hover {
+  translate: 0 -1px;
+}
+.hub-button:not(:disabled):active {
+  scale: 0.96;
+  translate: 0 0;
+}
+.lg-stage-strip > * {
+  position: relative;
+  overflow: hidden;
+  contain: content;
+  transition:
+    translate 200ms var(--ease-hub),
+    scale 200ms var(--ease-hub),
+    background-color 200ms var(--ease-hub),
+    border-color 200ms var(--ease-hub);
+}
+.lg-stage-strip > *:hover {
+  translate: 0 -3px;
+}
+.lg-stage-strip > *:active {
+  scale: 0.97;
+}
+.lg-tabs > button {
+  transition: color 180ms var(--ease-hub);
+}
+.lg-tabs > button:hover svg {
+  animation: fx-wiggle 420ms var(--ease-hub);
+}
+@keyframes fx-wiggle {
+  30% {
+    rotate: -10deg;
+    scale: 1.12;
+  }
+  60% {
+    rotate: 6deg;
+  }
+}
+.lg-map-rail::after,
+.lg-device-panel::after,
+.lg-tabs::after,
+.glass-inset::after,
+.lg-stage-strip > *::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  contain: strict;
+  transition: opacity 280ms var(--ease-hub);
+  background: radial-gradient(
+    220px circle at var(--mx, 50%) var(--my, 50%),
+    color-mix(in srgb, var(--hub-accent) 16%, transparent),
+    transparent 70%
+  );
+}
+.lg-map-rail:hover::after,
+.lg-device-panel:hover::after,
+.lg-tabs:hover::after,
+.glass-inset:hover::after,
+.lg-stage-strip > *:hover::after {
+  opacity: 1;
+}
+.fx-ripple {
+  position: absolute;
+  z-index: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  contain: layout paint style;
+  will-change: transform, opacity;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.45),
+    transparent 65%
+  );
+  transform: scale3d(0, 0, 1);
+  animation: fx-ripple 580ms var(--ease-hub) forwards;
+}
+@keyframes fx-ripple {
+  to {
+    transform: scale3d(1, 1, 1);
+    opacity: 0;
+  }
+}
+.lg-device-portrait {
+  perspective: 700px;
+  contain: layout style;
+}
+.lg-device-portrait > * {
+  will-change: transform;
+  animation: fx-float 7s ease-in-out infinite;
+  transform: rotateY(calc((var(--fx-x, 0.5) - 0.5) * 16deg))
+    rotateX(calc((0.5 - var(--fx-y, 0.5)) * 10deg));
+  transition: transform 180ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+@keyframes fx-float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -6px;
+  }
+}
+
+/* Replace main-thread box-shadow ping with compositor-only scale + opacity pseudo-ring */
+.lg-status-dot[data-connected="true"] {
+  position: relative;
+}
+.lg-status-dot[data-connected="true"]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--hub-accent);
+  pointer-events: none;
+  will-change: transform, opacity;
+  animation: fx-ping-ring 2.4s ease-out infinite;
+}
+@keyframes fx-ping-ring {
+  0% {
+    transform: scale3d(1, 1, 1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale3d(3.04, 3.04, 1);
+    opacity: 0;
+  }
+}
+.lg-map-rail .map-color-dot,
+.lg-map-chip .map-color-dot {
+  background: var(--hub-accent);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--hub-accent) 60%, transparent);
+}
+.lg-device-header-actions,
+.lg-device-header-actions .lg-history-group {
+  gap: 6px;
+}
+.lg-save-status {
+  justify-content: center;
+  text-align: center;
+}
+.lg-save-status .lg-save-reason {
+  text-align: center;
+}
+.lg-lab {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+  contain: content;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 230px;
+}
+.lg-lab-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--hub-text-muted);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.lg-lab-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  letter-spacing: 0.04em;
+}
+.lg-lab-live::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--hub-text-muted);
+  opacity: 0.5;
+  transition:
+    background-color 200ms var(--ease-hub),
+    opacity 200ms var(--ease-hub);
+}
+.lg-lab-live[data-on="true"] {
+  color: var(--hub-text);
+}
+.lg-lab-live[data-on="true"]::before {
+  background: var(--hub-accent);
+  opacity: 1;
+  will-change: transform, opacity;
+  animation: fx-live-pulse 1.4s ease-in-out infinite alternate;
+}
+@keyframes fx-live-pulse {
+  from {
+    transform: scale3d(0.9, 0.9, 1);
+    opacity: 0.55;
+  }
+  to {
+    transform: scale3d(1.35, 1.35, 1);
+    opacity: 1;
+  }
+}
+.lg-lab-pad {
+  position: relative;
+  height: 96px;
+  overflow: hidden;
+  contain: strict;
+  border-radius: 14px;
+  background:
+    radial-gradient(
+        circle at 1px 1px,
+        rgba(255, 255, 255, 0.1) 1px,
+        transparent 1.5px
+      )
+      0 0 / 14px 14px,
+    var(--surface-inset);
+  cursor: crosshair;
+  touch-action: none;
+}
+.lg-lab-pad canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.lg-lab-hint {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  color: var(--hub-text-muted);
+  font-size: 12px;
+  pointer-events: none;
+  transition: opacity 240ms var(--ease-hub);
+}
+.lg-lab-pad[data-on="true"] .lg-lab-hint {
+  opacity: 0;
+}
+.lg-lab-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+  margin: 0;
+}
+.lg-lab-stats > div {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  background: var(--control-bg);
+}
+.lg-lab-stats dt {
+  color: var(--hub-text-muted);
+  font-size: 11px;
+  line-height: 15px;
+}
+.lg-lab-stats dd {
+  margin: 0;
+  color: var(--hub-text);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 18px;
+  font-variant-numeric: tabular-nums;
+}
+.lg-lab-meter {
+  height: 6px;
+  overflow: hidden;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.1);
+}
+.lg-lab-meter > span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  transform-origin: left center;
+  will-change: transform;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--hub-accent) 50%, transparent),
+    var(--hub-accent)
+  );
+  transition: transform 320ms var(--ease-hub);
+}
+.lg-lab-note {
+  margin: 0;
+  color: var(--hub-text-muted);
+  font-size: 11px;
+  line-height: 15px;
+}
+
+/* Pause all infinite animations when tab is hidden */
+.fx-paused *,
+.fx-paused *::before,
+.fx-paused *::after {
+  animation-play-state: paused !important;
+}
+
+.lg-device-portrait:not(:hover) > * {
+  animation-play-state: paused;
+}
+
+:root[data-fx-paused="true"] .lg-backdrop > span:nth-child(n),
+:root[data-fx-paused="true"] .lg-device-portrait > *,
+:root[data-fx-paused="true"] .lg-status-dot[data-connected="true"]::after,
+:root[data-fx-paused="true"] .lg-lab-live[data-on="true"]::before {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lg-backdrop,
+  .lg-backdrop > span:nth-child(n),
+  .lg-editor-scroll > *,
+  .lg-device-scroll > *,
+  .lg-map-list > *,
+  .lg-stage-strip > *,
+  .lg-device-portrait > *,
+  .lg-status-dot[data-connected="true"]::after,
+  .lg-lab-live[data-on="true"]::before,
+  .lg-tabs > button:hover svg {
+    animation: none;
+  }
+  .lg-backdrop,
+  .lg-device-portrait > * {
+    translate: none;
+    transform: none;
+    transition: none;
+  }
+}

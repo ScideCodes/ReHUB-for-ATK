@@ -1,0 +1,3310 @@
+{
+  "source": "../extracted/asar_unpacked/static/demoMode.store-CXKd1LXo.js",
+  "entries": [
+    {
+      "symbol": "Bv",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4549,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 5,
+        "col": 14,
+        "connectType": 2,
+        "name": "ATK60 RX",
+        "title": "ATK60 RX",
+        "firmwareMark": "atk60rx",
+        "presetTag": "edge60-v2",
+        "borrowLayout": [
+          "2,11",
+          "3,11",
+          "3,12"
+        ],
+        "skin": null,
+        "groupName": "ATK60RX"
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8572,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "atk60rx"
+      }
+    },
+    {
+      "symbol": "Bv",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4550,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 5,
+        "col": 14,
+        "connectType": 2,
+        "name": "ATK60 RX",
+        "title": "ATK60 RX",
+        "firmwareMark": "atk60rx",
+        "presetTag": "edge60-v2",
+        "borrowLayout": [
+          "2,11",
+          "3,11",
+          "3,12"
+        ],
+        "skin": null,
+        "groupName": "ATK60RX-Ultra"
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8573,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "atk60rx"
+      }
+    },
+    {
+      "symbol": "Bv",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4551,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 5,
+        "col": 14,
+        "connectType": 2,
+        "name": "ATK60 RX",
+        "title": "ATK60 RX",
+        "firmwareMark": "atk60rx",
+        "presetTag": "edge60-v2",
+        "borrowLayout": [
+          "2,11",
+          "3,11",
+          "3,12"
+        ],
+        "skin": null,
+        "groupName": "ATK60RX-Limited"
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8574,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "atk60rx"
+      }
+    },
+    {
+      "symbol": "Bv",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4604,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 5,
+        "col": 14,
+        "connectType": 2,
+        "name": "ATK60 RX",
+        "title": "ATK60 RX",
+        "firmwareMark": "atk60rx",
+        "presetTag": "edge60-v2",
+        "borrowLayout": [
+          "2,11",
+          "3,11",
+          "3,12"
+        ],
+        "skin": null,
+        "groupName": "ATK60RX"
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8594,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "atk60rx"
+      }
+    },
+    {
+      "symbol": "Zv",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4584,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 5,
+        "col": 15,
+        "connectType": 2,
+        "name": "ATK RS6",
+        "title": "ATK RS6",
+        "firmwareMark": "rs6",
+        "presetTag": "rs6-v2",
+        "skin": null,
+        "borrowLayout": [
+          "2,11",
+          "3,12"
+        ],
+        "groupName": "RS6-48E"
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8588,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "rs6"
+      }
+    },
+    {
+      "symbol": "Zv",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4252,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 5,
+        "col": 15,
+        "connectType": 2,
+        "name": "ATK RS6",
+        "title": "ATK RS6",
+        "firmwareMark": "rs6",
+        "presetTag": "rs6-v2",
+        "skin": null,
+        "borrowLayout": [
+          "2,11",
+          "3,12"
+        ],
+        "groupName": "RS6-48E"
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8259,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "rs6"
+      }
+    },
+    {
+      "symbol": "Zv",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4253,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 5,
+        "col": 15,
+        "connectType": 2,
+        "name": "ATK RS6",
+        "title": "ATK RS6 Ultra",
+        "firmwareMark": "rs6",
+        "presetTag": "rs6-v2",
+        "skin": null,
+        "borrowLayout": [
+          "2,11",
+          "3,12"
+        ],
+        "groupName": "RS6-48E"
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8260,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "rs6"
+      }
+    },
+    {
+      "symbol": "Zv",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4254,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 5,
+        "col": 15,
+        "connectType": 2,
+        "name": "ATK RS6",
+        "title": "ATK RS6 Ultra",
+        "firmwareMark": "rs6",
+        "presetTag": "rs6-v2",
+        "skin": null,
+        "borrowLayout": [
+          "2,11",
+          "3,12"
+        ],
+        "groupName": "RS6-48E"
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8261,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "rs6"
+      }
+    },
+    {
+      "symbol": "Zv",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4585,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 5,
+        "col": 15,
+        "connectType": 2,
+        "name": "ATK RS6",
+        "title": "ATK RS6 Ultra",
+        "firmwareMark": "rs6",
+        "presetTag": "rs6-v2",
+        "skin": null,
+        "borrowLayout": [
+          "2,11",
+          "3,12"
+        ],
+        "groupName": "RS6-Ultra-48E"
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8589,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "rs6"
+      }
+    },
+    {
+      "symbol": "Zv",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4450,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 5,
+        "col": 15,
+        "connectType": 2,
+        "name": "ATK RS6",
+        "title": "ATK RS6",
+        "firmwareMark": "rs6",
+        "presetTag": "rs6-v2",
+        "skin": null,
+        "borrowLayout": [
+          "2,11",
+          "3,12"
+        ],
+        "groupName": "RS6-4015"
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8505,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "rs6"
+      }
+    },
+    {
+      "symbol": "Zv",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4586,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 5,
+        "col": 15,
+        "connectType": 2,
+        "name": "ATK RS6",
+        "title": "ATK RS6",
+        "firmwareMark": "rs6",
+        "presetTag": "rs6-v2",
+        "skin": null,
+        "borrowLayout": [
+          "2,11",
+          "3,12"
+        ],
+        "groupName": "RS6-4015"
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8590,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "rs6"
+      }
+    },
+    {
+      "symbol": "Zv",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4451,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 5,
+        "col": 15,
+        "connectType": 2,
+        "name": "ATK RS6",
+        "title": "ATK RS6 Ultra",
+        "firmwareMark": "rs6",
+        "presetTag": "rs6-v2",
+        "skin": null,
+        "borrowLayout": [
+          "2,11",
+          "3,12"
+        ],
+        "groupName": "RS6-Ultra-4015"
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8506,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "rs6"
+      }
+    },
+    {
+      "symbol": "Zv",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4452,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 5,
+        "col": 15,
+        "connectType": 2,
+        "name": "ATK RS6",
+        "title": "ATK RS6 Ultra",
+        "firmwareMark": "rs6",
+        "presetTag": "rs6-v2",
+        "skin": null,
+        "borrowLayout": [
+          "2,11",
+          "3,12"
+        ],
+        "groupName": "RS6-Ultra-4015"
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8507,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "rs6"
+      }
+    },
+    {
+      "symbol": "Zv",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4566,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 5,
+        "col": 15,
+        "connectType": 2,
+        "name": "ATK RS6",
+        "title": "ATK RS6 Ultra",
+        "firmwareMark": "rs6",
+        "presetTag": "rs6-v2",
+        "skin": null,
+        "borrowLayout": [
+          "2,11",
+          "3,12"
+        ],
+        "groupName": "RS6-Ultra-4015"
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8580,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "rs6"
+      }
+    },
+    {
+      "symbol": "Zv",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4587,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 5,
+        "col": 15,
+        "connectType": 2,
+        "name": "ATK RS6",
+        "title": "ATK RS6 Ultra",
+        "firmwareMark": "rs6",
+        "presetTag": "rs6-v2",
+        "skin": null,
+        "borrowLayout": [
+          "2,11",
+          "3,12"
+        ],
+        "groupName": "RS6-Ultra-4015"
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8591,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "rs6"
+      }
+    },
+    {
+      "symbol": "Zv",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4537,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 5,
+        "col": 15,
+        "connectType": 2,
+        "name": "ATK RS6 x FLEET18",
+        "title": "ATK RS6 x FLEET18",
+        "firmwareMark": "rs6",
+        "presetTag": "rs6-v2",
+        "skin": null,
+        "borrowLayout": [
+          "2,11",
+          "3,12"
+        ],
+        "groupName": "RS6-FLEET18-4015"
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8560,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "rs6"
+      }
+    },
+    {
+      "symbol": "Zv",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4370,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 5,
+        "col": 15,
+        "name": "ATK68 V3",
+        "connectType": 2,
+        "title": "ATK68 V3",
+        "firmwareMark": "atk68",
+        "skin": null,
+        "borrowLayout": [
+          "2,11",
+          "3,12"
+        ],
+        "groupName": "ATK68V3-48E"
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8452,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "atk68"
+      }
+    },
+    {
+      "symbol": "Zv",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4459,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 5,
+        "col": 15,
+        "name": "ATK68 V3",
+        "connectType": 2,
+        "title": "ATK68 V3",
+        "firmwareMark": "atk68",
+        "skin": null,
+        "borrowLayout": [
+          "2,11",
+          "3,12"
+        ],
+        "groupName": "ATK68V3-4015"
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8514,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "atk68"
+      }
+    },
+    {
+      "symbol": "Zv",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4582,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 5,
+        "col": 15,
+        "name": "ATK68 V3",
+        "connectType": 2,
+        "title": "ATK68 V3",
+        "firmwareMark": "atk68",
+        "skin": null,
+        "borrowLayout": [
+          "2,11",
+          "3,12"
+        ],
+        "groupName": "ATK68V3-4015"
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8587,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "atk68"
+      }
+    },
+    {
+      "symbol": "Zv",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4560,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 5,
+        "col": 15,
+        "connectType": 2,
+        "firmwareMark": "rs6",
+        "presetTag": "rs6-v2",
+        "title": "ATK RS6 Air",
+        "name": "ATK RS6 Air",
+        "groupName": "RS6-Air",
+        "skin": [],
+        "limitVersion": "1.10",
+        "supportSideLight": true,
+        "supportLogoLight": true,
+        "borrowLayout": [
+          "2,11",
+          "3,12"
+        ]
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8575,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "rs6"
+      }
+    },
+    {
+      "symbol": "Zv",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4699,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 5,
+        "col": 15,
+        "connectType": 2,
+        "firmwareMark": "rs6",
+        "presetTag": "rs6-v2",
+        "title": "ATK RS6 Air",
+        "name": "ATK RS6 Air",
+        "groupName": "RS6-Air-2",
+        "skin": [],
+        "limitVersion": "1.10",
+        "supportSideLight": true,
+        "supportLogoLight": true,
+        "borrowLayout": [
+          "2,11",
+          "3,12"
+        ]
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8633,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "rs6"
+      }
+    },
+    {
+      "symbol": "Zv",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4815,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 5,
+        "col": 15,
+        "connectType": 2,
+        "firmwareMark": "rs6",
+        "presetTag": "rs6-v2",
+        "title": "ATK RS6 Air",
+        "name": "ATK RS6 Air",
+        "groupName": "RS6-Air-2",
+        "skin": [],
+        "limitVersion": "1.10",
+        "supportSideLight": true,
+        "supportLogoLight": true,
+        "borrowLayout": [
+          "2,11",
+          "3,12"
+        ]
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8662,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "rs6"
+      }
+    },
+    {
+      "symbol": "Zv",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4617,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 5,
+        "col": 15,
+        "connectType": 2,
+        "firmwareMark": "rs6",
+        "presetTag": "rs6-v2",
+        "title": "ATK RS6 Air",
+        "name": "ATK RS6 Air",
+        "groupName": "RS6-Air",
+        "skin": [],
+        "limitVersion": "1.10",
+        "supportSideLight": true,
+        "supportLogoLight": true,
+        "borrowLayout": [
+          "2,11",
+          "3,12"
+        ]
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8602,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "rs6"
+      }
+    },
+    {
+      "symbol": "Zv",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4700,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 5,
+        "col": 15,
+        "connectType": 2,
+        "firmwareMark": "rs6",
+        "presetTag": "rs6-v2",
+        "title": "ATK RS6 Air",
+        "name": "ATK RS6 Air",
+        "groupName": "RS6-Air-2",
+        "skin": [],
+        "limitVersion": "1.10",
+        "supportSideLight": true,
+        "supportLogoLight": true,
+        "borrowLayout": [
+          "2,11",
+          "3,12"
+        ]
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8634,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "rs6"
+      }
+    },
+    {
+      "symbol": "Zv",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4506,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 5,
+        "col": 15,
+        "connectType": 2,
+        "name": "ATK68 RX",
+        "title": "ATK68 RX",
+        "firmwareMark": "atk68rx",
+        "borrowLayout": [
+          "2,11",
+          "3,12"
+        ],
+        "presetTag": "atk68rx",
+        "limitVersion": "1.10",
+        "skin": null,
+        "defaultKeyMatrix": [],
+        "groupName": "ATK68RX-4015"
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8546,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "atk68rx"
+      }
+    },
+    {
+      "symbol": "Zv",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4544,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 5,
+        "col": 15,
+        "connectType": 2,
+        "name": "ATK68 RX",
+        "title": "ATK68 RX",
+        "firmwareMark": "atk68rx",
+        "borrowLayout": [
+          "2,11",
+          "3,12"
+        ],
+        "presetTag": "atk68rx",
+        "limitVersion": "1.10",
+        "skin": null,
+        "defaultKeyMatrix": [],
+        "groupName": "ATK68RX-4015"
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8567,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "atk68rx"
+      }
+    },
+    {
+      "symbol": "Zv",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4545,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 5,
+        "col": 15,
+        "connectType": 2,
+        "name": "ATK68 RX",
+        "title": "ATK68 RX",
+        "firmwareMark": "atk68rx",
+        "borrowLayout": [
+          "2,11",
+          "3,12"
+        ],
+        "presetTag": "atk68rx",
+        "limitVersion": "1.10",
+        "skin": null,
+        "defaultKeyMatrix": [],
+        "groupName": "ATK68RX-4015"
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8568,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "atk68rx"
+      }
+    },
+    {
+      "symbol": "Zv",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4623,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 5,
+        "col": 15,
+        "connectType": 2,
+        "firmwareMark": "rs6-plus",
+        "name": "ATK RS6 Plus",
+        "title": "ATK RS6 +",
+        "groupName": "RS6-Plus-4015",
+        "presetTag": "rs6-v2",
+        "borrowLayout": [
+          "2,11",
+          "3,12"
+        ],
+        "skin": null
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8603,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "rs6-plus"
+      }
+    },
+    {
+      "symbol": "Zv",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4624,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 5,
+        "col": 15,
+        "connectType": 2,
+        "firmwareMark": "rs6-plus",
+        "name": "ATK RS6 Plus",
+        "title": "ATK RS6 Ultra +",
+        "groupName": "RS6-Ultra-Plus-4015",
+        "presetTag": "rs6-v2",
+        "borrowLayout": [
+          "2,11",
+          "3,12"
+        ],
+        "skin": null
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8604,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "rs6-plus"
+      }
+    },
+    {
+      "symbol": "Zv",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4862,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 5,
+        "col": 15,
+        "connectType": 2,
+        "firmwareMark": "rs6-plus",
+        "name": "ATK RS6 Plus",
+        "title": "ATK RS6 +",
+        "groupName": "RS6-Plus-4015",
+        "presetTag": "rs6-v2",
+        "borrowLayout": [
+          "2,11",
+          "3,12"
+        ],
+        "skin": null
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8670,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "rs6-plus"
+      }
+    },
+    {
+      "symbol": "Zv",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4697,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 5,
+        "col": 15,
+        "name": "ATK RS6 Cube",
+        "connectType": 2,
+        "title": "ATK RS6 Cube",
+        "firmwareMark": "rs6",
+        "supportSideLight": true,
+        "groupName": "RS6-Cube"
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8632,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "rs6"
+      }
+    },
+    {
+      "symbol": "Zv",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4848,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 5,
+        "col": 15,
+        "name": "ATK RS6 Cube",
+        "connectType": 2,
+        "title": "ATK RS6 Cube",
+        "firmwareMark": "rs6",
+        "supportSideLight": true,
+        "groupName": "RS6-Cube"
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8665,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "rs6"
+      }
+    },
+    {
+      "symbol": "Zv",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4874,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 5,
+        "col": 15,
+        "connectType": 2,
+        "firmwareMark": "rs6",
+        "presetTag": "rs6-v2",
+        "title": "ATK RS6 Air",
+        "name": "ATK RS6 Air",
+        "groupName": "RS6-Air",
+        "skin": [],
+        "limitVersion": "1.10",
+        "supportSideLight": true,
+        "supportLogoLight": true,
+        "borrowLayout": [
+          "2,11",
+          "3,12"
+        ],
+        "isISO": true
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8672,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "rs6"
+      }
+    },
+    {
+      "symbol": "ng",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4468,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 6,
+        "col": 15,
+        "connectType": 2,
+        "name": "ATK RS7 V2",
+        "title": "ATK RS7 V2 Ultra",
+        "firmwareMark": "rs7v2",
+        "presetTag": "rs7-v2",
+        "borrowLayout": [
+          "3,12",
+          "4,12",
+          "5,4",
+          "5,11"
+        ],
+        "wasdLayout": [
+          "2,2",
+          "3,1",
+          "3,2",
+          "3,3"
+        ],
+        "skin": null,
+        "limitVersion": "1.01",
+        "defaultKeyMatrix": [],
+        "supportSideLight": true,
+        "supportLogoLight": true,
+        "groupName": "RS7V2-Ultra-4015"
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8523,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "rs7v2"
+      }
+    },
+    {
+      "symbol": "ng",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4503,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 6,
+        "col": 15,
+        "connectType": 2,
+        "name": "ATK RS7 V2",
+        "title": "ATK RS7 V2 Ultra",
+        "firmwareMark": "rs7v2",
+        "presetTag": "rs7-v2",
+        "borrowLayout": [
+          "3,12",
+          "4,12",
+          "5,4",
+          "5,11"
+        ],
+        "wasdLayout": [
+          "2,2",
+          "3,1",
+          "3,2",
+          "3,3"
+        ],
+        "skin": null,
+        "limitVersion": "1.01",
+        "defaultKeyMatrix": [],
+        "supportSideLight": true,
+        "supportLogoLight": true,
+        "groupName": "RS7V2-Ultra-4015"
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8543,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "rs7v2"
+      }
+    },
+    {
+      "symbol": "ng",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4504,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 6,
+        "col": 15,
+        "connectType": 2,
+        "name": "ATK RS7 V2",
+        "title": "ATK RS7 V2 Ultra",
+        "firmwareMark": "rs7v2",
+        "presetTag": "rs7-v2",
+        "borrowLayout": [
+          "3,12",
+          "4,12",
+          "5,4",
+          "5,11"
+        ],
+        "wasdLayout": [
+          "2,2",
+          "3,1",
+          "3,2",
+          "3,3"
+        ],
+        "skin": null,
+        "limitVersion": "1.01",
+        "defaultKeyMatrix": [],
+        "supportSideLight": true,
+        "supportLogoLight": true,
+        "groupName": "RS7V2-Ultra-4015"
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8544,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "rs7v2"
+      }
+    },
+    {
+      "symbol": "ng",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4526,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 6,
+        "col": 15,
+        "connectType": 2,
+        "name": "ATK RS7 V2",
+        "title": "ATK RS7 V2 Ultra",
+        "firmwareMark": "rs7v2",
+        "presetTag": "rs7-v2",
+        "borrowLayout": [
+          "3,12",
+          "4,12",
+          "5,4",
+          "5,11"
+        ],
+        "wasdLayout": [
+          "2,2",
+          "3,1",
+          "3,2",
+          "3,3"
+        ],
+        "skin": null,
+        "limitVersion": "1.01",
+        "defaultKeyMatrix": [],
+        "supportSideLight": true,
+        "supportLogoLight": true,
+        "groupName": "RS7V2-Ultra-4015"
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8554,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "rs7v2"
+      }
+    },
+    {
+      "symbol": "ng",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4528,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 6,
+        "col": 15,
+        "connectType": 2,
+        "name": "ATK RS7 V2",
+        "title": "ATK RS7 V2 Ultra",
+        "firmwareMark": "rs7v2",
+        "presetTag": "rs7-v2",
+        "borrowLayout": [
+          "3,12",
+          "4,12",
+          "5,4",
+          "5,11"
+        ],
+        "wasdLayout": [
+          "2,2",
+          "3,1",
+          "3,2",
+          "3,3"
+        ],
+        "skin": null,
+        "limitVersion": "1.01",
+        "defaultKeyMatrix": [],
+        "supportSideLight": true,
+        "supportLogoLight": true,
+        "groupName": "RS7V2-Ultra-4015"
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8554,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "rs7v2"
+      }
+    },
+    {
+      "symbol": "ng",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4525,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 6,
+        "col": 15,
+        "connectType": 2,
+        "name": "ATK RS7 V2",
+        "title": "ATK RS7 V2",
+        "firmwareMark": "rs7v2",
+        "presetTag": "rs7-v2",
+        "borrowLayout": [
+          "3,12",
+          "4,12",
+          "5,4",
+          "5,11"
+        ],
+        "wasdLayout": [
+          "2,2",
+          "3,1",
+          "3,2",
+          "3,3"
+        ],
+        "skin": null,
+        "limitVersion": "1.01",
+        "defaultKeyMatrix": [],
+        "supportSideLight": true,
+        "supportLogoLight": true,
+        "groupName": "RS7V2-4015"
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8553,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "rs7v2"
+      }
+    },
+    {
+      "symbol": "ng",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4575,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 6,
+        "col": 15,
+        "connectType": 2,
+        "name": "ATK RS7 V2",
+        "title": "ATK RS7 V2",
+        "firmwareMark": "rs7v2",
+        "presetTag": "rs7-v2",
+        "borrowLayout": [
+          "3,12",
+          "4,12",
+          "5,4",
+          "5,11"
+        ],
+        "wasdLayout": [
+          "2,2",
+          "3,1",
+          "3,2",
+          "3,3"
+        ],
+        "skin": null,
+        "limitVersion": "1.01",
+        "defaultKeyMatrix": [],
+        "supportSideLight": true,
+        "supportLogoLight": true,
+        "groupName": "RS7V2-4015"
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8583,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "rs7v2"
+      }
+    },
+    {
+      "symbol": "ng",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4527,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 6,
+        "col": 15,
+        "connectType": 2,
+        "name": "ATK RS7 V2",
+        "title": "ATK RS7 V2 Ultra",
+        "firmwareMark": "rs7v2",
+        "presetTag": "rs7-v2",
+        "borrowLayout": [
+          "3,12",
+          "4,12",
+          "5,4",
+          "5,11"
+        ],
+        "wasdLayout": [
+          "2,2",
+          "3,1",
+          "3,2",
+          "3,3"
+        ],
+        "skin": null,
+        "limitVersion": "1.01",
+        "defaultKeyMatrix": [],
+        "supportSideLight": true,
+        "supportLogoLight": true,
+        "groupName": "RS7V2-Ultra-4015"
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8555,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "rs7v2"
+      }
+    },
+    {
+      "symbol": "ng",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4538,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 6,
+        "col": 15,
+        "connectType": 2,
+        "name": "ATK RS7 V2",
+        "title": "ATK RS7 V2 Ultra",
+        "firmwareMark": "rs7v2",
+        "presetTag": "rs7-v2",
+        "borrowLayout": [
+          "3,12",
+          "4,12",
+          "5,4",
+          "5,11"
+        ],
+        "wasdLayout": [
+          "2,2",
+          "3,1",
+          "3,2",
+          "3,3"
+        ],
+        "skin": null,
+        "limitVersion": "1.01",
+        "defaultKeyMatrix": [],
+        "supportSideLight": true,
+        "supportLogoLight": true,
+        "groupName": "RS7V2-Ultra-4015"
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8561,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "rs7v2"
+      }
+    },
+    {
+      "symbol": "ng",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4570,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 6,
+        "col": 15,
+        "connectType": 2,
+        "name": "ATK RS7 V2",
+        "title": "ATK RS7 V2 Ultra",
+        "firmwareMark": "rs7v2",
+        "presetTag": "rs7-v2",
+        "borrowLayout": [
+          "3,12",
+          "4,12",
+          "5,4",
+          "5,11"
+        ],
+        "wasdLayout": [
+          "2,2",
+          "3,1",
+          "3,2",
+          "3,3"
+        ],
+        "skin": null,
+        "limitVersion": "1.01",
+        "defaultKeyMatrix": [],
+        "supportSideLight": true,
+        "supportLogoLight": true,
+        "groupName": "RS7V2-Ultra-4015"
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8581,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "rs7v2"
+      }
+    },
+    {
+      "symbol": "ng",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4918,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 6,
+        "col": 15,
+        "connectType": 2,
+        "name": "ATK RS7 V2",
+        "title": "ATK RS7 V2 Ultra",
+        "firmwareMark": "rs7v2",
+        "presetTag": "rs7-v2",
+        "borrowLayout": [
+          "3,12",
+          "4,12",
+          "5,4",
+          "5,11"
+        ],
+        "wasdLayout": [
+          "2,2",
+          "3,1",
+          "3,2",
+          "3,3"
+        ],
+        "skin": null,
+        "limitVersion": "1.01",
+        "defaultKeyMatrix": [],
+        "supportSideLight": true,
+        "supportLogoLight": true,
+        "groupName": "RS7V2-Ultra-4015"
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8686,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "rs7v2"
+      }
+    },
+    {
+      "symbol": "ng",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4520,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "title": "ATK RS7 V2 Ultra",
+        "name": "ATK RS7 V2",
+        "groupName": "RS7V2-Extreme-4015",
+        "layer": 4,
+        "row": 6,
+        "col": 15,
+        "connectType": 2,
+        "firmwareMark": "rs7v2",
+        "presetTag": "rs7-v2",
+        "borrowLayout": [
+          "3,12",
+          "4,12",
+          "5,4",
+          "5,11"
+        ],
+        "wasdLayout": [
+          "2,2",
+          "3,1",
+          "3,2",
+          "3,3"
+        ],
+        "skin": null,
+        "limitVersion": "1.01",
+        "defaultKeyMatrix": [],
+        "supportSideLight": true,
+        "supportLogoLight": true
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8552,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "rs7v2"
+      }
+    },
+    {
+      "symbol": "ng",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4238,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 6,
+        "col": 15,
+        "connectType": 2,
+        "name": "ATK EDGE75",
+        "title": "ATK EDGE75",
+        "firmwareMark": "edge75",
+        "presetTag": "rs7-v2",
+        "borrowLayout": [
+          "3,12",
+          "4,12",
+          "4,14",
+          "5,11"
+        ],
+        "wasdLayout": [
+          "2,2",
+          "3,1",
+          "3,2",
+          "3,3"
+        ],
+        "skin": null,
+        "limitVersion": "1.11",
+        "defaultKeyMatrix": [],
+        "groupName": "EDGE75-48E",
+        "supportLogoLight": true
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8254,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "edge75"
+      }
+    },
+    {
+      "symbol": "ng",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4240,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 6,
+        "col": 15,
+        "connectType": 2,
+        "name": "ATK EDGE75",
+        "title": "ATK EDGE75",
+        "firmwareMark": "edge75",
+        "presetTag": "rs7-v2",
+        "borrowLayout": [
+          "3,12",
+          "4,12",
+          "4,14",
+          "5,11"
+        ],
+        "wasdLayout": [
+          "2,2",
+          "3,1",
+          "3,2",
+          "3,3"
+        ],
+        "skin": null,
+        "limitVersion": "1.11",
+        "defaultKeyMatrix": [],
+        "groupName": "EDGE75-48E",
+        "supportLogoLight": true
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8256,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "edge75"
+      }
+    },
+    {
+      "symbol": "ng",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4614,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 6,
+        "col": 15,
+        "connectType": 2,
+        "name": "ATK75 V2",
+        "title": "ATK EDGE75",
+        "firmwareMark": "edge75",
+        "presetTag": "rs7-v2",
+        "borrowLayout": [
+          "3,12",
+          "4,12",
+          "4,14",
+          "5,11"
+        ],
+        "wasdLayout": [
+          "2,2",
+          "3,1",
+          "3,2",
+          "3,3"
+        ],
+        "skin": [
+          {
+            "label": "Po.white",
+            "value": "White Translucent",
+            "icon": "#ffffff",
+            "image": "so.Edge75WhiteTransparent"
+          },
+          {
+            "label": "Po.black",
+            "value": "Black Translucent",
+            "icon": "#000000",
+            "image": "so.Edge75BlackTransparent"
+          }
+        ],
+        "limitVersion": "1.00",
+        "defaultKeyMatrix": [],
+        "groupName": "EDGE75-2",
+        "supportLogoLight": true
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8599,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "edge75"
+      }
+    },
+    {
+      "symbol": "ng",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4576,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 6,
+        "col": 15,
+        "connectType": 2,
+        "name": "ATK RS7 Turbo",
+        "title": "ATK RS7 Turbo",
+        "firmwareMark": "rs7",
+        "presetTag": "rs7-v2",
+        "skin": null,
+        "borrowLayout": [
+          "0,13",
+          "3,12",
+          "4,12",
+          "4,14",
+          "5,3",
+          "5,4",
+          "5,6",
+          "5,7",
+          "5,8",
+          "5,11"
+        ],
+        "supportLogoLight": true,
+        "groupName": "RS7-Turbo-4015"
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8584,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "rs7"
+      }
+    },
+    {
+      "symbol": "ng",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4577,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 6,
+        "col": 15,
+        "connectType": 2,
+        "name": "ATK RS7 Turbo",
+        "title": "ATK RS7 Turbo",
+        "firmwareMark": "rs7",
+        "presetTag": "rs7-v2",
+        "skin": null,
+        "borrowLayout": [
+          "0,13",
+          "3,12",
+          "4,12",
+          "4,14",
+          "5,3",
+          "5,4",
+          "5,6",
+          "5,7",
+          "5,8",
+          "5,11"
+        ],
+        "supportLogoLight": true,
+        "groupName": "RS7-Turbo-4015"
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8585,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "rs7"
+      }
+    },
+    {
+      "symbol": "ng",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4640,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 6,
+        "col": 15,
+        "connectType": 2,
+        "name": "ATK RS7 Air",
+        "title": "ATK RS7 Air",
+        "firmwareMark": "rs7",
+        "presetTag": "rs7-v2",
+        "borrowLayout": [
+          "3,12",
+          "4,12",
+          "5,4",
+          "5,11"
+        ],
+        "wasdLayout": [
+          "2,2",
+          "3,1",
+          "3,2",
+          "3,3"
+        ],
+        "groupName": "RS7-Air",
+        "skin": null,
+        "supportSideLight": true,
+        "supportLogoLight": true
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8605,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "rs7"
+      }
+    },
+    {
+      "symbol": "ng",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4921,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 6,
+        "col": 15,
+        "connectType": 2,
+        "name": "ATK RS7 Air",
+        "title": "ATK RS7 Air",
+        "firmwareMark": "rs7",
+        "presetTag": "rs7-v2",
+        "borrowLayout": [
+          "3,12",
+          "4,12",
+          "5,4",
+          "5,11"
+        ],
+        "wasdLayout": [
+          "2,2",
+          "3,1",
+          "3,2",
+          "3,3"
+        ],
+        "groupName": "RS7-Air",
+        "skin": null,
+        "supportSideLight": true,
+        "supportLogoLight": true
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8687,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "rs7"
+      }
+    },
+    {
+      "symbol": "ng",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4695,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 6,
+        "col": 15,
+        "connectType": 2,
+        "name": "ATK RS7 Air",
+        "title": "ATK RS7 Air",
+        "firmwareMark": "rs7",
+        "presetTag": "rs7-v2",
+        "borrowLayout": [
+          "3,12",
+          "4,12",
+          "5,4",
+          "5,11"
+        ],
+        "wasdLayout": [
+          "2,2",
+          "3,1",
+          "3,2",
+          "3,3"
+        ],
+        "groupName": "RS7-Air-2",
+        "skin": null,
+        "supportSideLight": true,
+        "supportLogoLight": true
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8630,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "rs7"
+      }
+    },
+    {
+      "symbol": "ng",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4917,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 6,
+        "col": 15,
+        "connectType": 2,
+        "name": "ATK RS7 Air",
+        "title": "ATK RS7 Air",
+        "firmwareMark": "rs7",
+        "presetTag": "rs7-v2",
+        "borrowLayout": [
+          "3,12",
+          "4,12",
+          "5,4",
+          "5,11"
+        ],
+        "wasdLayout": [
+          "2,2",
+          "3,1",
+          "3,2",
+          "3,3"
+        ],
+        "groupName": "RS7-Air-4",
+        "skin": null,
+        "supportSideLight": true,
+        "supportLogoLight": true
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8685,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "rs7"
+      }
+    },
+    {
+      "symbol": "ng",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4641,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 6,
+        "col": 15,
+        "connectType": 2,
+        "name": "ATK RS7 Air",
+        "title": "ATK RS7 Air",
+        "firmwareMark": "rs7",
+        "presetTag": "rs7-v2",
+        "borrowLayout": [
+          "3,12",
+          "4,12",
+          "5,4",
+          "5,11"
+        ],
+        "wasdLayout": [
+          "2,2",
+          "3,1",
+          "3,2",
+          "3,3"
+        ],
+        "groupName": "RS7-Air",
+        "skin": null,
+        "supportSideLight": true,
+        "supportLogoLight": true
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8606,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "rs7"
+      }
+    },
+    {
+      "symbol": "ng",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4651,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 6,
+        "col": 15,
+        "connectType": 2,
+        "name": "ATK RS7 Air",
+        "title": "ATK RS7 Air",
+        "firmwareMark": "rs7",
+        "presetTag": "rs7-v2",
+        "borrowLayout": [
+          "3,12",
+          "4,12",
+          "5,4",
+          "5,11"
+        ],
+        "wasdLayout": [
+          "2,2",
+          "3,1",
+          "3,2",
+          "3,3"
+        ],
+        "groupName": "RS7-Air",
+        "skin": null,
+        "supportSideLight": true,
+        "supportLogoLight": true
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8607,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "rs7"
+      }
+    },
+    {
+      "symbol": "ng",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4696,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 6,
+        "col": 15,
+        "connectType": 2,
+        "name": "ATK RS7 Air",
+        "title": "ATK RS7 Air",
+        "firmwareMark": "rs7",
+        "presetTag": "rs7-v2",
+        "borrowLayout": [
+          "3,12",
+          "4,12",
+          "5,4",
+          "5,11"
+        ],
+        "wasdLayout": [
+          "2,2",
+          "3,1",
+          "3,2",
+          "3,3"
+        ],
+        "groupName": "RS7-Air-2",
+        "skin": null,
+        "supportSideLight": true,
+        "supportLogoLight": true
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8631,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "rs7"
+      }
+    },
+    {
+      "symbol": "ng",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4888,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 6,
+        "col": 15,
+        "connectType": 2,
+        "name": "ATK RS7 Air",
+        "title": "ATK RS7 Air PIKACHU Edition",
+        "firmwareMark": "rs7",
+        "presetTag": "rs7-v2",
+        "borrowLayout": [
+          "3,12",
+          "4,12",
+          "5,4",
+          "5,11"
+        ],
+        "wasdLayout": [
+          "2,2",
+          "3,1",
+          "3,2",
+          "3,3"
+        ],
+        "groupName": "RS7-Air-Pikachu",
+        "skin": [
+          {
+            "label": "Po.pikachu",
+            "value": "Pikachu",
+            "icon": "#E9B42C",
+            "image": "so.rs7AirPikachu"
+          }
+        ],
+        "supportSideLight": true,
+        "supportLogoLight": true
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8675,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "rs7"
+      }
+    },
+    {
+      "symbol": "ng",
+      "controller": "Tv",
+      "protocolFamily": "BITYUAN",
+      "vendorId": 14139,
+      "productId": 4801,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 6,
+        "col": 15,
+        "connectType": 2,
+        "name": "ATK RS7 Air",
+        "title": "ATK RS7 Air",
+        "firmwareMark": "rs7",
+        "presetTag": "rs7-v2",
+        "borrowLayout": [
+          "3,12",
+          "4,12",
+          "5,4",
+          "5,11"
+        ],
+        "wasdLayout": [
+          "2,2",
+          "3,1",
+          "3,2",
+          "3,3"
+        ],
+        "groupName": "RS7-Air-ISO",
+        "skin": null,
+        "supportSideLight": true,
+        "supportLogoLight": true,
+        "isISO": true
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8658,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "rs7"
+      }
+    },
+    {
+      "symbol": "$m",
+      "controller": "Nm",
+      "protocolFamily": "ARBITER",
+      "vendorId": 14139,
+      "productId": 4190,
+      "usage": 0,
+      "usagePage": 1,
+      "custom": {
+        "connectType": 2,
+        "name": "ATK68 V2",
+        "title": "ATK68 V2",
+        "firmwareMark": "ATK68V2",
+        "skin": [
+          {
+            "label": "Po.blackBerrySideEngraving",
+            "value": "blackBerry",
+            "icon": "#B8999D",
+            "image": null
+          },
+          {
+            "label": "Po.blueWhiteSideEngraving",
+            "value": "blueWhite",
+            "icon": "#96ABC1",
+            "image": "so.ATK68V2BlueWhite"
+          },
+          {
+            "label": "Po.whiteSideEngraving",
+            "value": "white",
+            "icon": "#ffffff",
+            "image": "so.ATK68V2White"
+          },
+          {
+            "label": "Po.blackSideEngraving",
+            "value": "black",
+            "icon": "#000000",
+            "image": "so.ATK68V2Black"
+          }
+        ]
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8233,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "ATK68V2"
+      }
+    },
+    {
+      "symbol": "$m",
+      "controller": "Nm",
+      "protocolFamily": "ARBITER",
+      "vendorId": 14139,
+      "productId": 4290,
+      "usage": 0,
+      "usagePage": 1,
+      "custom": {
+        "connectType": 2,
+        "name": "ATK68 V2",
+        "title": "ATK68 V2 S",
+        "firmwareMark": "ATK68V2",
+        "skin": [
+          {
+            "label": "Po.blackBerrySideEngraving",
+            "value": "blackBerry",
+            "icon": "#B8999D",
+            "image": null
+          },
+          {
+            "label": "Po.blueWhiteSideEngraving",
+            "value": "blueWhite",
+            "icon": "#96ABC1",
+            "image": "so.ATK68V2BlueWhite"
+          },
+          {
+            "label": "Po.whiteSideEngraving",
+            "value": "white",
+            "icon": "#ffffff",
+            "image": "so.ATK68V2White"
+          },
+          {
+            "label": "Po.blackSideEngraving",
+            "value": "black",
+            "icon": "#000000",
+            "image": "so.ATK68V2Black"
+          }
+        ]
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8295,
+        "usagePage": 65280,
+        "usage": 1,
+        "firmwareMark": "ATK68V2"
+      }
+    },
+    {
+      "symbol": "xP",
+      "controller": "bP",
+      "protocolFamily": "DUCKBREAD",
+      "vendorId": 14139,
+      "productId": 4164,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 6,
+        "col": 16,
+        "connectType": 2,
+        "name": "ATK RS7",
+        "title": "ATK RS7",
+        "borrowLayout": [
+          "0,5",
+          "0,10",
+          "1,13",
+          "4,13",
+          "4,15"
+        ],
+        "firmwareMark": "duck",
+        "skin": [
+          {
+            "label": "Po.rainbow",
+            "value": "Rainbow",
+            "icon": "#540369",
+            "image": "undefined.href"
+          },
+          {
+            "label": "Po.extremeSpeed",
+            "value": "Speed",
+            "icon": "#0a93e8",
+            "image": "so.RS7RGBSpeed"
+          }
+        ],
+        "defaultKeyMatrix": [],
+        "supportLogoLight": true,
+        "shaft": "magnetic-jade"
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8194,
+        "usagePage": 255,
+        "usage": 1,
+        "firmwareMark": "duck"
+      }
+    },
+    {
+      "symbol": "AP",
+      "controller": "bP",
+      "protocolFamily": "DUCKBREAD",
+      "vendorId": 14139,
+      "productId": 4168,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 5,
+        "col": 15,
+        "connectType": 2,
+        "name": "ATK68 V2Pro",
+        "title": "ATK68 V2 Pro",
+        "borrowLayout": [
+          "2,12",
+          "3,1",
+          "3,14"
+        ],
+        "firmwareMark": "atk68v2",
+        "skin": [
+          {
+            "label": "Po.whiteBlue",
+            "value": "WhiteBlue",
+            "icon": "#1d9bf6",
+            "image": "undefined.href"
+          },
+          {
+            "label": "Po.blackOrange",
+            "value": "BlackOrange",
+            "icon": "#e0570e",
+            "image": "so.atk68v2ProBlackOrange"
+          },
+          {
+            "label": "Po.silverBlue",
+            "value": "SilverBlue",
+            "icon": "#06e0b8",
+            "image": "so.atk68v2ProSilverBlue"
+          }
+        ],
+        "shaft": "magnetic-jade"
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8216,
+        "usagePage": 255,
+        "usage": 1,
+        "firmwareMark": "atk68v2"
+      }
+    },
+    {
+      "symbol": "RP",
+      "controller": "Pm",
+      "protocolFamily": "HFD",
+      "vendorId": 14139,
+      "productId": 4382,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 8,
+        "col": 16,
+        "connectType": 2,
+        "name": "ATK A87 PRO",
+        "title": "ATK A87 PRO",
+        "keyMatrix": null,
+        "checkDeviceCmd": "AA42895AFF7162CC",
+        "chipId": 1,
+        "security": 0,
+        "firmwareMark": "a87",
+        "skin": null
+      },
+      "boot": {
+        "vendorId": 3141,
+        "productId": 28736,
+        "usagePage": 12,
+        "usage": 1,
+        "firmwareMark": "a87"
+      }
+    },
+    {
+      "symbol": "RP",
+      "controller": "Pm",
+      "protocolFamily": "HFD",
+      "vendorId": 14139,
+      "productId": 4383,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 8,
+        "col": 16,
+        "connectType": 1,
+        "name": "ATK A87 PRO",
+        "title": "ATK A87 PRO",
+        "keyMatrix": null,
+        "checkDeviceCmd": "AA42895AFF7162CC",
+        "chipId": 1,
+        "security": 0,
+        "firmwareMark": "a87",
+        "skin": null
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8194,
+        "usagePage": 255,
+        "usage": 1
+      }
+    },
+    {
+      "symbol": "RP",
+      "controller": "Pm",
+      "protocolFamily": "HFD",
+      "vendorId": 14139,
+      "productId": 4657,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 8,
+        "col": 16,
+        "connectType": 2,
+        "name": "ATK A87 PRO",
+        "title": "ATK A87 Ultra",
+        "keyMatrix": null,
+        "checkDeviceCmd": "AA42895AFF7162CC",
+        "chipId": 1,
+        "security": 0,
+        "firmwareMark": "a87",
+        "skin": null
+      },
+      "boot": {
+        "vendorId": 3141,
+        "productId": 28736,
+        "usagePage": 12,
+        "usage": 1,
+        "firmwareMark": "a87"
+      }
+    },
+    {
+      "symbol": "RP",
+      "controller": "Pm",
+      "protocolFamily": "HFD",
+      "vendorId": 14139,
+      "productId": 4429,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 8,
+        "col": 16,
+        "connectType": 2,
+        "name": "ATK A98",
+        "title": "ATK A98",
+        "keyMatrix": null,
+        "checkDeviceCmd": "AA42895AFF7162CC",
+        "chipId": 1,
+        "security": 0,
+        "firmwareMark": "a98",
+        "skin": null
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8494,
+        "usagePage": 255,
+        "usage": 1
+      }
+    },
+    {
+      "symbol": "RP",
+      "controller": "Pm",
+      "protocolFamily": "HFD",
+      "vendorId": 14139,
+      "productId": 4430,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 8,
+        "col": 16,
+        "connectType": 1,
+        "name": "ATK A98",
+        "title": "ATK A98",
+        "keyMatrix": null,
+        "checkDeviceCmd": "AA42895AFF7162CC",
+        "chipId": 1,
+        "security": 0,
+        "firmwareMark": "a98",
+        "skin": null
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8495,
+        "usagePage": 255,
+        "usage": 1
+      }
+    },
+    {
+      "symbol": "RP",
+      "controller": "Pm",
+      "protocolFamily": "HFD",
+      "vendorId": 14139,
+      "productId": 4433,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 8,
+        "col": 16,
+        "connectType": 2,
+        "name": "ATK A98",
+        "title": "ATK A98 Pro",
+        "keyMatrix": null,
+        "checkDeviceCmd": "AA42895AFF7162CC",
+        "chipId": 1,
+        "security": 0,
+        "firmwareMark": "a98",
+        "skin": null
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8494,
+        "usagePage": 255,
+        "usage": 1
+      }
+    },
+    {
+      "symbol": "RP",
+      "controller": "Pm",
+      "protocolFamily": "HFD",
+      "vendorId": 14139,
+      "productId": 4434,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 8,
+        "col": 16,
+        "connectType": 1,
+        "name": "ATK A98",
+        "title": "ATK A98 Pro",
+        "keyMatrix": null,
+        "checkDeviceCmd": "AA42895AFF7162CC",
+        "chipId": 1,
+        "security": 0,
+        "firmwareMark": "a98",
+        "skin": null
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8495,
+        "usagePage": 255,
+        "usage": 1
+      }
+    },
+    {
+      "symbol": "Aee",
+      "controller": "xs",
+      "protocolFamily": "13",
+      "vendorId": 14139,
+      "productId": 4673,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 6,
+        "col": 16,
+        "connectType": 2,
+        "name": "ATK A87 Ultra",
+        "title": "ATK A87 Ultra",
+        "firmwareMark": "atk-a87-ultra",
+        "keyMatrix": null,
+        "skin": null,
+        "supportsLogoLight": false,
+        "supportsSideLight": false
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8619,
+        "usagePage": 255,
+        "usage": 1
+      }
+    },
+    {
+      "symbol": "Aee",
+      "controller": "xs",
+      "protocolFamily": "13",
+      "vendorId": 14139,
+      "productId": 4675,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 6,
+        "col": 18,
+        "connectType": 2,
+        "name": "ATK A98 Ultra",
+        "title": "ATK A98 Ultra",
+        "firmwareMark": "atk-a98-ultra",
+        "skin": null,
+        "supportsLogoLight": false,
+        "supportsSideLight": false
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8621,
+        "usagePage": 255,
+        "usage": 1
+      }
+    },
+    {
+      "symbol": "Aee",
+      "controller": "xs",
+      "protocolFamily": "13",
+      "vendorId": 14139,
+      "productId": 4674,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 6,
+        "col": 16,
+        "connectType": 1,
+        "name": "8K Wireless Receiver",
+        "title": "ATK A87 Ultra 2.4G",
+        "firmwareMark": "atk-a87-ultra",
+        "skin": null,
+        "sdkConnectKind": "wireless8K",
+        "supportsLogoLight": false,
+        "supportsSideLight": false
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8620,
+        "usagePage": 255,
+        "usage": 1
+      }
+    },
+    {
+      "symbol": "Aee",
+      "controller": "xs",
+      "protocolFamily": "13",
+      "vendorId": 14139,
+      "productId": 4676,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 6,
+        "col": 18,
+        "connectType": 1,
+        "name": "8K Wireless Receiver",
+        "title": "ATK A98 Ultra 2.4G",
+        "firmwareMark": "atk-a98-ultra",
+        "skin": null,
+        "sdkConnectKind": "wireless8K",
+        "supportsLogoLight": false,
+        "supportsSideLight": false
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8622,
+        "usagePage": 255,
+        "usage": 1
+      }
+    },
+    {
+      "symbol": "Aee",
+      "controller": "xs",
+      "protocolFamily": "13",
+      "vendorId": 14139,
+      "productId": 4679,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 6,
+        "col": 15,
+        "connectType": 2,
+        "name": "ATK V75X Ultra",
+        "title": "ATK V75X Ultra",
+        "firmwareMark": "atk-v75x-ultra",
+        "keyMatrix": null,
+        "skin": null,
+        "skinTag": null,
+        "remoteSkinOnly": true
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8623,
+        "usagePage": 255,
+        "usage": 1
+      }
+    },
+    {
+      "symbol": "Aee",
+      "controller": "xs",
+      "protocolFamily": "13",
+      "vendorId": 14139,
+      "productId": 4683,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 6,
+        "col": 15,
+        "connectType": 1,
+        "name": "8K Wireless Receiver",
+        "title": "ATK V75X Ultra 2.4G",
+        "firmwareMark": "atk-v75x-ultra",
+        "skin": null,
+        "skinTag": null,
+        "remoteSkinOnly": true,
+        "sdkConnectKind": "wireless"
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8624,
+        "usagePage": 255,
+        "usage": 1
+      }
+    },
+    {
+      "symbol": "Aee",
+      "controller": "xs",
+      "protocolFamily": "13",
+      "vendorId": 14139,
+      "productId": 4692,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 6,
+        "col": 16,
+        "connectType": 2,
+        "name": "ATK RS8 Neo",
+        "title": "ATK RS8 Neo",
+        "firmwareMark": "atk-rs8-neo",
+        "keyMatrix": null,
+        "skin": null,
+        "supportsLogoLight": false,
+        "supportsSideLight": true,
+        "skinTag": null,
+        "supportsMusicRhythm": true
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8638,
+        "usagePage": 255,
+        "usage": 1
+      }
+    },
+    {
+      "symbol": "Aee",
+      "controller": "xs",
+      "protocolFamily": "13",
+      "vendorId": 14139,
+      "productId": 4693,
+      "usagePage": 65376,
+      "usage": 97,
+      "custom": {
+        "layer": 4,
+        "row": 6,
+        "col": 16,
+        "connectType": 1,
+        "name": "8K Wireless Receiver",
+        "title": "ATK RS8 Neo 2.4G",
+        "firmwareMark": "atk-rs8-neo",
+        "keyMatrix": null,
+        "skin": null,
+        "supportsLogoLight": false,
+        "supportsSideLight": true,
+        "skinTag": null,
+        "supportsMusicRhythm": true,
+        "sdkConnectKind": "wireless8K"
+      },
+      "boot": {
+        "vendorId": 14139,
+        "productId": 8639,
+        "usagePage": 255,
+        "usage": 1
+      }
+    },
+    {
+      "symbol": "rte",
+      "controller": "Vc",
+      "protocolFamily": "EVISION",
+      "vendorId": 14139,
+      "productId": 12383,
+      "usage": 146,
+      "usagePage": 65308,
+      "custom": {
+        "connectType": 0,
+        "title": "ATK V100",
+        "productName": "ATK V100 2.4G Dongle",
+        "cover": "v100",
+        "skin": [
+          {
+            "label": "white",
+            "value": "white",
+            "icon": "#cfdeec",
+            "image": "undefined.href"
+          },
+          {
+            "label": "black",
+            "value": "black",
+            "icon": "#5E646A",
+            "image": "so.V100BlackSKin"
+          },
+          {
+            "label": "heimei",
+            "value": "heimei",
+            "icon": "#73474b",
+            "image": "so.V100HeiMeiSKin"
+          }
+        ]
+      }
+    },
+    {
+      "symbol": "rte",
+      "controller": "Vc",
+      "protocolFamily": "EVISION",
+      "vendorId": 14139,
+      "productId": 4191,
+      "usage": 146,
+      "usagePage": 65308,
+      "custom": {
+        "connectType": 2,
+        "title": "ATK V100",
+        "productName": "ATK V100",
+        "cover": "v100",
+        "skin": [
+          {
+            "label": "white",
+            "value": "white",
+            "icon": "#cfdeec",
+            "image": "undefined.href"
+          },
+          {
+            "label": "black",
+            "value": "black",
+            "icon": "#5E646A",
+            "image": "so.V100BlackSKin"
+          },
+          {
+            "label": "heimei",
+            "value": "heimei",
+            "icon": "#73474b",
+            "image": "so.V100HeiMeiSKin"
+          }
+        ]
+      }
+    },
+    {
+      "symbol": "rte",
+      "controller": "Vc",
+      "protocolFamily": "EVISION",
+      "vendorId": 14139,
+      "productId": 12384,
+      "usage": 146,
+      "usagePage": 65308,
+      "custom": {
+        "connectType": 0,
+        "title": "ATK V100 Pro",
+        "productName": "ATK V100 Pro 2.4G Dongle",
+        "cover": "v100",
+        "skin": [
+          {
+            "label": "white",
+            "value": "white",
+            "icon": "#cfdeec",
+            "image": "undefined.href"
+          },
+          {
+            "label": "black",
+            "value": "black",
+            "icon": "#5E646A",
+            "image": "so.V100BlackSKin"
+          },
+          {
+            "label": "heimei",
+            "value": "heimei",
+            "icon": "#73474b",
+            "image": "so.V100HeiMeiSKin"
+          }
+        ]
+      }
+    },
+    {
+      "symbol": "rte",
+      "controller": "Vc",
+      "protocolFamily": "EVISION",
+      "vendorId": 14139,
+      "productId": 4192,
+      "usage": 146,
+      "usagePage": 65308,
+      "custom": {
+        "connectType": 2,
+        "title": "ATK V100 Pro",
+        "productName": "ATK V100 Pro",
+        "cover": "v100",
+        "skin": [
+          {
+            "label": "white",
+            "value": "white",
+            "icon": "#cfdeec",
+            "image": "undefined.href"
+          },
+          {
+            "label": "black",
+            "value": "black",
+            "icon": "#5E646A",
+            "image": "so.V100BlackSKin"
+          },
+          {
+            "label": "heimei",
+            "value": "heimei",
+            "icon": "#73474b",
+            "image": "so.V100HeiMeiSKin"
+          }
+        ]
+      }
+    },
+    {
+      "symbol": "ute",
+      "controller": "Vc",
+      "protocolFamily": "EVISION",
+      "vendorId": 14139,
+      "productId": 4494,
+      "usage": 146,
+      "usagePage": 65308,
+      "custom": {
+        "connectType": 2,
+        "title": "ATK S87",
+        "productName": "ATK S87",
+        "skin": [
+          {
+            "label": "Black",
+            "value": "Black",
+            "icon": "#0a0a0a",
+            "image": "undefined.href"
+          },
+          {
+            "label": "Blue",
+            "value": "Blue",
+            "icon": "#85b1de",
+            "image": "so.S87BlueSkin"
+          },
+          {
+            "label": "Pink",
+            "value": "Pink",
+            "icon": "#e2baea",
+            "image": "so.S87PinkSkin"
+          }
+        ]
+      }
+    },
+    {
+      "symbol": "ute",
+      "controller": "Vc",
+      "protocolFamily": "EVISION",
+      "vendorId": 14139,
+      "productId": 4495,
+      "usage": 146,
+      "usagePage": 65308,
+      "custom": {
+        "connectType": 0,
+        "title": "ATK S87",
+        "productName": "S87 Dongle",
+        "skin": [
+          {
+            "label": "Black",
+            "value": "Black",
+            "icon": "#0a0a0a",
+            "image": "undefined.href"
+          },
+          {
+            "label": "Blue",
+            "value": "Blue",
+            "icon": "#85b1de",
+            "image": "so.S87BlueSkin"
+          },
+          {
+            "label": "Pink",
+            "value": "Pink",
+            "icon": "#e2baea",
+            "image": "so.S87PinkSkin"
+          }
+        ]
+      }
+    },
+    {
+      "symbol": "vte",
+      "controller": "Y5",
+      "protocolFamily": "undefined",
+      "vendorId": 14139,
+      "productId": 4101,
+      "usagePage": 65281,
+      "usage": 1,
+      "custom": {
+        "layer": 2,
+        "row": 5,
+        "col": 15,
+        "connectType": 2,
+        "travelInfo": {
+          "travelMin": 0.1,
+          "travelMax": 4,
+          "travelStep": 0.02,
+          "rtMin": 0.04,
+          "rtMax": 4,
+          "rtStep": 0.02
+        },
+        "deadZone": {
+          "top": 0,
+          "bottom": 0
+        },
+        "name": "ATK68 Air",
+        "title": "ATK68 Air",
+        "borrowLayout": [],
+        "firmwareMark": "atk68",
+        "skin": [
+          {
+            "label": "Po.white",
+            "value": "White",
+            "icon": "#fff",
+            "image": "undefined.href"
+          },
+          {
+            "label": "Po.black",
+            "value": "Black",
+            "icon": "#000",
+            "image": "so.gtechAtk68Black"
+          },
+          {
+            "label": "Po.panzerCorps",
+            "value": "PanzerCorps",
+            "icon": "#BDB6AA",
+            "image": "so.gtechAtk68PanzerCorps"
+          }
+        ],
+        "defaultKeyMatrix": []
+      }
+    },
+    {
+      "symbol": "vte",
+      "controller": "Y5",
+      "protocolFamily": "undefined",
+      "vendorId": 6785,
+      "productId": 8323,
+      "usagePage": 65281,
+      "usage": 1,
+      "custom": {
+        "layer": 2,
+        "row": 5,
+        "col": 15,
+        "connectType": 2,
+        "travelInfo": {
+          "travelMin": 0.1,
+          "travelMax": 4,
+          "travelStep": 0.02,
+          "rtMin": 0.04,
+          "rtMax": 4,
+          "rtStep": 0.02
+        },
+        "deadZone": {
+          "top": 0,
+          "bottom": 0
+        },
+        "name": "ATK68 L",
+        "title": "ATK68 L",
+        "firmwareMark": "atk68",
+        "skin": [
+          {
+            "label": "Po.white",
+            "value": "White",
+            "icon": "#fff",
+            "image": "undefined.href"
+          },
+          {
+            "label": "Po.black",
+            "value": "Black",
+            "icon": "#000",
+            "image": "so.gtechAtk68Black"
+          },
+          {
+            "label": "Po.panzerCorps",
+            "value": "PanzerCorps",
+            "icon": "#BDB6AA",
+            "image": "so.gtechAtk68PanzerCorps"
+          }
+        ],
+        "defaultKeyMatrix": []
+      }
+    },
+    {
+      "symbol": "vte",
+      "controller": "Y5",
+      "protocolFamily": "undefined",
+      "vendorId": 6785,
+      "productId": 8318,
+      "usagePage": 65281,
+      "usage": 1,
+      "custom": {
+        "layer": 2,
+        "row": 5,
+        "col": 15,
+        "connectType": 2,
+        "travelInfo": {
+          "travelMin": 0.1,
+          "travelMax": 4,
+          "travelStep": 0.1,
+          "rtMin": 0.1,
+          "rtMax": 4,
+          "rtStep": 0.1
+        },
+        "deadZone": {
+          "top": 0,
+          "bottom": 0
+        },
+        "name": "ATK68",
+        "title": "ATK68",
+        "firmwareMark": "atk68",
+        "skin": [
+          {
+            "label": "Po.white",
+            "value": "White",
+            "icon": "#fff",
+            "image": "undefined.href"
+          },
+          {
+            "label": "Po.black",
+            "value": "Black",
+            "icon": "#000",
+            "image": "so.gtechAtk68Black"
+          },
+          {
+            "label": "Po.panzerCorps",
+            "value": "PanzerCorps",
+            "icon": "#BDB6AA",
+            "image": "so.gtechAtk68PanzerCorps"
+          }
+        ],
+        "defaultKeyMatrix": []
+      }
+    },
+    {
+      "symbol": "gte",
+      "controller": "Y5",
+      "protocolFamily": "undefined",
+      "vendorId": 6785,
+      "productId": 8309,
+      "usagePage": 65281,
+      "usage": 1,
+      "custom": {
+        "layer": 2,
+        "row": 6,
+        "col": 15,
+        "connectType": 2,
+        "wasdLayout": [
+          "2,2",
+          "3,1",
+          "3,2",
+          "3,3"
+        ],
+        "travelInfo": {
+          "travelMin": 0.1,
+          "travelMax": 4,
+          "travelStep": 0.1,
+          "rtMin": 0.1,
+          "rtMax": 4,
+          "rtStep": 0.1
+        },
+        "deadZone": {
+          "top": 0,
+          "bottom": 0
+        },
+        "productName": "ATK75 G",
+        "name": "ATK75 G",
+        "title": "ATK75 G",
+        "firmwareMark": "atk75",
+        "skin": [
+          {
+            "label": "Po.white",
+            "value": "White",
+            "icon": "#fff",
+            "image": "undefined.href"
+          },
+          {
+            "label": "Po.black",
+            "value": "Black",
+            "icon": "#000",
+            "image": "so.gtechAtk75Black"
+          }
+        ],
+        "defaultKeyMatrix": []
+      }
+    },
+    {
+      "symbol": "gte",
+      "controller": "Y5",
+      "protocolFamily": "undefined",
+      "vendorId": 6785,
+      "productId": 8322,
+      "usagePage": 65281,
+      "usage": 1,
+      "custom": {
+        "layer": 2,
+        "row": 6,
+        "col": 15,
+        "connectType": 2,
+        "wasdLayout": [
+          "2,2",
+          "3,1",
+          "3,2",
+          "3,3"
+        ],
+        "travelInfo": {
+          "travelMin": 0.1,
+          "travelMax": 4,
+          "travelStep": 0.1,
+          "rtMin": 0.1,
+          "rtMax": 4,
+          "rtStep": 0.1
+        },
+        "deadZone": {
+          "top": 0,
+          "bottom": 0
+        },
+        "productName": "ATK75 L",
+        "name": "ATK75 L",
+        "title": "ATK75 L",
+        "firmwareMark": "atk75",
+        "skin": [
+          {
+            "label": "Po.white",
+            "value": "White",
+            "icon": "#fff",
+            "image": "undefined.href"
+          },
+          {
+            "label": "Po.black",
+            "value": "Black",
+            "icon": "#000",
+            "image": "so.gtechAtk75Black"
+          }
+        ],
+        "defaultKeyMatrix": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+[
+  {
+    "deviceName": "VXE X3",
+    "color": "black",
+    "image": "/devices/vxe-x3/black.webp",
+    "source": "https://www.atk.store/products/vxe-dragonfly-x3-series-lightweight-wireless-mouse",
+    "sourceImage": "https://cdn.shopify.com/s/files/1/0691/4942/5882/files/4fe40f089696834c4906303a743d01c5_63743558-a19e-44c8-8446-fdefaadf30b9.jpg?v=1789468187"
+  },
+  {
+    "deviceName": "VXE X3",
+    "color": "white",
+    "image": "/devices/vxe-x3/white.webp",
+    "source": "https://www.atk.store/products/vxe-dragonfly-x3-series-lightweight-wireless-mouse",
+    "sourceImage": "https://cdn.shopify.com/s/files/1/0691/4942/5882/files/33ffae0206d3c7cd1aadac09875e5e96_dbb5e425-27b1-47a5-89e8-74cc51ec7694.jpg?v=1789526583"
+  },
+  {
+    "deviceName": "VXE X3 Pro",
+    "color": "metal-silver",
+    "image": "/devices/vxe-x3-pro/metal-silver.webp",
+    "source": "https://www.atk.store/products/vxe-dragonfly-x3-series-lightweight-wireless-mouse",
+    "sourceImage": "https://cdn.shopify.com/s/files/1/0691/4942/5882/files/94c2558a604b8dbcbafdfbe57abae0e6.jpg?v=1789468187"
+  },
+  {
+    "deviceName": "VXE X3 Pro",
+    "color": "metal-black",
+    "image": "/devices/vxe-x3-pro/metal-black.webp",
+    "source": "https://www.atk.store/products/vxe-dragonfly-x3-series-lightweight-wireless-mouse",
+    "sourceImage": "https://cdn.shopify.com/s/files/1/0691/4942/5882/files/4fe40f089696834c4906303a743d01c5_63743558-a19e-44c8-8446-fdefaadf30b9.jpg?v=1789468187"
+  },
+  {
+    "deviceName": "VXE X3 Pro",
+    "color": "metal-red",
+    "image": "/devices/vxe-x3-pro/metal-red.webp",
+    "source": "https://www.atk.store/products/vxe-dragonfly-x3-series-lightweight-wireless-mouse",
+    "sourceImage": "https://cdn.shopify.com/s/files/1/0691/4942/5882/files/7a96918c5a4111f5106ad2b0941050e0_d00ccb74-4dcf-4e8c-aea5-34cad282383c.jpg?v=1789468187"
+  },
+  {
+    "deviceName": "VXE X3 Turbo",
+    "color": "black",
+    "image": "/devices/vxe-x3-turbo/black.webp",
+    "source": "https://www.atk.store/products/vxe-dragonfly-x3-series-lightweight-wireless-mouse",
+    "sourceImage": "https://cdn.shopify.com/s/files/1/0691/4942/5882/files/Turbo.jpg?v=1789468187"
+  },
+  {
+    "deviceName": "VXE X3 Turbo",
+    "color": "white",
+    "image": "/devices/vxe-x3-turbo/white.webp",
+    "source": "https://www.atk.store/products/vxe-dragonfly-x3-series-lightweight-wireless-mouse",
+    "sourceImage": "https://cdn.shopify.com/s/files/1/0691/4942/5882/files/Turbo_07fbefba-e7b3-4144-99eb-e656d2d79e9f.jpg?v=1789468187"
+  }
+]

@@ -1,0 +1,7906 @@
+[
+  {
+    "id": "vxe-r1s-1084",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 63,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "VXE R1S+",
+    "VID": "0x373B",
+    "PID": "0x1084",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-00429ae068.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-b8532c4aaa.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-00429ae068.webp",
+      "/devices/artwork/white-b8532c4aaa.webp"
+    ]
+  },
+  {
+    "id": "vxe-v3-nk-10e7",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 72,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "VXE V3 NK",
+    "VID": "0x373B",
+    "PID": "0x10E7",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-cded7e65d0.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/white-cded7e65d0.webp"
+    ]
+  },
+  {
+    "id": "atk-a9-se-nk-1135",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 88,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK A9 SE NK",
+    "VID": "0x373B",
+    "PID": "0x1135",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-a4bb75f0af.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/white-a4bb75f0af.webp"
+    ]
+  },
+  {
+    "id": "atk-u2-se-nk-1149",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 92,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK U2 SE NK",
+    "VID": "0x373B",
+    "PID": "0x1149",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-a0944126ef.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/white-a0944126ef.webp"
+    ]
+  },
+  {
+    "id": "atk-y9-se-nk-115d",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 98,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK Y9 SE NK",
+    "VID": "0x373B",
+    "PID": "0x115D",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-379734b5e6.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-c7ab2f2f58.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-379734b5e6.webp",
+      "/devices/artwork/white-c7ab2f2f58.webp"
+    ]
+  },
+  {
+    "id": "dragonfly-f1-v2-se-nk-114c",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 95,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "DRAGONFLY F1 V2 SE NK",
+    "VID": "0x373B",
+    "PID": "0x114C",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-D-g07huf-cf6d40d837.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-BkYvVLnK-ff5ae2fff3.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-D-g07huf-cf6d40d837.webp",
+      "/devices/artwork/white-BkYvVLnK-ff5ae2fff3.webp"
+    ]
+  },
+  {
+    "id": "vxe-r1-s-nk-121f",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 117,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "VXE R1 S NK",
+    "VID": "0x373B",
+    "PID": "0x121F",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-00429ae068.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-b8532c4aaa.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-00429ae068.webp",
+      "/devices/artwork/white-b8532c4aaa.webp"
+    ]
+  },
+  {
+    "id": "vxe-x3-1248",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 121,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "VXE X3",
+    "VID": "0x373B",
+    "PID": "0x1248",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/vxe-x3/black.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/vxe-x3/white.webp"
+      }
+    ],
+    "images": [
+      "/devices/vxe-x3/black.webp",
+      "/devices/vxe-x3/white.webp"
+    ]
+  },
+  {
+    "id": "atk-dragonfly-f1-pro-f502",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 104,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK Dragonfly F1 PRO",
+    "VID": "0x3554",
+    "PID": "0xF502",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/white-BkYvVLnK-ff5ae2fff3.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/white-BkYvVLnK-ff5ae2fff3.webp"
+    ]
+  },
+  {
+    "id": "atk-dragonfly-f1-pro-max-f506",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 52,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK Dragonfly F1 PRO MAX JOJO",
+    "VID": "0x3554",
+    "PID": "0xF506",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-BkYvVLnK-ff5ae2fff3.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/white-BkYvVLnK-ff5ae2fff3.webp"
+    ]
+  },
+  {
+    "id": "atk-dragonfly-f1s-f50a",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 20,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK Dragonfly F1S",
+    "VID": "0x3554",
+    "PID": "0xF50A",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-BkYvVLnK-ff5ae2fff3.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/white-BkYvVLnK-ff5ae2fff3.webp"
+    ]
+  },
+  {
+    "id": "vxe-r1-pro-f58c",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 34,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "VXE R1 PRO",
+    "VID": "0x3554",
+    "PID": "0xF58C",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-00429ae068.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-b8532c4aaa.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-00429ae068.webp",
+      "/devices/artwork/white-b8532c4aaa.webp"
+    ]
+  },
+  {
+    "id": "vxe-r1-f58f",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 116,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "VXE R1SE+",
+    "VID": "0x3554",
+    "PID": "0xF58F",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-b8532c4aaa.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/white-b8532c4aaa.webp"
+    ]
+  },
+  {
+    "id": "mad-r-103f",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 49,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "MAD R",
+    "VID": "0x373B",
+    "PID": "0x103F",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-DCbDiXsF-9b57fb8764.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-mYWaqE2h-18ad157afc.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-DCbDiXsF-9b57fb8764.webp",
+      "/devices/artwork/white-mYWaqE2h-18ad157afc.webp"
+    ]
+  },
+  {
+    "id": "mad-r-104b",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 54,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "MAD R +",
+    "VID": "0x373B",
+    "PID": "0x104B",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-DCbDiXsF-9b57fb8764.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-mYWaqE2h-18ad157afc.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-DCbDiXsF-9b57fb8764.webp",
+      "/devices/artwork/white-mYWaqE2h-18ad157afc.webp"
+    ]
+  },
+  {
+    "id": "atk-x1-lite-113e",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 89,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK X1 Lite",
+    "VID": "0x373B",
+    "PID": "0x113E",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-9b248c98b3.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-8f9d4710bb.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-9b248c98b3.webp",
+      "/devices/artwork/white-8f9d4710bb.webp"
+    ]
+  },
+  {
+    "id": "atk-x1-s-nk-1106",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 76,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK X1 S NK",
+    "VID": "0x373B",
+    "PID": "0x1106",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-9b248c98b3.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-8f9d4710bb.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-9b248c98b3.webp",
+      "/devices/artwork/white-8f9d4710bb.webp"
+    ]
+  },
+  {
+    "id": "atk-a9-plus-nk-1115",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 83,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK A9 Plus NK",
+    "VID": "0x373B",
+    "PID": "0x1115",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-f735a51dc6.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-a4bb75f0af.webp"
+      },
+      {
+        "name": "Rose Red",
+        "hex": "#C50D75",
+        "id": "rose-red",
+        "image": "/devices/artwork/rose-red-362eac721e.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-f735a51dc6.webp",
+      "/devices/artwork/white-a4bb75f0af.webp",
+      "/devices/artwork/rose-red-362eac721e.webp"
+    ]
+  },
+  {
+    "id": "atk-u2-plus-nk-110d",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 78,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK U2 Plus NK",
+    "VID": "0x373B",
+    "PID": "0x110D",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-a5662b1c08.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-a0944126ef.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-a5662b1c08.webp",
+      "/devices/artwork/white-a0944126ef.webp"
+    ]
+  },
+  {
+    "id": "atk-y9-plus-nk-115b",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 96,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK Y9 Plus NK",
+    "VID": "0x373B",
+    "PID": "0x115B",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-379734b5e6.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-c7ab2f2f58.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-379734b5e6.webp",
+      "/devices/artwork/white-c7ab2f2f58.webp"
+    ]
+  },
+  {
+    "id": "dragonfly-f1-v2-plus-nk-114a",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 93,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "DRAGONFLY F1 V2 Plus NK",
+    "VID": "0x373B",
+    "PID": "0x114A",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-D-g07huf-cf6d40d837.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-BkYvVLnK-ff5ae2fff3.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-D-g07huf-cf6d40d837.webp",
+      "/devices/artwork/white-BkYvVLnK-ff5ae2fff3.webp"
+    ]
+  },
+  {
+    "id": "vxe-r1-ultra-11d2",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 114,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "VXE R1 UlTRA",
+    "VID": "0x373B",
+    "PID": "0x11D2",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-00429ae068.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-b8532c4aaa.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-00429ae068.webp",
+      "/devices/artwork/white-b8532c4aaa.webp"
+    ]
+  },
+  {
+    "id": "vxe-r1se-silent-12bf",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 130,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "VXE R1SE+ Silent",
+    "VID": "0x373B",
+    "PID": "0x12BF",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-00429ae068.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-b8532c4aaa.webp"
+      },
+      {
+        "name": "Purple",
+        "hex": "#B1A8CF",
+        "id": "purple",
+        "image": "/devices/artwork/purple-2c6aba3e93.webp"
+      },
+      {
+        "name": "Sakura Pink",
+        "hex": "#D1BFB4",
+        "id": "sakura-pink",
+        "image": "/devices/artwork/sakura-pink-c92d653b50.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-00429ae068.webp",
+      "/devices/artwork/white-b8532c4aaa.webp",
+      "/devices/artwork/purple-2c6aba3e93.webp",
+      "/devices/artwork/sakura-pink-c92d653b50.webp"
+    ]
+  },
+  {
+    "id": "atk-a9-nk-1116",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 84,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK A9 NK",
+    "VID": "0x373B",
+    "PID": "0x1116",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-a4bb75f0af.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/white-a4bb75f0af.webp"
+    ]
+  },
+  {
+    "id": "atk-x1e-113f",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 90,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK X1E",
+    "VID": "0x373B",
+    "PID": "0x113F",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-9b248c98b3.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-8f9d4710bb.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-9b248c98b3.webp",
+      "/devices/artwork/white-8f9d4710bb.webp"
+    ]
+  },
+  {
+    "id": "atk-a9-1157",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 99,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK A9",
+    "VID": "0x373B",
+    "PID": "0x1157",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-f735a51dc6.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-a4bb75f0af.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-f735a51dc6.webp",
+      "/devices/artwork/white-a4bb75f0af.webp"
+    ]
+  },
+  {
+    "id": "atk-u2-11aa",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 109,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK U2",
+    "VID": "0x373B",
+    "PID": "0x11AA",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-a5662b1c08.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-a0944126ef.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-a5662b1c08.webp",
+      "/devices/artwork/white-a0944126ef.webp"
+    ]
+  },
+  {
+    "id": "atk-x1-se-nk-1107",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 77,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK X1 SE NK",
+    "VID": "0x373B",
+    "PID": "0x1107",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/sky-x1-v2-black-0cc7781cf8.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/sky-x1-v2-white-9b346eb351.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/sky-x1-v2-black-0cc7781cf8.webp",
+      "/devices/artwork/sky-x1-v2-white-9b346eb351.webp"
+    ]
+  },
+  {
+    "id": "vxe-r1-nk-1065",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 57,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "VXE R1 NK",
+    "VID": "0x373B",
+    "PID": "0x1065",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-00429ae068.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-b8532c4aaa.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-00429ae068.webp",
+      "/devices/artwork/white-b8532c4aaa.webp"
+    ]
+  },
+  {
+    "id": "vxe-r1-nk-1066",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 57,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "VXE R1 NK",
+    "VID": "0x373B",
+    "PID": "0x1066",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-00429ae068.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-b8532c4aaa.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-00429ae068.webp",
+      "/devices/artwork/white-b8532c4aaa.webp"
+    ]
+  },
+  {
+    "id": "vxe-r1-nk-10c7",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 67,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "VXE R1 NK",
+    "VID": "0x373B",
+    "PID": "0x10C7",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-00429ae068.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-b8532c4aaa.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-00429ae068.webp",
+      "/devices/artwork/white-b8532c4aaa.webp"
+    ]
+  },
+  {
+    "id": "vxe-r1-nk-10c8",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 67,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "VXE R1 NK",
+    "VID": "0x373B",
+    "PID": "0x10C8",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-00429ae068.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-b8532c4aaa.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-00429ae068.webp",
+      "/devices/artwork/white-b8532c4aaa.webp"
+    ]
+  },
+  {
+    "id": "vxe-v3-pro-nk-10e8",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 73,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "VXE V3 PRO NK",
+    "VID": "0x373B",
+    "PID": "0x10E8",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-4e5e71bec6.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-cded7e65d0.webp"
+      },
+      {
+        "name": "Purple",
+        "hex": "#C5CEF2",
+        "id": "purple",
+        "image": "/devices/artwork/purple-0ed5196dec.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-4e5e71bec6.webp",
+      "/devices/artwork/white-cded7e65d0.webp",
+      "/devices/artwork/purple-0ed5196dec.webp"
+    ]
+  },
+  {
+    "id": "atk-u2-nk-110e",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 79,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK U2 NK",
+    "VID": "0x373B",
+    "PID": "0x110E",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-a0944126ef.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/white-a0944126ef.webp"
+    ]
+  },
+  {
+    "id": "atk-y9-nk-115c",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 97,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK Y9 NK",
+    "VID": "0x373B",
+    "PID": "0x115C",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-379734b5e6.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-c7ab2f2f58.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-379734b5e6.webp",
+      "/devices/artwork/white-c7ab2f2f58.webp"
+    ]
+  },
+  {
+    "id": "dragonfly-f1-v2-nk-114b",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 94,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "DRAGONFLY F1 V2 NK",
+    "VID": "0x373B",
+    "PID": "0x114B",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-D-g07huf-cf6d40d837.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-BkYvVLnK-ff5ae2fff3.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-D-g07huf-cf6d40d837.webp",
+      "/devices/artwork/white-BkYvVLnK-ff5ae2fff3.webp"
+    ]
+  },
+  {
+    "id": "atk-a9-x-11a0",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 107,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK A9 X",
+    "VID": "0x373B",
+    "PID": "0x11A0",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/a9-x-black-b85f9f8c5a.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/a9-x-white-4376f5eb90.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/a9-x-black-b85f9f8c5a.webp",
+      "/devices/artwork/a9-x-white-4376f5eb90.webp"
+    ]
+  },
+  {
+    "id": "vxe-x3-pro-1249",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 122,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "VXE X3 Pro",
+    "VID": "0x373B",
+    "PID": "0x1249",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Metal Black",
+        "hex": "#3F3F3F",
+        "id": "metal-black",
+        "image": "/devices/vxe-x3-pro/metal-black.webp"
+      },
+      {
+        "name": "Metal Silver",
+        "hex": "#AAA9AB",
+        "id": "metal-silver",
+        "image": "/devices/vxe-x3-pro/metal-silver.webp"
+      },
+      {
+        "name": "Metal Red",
+        "hex": "#9A322C",
+        "id": "metal-red",
+        "image": "/devices/vxe-x3-pro/metal-red.webp"
+      }
+    ],
+    "images": [
+      "/devices/vxe-x3-pro/metal-black.webp",
+      "/devices/vxe-x3-pro/metal-silver.webp",
+      "/devices/vxe-x3-pro/metal-red.webp"
+    ]
+  },
+  {
+    "id": "vxe-x3-turbo-124a",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 123,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "VXE X3 Turbo",
+    "VID": "0x373B",
+    "PID": "0x124A",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/vxe-x3-turbo/black.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/vxe-x3-turbo/white.webp"
+      }
+    ],
+    "images": [
+      "/devices/vxe-x3-turbo/black.webp",
+      "/devices/vxe-x3-turbo/white.webp"
+    ]
+  },
+  {
+    "id": "atk-a9-nb-1245",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 120,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK A9 NB",
+    "VID": "0x373B",
+    "PID": "0x1245",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-f735a51dc6.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-a4bb75f0af.webp"
+      },
+      {
+        "name": "Rose Red",
+        "hex": "#C50D75",
+        "id": "rose-red",
+        "image": "/devices/artwork/rose-red-362eac721e.webp"
+      },
+      {
+        "name": "Scarlet",
+        "hex": "#BD4C40",
+        "id": "scarlet",
+        "image": "/devices/artwork/scarlet-45b593263a.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-f735a51dc6.webp",
+      "/devices/artwork/white-a4bb75f0af.webp",
+      "/devices/artwork/rose-red-362eac721e.webp",
+      "/devices/artwork/scarlet-45b593263a.webp"
+    ]
+  },
+  {
+    "id": "atk-a9-pro-max-1117",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 85,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK A9 Pro Max",
+    "VID": "0x373B",
+    "PID": "0x1117",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-f735a51dc6.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-a4bb75f0af.webp"
+      },
+      {
+        "name": "Rose Red",
+        "hex": "#C50D75",
+        "id": "rose-red",
+        "image": "/devices/artwork/rose-red-362eac721e.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-f735a51dc6.webp",
+      "/devices/artwork/white-a4bb75f0af.webp",
+      "/devices/artwork/rose-red-362eac721e.webp"
+    ]
+  },
+  {
+    "id": "atk-u2-pro-max-1158",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 100,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK U2 Pro Max",
+    "VID": "0x373B",
+    "PID": "0x1158",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-a5662b1c08.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-a0944126ef.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-a5662b1c08.webp",
+      "/devices/artwork/white-a0944126ef.webp"
+    ]
+  },
+  {
+    "id": "dragonfly-f1-v2-pro-max-11ab",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 110,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "DRAGONFLY F1 V2 PRO MAX",
+    "VID": "0x373B",
+    "PID": "0x11AB",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-BkYvVLnK-ff5ae2fff3.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/white-BkYvVLnK-ff5ae2fff3.webp"
+    ]
+  },
+  {
+    "id": "atk-a9-ultra-max-2-0-11dd",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 6,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK A9 Ultra Max 2.0",
+    "VID": "0x373B",
+    "PID": "0x11DD",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-f735a51dc6.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-a4bb75f0af.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-f735a51dc6.webp",
+      "/devices/artwork/white-a4bb75f0af.webp"
+    ]
+  },
+  {
+    "id": "atk-a9-ultra-max-2-0-tri-mode-11f2",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 15,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK A9 Ultra Max 2.0 Tri-Mode",
+    "VID": "0x373B",
+    "PID": "0x11F2",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-f735a51dc6.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-a4bb75f0af.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-f735a51dc6.webp",
+      "/devices/artwork/white-a4bb75f0af.webp"
+    ]
+  },
+  {
+    "id": "atk-f1-ultra-max-2-0-11ed",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 12,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK F1 Ultra Max 2.0",
+    "VID": "0x373B",
+    "PID": "0x11ED",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/sky-f1-v2-black-d7a5f3c5d9.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/sky-f1-v2-white-ead149833f.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/sky-f1-v2-black-d7a5f3c5d9.webp",
+      "/devices/artwork/sky-f1-v2-white-ead149833f.webp"
+    ]
+  },
+  {
+    "id": "atk-x1-ultra-max-2-0-11ec",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 11,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK X1 Ultra Max 2.0",
+    "VID": "0x373B",
+    "PID": "0x11EC",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/sky-x1-v2-black-0cc7781cf8.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/sky-x1-v2-white-9b346eb351.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/sky-x1-v2-black-0cc7781cf8.webp",
+      "/devices/artwork/sky-x1-v2-white-9b346eb351.webp"
+    ]
+  },
+  {
+    "id": "atk-u2-ultra-max-2-0-11f7",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 18,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK U2 Ultra Max 2.0",
+    "VID": "0x373B",
+    "PID": "0x11F7",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-a5662b1c08.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-a0944126ef.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-a5662b1c08.webp",
+      "/devices/artwork/white-a0944126ef.webp"
+    ]
+  },
+  {
+    "id": "vxe-r1-ultra-11f9",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 20,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "VXE R1 Ultra",
+    "VID": "0x373B",
+    "PID": "0x11F9",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-00429ae068.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-b8532c4aaa.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-00429ae068.webp",
+      "/devices/artwork/white-b8532c4aaa.webp"
+    ]
+  },
+  {
+    "id": "atk-f1-pro-1014",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 36,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK F1 PRO",
+    "VID": "0x373B",
+    "PID": "0x1014",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-kLVeKquv-9454cec967.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-CnM8dqcL-3c45cec0c6.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-kLVeKquv-9454cec967.webp",
+      "/devices/artwork/white-CnM8dqcL-3c45cec0c6.webp"
+    ]
+  },
+  {
+    "id": "atk-f1-pro-max-1015",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 37,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK F1 PRO MAX",
+    "VID": "0x373B",
+    "PID": "0x1015",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-kLVeKquv-9454cec967.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-CnM8dqcL-3c45cec0c6.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-kLVeKquv-9454cec967.webp",
+      "/devices/artwork/white-CnM8dqcL-3c45cec0c6.webp"
+    ]
+  },
+  {
+    "id": "atk-x1-pro-1016",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 38,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK X1 PRO",
+    "VID": "0x373B",
+    "PID": "0x1016",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-9b248c98b3.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-8f9d4710bb.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-9b248c98b3.webp",
+      "/devices/artwork/white-8f9d4710bb.webp"
+    ]
+  },
+  {
+    "id": "atk-x1-pro-max-1017",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 39,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK X1 PRO MAX",
+    "VID": "0x373B",
+    "PID": "0x1017",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-9b248c98b3.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-8f9d4710bb.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-9b248c98b3.webp",
+      "/devices/artwork/white-8f9d4710bb.webp"
+    ]
+  },
+  {
+    "id": "atk-z1-pro-1018",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 40,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK Z1 PRO",
+    "VID": "0x373B",
+    "PID": "0x1018",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-2ac2a41c9b.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-db2f9a2fe7.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-2ac2a41c9b.webp",
+      "/devices/artwork/white-db2f9a2fe7.webp"
+    ]
+  },
+  {
+    "id": "atk-z1-pro-max-1019",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 41,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK Z1 PRO MAX",
+    "VID": "0x373B",
+    "PID": "0x1019",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-2ac2a41c9b.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-db2f9a2fe7.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-2ac2a41c9b.webp",
+      "/devices/artwork/white-db2f9a2fe7.webp"
+    ]
+  },
+  {
+    "id": "atk-u2-mini-1086",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 64,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK U2 MINI",
+    "VID": "0x373B",
+    "PID": "0x1086",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-a0944126ef.webp"
+      },
+      {
+        "name": "Rose Red",
+        "hex": "#C50D75",
+        "id": "rose-red",
+        "image": "/devices/artwork/sky-u2-v2-rose-red-870b12dc53.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/white-a0944126ef.webp",
+      "/devices/artwork/sky-u2-v2-rose-red-870b12dc53.webp"
+    ]
+  },
+  {
+    "id": "atk-u2-ultra-10ac",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 66,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK U2 Ultra",
+    "VID": "0x373B",
+    "PID": "0x10AC",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-a5662b1c08.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-a0944126ef.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-a5662b1c08.webp",
+      "/devices/artwork/white-a0944126ef.webp"
+    ]
+  },
+  {
+    "id": "atk-y9-pro-max-10fd",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 108,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK Y9 PRO MAX",
+    "VID": "0x373B",
+    "PID": "0x10FD",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-379734b5e6.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-c7ab2f2f58.webp"
+      },
+      {
+        "name": "Rose Red",
+        "hex": "#C50D75",
+        "id": "rose-red",
+        "image": "/devices/artwork/rose-red-0e792464d9.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-379734b5e6.webp",
+      "/devices/artwork/white-c7ab2f2f58.webp",
+      "/devices/artwork/rose-red-0e792464d9.webp"
+    ]
+  },
+  {
+    "id": "mad-r-major-103e",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 47,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "MAD R MAJOR",
+    "VID": "0x373B",
+    "PID": "0x103E",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-DCbDiXsF-9b57fb8764.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-mYWaqE2h-18ad157afc.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-DCbDiXsF-9b57fb8764.webp",
+      "/devices/artwork/white-mYWaqE2h-18ad157afc.webp"
+    ]
+  },
+  {
+    "id": "mad-r-major-104c",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 55,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "MAD R MAJOR+",
+    "VID": "0x373B",
+    "PID": "0x104C",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-DCbDiXsF-9b57fb8764.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-mYWaqE2h-18ad157afc.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-DCbDiXsF-9b57fb8764.webp",
+      "/devices/artwork/white-mYWaqE2h-18ad157afc.webp"
+    ]
+  },
+  {
+    "id": "atk-x1-ultra-max-2-0-12ff",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 87,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK X1 Ultra Max 2.0",
+    "VID": "0x373B",
+    "PID": "0x12FF",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/sky-x1-v2-black-0cc7781cf8.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/sky-x1-v2-white-9b346eb351.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/sky-x1-v2-black-0cc7781cf8.webp",
+      "/devices/artwork/sky-x1-v2-white-9b346eb351.webp"
+    ]
+  },
+  {
+    "id": "atk-f1-ultimate-102e",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 42,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "ATK F1 Ultimate",
+    "VID": "0x373B",
+    "PID": "0x102E",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-kLVeKquv-9454cec967.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-CnM8dqcL-3c45cec0c6.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-kLVeKquv-9454cec967.webp",
+      "/devices/artwork/white-CnM8dqcL-3c45cec0c6.webp"
+    ]
+  },
+  {
+    "id": "atk-x1-ultra-102f",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 43,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK X1 Ultra",
+    "VID": "0x373B",
+    "PID": "0x102F",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-9b248c98b3.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-8f9d4710bb.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-9b248c98b3.webp",
+      "/devices/artwork/white-8f9d4710bb.webp"
+    ]
+  },
+  {
+    "id": "atk-fierce-x-1030",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 44,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK FIERCE X",
+    "VID": "0x373B",
+    "PID": "0x1030",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-CDKCqxhs-a93851dfee.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-CExDBJvE-45b5ad38be.webp"
+      },
+      {
+        "name": "Gray",
+        "hex": "#808080",
+        "id": "gray",
+        "image": "/devices/artwork/gray-DeUg3Pt1-d4b03a572f.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-CDKCqxhs-a93851dfee.webp",
+      "/devices/artwork/white-CExDBJvE-45b5ad38be.webp",
+      "/devices/artwork/gray-DeUg3Pt1-d4b03a572f.webp"
+    ]
+  },
+  {
+    "id": "atk-f1-ultra-103c",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 45,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "ATK F1 Ultra",
+    "VID": "0x373B",
+    "PID": "0x103C",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-kLVeKquv-9454cec967.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-CnM8dqcL-3c45cec0c6.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-kLVeKquv-9454cec967.webp",
+      "/devices/artwork/white-CnM8dqcL-3c45cec0c6.webp"
+    ]
+  },
+  {
+    "id": "atk-x1-ultimate-103d",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 46,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK X1 Ultimate",
+    "VID": "0x373B",
+    "PID": "0x103D",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-9b248c98b3.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-8f9d4710bb.webp"
+      },
+      {
+        "name": "Metal Red",
+        "hex": "#FF0000",
+        "id": "metal-red",
+        "image": "/devices/artwork/metal-red-0c72ef009f.webp"
+      },
+      {
+        "name": "Metal Purple",
+        "hex": "#412564",
+        "id": "metal-purple",
+        "image": "/devices/artwork/metal-purple-ae0f008fd9.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-9b248c98b3.webp",
+      "/devices/artwork/white-8f9d4710bb.webp",
+      "/devices/artwork/metal-red-0c72ef009f.webp",
+      "/devices/artwork/metal-purple-ae0f008fd9.webp"
+    ]
+  },
+  {
+    "id": "atk-f1-extreme-1045",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 50,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "ATK F1 EXTREME",
+    "VID": "0x373B",
+    "PID": "0x1045",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-kLVeKquv-9454cec967.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-CnM8dqcL-3c45cec0c6.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-kLVeKquv-9454cec967.webp",
+      "/devices/artwork/white-CnM8dqcL-3c45cec0c6.webp"
+    ]
+  },
+  {
+    "id": "atk-z1-ultra-104a",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 53,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK Z1 Ultra",
+    "VID": "0x373B",
+    "PID": "0x104A",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-2ac2a41c9b.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-db2f9a2fe7.webp"
+      },
+      {
+        "name": "Orange",
+        "hex": "#F68641",
+        "id": "orange",
+        "image": "/devices/artwork/orange-5b84b225a1.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-2ac2a41c9b.webp",
+      "/devices/artwork/white-db2f9a2fe7.webp",
+      "/devices/artwork/orange-5b84b225a1.webp"
+    ]
+  },
+  {
+    "id": "atk-f1-leviatan-105b",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 56,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK F1 LEVIATAN",
+    "VID": "0x373B",
+    "PID": "0x105B",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Lev",
+        "hex": "#0000FF",
+        "id": "lev",
+        "image": "/devices/artwork/lev-fqHhofih-b160425cbb.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/lev-fqHhofih-b160425cbb.webp"
+    ]
+  },
+  {
+    "id": "atk-u2-ultimate-1087",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 65,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK U2 Ultimate",
+    "VID": "0x373B",
+    "PID": "0x1087",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-a5662b1c08.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-a0944126ef.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-a5662b1c08.webp",
+      "/devices/artwork/white-a0944126ef.webp"
+    ]
+  },
+  {
+    "id": "atk-x1-extreme-10e9",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 70,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK X1 EXTREME",
+    "VID": "0x373B",
+    "PID": "0x10E9",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-9b248c98b3.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-8f9d4710bb.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-9b248c98b3.webp",
+      "/devices/artwork/white-8f9d4710bb.webp"
+    ]
+  },
+  {
+    "id": "atk-a9-ultra-1119",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 87,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK A9 Ultra",
+    "VID": "0x373B",
+    "PID": "0x1119",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-f735a51dc6.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-a4bb75f0af.webp"
+      },
+      {
+        "name": "Rose Red",
+        "hex": "#C50D75",
+        "id": "rose-red",
+        "image": "/devices/artwork/rose-red-362eac721e.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-f735a51dc6.webp",
+      "/devices/artwork/white-a4bb75f0af.webp",
+      "/devices/artwork/rose-red-362eac721e.webp"
+    ]
+  },
+  {
+    "id": "atk-a9-nb-ultra-11f3",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 115,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK A9 NB ULTRA",
+    "VID": "0x373B",
+    "PID": "0x11F3",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-f735a51dc6.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-a4bb75f0af.webp"
+      },
+      {
+        "name": "Rose Red",
+        "hex": "#C50D75",
+        "id": "rose-red",
+        "image": "/devices/artwork/rose-red-362eac721e.webp"
+      },
+      {
+        "name": "Scarlet",
+        "hex": "#BD4C40",
+        "id": "scarlet",
+        "image": "/devices/artwork/scarlet-45b593263a.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-f735a51dc6.webp",
+      "/devices/artwork/white-a4bb75f0af.webp",
+      "/devices/artwork/rose-red-362eac721e.webp",
+      "/devices/artwork/scarlet-45b593263a.webp"
+    ]
+  },
+  {
+    "id": "atk-a9-ultimate-11b6",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 3,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK A9 Ultimate",
+    "VID": "0x373B",
+    "PID": "0x11B6",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-f735a51dc6.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-a4bb75f0af.webp"
+      },
+      {
+        "name": "Rose Red",
+        "hex": "#C50D75",
+        "id": "rose-red",
+        "image": "/devices/artwork/rose-red-362eac721e.webp"
+      },
+      {
+        "name": "Scarlet",
+        "hex": "#BD4C40",
+        "id": "scarlet",
+        "image": "/devices/artwork/scarlet-45b593263a.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-f735a51dc6.webp",
+      "/devices/artwork/white-a4bb75f0af.webp",
+      "/devices/artwork/rose-red-362eac721e.webp",
+      "/devices/artwork/scarlet-45b593263a.webp"
+    ]
+  },
+  {
+    "id": "atk-a9-air-120a",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 21,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK A9 Air",
+    "VID": "0x373B",
+    "PID": "0x120A",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-f735a51dc6.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-a4bb75f0af.webp"
+      },
+      {
+        "name": "Night White",
+        "hex": "#FFFFFF94",
+        "id": "night-white",
+        "image": "/devices/artwork/night-white-8076a52539.webp"
+      },
+      {
+        "name": "Phantom Orange",
+        "hex": "#F68641",
+        "id": "phantom-orange",
+        "image": "/devices/artwork/phantom-orange-df125c836d.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-f735a51dc6.webp",
+      "/devices/artwork/white-a4bb75f0af.webp",
+      "/devices/artwork/night-white-8076a52539.webp",
+      "/devices/artwork/phantom-orange-df125c836d.webp"
+    ]
+  },
+  {
+    "id": "atk-y9-ultimate-11cf",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 5,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK Y9 Ultimate",
+    "VID": "0x373B",
+    "PID": "0x11CF",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-c7ab2f2f58.webp"
+      },
+      {
+        "name": "Rose Red",
+        "hex": "#C50D75",
+        "id": "rose-red",
+        "image": "/devices/artwork/rose-red-0e792464d9.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/white-c7ab2f2f58.webp",
+      "/devices/artwork/rose-red-0e792464d9.webp"
+    ]
+  },
+  {
+    "id": "atk-f1-ultimate-2-0-11e4",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 8,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "ATK F1 Ultimate 2.0",
+    "VID": "0x373B",
+    "PID": "0x11E4",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/sky-f1-v2-black-d7a5f3c5d9.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/sky-f1-v2-white-ead149833f.webp"
+      },
+      {
+        "name": "Blue",
+        "hex": "#BDC9E2",
+        "id": "blue",
+        "image": "/devices/artwork/sky-f1-v2-blue-e2656c675a.webp"
+      },
+      {
+        "name": "Pink",
+        "hex": "#EFB8A4",
+        "id": "pink",
+        "image": "/devices/artwork/sky-f1-v2-pink-68286b7599.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/sky-f1-v2-black-d7a5f3c5d9.webp",
+      "/devices/artwork/sky-f1-v2-white-ead149833f.webp",
+      "/devices/artwork/sky-f1-v2-blue-e2656c675a.webp",
+      "/devices/artwork/sky-f1-v2-pink-68286b7599.webp"
+    ]
+  },
+  {
+    "id": "atk-x1-ultimate-2-0-11e7",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 10,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK X1 Ultimate 2.0",
+    "VID": "0x373B",
+    "PID": "0x11E7",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/sky-x1-v2-black-0cc7781cf8.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/sky-x1-v2-white-9b346eb351.webp"
+      },
+      {
+        "name": "Metal Red",
+        "hex": "#93322C",
+        "id": "metal-red",
+        "image": "/devices/artwork/sky-x1-v2-metal-red-e1706235ad.webp"
+      },
+      {
+        "name": "Metal Silver",
+        "hex": "#A0A1A1",
+        "id": "metal-silver",
+        "image": "/devices/artwork/sky-x1-v2-metal-silver-d6c70474a7.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/sky-x1-v2-black-0cc7781cf8.webp",
+      "/devices/artwork/sky-x1-v2-white-9b346eb351.webp",
+      "/devices/artwork/sky-x1-v2-metal-red-e1706235ad.webp",
+      "/devices/artwork/sky-x1-v2-metal-silver-d6c70474a7.webp"
+    ]
+  },
+  {
+    "id": "atk-duckbill-ultra-11a6",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 2,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK Duckbill Ultra",
+    "VID": "0x373B",
+    "PID": "0x11A6",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Metal Purple",
+        "hex": "#800080",
+        "id": "metal-purple",
+        "image": "/devices/artwork/purple-DpbLwWsF-497451617f.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-3da400db0b.webp"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-c35fca94d3.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/purple-DpbLwWsF-497451617f.webp",
+      "/devices/artwork/white-3da400db0b.webp",
+      "/devices/artwork/black-c35fca94d3.webp"
+    ]
+  },
+  {
+    "id": "atk-duckbill-extreme-1230",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 25,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK Duckbill EXTREME",
+    "VID": "0x373B",
+    "PID": "0x1230",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Metal Purple",
+        "hex": "#800080",
+        "id": "metal-purple",
+        "image": "/devices/artwork/purple-DpbLwWsF-497451617f.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-3da400db0b.webp"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-c35fca94d3.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/purple-DpbLwWsF-497451617f.webp",
+      "/devices/artwork/white-3da400db0b.webp",
+      "/devices/artwork/black-c35fca94d3.webp"
+    ]
+  },
+  {
+    "id": "atk-zero-ex-11cc",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 4,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "ATK ZERO EX",
+    "VID": "0x373B",
+    "PID": "0x11CC",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Ice Translucent",
+        "hex": "#BDC9E2",
+        "id": "ice-translucent",
+        "image": "/devices/artwork/ice-transparent-70ba1c544b.webp"
+      },
+      {
+        "name": "Black Translucent",
+        "hex": "#000000",
+        "id": "black-translucent",
+        "image": "/devices/artwork/black-transparent-50c4b4214d.webp"
+      },
+      {
+        "name": "Orange Translucent",
+        "hex": "#F68641",
+        "id": "orange-translucent",
+        "image": "/devices/artwork/orange-transparent-082f64fa39.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/ice-transparent-70ba1c544b.webp",
+      "/devices/artwork/black-transparent-50c4b4214d.webp",
+      "/devices/artwork/orange-transparent-082f64fa39.webp"
+    ]
+  },
+  {
+    "id": "atk-x1-extreme-2-0-11e5",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 9,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK X1 EXTREME 2.0",
+    "VID": "0x373B",
+    "PID": "0x11E5",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Metal Red",
+        "hex": "#93322C",
+        "id": "metal-red",
+        "image": "/devices/artwork/sky-x1-v2-metal-red-e1706235ad.webp"
+      },
+      {
+        "name": "Metal Purple",
+        "hex": "#492159",
+        "id": "metal-purple",
+        "image": "/devices/artwork/sky-x1-v2-metal-purple-b182dc2390.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/sky-x1-v2-metal-red-e1706235ad.webp",
+      "/devices/artwork/sky-x1-v2-metal-purple-b182dc2390.webp"
+    ]
+  },
+  {
+    "id": "atk-x1-extreme-gt-120b",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 22,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK X1 EXTREME GT",
+    "VID": "0x373B",
+    "PID": "0x120B",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Metal Red",
+        "hex": "#93322C",
+        "id": "metal-red",
+        "image": "/devices/artwork/sky-x1-v2-metal-red-e1706235ad.webp"
+      },
+      {
+        "name": "Metal Purple",
+        "hex": "#492159",
+        "id": "metal-purple",
+        "image": "/devices/artwork/sky-x1-v2-metal-purple-b182dc2390.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/sky-x1-v2-metal-red-e1706235ad.webp",
+      "/devices/artwork/sky-x1-v2-metal-purple-b182dc2390.webp"
+    ]
+  },
+  {
+    "id": "atk-f1-extreme-2-0-11e3",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 7,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "ATK F1 EXTREME 2.0",
+    "VID": "0x373B",
+    "PID": "0x11E3",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Pink",
+        "hex": "#EFB8A4",
+        "id": "pink",
+        "image": "/devices/artwork/sky-f1-v2-pink-68286b7599.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/sky-f1-v2-pink-68286b7599.webp"
+    ]
+  },
+  {
+    "id": "atk-f1-leviatan-2-0-11f0",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 13,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "ATK F1 LEVIATAN 2.0",
+    "VID": "0x373B",
+    "PID": "0x11F0",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Lev",
+        "hex": "#498BEA",
+        "id": "lev",
+        "image": "/devices/artwork/sky-f1-v2-lev-5853174f9e.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/sky-f1-v2-lev-5853174f9e.webp"
+    ]
+  },
+  {
+    "id": "atk-u2-mini-2-0-11f6",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 17,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK U2 Mini 2.0",
+    "VID": "0x373B",
+    "PID": "0x11F6",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/sky-u2-v2-white-991dba9643.webp"
+      },
+      {
+        "name": "Lake Green",
+        "hex": "#A8D1BB",
+        "id": "lake-green",
+        "image": "/devices/artwork/sky-u2-v2-green-74238ca9fb.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/sky-u2-v2-white-991dba9643.webp",
+      "/devices/artwork/sky-u2-v2-green-74238ca9fb.webp"
+    ]
+  },
+  {
+    "id": "atk-z1-ultimate-2-0-1201",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 19,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK Z1 Ultimate 2.0",
+    "VID": "0x373B",
+    "PID": "0x1201",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/sky-z1-v2-black-ad4329d317.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/sky-z1-v2-white-f255693f8e.webp"
+      },
+      {
+        "name": "Orange",
+        "hex": "#F68641",
+        "id": "orange",
+        "image": "/devices/artwork/sky-z1-v2-orange-4316fc740e.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/sky-z1-v2-black-ad4329d317.webp",
+      "/devices/artwork/sky-z1-v2-white-f255693f8e.webp",
+      "/devices/artwork/sky-z1-v2-orange-4316fc740e.webp"
+    ]
+  },
+  {
+    "id": "atk-u2-ultimate-2-0-11f5",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 16,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK U2 Ultimate 2.0",
+    "VID": "0x373B",
+    "PID": "0x11F5",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/sky-u2-v2-black-29a81b60a3.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/sky-u2-v2-white-991dba9643.webp"
+      },
+      {
+        "name": "Lake Green",
+        "hex": "#A8D1BB",
+        "id": "lake-green",
+        "image": "/devices/artwork/sky-u2-v2-green-74238ca9fb.webp"
+      },
+      {
+        "name": "Rose Red",
+        "hex": "#CA6080",
+        "id": "rose-red",
+        "image": "/devices/artwork/sky-u2-v2-rose-red-870b12dc53.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/sky-u2-v2-black-29a81b60a3.webp",
+      "/devices/artwork/sky-u2-v2-white-991dba9643.webp",
+      "/devices/artwork/sky-u2-v2-green-74238ca9fb.webp",
+      "/devices/artwork/sky-u2-v2-rose-red-870b12dc53.webp"
+    ]
+  },
+  {
+    "id": "atk-ghost-extreme-120d",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 23,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK Ghost EXTREME",
+    "VID": "0x373B",
+    "PID": "0x120D",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Metal Black",
+        "hex": "#000000",
+        "id": "metal-black",
+        "image": "/devices/artwork/black-462ca9a6ad.webp"
+      },
+      {
+        "name": "Metal Silver",
+        "hex": "#A0A1A1",
+        "id": "metal-silver",
+        "image": "/devices/artwork/silver-28eb9b54df.webp"
+      },
+      {
+        "name": "Metal Purple",
+        "hex": "#412564",
+        "id": "metal-purple",
+        "image": "/devices/artwork/purple-c44fb9e22b.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-462ca9a6ad.webp",
+      "/devices/artwork/silver-28eb9b54df.webp",
+      "/devices/artwork/purple-c44fb9e22b.webp"
+    ]
+  },
+  {
+    "id": "atk-ghost-ultimate-120e",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 24,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK Ghost Ultimate",
+    "VID": "0x373B",
+    "PID": "0x120E",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Metal Black",
+        "hex": "#000000",
+        "id": "metal-black",
+        "image": "/devices/artwork/black-462ca9a6ad.webp"
+      },
+      {
+        "name": "Metal Silver",
+        "hex": "#A0A1A1",
+        "id": "metal-silver",
+        "image": "/devices/artwork/silver-28eb9b54df.webp"
+      },
+      {
+        "name": "Red",
+        "hex": "#FF0000",
+        "id": "red",
+        "image": "/devices/artwork/red-28a62b5d70.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-462ca9a6ad.webp",
+      "/devices/artwork/silver-28eb9b54df.webp",
+      "/devices/artwork/red-28a62b5d70.webp"
+    ]
+  },
+  {
+    "id": "atk-zero-124e",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 26,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK ZERO",
+    "VID": "0x373B",
+    "PID": "0x124E",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-75999a3d05.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-cd9cdb2039.webp"
+      },
+      {
+        "name": "Blue",
+        "hex": "#BDC9E2",
+        "id": "blue",
+        "image": "/devices/artwork/blue-ff57782e34.webp"
+      },
+      {
+        "name": "Pink",
+        "hex": "#EFB8A4",
+        "id": "pink",
+        "image": "/devices/artwork/pink-27c8eb3528.webp"
+      },
+      {
+        "name": "Purple Translucent",
+        "hex": "#9974CD",
+        "id": "purple-translucent",
+        "image": "/devices/artwork/purple-transparent-f83ccc2e8a.webp"
+      },
+      {
+        "name": "White Translucent",
+        "hex": "#DADCDA",
+        "id": "white-translucent",
+        "image": "/devices/artwork/white-transparent-208b78eb36.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-75999a3d05.webp",
+      "/devices/artwork/white-cd9cdb2039.webp",
+      "/devices/artwork/blue-ff57782e34.webp",
+      "/devices/artwork/pink-27c8eb3528.webp",
+      "/devices/artwork/purple-transparent-f83ccc2e8a.webp",
+      "/devices/artwork/white-transparent-208b78eb36.webp"
+    ]
+  },
+  {
+    "id": "atk-a9-mini-1256",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 27,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK A9 Mini",
+    "VID": "0x373B",
+    "PID": "0x1256",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-f735a51dc6.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-a4bb75f0af.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-f735a51dc6.webp",
+      "/devices/artwork/white-a4bb75f0af.webp"
+    ]
+  },
+  {
+    "id": "atk-x-extreme-1266",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK X EXTREME",
+    "VID": "0x373B",
+    "PID": "0x1266",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff",
+        "id": "white"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "atk-x1-ultra-max-2-0-1274",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 32,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK X1 Ultra Max 2.0",
+    "VID": "0x373B",
+    "PID": "0x1274",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/sky-x1-v2-black-0cc7781cf8.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/sky-x1-v2-white-9b346eb351.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/sky-x1-v2-black-0cc7781cf8.webp",
+      "/devices/artwork/sky-x1-v2-white-9b346eb351.webp"
+    ]
+  },
+  {
+    "id": "atk-f1-ultra-max-2-0-126e",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 33,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK F1 Ultra Max 2.0",
+    "VID": "0x373B",
+    "PID": "0x126E",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/sky-f1-v2-black-d7a5f3c5d9.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/sky-f1-v2-white-ead149833f.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/sky-f1-v2-black-d7a5f3c5d9.webp",
+      "/devices/artwork/sky-f1-v2-white-ead149833f.webp"
+    ]
+  },
+  {
+    "id": "atk-a9-ultra-max-2-0-tri-mode-1270",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 37,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK A9 Ultra Max 2.0 Tri-Mode",
+    "VID": "0x373B",
+    "PID": "0x1270",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-f735a51dc6.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-a4bb75f0af.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-f735a51dc6.webp",
+      "/devices/artwork/white-a4bb75f0af.webp"
+    ]
+  },
+  {
+    "id": "atk-a9-ultra-max-2-0-126f",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 38,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK A9 Ultra Max 2.0",
+    "VID": "0x373B",
+    "PID": "0x126F",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-f735a51dc6.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-a4bb75f0af.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-f735a51dc6.webp",
+      "/devices/artwork/white-a4bb75f0af.webp"
+    ]
+  },
+  {
+    "id": "atk-u2-plus-nk-126c",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 124,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK U2 Plus NK",
+    "VID": "0x373B",
+    "PID": "0x126C",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-a5662b1c08.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-a0944126ef.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-a5662b1c08.webp",
+      "/devices/artwork/white-a0944126ef.webp"
+    ]
+  },
+  {
+    "id": "vxe-r1-1271",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 127,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "VXE R1",
+    "VID": "0x373B",
+    "PID": "0x1271",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-00429ae068.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-b8532c4aaa.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-00429ae068.webp",
+      "/devices/artwork/white-b8532c4aaa.webp"
+    ]
+  },
+  {
+    "id": "vxe-r1-pro-1272",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 125,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "VXE R1 PRO",
+    "VID": "0x373B",
+    "PID": "0x1272",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-00429ae068.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-b8532c4aaa.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-00429ae068.webp",
+      "/devices/artwork/white-b8532c4aaa.webp"
+    ]
+  },
+  {
+    "id": "vxe-r1-pro-max-1273",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 126,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "VXE R1 PRO MAX",
+    "VID": "0x373B",
+    "PID": "0x1273",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-00429ae068.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-b8532c4aaa.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-00429ae068.webp",
+      "/devices/artwork/white-b8532c4aaa.webp"
+    ]
+  },
+  {
+    "id": "atk-a9-mini-125a",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 28,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK A9 Mini",
+    "VID": "0x373B",
+    "PID": "0x125A",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-f735a51dc6.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-a4bb75f0af.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-f735a51dc6.webp",
+      "/devices/artwork/white-a4bb75f0af.webp"
+    ]
+  },
+  {
+    "id": "atk-u2-pro-max-126d",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 128,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK U2 Pro Max",
+    "VID": "0x373B",
+    "PID": "0x126D",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-a5662b1c08.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-a0944126ef.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-a5662b1c08.webp",
+      "/devices/artwork/white-a0944126ef.webp"
+    ]
+  },
+  {
+    "id": "flow-7-12d7",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "Flow 7",
+    "VID": "0x373B",
+    "PID": "0x12D7",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff",
+        "id": "white"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "atk-f1-v3-ultimate-12fa",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 85,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "ATK F1 V3 ULTIMATE",
+    "VID": "0x373B",
+    "PID": "0x12FA",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/sky-f1-v2-black-d7a5f3c5d9.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/sky-f1-v2-white-ead149833f.webp"
+      },
+      {
+        "name": "Blue",
+        "hex": "#BDC9E2",
+        "id": "blue",
+        "image": "/devices/artwork/sky-f1-v2-blue-e2656c675a.webp"
+      },
+      {
+        "name": "Pink",
+        "hex": "#EFB8A4",
+        "id": "pink",
+        "image": "/devices/artwork/sky-f1-v2-pink-68286b7599.webp"
+      },
+      {
+        "name": "Lake Green",
+        "hex": "#C2E1CD",
+        "id": "lake-green",
+        "image": "/devices/artwork/sky-f1-v2-green-2ae55ed157.webp"
+      },
+      {
+        "name": "Lev",
+        "hex": "#498BEA",
+        "id": "lev",
+        "image": "/devices/artwork/sky-f1-v2-lev-5853174f9e.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/sky-f1-v2-black-d7a5f3c5d9.webp",
+      "/devices/artwork/sky-f1-v2-white-ead149833f.webp",
+      "/devices/artwork/sky-f1-v2-blue-e2656c675a.webp",
+      "/devices/artwork/sky-f1-v2-pink-68286b7599.webp",
+      "/devices/artwork/sky-f1-v2-green-2ae55ed157.webp",
+      "/devices/artwork/sky-f1-v2-lev-5853174f9e.webp"
+    ]
+  },
+  {
+    "id": "mad-r-132b",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 133,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "MAD R",
+    "VID": "0x373B",
+    "PID": "0x132B",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-DCbDiXsF-9b57fb8764.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-mYWaqE2h-18ad157afc.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-DCbDiXsF-9b57fb8764.webp",
+      "/devices/artwork/white-mYWaqE2h-18ad157afc.webp"
+    ]
+  },
+  {
+    "id": "atk-x1-s-nk-131a",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 132,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK X1 S NK",
+    "VID": "0x373B",
+    "PID": "0x131A",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/sky-x1-v2-black-0cc7781cf8.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/sky-x1-v2-white-9b346eb351.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/sky-x1-v2-black-0cc7781cf8.webp",
+      "/devices/artwork/sky-x1-v2-white-9b346eb351.webp"
+    ]
+  },
+  {
+    "id": "atk-a9-mini-1269",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 31,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK A9 Mini +",
+    "VID": "0x373B",
+    "PID": "0x1269",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-f735a51dc6.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-a4bb75f0af.webp"
+      },
+      {
+        "name": "Rose Red",
+        "hex": "#EB578F",
+        "id": "rose-red",
+        "image": "/devices/artwork/rose-red-362eac721e.webp"
+      },
+      {
+        "name": "Pink",
+        "hex": "#EFB8A4",
+        "id": "pink",
+        "image": "/devices/artwork/pink-e19769f16d.webp"
+      },
+      {
+        "name": "Lake Green",
+        "hex": "#C2E1CD",
+        "id": "lake-green",
+        "image": "/devices/artwork/green-9c5b56fa2a.webp"
+      },
+      {
+        "name": "Prince",
+        "hex": "#9BE167",
+        "id": "prince",
+        "image": "/devices/artwork/prince-2fb4d6d8fe.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-f735a51dc6.webp",
+      "/devices/artwork/white-a4bb75f0af.webp",
+      "/devices/artwork/rose-red-362eac721e.webp",
+      "/devices/artwork/pink-e19769f16d.webp",
+      "/devices/artwork/green-9c5b56fa2a.webp",
+      "/devices/artwork/prince-2fb4d6d8fe.webp"
+    ]
+  },
+  {
+    "id": "atk-a9-mini-128e",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 52,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK A9 Mini +",
+    "VID": "0x373B",
+    "PID": "0x128E",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-f735a51dc6.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-a4bb75f0af.webp"
+      },
+      {
+        "name": "Rose Red",
+        "hex": "#EB578F",
+        "id": "rose-red",
+        "image": "/devices/artwork/rose-red-362eac721e.webp"
+      },
+      {
+        "name": "Pink",
+        "hex": "#EFB8A4",
+        "id": "pink",
+        "image": "/devices/artwork/pink-e19769f16d.webp"
+      },
+      {
+        "name": "Lake Green",
+        "hex": "#C2E1CD",
+        "id": "lake-green",
+        "image": "/devices/artwork/green-9c5b56fa2a.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-f735a51dc6.webp",
+      "/devices/artwork/white-a4bb75f0af.webp",
+      "/devices/artwork/rose-red-362eac721e.webp",
+      "/devices/artwork/pink-e19769f16d.webp",
+      "/devices/artwork/green-9c5b56fa2a.webp"
+    ]
+  },
+  {
+    "id": "atk-zero-ex-1289",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 47,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK ZERO EX +",
+    "VID": "0x373B",
+    "PID": "0x1289",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Ice Translucent",
+        "hex": "#BDC9E2",
+        "id": "ice-translucent",
+        "image": "/devices/artwork/ice-transparent-70ba1c544b.webp"
+      },
+      {
+        "name": "Black Translucent",
+        "hex": "#000000",
+        "id": "black-translucent",
+        "image": "/devices/artwork/black-transparent-50c4b4214d.webp"
+      },
+      {
+        "name": "Orange Translucent",
+        "hex": "#F68641",
+        "id": "orange-translucent",
+        "image": "/devices/artwork/orange-transparent-082f64fa39.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/ice-transparent-70ba1c544b.webp",
+      "/devices/artwork/black-transparent-50c4b4214d.webp",
+      "/devices/artwork/orange-transparent-082f64fa39.webp"
+    ]
+  },
+  {
+    "id": "atk-x1-ultimate-2-0-1286",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 46,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK X1 Ultimate 2.0 +",
+    "VID": "0x373B",
+    "PID": "0x1286",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/sky-x1-v2-black-0cc7781cf8.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/sky-x1-v2-white-9b346eb351.webp"
+      },
+      {
+        "name": "Metal Red",
+        "hex": "#93322C",
+        "id": "metal-red",
+        "image": "/devices/artwork/sky-x1-v2-metal-red-e1706235ad.webp"
+      },
+      {
+        "name": "Metal Silver",
+        "hex": "#A0A1A1",
+        "id": "metal-silver",
+        "image": "/devices/artwork/sky-x1-v2-metal-silver-d6c70474a7.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/sky-x1-v2-black-0cc7781cf8.webp",
+      "/devices/artwork/sky-x1-v2-white-9b346eb351.webp",
+      "/devices/artwork/sky-x1-v2-metal-red-e1706235ad.webp",
+      "/devices/artwork/sky-x1-v2-metal-silver-d6c70474a7.webp"
+    ]
+  },
+  {
+    "id": "atk-f1-v3-extreme-129b",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 58,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK F1 V3 EXTREME +",
+    "VID": "0x373B",
+    "PID": "0x129B",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Pink",
+        "hex": "#EFB8A4",
+        "id": "pink",
+        "image": "/devices/artwork/sky-f1-v2-pink-68286b7599.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/sky-f1-v2-pink-68286b7599.webp"
+    ]
+  },
+  {
+    "id": "atk-f1-v3-leviatan-129d",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 60,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK F1 V3 LEVIATAN +",
+    "VID": "0x373B",
+    "PID": "0x129D",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Lev",
+        "hex": "#498BEA",
+        "id": "lev",
+        "image": "/devices/artwork/sky-f1-v2-lev-5853174f9e.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/sky-f1-v2-lev-5853174f9e.webp"
+    ]
+  },
+  {
+    "id": "atk-a9-air-1293",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 54,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK A9 Air +",
+    "VID": "0x373B",
+    "PID": "0x1293",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-f735a51dc6.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-a4bb75f0af.webp"
+      },
+      {
+        "name": "Night White",
+        "hex": "#FFFFFF94",
+        "id": "night-white",
+        "image": "/devices/artwork/night-white-8076a52539.webp"
+      },
+      {
+        "name": "Phantom Orange",
+        "hex": "#F68641",
+        "id": "phantom-orange",
+        "image": "/devices/artwork/phantom-orange-df125c836d.webp"
+      },
+      {
+        "name": "Lev",
+        "hex": "#8BCBFE",
+        "id": "lev",
+        "image": "/devices/artwork/lev-41aa34915f.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-f735a51dc6.webp",
+      "/devices/artwork/white-a4bb75f0af.webp",
+      "/devices/artwork/night-white-8076a52539.webp",
+      "/devices/artwork/phantom-orange-df125c836d.webp",
+      "/devices/artwork/lev-41aa34915f.webp"
+    ]
+  },
+  {
+    "id": "atk-a9-ultimate-1292",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 53,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK A9 Ultimate +",
+    "VID": "0x373B",
+    "PID": "0x1292",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-f735a51dc6.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-a4bb75f0af.webp"
+      },
+      {
+        "name": "Rose Red",
+        "hex": "#C50D75",
+        "id": "rose-red",
+        "image": "/devices/artwork/rose-red-362eac721e.webp"
+      },
+      {
+        "name": "Scarlet",
+        "hex": "#BD4C40",
+        "id": "scarlet",
+        "image": "/devices/artwork/scarlet-45b593263a.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-f735a51dc6.webp",
+      "/devices/artwork/white-a4bb75f0af.webp",
+      "/devices/artwork/rose-red-362eac721e.webp",
+      "/devices/artwork/scarlet-45b593263a.webp"
+    ]
+  },
+  {
+    "id": "atk-u2-mini-2-0-128d",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 51,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK U2 Mini 2.0 +",
+    "VID": "0x373B",
+    "PID": "0x128D",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/sky-u2-v2-white-991dba9643.webp"
+      },
+      {
+        "name": "Lake Green",
+        "hex": "#A8D1BB",
+        "id": "lake-green",
+        "image": "/devices/artwork/sky-u2-v2-green-74238ca9fb.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/sky-u2-v2-white-991dba9643.webp",
+      "/devices/artwork/sky-u2-v2-green-74238ca9fb.webp"
+    ]
+  },
+  {
+    "id": "atk-u2-ultimate-2-0-128c",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 50,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK U2 Ultimate 2.0 +",
+    "VID": "0x373B",
+    "PID": "0x128C",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/sky-u2-v2-black-29a81b60a3.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/sky-u2-v2-white-991dba9643.webp"
+      },
+      {
+        "name": "Lake Green",
+        "hex": "#A8D1BB",
+        "id": "lake-green",
+        "image": "/devices/artwork/sky-u2-v2-green-74238ca9fb.webp"
+      },
+      {
+        "name": "Rose Red",
+        "hex": "#CA6080",
+        "id": "rose-red",
+        "image": "/devices/artwork/sky-u2-v2-rose-red-870b12dc53.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/sky-u2-v2-black-29a81b60a3.webp",
+      "/devices/artwork/sky-u2-v2-white-991dba9643.webp",
+      "/devices/artwork/sky-u2-v2-green-74238ca9fb.webp",
+      "/devices/artwork/sky-u2-v2-rose-red-870b12dc53.webp"
+    ]
+  },
+  {
+    "id": "atk-phantom-ultimate-1296",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 55,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK PHANTOM ULTIMATE",
+    "VID": "0x373B",
+    "PID": "0x1296",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Border",
+        "hex": "#364B59",
+        "id": "border",
+        "image": "/devices/artwork/border-75b0775eb5.webp"
+      },
+      {
+        "name": "Dune",
+        "hex": "#DFD9CF",
+        "id": "dune",
+        "image": "/devices/artwork/dune-f1bfc4451c.webp"
+      },
+      {
+        "name": "Primordial",
+        "hex": "#C8CACE",
+        "id": "primordial",
+        "image": "/devices/artwork/primordial-4651addc4b.webp"
+      },
+      {
+        "name": "Solar Eclipse",
+        "hex": "#212123",
+        "id": "solar-eclipse",
+        "image": "/devices/artwork/solar-eclipse-db58629280.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/border-75b0775eb5.webp",
+      "/devices/artwork/dune-f1bfc4451c.webp",
+      "/devices/artwork/primordial-4651addc4b.webp",
+      "/devices/artwork/solar-eclipse-db58629280.webp"
+    ]
+  },
+  {
+    "id": "atk-x1-extreme-2-0-1285",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 45,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK X1 EXTREME 2.0 +",
+    "VID": "0x373B",
+    "PID": "0x1285",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Metal Red",
+        "hex": "#93322C",
+        "id": "metal-red",
+        "image": "/devices/artwork/sky-x1-v2-metal-red-e1706235ad.webp"
+      },
+      {
+        "name": "Metal Purple",
+        "hex": "#492159",
+        "id": "metal-purple",
+        "image": "/devices/artwork/sky-x1-v2-metal-purple-b182dc2390.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/sky-x1-v2-metal-red-e1706235ad.webp",
+      "/devices/artwork/sky-x1-v2-metal-purple-b182dc2390.webp"
+    ]
+  },
+  {
+    "id": "atk-x1-air-12a2",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 61,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK X1 Air +",
+    "VID": "0x373B",
+    "PID": "0x12A2",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Midnight White",
+        "hex": "#FFFFFF94",
+        "id": "midnight-white",
+        "image": "/devices/artwork/midnight-white-23f234d3f5.webp"
+      },
+      {
+        "name": "Flame Lnk Silver",
+        "hex": "#A0A1A1",
+        "id": "flame-lnk-silver",
+        "image": "/devices/artwork/flame-lnk-silver-c83fb6470c.webp"
+      },
+      {
+        "name": "Phantom Orange",
+        "hex": "#F68641",
+        "id": "phantom-orange",
+        "image": "/devices/artwork/phantom-orange-73cda09b2e.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/midnight-white-23f234d3f5.webp",
+      "/devices/artwork/flame-lnk-silver-c83fb6470c.webp",
+      "/devices/artwork/phantom-orange-73cda09b2e.webp"
+    ]
+  },
+  {
+    "id": "atk-ghost-ultimate-128b",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 49,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK Ghost Ultimate +",
+    "VID": "0x373B",
+    "PID": "0x128B",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Metal Black",
+        "hex": "#000000",
+        "id": "metal-black",
+        "image": "/devices/artwork/black-462ca9a6ad.webp"
+      },
+      {
+        "name": "Metal Silver",
+        "hex": "#A0A1A1",
+        "id": "metal-silver",
+        "image": "/devices/artwork/silver-28eb9b54df.webp"
+      },
+      {
+        "name": "Red",
+        "hex": "#FF0000",
+        "id": "red",
+        "image": "/devices/artwork/red-28a62b5d70.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-462ca9a6ad.webp",
+      "/devices/artwork/silver-28eb9b54df.webp",
+      "/devices/artwork/red-28a62b5d70.webp"
+    ]
+  },
+  {
+    "id": "atk-ghost-extreme-128a",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 48,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK Ghost EXTREME +",
+    "VID": "0x373B",
+    "PID": "0x128A",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Metal Black",
+        "hex": "#000000",
+        "id": "metal-black",
+        "image": "/devices/artwork/black-462ca9a6ad.webp"
+      },
+      {
+        "name": "Metal Silver",
+        "hex": "#A0A1A1",
+        "id": "metal-silver",
+        "image": "/devices/artwork/silver-28eb9b54df.webp"
+      },
+      {
+        "name": "Metal Purple",
+        "hex": "#412564",
+        "id": "metal-purple",
+        "image": "/devices/artwork/purple-c44fb9e22b.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-462ca9a6ad.webp",
+      "/devices/artwork/silver-28eb9b54df.webp",
+      "/devices/artwork/purple-c44fb9e22b.webp"
+    ]
+  },
+  {
+    "id": "atk-f1-ultimate-2-0-129c",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 59,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK F1 Ultimate 2.0 +",
+    "VID": "0x373B",
+    "PID": "0x129C",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/sky-f1-v2-black-d7a5f3c5d9.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/sky-f1-v2-white-ead149833f.webp"
+      },
+      {
+        "name": "Blue",
+        "hex": "#BDC9E2",
+        "id": "blue",
+        "image": "/devices/artwork/sky-f1-v2-blue-e2656c675a.webp"
+      },
+      {
+        "name": "Pink",
+        "hex": "#EFB8A4",
+        "id": "pink",
+        "image": "/devices/artwork/sky-f1-v2-pink-68286b7599.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/sky-f1-v2-black-d7a5f3c5d9.webp",
+      "/devices/artwork/sky-f1-v2-white-ead149833f.webp",
+      "/devices/artwork/sky-f1-v2-blue-e2656c675a.webp",
+      "/devices/artwork/sky-f1-v2-pink-68286b7599.webp"
+    ]
+  },
+  {
+    "id": "atk-x1-air-127c",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 42,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK X1 Air +",
+    "VID": "0x373B",
+    "PID": "0x127C",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Midnight White",
+        "hex": "#FFFFFF94",
+        "id": "midnight-white",
+        "image": "/devices/artwork/midnight-white-23f234d3f5.webp"
+      },
+      {
+        "name": "Flame Lnk Silver",
+        "hex": "#A0A1A1",
+        "id": "flame-lnk-silver",
+        "image": "/devices/artwork/flame-lnk-silver-c83fb6470c.webp"
+      },
+      {
+        "name": "Phantom Orange",
+        "hex": "#F68641",
+        "id": "phantom-orange",
+        "image": "/devices/artwork/phantom-orange-73cda09b2e.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/midnight-white-23f234d3f5.webp",
+      "/devices/artwork/flame-lnk-silver-c83fb6470c.webp",
+      "/devices/artwork/phantom-orange-73cda09b2e.webp"
+    ]
+  },
+  {
+    "id": "atk-f1-v3-ultimate-12a7",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 62,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK F1 V3 ULTIMATE +",
+    "VID": "0x373B",
+    "PID": "0x12A7",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/sky-f1-v2-black-d7a5f3c5d9.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/sky-f1-v2-white-ead149833f.webp"
+      },
+      {
+        "name": "Blue",
+        "hex": "#BDC9E2",
+        "id": "blue",
+        "image": "/devices/artwork/sky-f1-v2-blue-e2656c675a.webp"
+      },
+      {
+        "name": "Pink",
+        "hex": "#EFB8A4",
+        "id": "pink",
+        "image": "/devices/artwork/sky-f1-v2-pink-68286b7599.webp"
+      },
+      {
+        "name": "Lake Green",
+        "hex": "#C2E1CD",
+        "id": "lake-green",
+        "image": "/devices/artwork/sky-f1-v2-green-2ae55ed157.webp"
+      },
+      {
+        "name": "Lev",
+        "hex": "#498BEA",
+        "id": "lev",
+        "image": "/devices/artwork/sky-f1-v2-lev-5853174f9e.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/sky-f1-v2-black-d7a5f3c5d9.webp",
+      "/devices/artwork/sky-f1-v2-white-ead149833f.webp",
+      "/devices/artwork/sky-f1-v2-blue-e2656c675a.webp",
+      "/devices/artwork/sky-f1-v2-pink-68286b7599.webp",
+      "/devices/artwork/sky-f1-v2-green-2ae55ed157.webp",
+      "/devices/artwork/sky-f1-v2-lev-5853174f9e.webp"
+    ]
+  },
+  {
+    "id": "atk-a9-nb-ultra-12ab",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 129,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK A9 NB ULTRA +",
+    "VID": "0x373B",
+    "PID": "0x12AB",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-f735a51dc6.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-a4bb75f0af.webp"
+      },
+      {
+        "name": "Rose Red",
+        "hex": "#C50D75",
+        "id": "rose-red",
+        "image": "/devices/artwork/rose-red-362eac721e.webp"
+      },
+      {
+        "name": "Scarlet",
+        "hex": "#BD4C40",
+        "id": "scarlet",
+        "image": "/devices/artwork/scarlet-45b593263a.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-f735a51dc6.webp",
+      "/devices/artwork/white-a4bb75f0af.webp",
+      "/devices/artwork/rose-red-362eac721e.webp",
+      "/devices/artwork/scarlet-45b593263a.webp"
+    ]
+  },
+  {
+    "id": "atk-y9-ultimate-12af",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 66,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK Y9 Ultimate +",
+    "VID": "0x373B",
+    "PID": "0x12AF",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-c7ab2f2f58.webp"
+      },
+      {
+        "name": "Rose Red",
+        "hex": "#C50D75",
+        "id": "rose-red",
+        "image": "/devices/artwork/rose-red-0e792464d9.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/white-c7ab2f2f58.webp",
+      "/devices/artwork/rose-red-0e792464d9.webp"
+    ]
+  },
+  {
+    "id": "atk-z1-ultimate-2-0-12b0",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 67,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK Z1 Ultimate 2.0 +",
+    "VID": "0x373B",
+    "PID": "0x12B0",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/sky-z1-v2-black-ad4329d317.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/sky-z1-v2-white-f255693f8e.webp"
+      },
+      {
+        "name": "Orange",
+        "hex": "#F68641",
+        "id": "orange",
+        "image": "/devices/artwork/sky-z1-v2-orange-4316fc740e.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/sky-z1-v2-black-ad4329d317.webp",
+      "/devices/artwork/sky-z1-v2-white-f255693f8e.webp",
+      "/devices/artwork/sky-z1-v2-orange-4316fc740e.webp"
+    ]
+  },
+  {
+    "id": "atk-a9-air-127f",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 40,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK A9 Air +",
+    "VID": "0x373B",
+    "PID": "0x127F",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-f735a51dc6.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-a4bb75f0af.webp"
+      },
+      {
+        "name": "Night White",
+        "hex": "#FFFFFF94",
+        "id": "night-white",
+        "image": "/devices/artwork/night-white-8076a52539.webp"
+      },
+      {
+        "name": "Phantom Orange",
+        "hex": "#F68641",
+        "id": "phantom-orange",
+        "image": "/devices/artwork/phantom-orange-df125c836d.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-f735a51dc6.webp",
+      "/devices/artwork/white-a4bb75f0af.webp",
+      "/devices/artwork/night-white-8076a52539.webp",
+      "/devices/artwork/phantom-orange-df125c836d.webp"
+    ]
+  },
+  {
+    "id": "atk-a9-ultimate-127e",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 39,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK A9 Ultimate +",
+    "VID": "0x373B",
+    "PID": "0x127E",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-f735a51dc6.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-a4bb75f0af.webp"
+      },
+      {
+        "name": "Rose Red",
+        "hex": "#C50D75",
+        "id": "rose-red",
+        "image": "/devices/artwork/rose-red-362eac721e.webp"
+      },
+      {
+        "name": "Scarlet",
+        "hex": "#BD4C40",
+        "id": "scarlet",
+        "image": "/devices/artwork/scarlet-45b593263a.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-f735a51dc6.webp",
+      "/devices/artwork/white-a4bb75f0af.webp",
+      "/devices/artwork/rose-red-362eac721e.webp",
+      "/devices/artwork/scarlet-45b593263a.webp"
+    ]
+  },
+  {
+    "id": "atk-f1-v3-ultimate-12a8",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 63,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK F1 V3 ULTIMATE +",
+    "VID": "0x373B",
+    "PID": "0x12A8",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "White Translucent",
+        "hex": "#FFFFFF",
+        "id": "white-translucent",
+        "image": "/devices/artwork/white-transparent-02f24438cd.webp"
+      },
+      {
+        "name": "Red Translucent",
+        "hex": "#7F1F24",
+        "id": "red-translucent",
+        "image": "/devices/artwork/red-transparent-b8fe9a3c8e.webp"
+      },
+      {
+        "name": "Green Translucent",
+        "hex": "#256130",
+        "id": "green-translucent",
+        "image": "/devices/artwork/green-transparent-21de8f1821.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/white-transparent-02f24438cd.webp",
+      "/devices/artwork/red-transparent-b8fe9a3c8e.webp",
+      "/devices/artwork/green-transparent-21de8f1821.webp"
+    ]
+  },
+  {
+    "id": "atk-f1-v3-ultimate-12a9",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 64,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK F1 V3 ULTIMATE +",
+    "VID": "0x373B",
+    "PID": "0x12A9",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "White Translucent",
+        "hex": "#FFFFFF",
+        "id": "white-translucent",
+        "image": "/devices/artwork/white-transparent-02f24438cd.webp"
+      },
+      {
+        "name": "Red Translucent",
+        "hex": "#7F1F24",
+        "id": "red-translucent",
+        "image": "/devices/artwork/red-transparent-b8fe9a3c8e.webp"
+      },
+      {
+        "name": "Green Translucent",
+        "hex": "#256130",
+        "id": "green-translucent",
+        "image": "/devices/artwork/green-transparent-21de8f1821.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/white-transparent-02f24438cd.webp",
+      "/devices/artwork/red-transparent-b8fe9a3c8e.webp",
+      "/devices/artwork/green-transparent-21de8f1821.webp"
+    ]
+  },
+  {
+    "id": "atk-a9-wireless-charging-12c6",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 71,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK A9 Wireless Charging",
+    "VID": "0x373B",
+    "PID": "0x12C6",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black Gold",
+        "hex": "#000000",
+        "id": "black-gold",
+        "image": "/devices/artwork/black-gold-ad4f592f5a.webp"
+      },
+      {
+        "name": "White Gold",
+        "hex": "#FFFFFF",
+        "id": "white-gold",
+        "image": "/devices/artwork/white-gold-d2d341a419.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-gold-ad4f592f5a.webp",
+      "/devices/artwork/white-gold-d2d341a419.webp"
+    ]
+  },
+  {
+    "id": "atk-x1-ultimate-2-0-silent-12b4",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 76,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK X1 Ultimate 2.0 Silent",
+    "VID": "0x373B",
+    "PID": "0x12B4",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/sky-x1-v2-black-0cc7781cf8.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/sky-x1-v2-white-9b346eb351.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/sky-x1-v2-black-0cc7781cf8.webp",
+      "/devices/artwork/sky-x1-v2-white-9b346eb351.webp"
+    ]
+  },
+  {
+    "id": "atk-a9-ultimate-silent-12b3",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 75,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK A9 Ultimate Silent",
+    "VID": "0x373B",
+    "PID": "0x12B3",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-f735a51dc6.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-a4bb75f0af.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-f735a51dc6.webp",
+      "/devices/artwork/white-a4bb75f0af.webp"
+    ]
+  },
+  {
+    "id": "mouse-1340",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "Mouse",
+    "VID": "0x373B",
+    "PID": "0x1340",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff",
+        "id": "white"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "mouse-1341",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "Mouse",
+    "VID": "0x373B",
+    "PID": "0x1341",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff",
+        "id": "white"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "atk-f1-v3-pikachu-edition-132a",
+    "kind": "mouse",
+    "cid": 1,
+    "mid": 90,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "ATK F1 V3 PIKACHU Edition",
+    "VID": "0x373B",
+    "PID": "0x132A",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Pikachu",
+        "hex": "#FADF2D",
+        "id": "pikachu",
+        "image": "/devices/artwork/pikachu-c7d7c28330.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/pikachu-c7d7c28330.webp"
+    ]
+  },
+  {
+    "id": "mouse-12fb",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "Mouse",
+    "VID": "0x373B",
+    "PID": "0x12FB",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff",
+        "id": "white"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "mouse-133b",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "Mouse",
+    "VID": "0x373B",
+    "PID": "0x133B",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff",
+        "id": "white"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "mouse-1316",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "Mouse",
+    "VID": "0x373B",
+    "PID": "0x1316",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff",
+        "id": "white"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "mouse-12f9",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "Mouse",
+    "VID": "0x373B",
+    "PID": "0x12F9",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff",
+        "id": "white"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "mouse-12f7",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "Mouse",
+    "VID": "0x373B",
+    "PID": "0x12F7",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff",
+        "id": "white"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "vxe-r1se-1358",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 136,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "VXE R1SE+",
+    "VID": "0x373B",
+    "PID": "0x1358",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-00429ae068.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-b8532c4aaa.webp"
+      },
+      {
+        "name": "Purple",
+        "hex": "#B1A8CF",
+        "id": "purple",
+        "image": "/devices/artwork/purple-2c6aba3e93.webp"
+      },
+      {
+        "name": "Sakura Pink",
+        "hex": "#D1BFB4",
+        "id": "sakura-pink",
+        "image": "/devices/artwork/sakura-pink-c92d653b50.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-00429ae068.webp",
+      "/devices/artwork/white-b8532c4aaa.webp",
+      "/devices/artwork/purple-2c6aba3e93.webp",
+      "/devices/artwork/sakura-pink-c92d653b50.webp"
+    ]
+  },
+  {
+    "id": "vxe-r1se-silent-1359",
+    "kind": "mouse",
+    "cid": 2,
+    "mid": 137,
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "read-only",
+    "name": "VXE R1SE+ Silent",
+    "VID": "0x373B",
+    "PID": "0x1359",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black",
+        "image": "/devices/artwork/black-00429ae068.webp"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "id": "white",
+        "image": "/devices/artwork/white-b8532c4aaa.webp"
+      },
+      {
+        "name": "Purple",
+        "hex": "#B1A8CF",
+        "id": "purple",
+        "image": "/devices/artwork/purple-2c6aba3e93.webp"
+      },
+      {
+        "name": "Sakura Pink",
+        "hex": "#D1BFB4",
+        "id": "sakura-pink",
+        "image": "/devices/artwork/sakura-pink-c92d653b50.webp"
+      }
+    ],
+    "images": [
+      "/devices/artwork/black-00429ae068.webp",
+      "/devices/artwork/white-b8532c4aaa.webp",
+      "/devices/artwork/purple-2c6aba3e93.webp",
+      "/devices/artwork/sakura-pink-c92d653b50.webp"
+    ]
+  },
+  {
+    "id": "mouse-1k-dongle-f503",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "Mouse 1K Dongle",
+    "VID": "0x3554",
+    "PID": "0xF503",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Ice translucent",
+        "hex": "#BDC9E2",
+        "id": "ice"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "Orange",
+        "hex": "#F68641",
+        "id": "orange"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "mouse-4k-dongle-f505",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "Mouse 4K Dongle",
+    "VID": "0x3554",
+    "PID": "0xF505",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Ice translucent",
+        "hex": "#BDC9E2",
+        "id": "ice"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "Orange",
+        "hex": "#F68641",
+        "id": "orange"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "mouse-1k-dongle-f50b",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "Mouse 1K Dongle",
+    "VID": "0x3554",
+    "PID": "0xF50B",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Ice translucent",
+        "hex": "#BDC9E2",
+        "id": "ice"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "Orange",
+        "hex": "#F68641",
+        "id": "orange"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "mouse-1k-dongle-f58a",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "Mouse 1K Dongle",
+    "VID": "0x3554",
+    "PID": "0xF58A",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Ice translucent",
+        "hex": "#BDC9E2",
+        "id": "ice"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "Orange",
+        "hex": "#F68641",
+        "id": "orange"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "mouse-4k-dongle-f58d",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "Mouse 4K Dongle",
+    "VID": "0x3554",
+    "PID": "0xF58D",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Ice translucent",
+        "hex": "#BDC9E2",
+        "id": "ice"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "Orange",
+        "hex": "#F68641",
+        "id": "orange"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "mouse-1k-dongle-f58e",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "Mouse 1K Dongle",
+    "VID": "0x3554",
+    "PID": "0xF58E",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Ice translucent",
+        "hex": "#BDC9E2",
+        "id": "ice"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "Orange",
+        "hex": "#F68641",
+        "id": "orange"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "mad-1k-dongle-104d",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "MAD 1K Dongle",
+    "VID": "0x373B",
+    "PID": "0x104D",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Ice translucent",
+        "hex": "#BDC9E2",
+        "id": "ice"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "Orange",
+        "hex": "#F68641",
+        "id": "orange"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "vxe-mouse-1k-dongle-fb12",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "VXE Mouse 1K Dongle",
+    "VID": "0x3554",
+    "PID": "0xFB12",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Ice translucent",
+        "hex": "#BDC9E2",
+        "id": "ice"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "Orange",
+        "hex": "#F68641",
+        "id": "orange"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "wireless-mouse-1k-dongle-1085",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "Wireless mouse 1k dongle  ",
+    "VID": "0x373B",
+    "PID": "0x1085",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Ice translucent",
+        "hex": "#BDC9E2",
+        "id": "ice"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "Orange",
+        "hex": "#F68641",
+        "id": "orange"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "r1-nk-1067",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "R1 NK",
+    "VID": "0x373B",
+    "PID": "0x1067",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff",
+        "id": "white"
+      },
+      {
+        "name": "Purple",
+        "hex": "#7E22CE",
+        "id": "purple"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "r1-nk-1068",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "R1 NK",
+    "VID": "0x373B",
+    "PID": "0x1068",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff",
+        "id": "white"
+      },
+      {
+        "name": "Purple",
+        "hex": "#7E22CE",
+        "id": "purple"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "r1-nk-1069",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "R1 NK",
+    "VID": "0x373B",
+    "PID": "0x1069",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff",
+        "id": "white"
+      },
+      {
+        "name": "Purple",
+        "hex": "#7E22CE",
+        "id": "purple"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "r1-nk-106a",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "R1 NK",
+    "VID": "0x373B",
+    "PID": "0x106A",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff",
+        "id": "white"
+      },
+      {
+        "name": "Purple",
+        "hex": "#7E22CE",
+        "id": "purple"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "nk-mouse-dongle-10c9",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "NK Mouse Dongle",
+    "VID": "0x373B",
+    "PID": "0x10C9",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Ice translucent",
+        "hex": "#BDC9E2",
+        "id": "ice"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "Orange",
+        "hex": "#F68641",
+        "id": "orange"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "r1-nk-10ca",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "R1 NK",
+    "VID": "0x373B",
+    "PID": "0x10CA",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff",
+        "id": "white"
+      },
+      {
+        "name": "Purple",
+        "hex": "#7E22CE",
+        "id": "purple"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "r1-nk-10cb",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "R1 NK",
+    "VID": "0x373B",
+    "PID": "0x10CB",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff",
+        "id": "white"
+      },
+      {
+        "name": "Purple",
+        "hex": "#7E22CE",
+        "id": "purple"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "r1-nk-10cc",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "R1 NK",
+    "VID": "0x373B",
+    "PID": "0x10CC",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff",
+        "id": "white"
+      },
+      {
+        "name": "Purple",
+        "hex": "#7E22CE",
+        "id": "purple"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "atk-mouse-1k-dongle-101a",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "ATK Mouse 1K Dongle",
+    "VID": "0x373B",
+    "PID": "0x101A",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Ice translucent",
+        "hex": "#BDC9E2",
+        "id": "ice"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "Orange",
+        "hex": "#F68641",
+        "id": "orange"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "atk-mouse-8k-dongle-101b",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "ATK Mouse 8K Dongle",
+    "VID": "0x373B",
+    "PID": "0x101B",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Ice translucent",
+        "hex": "#BDC9E2",
+        "id": "ice"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "Orange",
+        "hex": "#F68641",
+        "id": "orange"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "wireless-mouse-8k-nano-dongle-111a",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "Wireless mouse -8K NANO dongle",
+    "VID": "0x373B",
+    "PID": "0x111A",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Ice translucent",
+        "hex": "#BDC9E2",
+        "id": "ice"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "Orange",
+        "hex": "#F68641",
+        "id": "orange"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "wireless-mouse-8k-nano-dongle-111b",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "Wireless mouse -8K NANO dongle",
+    "VID": "0x373B",
+    "PID": "0x111B",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Ice translucent",
+        "hex": "#BDC9E2",
+        "id": "ice"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "Orange",
+        "hex": "#F68641",
+        "id": "orange"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "atk-mouse-8k-dongle-11a7",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "ATK Mouse 8K Dongle",
+    "VID": "0x373B",
+    "PID": "0x11A7",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Ice translucent",
+        "hex": "#BDC9E2",
+        "id": "ice"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "Orange",
+        "hex": "#F68641",
+        "id": "orange"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "wireless-mouse-4k-dongle-11a9",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "Wireless mouse 4k dongle",
+    "VID": "0x373B",
+    "PID": "0x11A9",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Ice translucent",
+        "hex": "#BDC9E2",
+        "id": "ice"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "Orange",
+        "hex": "#F68641",
+        "id": "orange"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "mad-8k-dongle-1040",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "MAD 8K Dongle",
+    "VID": "0x373B",
+    "PID": "0x1040",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Ice translucent",
+        "hex": "#BDC9E2",
+        "id": "ice"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "Orange",
+        "hex": "#F68641",
+        "id": "orange"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "atk-8k-dongle-light-version-1031",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "ATK 8K Dongle Light Version",
+    "VID": "0x373B",
+    "PID": "0x1031",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Ice translucent",
+        "hex": "#BDC9E2",
+        "id": "ice"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "Orange",
+        "hex": "#F68641",
+        "id": "orange"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "atk-8k-dongle-light-version-1159",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "ATK 8K Dongle Light Version",
+    "VID": "0x373B",
+    "PID": "0x1159",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Ice translucent",
+        "hex": "#BDC9E2",
+        "id": "ice"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "Orange",
+        "hex": "#F68641",
+        "id": "orange"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "wireless-mouse-8k-dongle-115e",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "Wireless mouse 8k dongle",
+    "VID": "0x373B",
+    "PID": "0x115E",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Ice translucent",
+        "hex": "#BDC9E2",
+        "id": "ice"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "Orange",
+        "hex": "#F68641",
+        "id": "orange"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "wireless-mouse-8k-typec-dongle-11c8",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "Wireless mouse -8K TypeC dongle",
+    "VID": "0x373B",
+    "PID": "0x11C8",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Ice translucent",
+        "hex": "#BDC9E2",
+        "id": "ice"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "Orange",
+        "hex": "#F68641",
+        "id": "orange"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "wireless-mouse-8k-nano-dongle-11ce",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "Wireless mouse-8K NANO dongle",
+    "VID": "0x373B",
+    "PID": "0x11CE",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Ice translucent",
+        "hex": "#BDC9E2",
+        "id": "ice"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "Orange",
+        "hex": "#F68641",
+        "id": "orange"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "wireless-mouse-8k-typec-dongle-11cd",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "Wireless mouse -8K TypeC dongle",
+    "VID": "0x373B",
+    "PID": "0x11CD",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Ice translucent",
+        "hex": "#BDC9E2",
+        "id": "ice"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "Orange",
+        "hex": "#F68641",
+        "id": "orange"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "wireless-mouse-8k-dongle-h-11d8",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "Wireless mouse 8k dongle-H",
+    "VID": "0x373B",
+    "PID": "0x11D8",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Ice translucent",
+        "hex": "#BDC9E2",
+        "id": "ice"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "Orange",
+        "hex": "#F68641",
+        "id": "orange"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "wireless-mouse-8k-dongle-l-11d9",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "Wireless mouse 8k dongle-L",
+    "VID": "0x373B",
+    "PID": "0x11D9",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Ice translucent",
+        "hex": "#BDC9E2",
+        "id": "ice"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "Orange",
+        "hex": "#F68641",
+        "id": "orange"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "wireless-mouse-8k-dongle-l-1278",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "Wireless mouse 8k dongle-L",
+    "VID": "0x373B",
+    "PID": "0x1278",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Ice translucent",
+        "hex": "#BDC9E2",
+        "id": "ice"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "Orange",
+        "hex": "#F68641",
+        "id": "orange"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "wireless-mouse-8k-nano-dongle-l-11fe",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "Wireless mouse 8k NANO dongle-L",
+    "VID": "0x373B",
+    "PID": "0x11FE",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Ice translucent",
+        "hex": "#BDC9E2",
+        "id": "ice"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "Orange",
+        "hex": "#F68641",
+        "id": "orange"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "wireless-mouse-8k-nano-dongle-l-127a",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "Wireless mouse 8k NANO dongle-L",
+    "VID": "0x373B",
+    "PID": "0x127A",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Ice translucent",
+        "hex": "#BDC9E2",
+        "id": "ice"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "Orange",
+        "hex": "#F68641",
+        "id": "orange"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "wireless-mouse-8k-nano-dongle-l-11fd",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "Wireless mouse 8k NANO dongle-L",
+    "VID": "0x373B",
+    "PID": "0x11FD",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Ice translucent",
+        "hex": "#BDC9E2",
+        "id": "ice"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "Orange",
+        "hex": "#F68641",
+        "id": "orange"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "wireless-mouse-8k-nano-dongle-l-1279",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "Wireless mouse 8k NANO dongle-L",
+    "VID": "0x373B",
+    "PID": "0x1279",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Ice translucent",
+        "hex": "#BDC9E2",
+        "id": "ice"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "Orange",
+        "hex": "#F68641",
+        "id": "orange"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "wireless-mouse-8k-tower-dongle-11f4",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "Wireless mouse -8K TOWER dongle",
+    "VID": "0x373B",
+    "PID": "0x11F4",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Ice translucent",
+        "hex": "#BDC9E2",
+        "id": "ice"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "Orange",
+        "hex": "#F68641",
+        "id": "orange"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "wireless-mouse-1k-tower-dongle-1246",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "Wireless mouse -1K TOWER dongle",
+    "VID": "0x373B",
+    "PID": "0x1246",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Ice translucent",
+        "hex": "#BDC9E2",
+        "id": "ice"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "Orange",
+        "hex": "#F68641",
+        "id": "orange"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "wireless-mouse-8k-dongle-h-12cc",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "Wireless mouse 8k dongle-H",
+    "VID": "0x373B",
+    "PID": "0x12CC",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Ice translucent",
+        "hex": "#BDC9E2",
+        "id": "ice"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "Orange",
+        "hex": "#F68641",
+        "id": "orange"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "flow-7-11b3",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "Flow 7",
+    "VID": "0x373B",
+    "PID": "0x11B3",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff",
+        "id": "white"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "wireless-mouse-8k-nano-dongle-m-12e9",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "Wireless mouse 8k NANO dongle-M",
+    "VID": "0x373B",
+    "PID": "0x12E9",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Ice translucent",
+        "hex": "#BDC9E2",
+        "id": "ice"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "Orange",
+        "hex": "#F68641",
+        "id": "orange"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "wireless-mouse-8k-dongle-m-1303",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "Wireless mouse 8k dongle-M",
+    "VID": "0x373B",
+    "PID": "0x1303",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Ice translucent",
+        "hex": "#BDC9E2",
+        "id": "ice"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "Orange",
+        "hex": "#F68641",
+        "id": "orange"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "atk-wireless-charging-dongle-12da",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "ATK Wireless Charging dongle",
+    "VID": "0x373B",
+    "PID": "0x12DA",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Ice translucent",
+        "hex": "#BDC9E2",
+        "id": "ice"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "Orange",
+        "hex": "#F68641",
+        "id": "orange"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "atk-wireless-charging-s-dongle-1342",
+    "kind": "mouse",
+    "protocolFamily": "ATK_MOUSE",
+    "capabilities": [
+      "dpi",
+      "buttons",
+      "pollingRate",
+      "debounce",
+      "power",
+      "dongleLed"
+    ],
+    "hardwareAccess": "verified",
+    "name": "ATK Wireless Charging-S dongle",
+    "VID": "0x373B",
+    "PID": "0x1342",
+    "usagePage": 65284,
+    "usage": 2,
+    "reportId": 8,
+    "colorways": [
+      {
+        "name": "Ice translucent",
+        "hex": "#BDC9E2",
+        "id": "ice"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "Orange",
+        "hex": "#F68641",
+        "id": "orange"
+      }
+    ],
+    "images": []
+  }
+]

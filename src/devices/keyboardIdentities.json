@@ -1,0 +1,358 @@
+{
+  "14139:4549": {
+    "name": "ATK60 RX",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4550": {
+    "name": "ATK60 RX",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4551": {
+    "name": "ATK60 RX",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4604": {
+    "name": "ATK60 RX",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4584": {
+    "name": "ATK RS6",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4252": {
+    "name": "ATK RS6",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4253": {
+    "name": "ATK RS6 Ultra",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4254": {
+    "name": "ATK RS6 Ultra",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4585": {
+    "name": "ATK RS6 Ultra",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4450": {
+    "name": "ATK RS6",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4586": {
+    "name": "ATK RS6",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4451": {
+    "name": "ATK RS6 Ultra",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4452": {
+    "name": "ATK RS6 Ultra",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4566": {
+    "name": "ATK RS6 Ultra",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4587": {
+    "name": "ATK RS6 Ultra",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4537": {
+    "name": "ATK RS6 x FLEET18",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4370": {
+    "name": "ATK68 V3",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4459": {
+    "name": "ATK68 V3",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4582": {
+    "name": "ATK68 V3",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4560": {
+    "name": "ATK RS6 Air",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4699": {
+    "name": "ATK RS6 Air",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4815": {
+    "name": "ATK RS6 Air",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4617": {
+    "name": "ATK RS6 Air",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4700": {
+    "name": "ATK RS6 Air",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4506": {
+    "name": "ATK68 RX",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4544": {
+    "name": "ATK68 RX",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4545": {
+    "name": "ATK68 RX",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4623": {
+    "name": "ATK RS6 +",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4624": {
+    "name": "ATK RS6 Ultra +",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4862": {
+    "name": "ATK RS6 +",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4697": {
+    "name": "ATK RS6 Cube",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4848": {
+    "name": "ATK RS6 Cube",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4874": {
+    "name": "ATK RS6 Air",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4468": {
+    "name": "ATK RS7 V2 Ultra",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4503": {
+    "name": "ATK RS7 V2 Ultra",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4504": {
+    "name": "ATK RS7 V2 Ultra",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4526": {
+    "name": "ATK RS7 V2 Ultra",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4528": {
+    "name": "ATK RS7 V2 Ultra",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4525": {
+    "name": "ATK RS7 V2",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4575": {
+    "name": "ATK RS7 V2",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4527": {
+    "name": "ATK RS7 V2 Ultra",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4538": {
+    "name": "ATK RS7 V2 Ultra",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4570": {
+    "name": "ATK RS7 V2 Ultra",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4918": {
+    "name": "ATK RS7 V2 Ultra",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4520": {
+    "name": "ATK RS7 V2 Ultra",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4238": {
+    "name": "ATK EDGE75",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4240": {
+    "name": "ATK EDGE75",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4614": {
+    "name": "ATK EDGE75",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4576": {
+    "name": "ATK RS7 Turbo",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4577": {
+    "name": "ATK RS7 Turbo",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4640": {
+    "name": "ATK RS7 Air",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4921": {
+    "name": "ATK RS7 Air",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4695": {
+    "name": "ATK RS7 Air",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4917": {
+    "name": "ATK RS7 Air",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4641": {
+    "name": "ATK RS7 Air",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4651": {
+    "name": "ATK RS7 Air",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4696": {
+    "name": "ATK RS7 Air",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4888": {
+    "name": "ATK RS7 Air PIKACHU Edition",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4801": {
+    "name": "ATK RS7 Air",
+    "protocolFamily": "BITYUAN"
+  },
+  "14139:4190": {
+    "name": "ATK68 V2",
+    "protocolFamily": "ARBITER"
+  },
+  "14139:4290": {
+    "name": "ATK68 V2 S",
+    "protocolFamily": "ARBITER"
+  },
+  "14139:4164": {
+    "name": "ATK RS7",
+    "protocolFamily": "DUCKBREAD"
+  },
+  "14139:4168": {
+    "name": "ATK68 V2 Pro",
+    "protocolFamily": "DUCKBREAD"
+  },
+  "14139:4382": {
+    "name": "ATK A87 PRO",
+    "protocolFamily": "HFD"
+  },
+  "14139:4383": {
+    "name": "ATK A87 PRO",
+    "protocolFamily": "HFD"
+  },
+  "14139:4657": {
+    "name": "ATK A87 Ultra",
+    "protocolFamily": "HFD"
+  },
+  "14139:4429": {
+    "name": "ATK A98",
+    "protocolFamily": "HFD"
+  },
+  "14139:4430": {
+    "name": "ATK A98",
+    "protocolFamily": "HFD"
+  },
+  "14139:4433": {
+    "name": "ATK A98 Pro",
+    "protocolFamily": "HFD"
+  },
+  "14139:4434": {
+    "name": "ATK A98 Pro",
+    "protocolFamily": "HFD"
+  },
+  "14139:4673": {
+    "name": "ATK A87 Ultra",
+    "protocolFamily": "13"
+  },
+  "14139:4675": {
+    "name": "ATK A98 Ultra",
+    "protocolFamily": "13"
+  },
+  "14139:4674": {
+    "name": "ATK A87 Ultra 2.4G",
+    "protocolFamily": "13"
+  },
+  "14139:4676": {
+    "name": "ATK A98 Ultra 2.4G",
+    "protocolFamily": "13"
+  },
+  "14139:4679": {
+    "name": "ATK V75X Ultra",
+    "protocolFamily": "13"
+  },
+  "14139:4683": {
+    "name": "ATK V75X Ultra 2.4G",
+    "protocolFamily": "13"
+  },
+  "14139:4692": {
+    "name": "ATK RS8 Neo",
+    "protocolFamily": "13"
+  },
+  "14139:4693": {
+    "name": "ATK RS8 Neo 2.4G",
+    "protocolFamily": "13"
+  },
+  "14139:12383": {
+    "name": "ATK V100",
+    "protocolFamily": "EVISION"
+  },
+  "14139:4191": {
+    "name": "ATK V100",
+    "protocolFamily": "EVISION"
+  },
+  "14139:12384": {
+    "name": "ATK V100 Pro",
+    "protocolFamily": "EVISION"
+  },
+  "14139:4192": {
+    "name": "ATK V100 Pro",
+    "protocolFamily": "EVISION"
+  },
+  "14139:4494": {
+    "name": "ATK S87",
+    "protocolFamily": "EVISION"
+  },
+  "14139:4495": {
+    "name": "ATK S87",
+    "protocolFamily": "EVISION"
+  },
+  "14139:4101": {
+    "name": "ATK68 Air",
+    "protocolFamily": "undefined"
+  },
+  "6785:8323": {
+    "name": "ATK68 L",
+    "protocolFamily": "undefined"
+  },
+  "6785:8318": {
+    "name": "ATK68",
+    "protocolFamily": "undefined"
+  },
+  "6785:8309": {
+    "name": "ATK75 G",
+    "protocolFamily": "undefined"
+  },
+  "6785:8322": {
+    "name": "ATK75 L",
+    "protocolFamily": "undefined"
+  }
+}
