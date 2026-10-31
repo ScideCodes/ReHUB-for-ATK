@@ -2,6 +2,19 @@
 
 All notable changes to Re-HUB for ATK. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.4.0] - 2026-10-31
+
+### Added
+- **Axial Alignment works in demo mode.** Start calibration, then click each key: it turns green and a counter shows your progress until you finish. On a real keyboard the page now explains that switch calibration rewrites data stored on the keyboard and hasn't been tested on hardware yet, and links to the official ATK web driver to do it there. Previously the button was simply disabled.
+
+### Changed
+- **Larger key labels only on the Light tab** (9 px to 10.5 px). The Trigger and Key Change tabs are back to their original size.
+- **Configurations no longer show the Cloud Config panel**, the "Link Game/App" note or the cloud-upload icons. These need an ATK account or the desktop app, so they were never usable here.
+
+### Fixed
+- **Device images looked grainy and low-resolution**, most noticeably on the home page. Images are now ATK's original files wherever possible (up to 1600 px), instead of 800 px re-compressed copies.
+- **The calibration colour legend no longer covers the keyboard.**
+
 ## [1.3.2] - 2026-10-31
 
 ### Fixed
@@ -59,6 +72,7 @@ All notable changes to Re-HUB for ATK. The format follows [Keep a Changelog](htt
 ### Added
 - First public release: an unofficial, open-source, local-first WebHID configurator for ATK mice and keyboards, with read-back-verified writes, a demo mode, offline maps, diagnostics, light and dark themes, and a README, launch film, CI and contribution guides.
 
+[1.4.0]: https://github.com/ScideCodes/ReHUB-for-ATK/compare/v1.3.2...v1.4.0
 [1.3.2]: https://github.com/ScideCodes/ReHUB-for-ATK/compare/v1.3.1...v1.3.2
 [1.3.1]: https://github.com/ScideCodes/ReHUB-for-ATK/compare/v1.3.0...v1.3.1
 [1.3.0]: https://github.com/ScideCodes/ReHUB-for-ATK/compare/v1.2.0...v1.3.0
