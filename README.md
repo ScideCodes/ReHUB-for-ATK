@@ -16,7 +16,7 @@ An unofficial, open-source, local-first configurator for ATK mice and keyboards 
 ![WebHID](https://img.shields.io/badge/WebHID-Chromium-111111)
 [![Stars](https://img.shields.io/github/stars/ScideCodes/ReHUB-for-ATK?style=flat&color=ff6900)](https://github.com/ScideCodes/ReHUB-for-ATK/stargazers)
 
-[**▶ Watch the 36-second film on YouTube**](https://www.youtube.com/watch?v=ck-0Ct8F_g4) · [Quick start](#-quick-start) · [Features](#-features) · [Why Re-HUB](#-why-re-hub) · [Supported devices](#-supported-devices) · [Safety](#-safety-model)
+[**▶ Watch the 36-second film on YouTube**](https://www.youtube.com/watch?v=ck-0Ct8F_g4) · [Quick start](#-quick-start) · [Features](#-features) · [Why Re-HUB](#-why-re-hub) · [Supported devices](#-supported-devices) · [Safety](#-safety-model) · [Changelog](CHANGELOG.md)
 
 </div>
 
@@ -59,17 +59,67 @@ Also included:
 
 ## 🚀 Quick start
 
-Requirements: Node.js 20+ and a Chromium-based browser (Chrome, Edge or Brave), because WebHID is Chromium-only.
+You need two things:
+- **Node.js:** download the **LTS** version from [nodejs.org](https://nodejs.org) and install it with the default options.
+- **A Chromium-based browser:** Chrome, Edge, Brave or Opera. Firefox and Safari don't support WebHID.
+
+### Windows: easiest way
+
+1. On this page, click the green **Code** button, then **Download ZIP**.
+2. Right-click the downloaded ZIP, choose **Extract All…**, and open the extracted folder.
+3. Double-click **`start.bat`**.
+
+The first start installs everything, which takes about a minute. After that your browser opens Re-HUB automatically.
+Keep the black window open while you use Re-HUB, and close it to stop. Next time, just double-click `start.bat` again.
+
+> If Windows asks for confirmation ("Windows protected your PC" or a security warning), click **More info** → **Run anyway**, or **Run**. `start.bat` is a short text file you can open in Notepad to check first.
+
+### macOS and Linux
+
+Download and extract the ZIP as above. Open a terminal in that folder and run:
+
+```bash
+./start.sh
+```
+
+### Using git and a terminal
 
 ```bash
 git clone https://github.com/ScideCodes/ReHUB-for-ATK.git
+```
+
+```bash
 cd ReHUB-for-ATK
+```
+
+```bash
 npm ci
+```
+
+```bash
 npm run dev
 ```
 
-Open the printed `localhost` URL. Choose **Add Device** for hardware, or the demo button in the header to explore safely.
-Close `atk-hub.exe`, hub.atk.pro and any other configurator first, so the HID collection is free.
+Then open the address it prints (usually http://localhost:5173). Run `npm ci` once; after that `npm run dev` is enough.
+Always run the commands inside the `ReHUB-for-ATK` folder.
+
+### First steps in the app
+
+- **Try it safely:** click the demo icon (the small screen with a play button) in the header. Demo mode never talks to hardware.
+- **Connect your own device:** click **Add Device** and pick it from the browser's list. First close the official ATK HUB app and any hub.atk.pro tab, because only one program can use the device at a time.
+
+### Troubleshooting
+
+| You see | Fix |
+|---|---|
+| `'vite' is not recognized…` | The install didn't finish. In the project folder, run `npm ci` again, then `npm run dev`. |
+| `EPERM: operation not permitted` | Another copy of Re-HUB (or an editor) is using the files. Close every window running Re-HUB, then run `npm ci` again. |
+| `Port 5173 is in use` | Nothing is wrong: Re-HUB picks the next free port. Open the address it prints. |
+| `Cannot find path …` after `cd` | You're not in the right folder. Use the folder you extracted or cloned, for example `cd Downloads\ReHUB-for-ATK-main`. |
+| Your device isn't in the list | Close the official ATK app and hub.atk.pro, plug the device in by cable or 2.4G receiver (Bluetooth isn't supported), and click **Add Device** again. |
+| Nothing happens in Firefox or Safari | WebHID only works in Chrome, Edge, Brave or Opera. |
+
+### For developers
 
 | Script | What it does |
 |---|---|
@@ -79,7 +129,7 @@ Close `atk-hub.exe`, hub.atk.pro and any other configurator first, so the HID co
 | `npm run test:devices` | Mock matrix across every device profile |
 | `npm run lint` / `npx tsc --noEmit` | Lint and type-check |
 | `npm run shots` | Screenshot regression run (Playwright) |
-| `node scripts/audit-browser.mjs` | axe accessibility audit at three widths, in both themes |
+| `node scripts/audit-browser.mjs` | Accessibility audit at three widths, in both themes |
 
 ## 🖱 Supported devices
 
