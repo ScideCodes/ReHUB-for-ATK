@@ -2,6 +2,14 @@
 
 All notable changes to Re-HUB for ATK. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.3.2] - 2026-10-31
+
+### Fixed
+- **Lighting effect names were cut off** ("Customiz…", "Single Col…"). The effect column now widens on larger screens, and long names wrap onto a second line instead of being shortened. In longer languages such as German and Russian, the panel scrolls slightly rather than hiding text.
+
+### Changed
+- **Key labels are 5% larger** on the keyboard, on the Light tab and in the Key Change picker.
+
 ## [1.3.1] - 2026-10-31
 
 ### Fixed
@@ -51,6 +59,7 @@ All notable changes to Re-HUB for ATK. The format follows [Keep a Changelog](htt
 ### Added
 - First public release: an unofficial, open-source, local-first WebHID configurator for ATK mice and keyboards, with read-back-verified writes, a demo mode, offline maps, diagnostics, light and dark themes, and a README, launch film, CI and contribution guides.
 
+[1.3.2]: https://github.com/ScideCodes/ReHUB-for-ATK/compare/v1.3.1...v1.3.2
 [1.3.1]: https://github.com/ScideCodes/ReHUB-for-ATK/compare/v1.3.0...v1.3.1
 [1.3.0]: https://github.com/ScideCodes/ReHUB-for-ATK/compare/v1.2.0...v1.3.0
 [1.2.0]: https://github.com/ScideCodes/ReHUB-for-ATK/compare/v1.1.0...v1.2.0
