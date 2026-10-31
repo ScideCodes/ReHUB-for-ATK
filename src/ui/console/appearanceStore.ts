@@ -78,15 +78,31 @@ function load() {
   }
 }
 
-export function setAppearance(patch: Partial<Appearance>) {
+let frame = 0;
+const notify = () => {
+  if (frame) cancelAnimationFrame(frame);
+  frame = 0;
+  listeners.forEach((listener) => listener());
+};
+
+/**
+ * Applies appearance changes. `persist: false` is for live previews (slider drags): it skips storage and
+ * coalesces repaints to one per animation frame; the final value is saved by a normal call.
+ */
+export function setAppearance(patch: Partial<Appearance>, { persist = true }: { persist?: boolean } = {}) {
   load();
   state = normalizeAppearance({ ...state, ...patch });
+  if (!persist) {
+    if (!frame && typeof requestAnimationFrame === "function") frame = requestAnimationFrame(notify);
+    else if (!frame) notify();
+    return;
+  }
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
   } catch {
     /* Settings still apply for this session. */
   }
-  listeners.forEach((listener) => listener());
+  notify();
 }
 
 export function useAppearance() {

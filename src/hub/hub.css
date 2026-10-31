@@ -1355,6 +1355,8 @@ html.dark .h-switch[aria-checked="true"]::after {
   background-size: cover;
   background-position: center;
   pointer-events: none;
+  /* Own compositor layer: blur/brightness changes repaint only the wallpaper while a slider moves. */
+  will-change: filter;
 }
 html[data-ui-font="system"] .hub {
   --hub-font: system-ui, sans-serif;

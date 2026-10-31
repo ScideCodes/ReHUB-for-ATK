@@ -76,10 +76,22 @@ export function Slider({
   disabled?: boolean;
 }) {
   const [local, setLocal] = useState(value);
-  useEffect(() => setLocal(value), [value]);
+  // Value when the current drag or key press began: a live onChange preview may already have moved `value`.
+  const start = useRef(value);
+  const active = useRef(false);
+  useEffect(() => {
+    setLocal(value);
+    if (!active.current) start.current = value;
+  }, [value]);
   const fill = max > min ? ((local - min) / (max - min)) * 100 : 0;
+  const begin = () => {
+    if (!active.current) start.current = value;
+    active.current = true;
+  };
   const commit = () => {
-    if (local !== value) onCommit(local);
+    active.current = false;
+    if (local !== start.current) onCommit(local);
+    start.current = local;
   };
   return (
     <input
@@ -97,6 +109,8 @@ export function Slider({
         setLocal(next);
         onChange?.(next);
       }}
+      onPointerDown={begin}
+      onKeyDown={begin}
       onPointerUp={commit}
       onKeyUp={commit}
       onBlur={commit}

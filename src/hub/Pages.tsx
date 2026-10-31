@@ -142,11 +142,27 @@ export function WallpaperPage({ onBack }: { onBack: () => void }) {
             <div className="hp-two">
               <div className="hp-effect">
                 <span>Background Blur <b>{appearance.blur}%</b></span>
-                <Slider label="Background Blur" value={appearance.blur} min={0} max={20} step={0.5} onCommit={(blur) => setAppearance({ blur })} />
+                <Slider
+                  label="Background Blur"
+                  value={appearance.blur}
+                  min={0}
+                  max={20}
+                  step={0.5}
+                  onChange={(blur) => setAppearance({ blur }, { persist: false })}
+                  onCommit={(blur) => setAppearance({ blur })}
+                />
               </div>
               <div className="hp-effect">
                 <span>Background Brightness <b>{appearance.brightness}%</b></span>
-                <Slider label="Background Brightness" value={appearance.brightness} min={10} max={150} step={5} onCommit={(brightness) => setAppearance({ brightness })} />
+                <Slider
+                  label="Background Brightness"
+                  value={appearance.brightness}
+                  min={10}
+                  max={150}
+                  step={5}
+                  onChange={(brightness) => setAppearance({ brightness }, { persist: false })}
+                  onCommit={(brightness) => setAppearance({ brightness })}
+                />
               </div>
             </div>
           </section>
