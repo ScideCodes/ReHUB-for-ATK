@@ -87,6 +87,8 @@ export function KeyboardWorkspace({
   const [backgroundReading, setBackgroundReading] = useState(false);
   const [busy, setBusy] = useState(false),
     [progress, setProgress] = useState(0),
+    // Quick reads (cached or small tabs) would only flash the notice; show it once a read runs long.
+    [slowRead, setSlowRead] = useState(false),
     [firmware, setFirmware] = useState(cached?.firmware ?? "");
   const [, setObserved] = useState<KeyboardSettings | null>(
       cached?.settings ?? null,
@@ -110,6 +112,11 @@ export function KeyboardWorkspace({
     mounted = useRef(true);
   const reading = useRef(false),
     loadedTabs = useRef(new Set<string>());
+  useEffect(() => {
+    if (!busy) return setSlowRead(false);
+    const timer = setTimeout(() => setSlowRead(true), 500);
+    return () => clearTimeout(timer);
+  }, [busy]);
   const { toast } = useToast();
   const finish = device.colorways?.[color];
   const hardwareVerified = useMemo(() => {
@@ -521,7 +528,8 @@ export function KeyboardWorkspace({
               ? "Read-only · edits stay on this computer"
               : cachedRefreshing
                 ? "Cached, refreshing · display only"
-                : (busy || backgroundReading) && mode === "hardware"
+                : // Background prefetches of other tabs stay silent.
+                  busy && slowRead && mode === "hardware"
                   ? `Reading keyboard · ${progress}%`
                   : mode === "hardware" && liveState.status === "error"
                     ? "Save failed · draft kept"
