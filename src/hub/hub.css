@@ -90,7 +90,8 @@ body {
   background-position: center;
   pointer-events: none;
 }
-.hub > :not(.hub-wallpaper, .cx-wallpaper) {
+/* :where keeps this at one-class specificity so .hub-header's z-index (popovers, tooltips) still wins. */
+.hub > :where(:not(.hub-wallpaper, .cx-wallpaper)) {
   position: relative;
   z-index: 1;
 }
@@ -966,7 +967,9 @@ html.dark .h-switch[aria-checked="true"]::after {
   align-self: stretch;
   display: flex;
   gap: 16px;
-  padding: 0 5vw 60px;
+  /* Room for the hover lift and shadow: overflow-x:auto also clips vertically. */
+  padding: 28px 5vw 60px;
+  margin-top: -28px;
   max-width: 100%;
   overflow-x: auto;
   scrollbar-width: none;
@@ -3086,12 +3089,21 @@ html.dark .hub-main.split:has(.hk-light) .hk-key[style*="--tint"] {
   font-variant-numeric: tabular-nums;
 }
 /* Manrope sets wider than the old face; header pills stay on one line. */
-/* Tabs keep their width; the right group gives way by ellipsizing its pill. */
+/* The icon group keeps its size; open tabs shrink and ellipsize their labels when space runs out. */
 .hub-header-left {
-  flex-shrink: 0;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.hub-header-left .hub-logo {
+  flex: none;
+}
+.hub-header-left .hub-tab {
+  flex: 0 1 auto;
+  min-width: 72px;
 }
 .hub-header-right {
-  min-width: 0;
+  flex: none;
+  margin-left: auto;
 }
 .hub-header-right .h-btn,
 .hub-demo,

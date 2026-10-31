@@ -199,6 +199,15 @@ try {
           };
         });
       await scan(page, "home/disconnected", width, theme);
+      // Header popovers must sit above the page: a real click on a menu item has to reach it.
+      await page.getByRole("button", { name: "Language", exact: true }).click();
+      const item = page.getByRole("menuitemradio", { name: "English" });
+      const onTop = await item.evaluate((el) => {
+        const r = el.getBoundingClientRect();
+        return el.contains(document.elementFromPoint(r.x + r.width / 2, r.y + r.height / 2));
+      });
+      if (!onTop) throw new Error("Header menu is covered by the page");
+      await page.keyboard.press("Escape");
       await page.getByRole("button", { name: "Experience demo", exact: true }).click();
       await openDemo(page, "ATK F1 Ultimate 2.0");
       await scanSections(page, "mouse", width, theme);

@@ -88,7 +88,13 @@ function PopIcon({
         )}
       </button>
       {pop.open && (
-        <div className="hub-pop" style={{ width }} role="menu">
+        <div
+          className="hub-pop"
+          style={{ width }}
+          role="menu"
+          // Picking a menu item (e.g. a language) closes the menu; other content stays interactive.
+          onClick={(event) => (event.target as Element).closest(".hub-menu-item") && pop.setOpen(false)}
+        >
           {children}
         </div>
       )}
