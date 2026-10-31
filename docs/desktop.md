@@ -14,6 +14,12 @@ Device access requires choosing a device; no automatic blanket HID permissions. 
 
 The current local build is unsigned. Windows may display an unknown-publisher warning. Verify the release source and SHA-256 checksum; code signing is separate from the open-source build and requires the maintainer's signing credentials. No credentials are embedded in the app.
 
+## Installation details and removal
+
+During installation, click **Show details** to expand the progress log. After extraction, it lists every installed file, including the bundled runtime and uninstaller. Application code and web assets are bundled in `resources/app.asar`, so they appear as that archive rather than individual source files.
+
+To uninstall, use **Windows Settings > Apps > Installed apps > ReHUB for ATK > Uninstall**, or run `Uninstall ReHUB for ATK.exe` from the installation folder. The uninstaller also has a **Show details** button. Saved profiles and preferences are retained for reinstalling.
+
 ## Contribute a device report
 
 Use the bug icon in the header, Settings > Community device support, or **Help support my device** in Diagnostics. A device does not have to be supported to create a report.

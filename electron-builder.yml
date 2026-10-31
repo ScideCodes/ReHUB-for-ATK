@@ -19,6 +19,7 @@ win:
   icon: electron/icon.ico
   artifactName: ReHUB-Setup-${version}-${arch}.${ext}
 nsis:
+  include: electron/installer.nsh
   oneClick: false
   perMachine: false
   allowElevation: false

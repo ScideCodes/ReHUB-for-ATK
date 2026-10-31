@@ -15,6 +15,8 @@ ReHUB 1.5.0, Electron 45.2.1, Windows x64. Based on public repository commit e57
 
 ## Limits
 
+Installer follow-up: enabled the standard **Show details** button for installation and removal, added an installed-file listing and uninstaller path, and rebuilt the NSIS x64 installer successfully. The build generated and bundled its uninstaller. The SHA-256 manifest was refreshed. The installer UI and a full install/uninstall cycle were not exercised.
+
 - No physical device configuration writes or hardware-support certification.
 - Installer built and packaged executable launched; clean-machine installation/uninstallation and launch-at-login registration were not exercised on this workstation.
 - Installer is unsigned. No release, update or device report was published during testing.
