@@ -2,18 +2,18 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import {
   Bell,
   Check,
-  Download,
   Languages,
   MonitorPlay,
   Moon,
-  Puzzle,
   Settings,
   Shirt,
   Sun,
-  User,
+  Trash2,
   X,
 } from "lucide-react";
 import { setTheme, useHubTheme } from "./theme";
+import { LANGUAGES, setLanguage, useLanguage } from "../i18n/language";
+import { useNotifications } from "./notifications";
 
 export type HubTab = { id: string; label: string };
 
@@ -57,11 +57,15 @@ function PopIcon({
   icon,
   children,
   width,
+  badge,
+  onOpen,
 }: {
   tip: string;
   icon: ReactNode;
   children: ReactNode;
   width?: number;
+  badge?: number;
+  onOpen?: () => void;
 }) {
   const pop = usePopover();
   return (
@@ -71,9 +75,17 @@ function PopIcon({
         className="hub-icon-btn"
         aria-label={tip}
         aria-expanded={pop.open}
-        onClick={() => pop.setOpen(!pop.open)}
+        onClick={() => {
+          if (!pop.open) onOpen?.();
+          pop.setOpen(!pop.open);
+        }}
       >
         {icon}
+        {!!badge && (
+          <span className="hub-badge" aria-label={`${badge} new`}>
+            {badge > 9 ? "9+" : badge}
+          </span>
+        )}
       </button>
       {pop.open && (
         <div className="hub-pop" style={{ width }} role="menu">
@@ -84,8 +96,40 @@ function PopIcon({
   );
 }
 
-// Original language list; this build ships English strings only.
-const LANGUAGES = ["简体中文", "English", "한국어", "Russian", "日本語", "Deutsch", "Français", "繁體中文", "Türkçe"];
+function MessageCenter() {
+  const { items, unseen, markSeen, clear } = useNotifications();
+  return (
+    <PopIcon tip="Message center" icon={<Bell size={20} strokeWidth={1.6} />} width={340} badge={unseen} onOpen={markSeen}>
+      <div className="hub-messages">
+        <div className="hub-messages-head">
+          <strong>Message center</strong>
+          {items.length > 0 && (
+            <button type="button" className="h-btn" onClick={clear}>
+              <Trash2 size={13} /> Clear
+            </button>
+          )}
+        </div>
+        {items.length ? (
+          <ul>
+            {[...items].reverse().map((item) => (
+              <li key={item.id}>
+                <span className="dot" aria-hidden="true" />
+                <div>
+                  <p>{item.message}{item.count > 1 && <b> ×{item.count}</b>}</p>
+                  <time dateTime={new Date(item.time).toISOString()}>{new Date(item.time).toLocaleTimeString()}</time>
+                </div>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p className="h-desc" style={{ textAlign: "center", margin: "24px 0" }}>
+            No more messages
+          </p>
+        )}
+      </div>
+    </PopIcon>
+  );
+}
 
 export function Header({
   tabs,
@@ -96,7 +140,6 @@ export function Header({
   onCloseTab,
   onDemo,
   onOpenPage,
-  onSleepHelp,
 }: {
   tabs: HubTab[];
   active: string;
@@ -106,9 +149,9 @@ export function Header({
   onCloseTab: (id: string) => void;
   onDemo: () => void;
   onOpenPage: (id: "settings" | "wallpaper") => void;
-  onSleepHelp: () => void;
 }) {
   const theme = useHubTheme();
+  const language = useLanguage();
   const away = active !== "home";
   return (
     <header className="hub-header">
@@ -161,9 +204,6 @@ export function Header({
         ))}
       </div>
       <div className="hub-header-right">
-        <button type="button" className="h-btn primary" onClick={onSleepHelp}>
-          Abnormal mouse sleep, click me!
-        </button>
         {demo ? (
           <div className="hub-tip" data-tip="Exit Demo Mode">
             <button type="button" className="hub-demo" data-on="true" onClick={onDemo}>
@@ -178,11 +218,6 @@ export function Header({
             </button>
           </div>
         )}
-        <PopIcon tip="Plugin Market" icon={<Puzzle size={20} strokeWidth={1.6} />} width={240}>
-          <p className="h-desc" style={{ margin: 8 }}>
-            The plugin market needs ATK online services. This local build does not connect to them.
-          </p>
-        </PopIcon>
         <div className="hub-tip" data-tip="Background Wallpaper">
           <button type="button" className="hub-icon-btn" aria-label="Background Wallpaper" onClick={() => onOpenPage("wallpaper")}>
             <Shirt size={20} strokeWidth={1.6} />
@@ -198,33 +233,24 @@ export function Header({
             {theme.dark ? <Moon size={20} strokeWidth={1.6} /> : <Sun size={20} strokeWidth={1.6} />}
           </button>
         </div>
-        <PopIcon tip="Language" icon={<Languages size={20} strokeWidth={1.6} />} width={160}>
-          {LANGUAGES.map((name) => (
-            <button key={name} type="button" className="hub-menu-item" disabled={name !== "English"} role="menuitemradio" aria-checked={name === "English"}>
+        <PopIcon tip="Language" icon={<Languages size={20} strokeWidth={1.6} />} width={170}>
+          {LANGUAGES.map(({ code, name }) => (
+            <button
+              key={code}
+              type="button"
+              className="hub-menu-item"
+              role="menuitemradio"
+              aria-checked={code === language}
+              lang={code}
+              translate="no"
+              onClick={() => setLanguage(code)}
+            >
               {name}
-              {name === "English" && <Check size={14} />}
+              {code === language && <Check size={14} />}
             </button>
           ))}
         </PopIcon>
-        <PopIcon tip="Log In" icon={<User size={20} strokeWidth={1.6} />} width={260}>
-          <div style={{ padding: 10 }}>
-            <strong style={{ fontSize: 16 }}>Welcome to ATK HOME</strong>
-            <p className="h-desc">
-              ATK accounts (cloud config, Config Square, game linking) need ATK servers. This local build keeps every setting on this computer.
-            </p>
-          </div>
-        </PopIcon>
-        <PopIcon tip="Message center" icon={<Bell size={20} strokeWidth={1.6} />} width={300}>
-          <div style={{ padding: 10 }}>
-            <strong>Message center</strong>
-            <p className="h-desc" style={{ textAlign: "center", margin: "24px 0" }}>
-              No more messages
-            </p>
-          </div>
-        </PopIcon>
-        <a className="hub-client" href="https://desktop.vxe.com/v3hub" target="_blank" rel="noopener noreferrer">
-          ATK HUB Client <Download size={13} />
-        </a>
+        <MessageCenter />
         <div className="hub-tip" data-tip="Settings">
           <button type="button" className="hub-icon-btn" aria-label="Settings" onClick={() => onOpenPage("settings")}>
             <Settings size={20} strokeWidth={1.6} />

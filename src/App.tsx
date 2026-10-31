@@ -7,6 +7,7 @@ import type { DeviceDefinition } from "./types/schema";
 import { Header } from "./hub/Header";
 import { Home } from "./hub/Home";
 import { SettingsPage, WallpaperPage, Wallpaper } from "./hub/Pages";
+import { notifyError } from "./hub/notifications";
 import "./hub/hub.css";
 
 import {
@@ -39,6 +40,8 @@ export function App() {
   const [screen, setScreen] = useState<Screen>({ kind: "home" });
   const [active, setActive] = useState("home");
   const [pages, setPages] = useState<("settings" | "wallpaper")[]>([]);
+  // Where each page was opened from, so Back returns there instead of always to Home.
+  const [returnTo, setReturnTo] = useState<Record<string, string>>({});
   const [demo, setDemo] = useState(false);
 
   async function selectDevice(
@@ -159,6 +162,12 @@ export function App() {
   ];
   const current = active === "device" && !deviceTab ? "home" : active;
 
+  // The screen a page was opened from, if it is still open.
+  function back(id: string) {
+    const target = returnTo[id] ?? "home";
+    return tabs.some((tab) => tab.id === target) ? target : "home";
+  }
+
   function closeTab(id: string) {
     if (id === "device") {
       setScreen({ kind: "home" });
@@ -169,7 +178,7 @@ export function App() {
 
   return (
     <ErrorBoundary>
-      <ToastProvider>
+      <ToastProvider onError={notifyError}>
         <div className="hub hub-toastfix">
           <Wallpaper />
           <Header
@@ -186,10 +195,9 @@ export function App() {
             }}
             onOpenPage={(id) => {
               setPages((list) => (list.includes(id) ? list : [...list, id]));
+              if (current !== id) setReturnTo((map) => ({ ...map, [id]: current }));
               setActive(id);
             }}
-            // Same help document the original header button opens.
-            onSleepHelp={() => window.open("https://www.yuque.com/yunyanyingraorenjian/atk/fo0btr419puekrzt", "_blank", "noopener")}
           />
           <Suspense fallback={<div className="hub-body" />}>
             {current === "home" && (
@@ -210,8 +218,8 @@ export function App() {
               />
             )}
             {current === "device" && screen.kind === "mouse" && deviceTab && <MousePage name={deviceTab.label} />}
-            {current === "settings" && <SettingsPage onBack={() => setActive("home")} />}
-            {current === "wallpaper" && <WallpaperPage onBack={() => setActive("home")} />}
+            {current === "settings" && <SettingsPage onBack={() => setActive(back("settings"))} />}
+            {current === "wallpaper" && <WallpaperPage onBack={() => setActive(back("wallpaper"))} />}
           </Suspense>
         </div>
       </ToastProvider>

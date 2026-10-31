@@ -893,10 +893,7 @@ export function ConfigSection({ onImport, onNew, onExport }: { onImport: () => v
             <CloudUpload size={20} />
           </span>
           Please upload the custom configuration on the left
-          <span>Login to use cloud configurations</span>
-          <button type="button" className="h-btn primary" disabled title="ATK account login is not available in this local build">
-            Log In
-          </button>
+          <span style={{ color: "var(--color-text-hint-60)" }}>Cloud configs need an ATK account, so they are not available here.</span>
         </div>
       </div>
     </div>

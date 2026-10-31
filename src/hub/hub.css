@@ -90,7 +90,7 @@ body {
   background-position: center;
   pointer-events: none;
 }
-.hub > :not(.hub-wallpaper) {
+.hub > :not(.hub-wallpaper, .cx-wallpaper) {
   position: relative;
   z-index: 1;
 }
@@ -1361,20 +1361,12 @@ html[data-ui-font="custom"] .hub {
 }
 .hp-page {
   display: flex;
-  gap: 24px;
+  flex-direction: column;
+  gap: 16px;
   padding: 24px;
 }
-.hp-nav {
+.hp-top {
   flex: none;
-  width: 380px;
-  display: flex;
-  gap: 120px;
-}
-.hp-nav > div {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  width: 140px;
 }
 .hp-back {
   display: flex;
@@ -1388,24 +1380,12 @@ html[data-ui-font="custom"] .hub {
   color: var(--color-text-head-100);
   white-space: nowrap;
 }
-.hp-nav-item {
-  height: 36px;
-  padding: 0 14px;
-  border: 0;
-  border-radius: 6px;
-  background: none;
-  cursor: pointer;
-  text-align: left;
-  color: var(--color-text-primary-65);
-}
-.hp-nav-item[aria-current="page"] {
-  background: var(--color-active);
-  color: var(--color-text-head-100);
-}
 .hp-content {
   flex: 1;
   min-width: 0;
-  max-width: 1000px;
+  width: 100%;
+  max-width: 1160px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -1426,7 +1406,7 @@ html[data-ui-font="custom"] .hub {
 }
 .hp-two {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 16px;
 }
 .hp-two > * {
@@ -1434,20 +1414,23 @@ html[data-ui-font="custom"] .hub {
   flex-direction: column;
   gap: 10px;
 }
-.hp-tools {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-top: 16px;
-}
-.hp-tools .h-btn {
-  overflow: hidden;
-  text-overflow: ellipsis;
+.hp-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  margin-top: 8px;
+  text-decoration: none;
 }
 .hp-wall {
   display: grid;
-  grid-template-columns: 288px 1fr;
+  grid-template-columns: minmax(260px, 300px) minmax(0, 1fr);
   gap: 16px;
+}
+@media (max-width: 980px) {
+  .hp-wall {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 .hp-mode {
   display: flex;
@@ -1496,7 +1479,7 @@ html[data-ui-font="custom"] .hub {
 }
 .hp-papers {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 20px 20px;
 }
 .hp-papers button {
@@ -2859,28 +2842,16 @@ html.dark .h-num .spin button + button {
   white-space: pre-line;
   padding: 1px 2px;
 }
-/* Settings page nav items may wrap. */
-.hp-nav-item {
-  height: auto;
-  min-height: 36px;
-  padding: 8px 14px;
-  line-height: 1.3;
-}
 /* General: long words in panels never push out of their box. */
 .fd-panel-body,
-.hk-controls,
-.hp-content {
+.hk-controls {
   overflow-wrap: anywhere;
+}
+.hp-content {
+  overflow-wrap: break-word;
 }
 .h-btn {
   max-width: 100%;
-}
-.hp-tools .h-btn {
-  height: auto;
-  min-height: 36px;
-  padding: 8px 16px;
-  white-space: normal;
-  line-height: 1.3;
 }
 .hub-device-card[data-kind="mouse"] .name {
   font-size: clamp(17px, 1.45vw, 21px);
@@ -3139,4 +3110,76 @@ button.fd-badge {
   font: inherit;
   font-size: 11px;
   cursor: pointer;
+}
+
+/* Message center: unread badge on the bell and the error list. */
+.hub-icon-btn {
+  position: relative;
+}
+.hub-badge {
+  position: absolute;
+  top: 2px;
+  right: 1px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: 999px;
+  background: var(--color-error, #e5484d);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 16px;
+  text-align: center;
+  box-shadow: 0 0 0 2px rgb(var(--base-background-color));
+}
+.hub-messages {
+  padding: 10px;
+}
+.hub-messages-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.hub-messages-head .h-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.hub-messages ul {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 320px;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  list-style: none;
+}
+.hub-messages li {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  background: rgba(var(--base-color), 0.05);
+}
+.hub-messages li .dot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  margin-top: 6px;
+  border-radius: 50%;
+  background: var(--color-error, #e5484d);
+}
+.hub-messages li p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--color-text-head-100);
+  overflow-wrap: anywhere;
+}
+.hub-messages li time {
+  font-size: 11px;
+  color: var(--color-text-hint-60);
 }

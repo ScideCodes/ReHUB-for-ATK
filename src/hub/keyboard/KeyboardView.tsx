@@ -68,7 +68,7 @@ function pollingRates(device: DeviceDefinition): KeyboardSettings["pollingRate"]
 
 // Keyboard lighting modes, titles and icons as the original lists them (demoMode.store, values 0-39).
 const MODES: [id: number, name: string, icon: string][] = [
-  [0, "Close", "flow"], [1, "Customization", "wind"], [2, "Single Color Constant", "neon"], [3, "Focus", "breath"],
+  [0, "Off", "flow"], [1, "Customization", "wind"], [2, "Single Color Constant", "neon"], [3, "Focus", "breath"],
   [4, "Up-Down Rainbow", "normal"], [5, "Left-Right Rainbow (Static)", "snow"], [6, "Monochrome Breath", "key"],
   [7, "Fluttering Ribbons", "run"], [8, "Laser", "dot"], [9, "Pinwheel", "flowers"], [11, "Vortex", "flowers"],
   [13, "Spectral Cycle", "flowers"], [14, "Streamer", "wave"], [19, "Colorful Swirls", "wave"], [23, "Double Vortex", "flower"],
@@ -794,8 +794,7 @@ function ConfigSection({ busy, exportMaps, importMaps, layout }: SectionProps) {
         <div className="h-grid-bg" style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 14 }}>
           <CloudUpload size={22} />
           Please upload the custom configuration on the left
-          <span>Login to use cloud configurations</span>
-          <button type="button" className="h-btn primary" disabled title="ATK account login is not available in this local build">Log In</button>
+          <span style={{ color: "var(--color-text-hint-60)" }}>Cloud configs need an ATK account, so they are not available here.</span>
         </div>
         <div style={{ padding: "16px 0 0" }}>
           <h3 className="h-title">Link Game/App</h3>

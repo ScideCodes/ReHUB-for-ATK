@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { Check, ChevronLeft, ImagePlus, Moon, Palette, Sun, Type, Wallpaper as WallpaperIcon } from "lucide-react";
+import { Check, ChevronLeft, ExternalLink, ImagePlus, Moon, Palette, Sun, Type, Wallpaper as WallpaperIcon } from "lucide-react";
 import { AppearanceLayer } from "../ui/console/Appearance";
 import {
   WALLPAPERS,
@@ -11,59 +11,44 @@ import {
 import { AtkLogo } from "./Header";
 import { Dropdown, Seg, Slider } from "./controls";
 import { setTheme, useHubTheme } from "./theme";
+import { LANGUAGES, setLanguage, useLanguage, type LanguageCode } from "../i18n/language";
 
 export const Wallpaper = AppearanceLayer;
 
-function PageFrame({ onBack, nav, active, onNav, children }: {
-  onBack: () => void;
-  nav: string[];
-  active: string;
-  onNav: (id: string) => void;
-  children: React.ReactNode;
-}) {
+function PageFrame({ onBack, children }: { onBack: () => void; children: React.ReactNode }) {
   return (
     <div className="hub-body">
       <main className="hub-main hp-page">
-        <aside className="hp-nav">
+        <div className="hp-top">
           <button type="button" className="hp-back" onClick={onBack}>
             <ChevronLeft size={18} /> Back
           </button>
-          <div>
-            {nav.map((item) => (
-              <button key={item} type="button" className="hp-nav-item" aria-current={item === active ? "page" : undefined} onClick={() => onNav(item)}>
-                {item}
-              </button>
-            ))}
-          </div>
-        </aside>
+        </div>
         <div className="hp-content">{children}</div>
       </main>
     </div>
   );
 }
 
-const SETTINGS_NAV = ["Interface Settings", "Firmware Tools", "Help", "About ATK HUB"];
-const FIRMWARE_TOOLS = [
-  "Mouse Firmware Tool", "Firmware Tools for 54 Series Mice", "Mouse Pairing",
-  "Firmware Tool for Magnetic Keyboard of Strong Wind Series", "ATK68 V2 / ATK68 V2 S",
-  "A87 Pro/ A98 Pro", "ATK RS7", "ATK68 V2 PRO", "YOGO 75", "ATK Horizon",
-];
+// The official driver can flash firmware; Re-HUB never sends bootloader commands.
+const OFFICIAL_DRIVER = "https://hub.atk.pro/";
 
 export function SettingsPage({ onBack }: { onBack: () => void }) {
   const theme = useHubTheme();
-  const [section, setSection] = useState(SETTINGS_NAV[0]);
-  const jump = (id: string) => {
-    setSection(id);
-    document.getElementById(`hp-${id.replace(/\s/g, "-")}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
+  const language = useLanguage();
   return (
-    <PageFrame onBack={onBack} nav={SETTINGS_NAV} active={section} onNav={jump}>
-      <section className="hp-card" id="hp-Interface-Settings">
+    <PageFrame onBack={onBack}>
+      <section className="hp-card">
         <h2>Interface Settings</h2>
         <div className="hp-two">
           <div>
             Language
-            <Dropdown label="Language" value="en" options={[{ value: "en", label: "English" }]} onChange={() => {}} />
+            <Dropdown
+              label="Language"
+              value={language}
+              options={LANGUAGES.map(({ code, name }) => ({ value: code, label: name }))}
+              onChange={(code) => setLanguage(code as LanguageCode)}
+            />
           </div>
           <div>
             Theme
@@ -80,18 +65,19 @@ export function SettingsPage({ onBack }: { onBack: () => void }) {
           </div>
         </div>
       </section>
-      <section className="hp-card" id="hp-Firmware-Tools">
+      <section className="hp-card">
         <h2>Firmware Tools</h2>
-        <p className="h-desc">Firmware update and DFU tools stay blocked: this build never sends the bootloader command (0x0D).</p>
-        <div className="hp-tools">
-          {FIRMWARE_TOOLS.map((tool) => (
-            <button key={tool} type="button" className="h-btn lg" disabled title="Blocked by Safe Mode">
-              {tool}
-            </button>
-          ))}
-        </div>
+        <p className="h-desc">Firmware updates are not available in Re-HUB.</p>
+        <p className="h-desc">
+          Updating firmware puts the device into bootloader (DFU) mode, and a failed or interrupted write there can leave it unusable.
+          Re-HUB permanently blocks those commands until they have been tested on real hardware.
+        </p>
+        <p className="h-desc">To update firmware, use the official ATK web driver, then come back here for your settings.</p>
+        <a className="h-btn primary hp-link" href={OFFICIAL_DRIVER} target="_blank" rel="noopener noreferrer">
+          Open the official ATK web driver <ExternalLink size={14} />
+        </a>
       </section>
-      <section className="hp-card" id="hp-Help">
+      <section className="hp-card">
         <h2>Help</h2>
         <p className="h-desc">
           Use a 2.4G receiver or a cable connection; Bluetooth is not recognized. Open Chrome, Edge, Brave or Opera for WebHID.
@@ -100,13 +86,13 @@ export function SettingsPage({ onBack }: { onBack: () => void }) {
           ATK help center
         </a>
       </section>
-      <section className="hp-card" id="hp-About-ATK-HUB">
-        <h2>About ATK HUB</h2>
+      <section className="hp-card">
+        <h2>About Re-HUB</h2>
         <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
           <span className="hub-logo" style={{ pointerEvents: "none" }}>
             <AtkLogo />
           </span>
-          <span className="h-desc">Local WebHID configurator · layout of ATK HUB 3.2.29 · no telemetry</span>
+          <span className="h-desc">Re-HUB for ATK · unofficial open-source WebHID configurator · no telemetry</span>
         </div>
       </section>
     </PageFrame>
@@ -120,7 +106,7 @@ export function WallpaperPage({ onBack }: { onBack: () => void }) {
   const [error, setError] = useState("");
   const papers = [{ id: "none", name: "Default", file: "" }, ...WALLPAPERS];
   return (
-    <PageFrame onBack={onBack} nav={["HUB Theme Personalization"]} active="HUB Theme Personalization" onNav={() => {}}>
+    <PageFrame onBack={onBack}>
       <div className="hp-wall">
         <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
           <section className="hp-card">
