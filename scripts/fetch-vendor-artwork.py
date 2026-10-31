@@ -22,8 +22,8 @@ for variant in product['variants']:
     if not target.exists():
         with urlopen(photo['src'], timeout=30) as response:
             with Image.open(BytesIO(response.read())) as image:
-                image.thumbnail((800, 800))
-                image.save(target, 'WEBP', quality=88)
+                image.thumbnail((1600, 1600))
+                image.save(target, 'WEBP', quality=92)
     records.append({'deviceName': 'VXE ' + model, 'color': color_id, 'image': '/' + target.relative_to(root / 'public').as_posix(), 'source': product_url, 'sourceImage': photo['src']})
 (root / 'src/devices/vendorArtwork.json').write_text(json.dumps(records, indent=2) + '\n')
 print(f'Cached {len(records)} exact manufacturer variant photos.')

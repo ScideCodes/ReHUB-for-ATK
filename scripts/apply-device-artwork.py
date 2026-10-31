@@ -47,8 +47,8 @@ def materialize(source):
             else:
                 data = source
             with Image.open(data) as image:
-                image.thumbnail((800, 800))
-                image.save(target, 'WEBP', quality=88)
+                image.thumbnail((1600, 1600))
+                image.save(target, 'WEBP', quality=92)
         return source, '/' + target.relative_to(ROOT / 'public').as_posix()
     except Exception as error:
         print(f'Unavailable: {source}: {error}')
