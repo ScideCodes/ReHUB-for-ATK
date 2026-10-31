@@ -217,7 +217,14 @@ export function Toast({
   );
 }
 
-export function ToastProvider({ children }: { children: ReactNode }) {
+export function ToastProvider({
+  children,
+  onError,
+}: {
+  children: ReactNode;
+  /** Receives the title of every error toast (the hub's message center keeps them). */
+  onError?: (title: string) => void;
+}) {
   const [messages, setMessages] = useState<(ToastMessage & { id: string })[]>(
     [],
   );
@@ -227,6 +234,7 @@ export function ToastProvider({ children }: { children: ReactNode }) {
     [],
   );
   const toast = useCallback((message: ToastMessage) => {
+    if (message.tone === "error") onError?.(message.title);
     const id =
       message.id ??
       (message.tone === "error"
@@ -236,7 +244,7 @@ export function ToastProvider({ children }: { children: ReactNode }) {
       [...items.filter((item) => item.id !== id), { ...message, id }].slice(-4),
     );
     return id;
-  }, []);
+  }, [onError]);
   const api = useMemo(() => ({ toast, dismiss }), [toast, dismiss]);
   return (
     <ToastContext.Provider value={api}>
