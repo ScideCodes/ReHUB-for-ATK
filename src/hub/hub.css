@@ -2558,15 +2558,16 @@ html.dark .h-dd[data-tone="hero"] .h-dd-trigger {
   display: grid;
   place-items: center;
 }
+/* Key labels are 5% larger than the original scale. */
 .hk-board .hk-key {
-  font-size: calc(var(--u, 54px) * 0.17);
+  font-size: calc(var(--u, 54px) * 0.1785);
   line-height: 1.15;
 }
 .hk-board .hk-key .t {
-  font-size: calc(var(--u, 54px) * 0.18);
+  font-size: calc(var(--u, 54px) * 0.189);
 }
 .hk-board .hk-key .b {
-  font-size: calc(var(--u, 54px) * 0.15);
+  font-size: calc(var(--u, 54px) * 0.1575);
 }
 .hk-light,
 .hk-trigger {
@@ -2806,7 +2807,7 @@ html.dark .h-num .spin button + button {
   width: calc(var(--w) * var(--pu) + (var(--w) - 1) * 4px);
   height: min(46px, calc(var(--pu) * 0.82));
   margin-left: calc(var(--g) * (var(--pu) + 4px));
-  font-size: min(13px, calc(var(--pu) * 0.24));
+  font-size: min(13.65px, calc(var(--pu) * 0.252));
 }
 
 /* Quicker entrances so pages feel instant */
@@ -2972,8 +2973,9 @@ html.dark .fd-badge {
 
 /* ---------- Light Setting: original ATK markup/CSS (hub.atk.pro 3.2.29 ConfigPage, keyboard and colour picker) ---------- */
 /* Original base-background-color equals our --base-color in both themes, so its rgba(...) tokens map onto --base-color. */
+/* The mode column grows past the original 356px on wider screens so names fit. */
 .hk-light {
-  grid-template-columns: minmax(0, 356px) 1px minmax(0, 1fr) 1px minmax(0, 1fr);
+  grid-template-columns: minmax(0, clamp(356px, 32vw, 460px)) 1px minmax(0, 1fr) 1px minmax(0, 1fr);
 }
 .hk-light .hk-label {
   margin: 0;
@@ -2985,34 +2987,35 @@ html.dark .fd-badge {
 .hk-modes,
 .fdk .hk-modes {
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 8px;
+  gap: 6px;
   margin-top: 8px;
 }
 .hk-modes button,
 .fdk .hk-modes button {
-  height: 32px;
-  min-height: 0;
+  height: auto;
+  min-height: 32px;
   gap: 0;
-  padding: 0 4px 0 16px;
+  padding: 2px 4px 2px 10px;
   border-radius: 4px;
   background: rgba(var(--base-color), 0.06);
   color: rgba(var(--base-color), 0.85);
-  font-size: 14px;
+  font-size: 13px;
   line-height: normal;
 }
+/* Long effect names wrap onto a second line instead of being cut off with an ellipsis. */
 .hk-modes button span {
   flex: 1;
   min-width: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  overflow-wrap: normal;
+  white-space: normal;
+  overflow-wrap: break-word;
+  text-align: left;
+  line-height: 1.2;
 }
 .hk-modes button i {
   flex: none;
   width: 12px;
   height: 12px;
-  margin-right: 8px;
+  margin-right: 6px;
   background: currentColor;
   mask: center / contain no-repeat;
 }
@@ -3064,7 +3067,7 @@ html.dark .hub-main.split:has(.hk-light) .hk-board {
   border-radius: 3px;
   background: var(--hk-key-bg);
   color: rgb(var(--base-color));
-  font-size: 9px;
+  font-size: 9.45px;
   line-height: 1.15;
   transition: background-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), border 0.3s cubic-bezier(0.4, 0, 0.2, 1),
     transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
