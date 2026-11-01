@@ -4,7 +4,7 @@ labels: [hardware-test]
 body:
   - type: markdown
     attributes:
-      value: Thank you! Follow [HARDWARE_TEST.md](../blob/main/HARDWARE_TEST.md) and back up your settings first.
+      value: Follow the [hardware checklist](https://github.com/ScideCodes/ReHUB-for-ATK/blob/desktop-source/HARDWARE_TEST.md) and back up your settings first.
   - type: input
     id: device
     attributes:

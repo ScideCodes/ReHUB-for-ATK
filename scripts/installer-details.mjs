@@ -8,11 +8,21 @@ const require = createRequire(import.meta.url);
 export function enableDetails(source) {
   const hidden = '  SetDetailsPrint none';
   const enabled = '  SetDetailsPrint both ; ReHUB installation details';
-  if (source.includes(enabled)) return source;
+  if (source.includes(enabled)) return enableDirectoryGuard(source);
   if (source.split(hidden).length !== 2) {
     throw new Error('electron-builder NSIS template changed; review installer details logging.');
   }
-  return source.replace(hidden, enabled);
+  return enableDirectoryGuard(source.replace(hidden, enabled));
+}
+
+export function enableDirectoryGuard(source) {
+  const original = 'InitPluginsDir';
+  const replacement = 'InitPluginsDir\n!insertmacro rehubValidateInstallDir ; Validate before any old-version removal';
+  if (source.includes(replacement)) return source;
+  if (source.split(original).length !== 2) {
+    throw new Error('electron-builder install template changed; review install-directory safety.');
+  }
+  return source.replace(original, replacement);
 }
 
 export default async function () {

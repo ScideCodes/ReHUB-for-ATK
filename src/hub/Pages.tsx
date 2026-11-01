@@ -205,8 +205,12 @@ export function WallpaperPage({ onBack }: { onBack: () => void }) {
               const problem = checkUpload(file, "image");
               if (problem) return setError(problem);
               setError("");
-              await saveFile("wallpaper", file);
-              setAppearance({ wallpaper: "custom" });
+              try {
+                await saveFile("wallpaper", file);
+                setAppearance({ wallpaper: "custom" });
+              } catch {
+                setError("Image could not be saved on this device. Try another image or free some disk space.");
+              }
             }}
           />
         </div>

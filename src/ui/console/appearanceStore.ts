@@ -121,21 +121,32 @@ export function useAppearance() {
 
 // Uploaded wallpaper and font stay on this device (IndexedDB), like the original.
 const DB = "atk-hub-appearance";
+export const APPEARANCE_FILE_EVENT = "rehub-appearance-file-saved";
 function store(mode: IDBTransactionMode) {
   return new Promise<IDBObjectStore>((resolve, reject) => {
     const request = indexedDB.open(DB, 1);
     request.onupgradeneeded = () => request.result.createObjectStore("files");
     request.onerror = () => reject(request.error);
-    request.onsuccess = () => resolve(request.result.transaction("files", mode).objectStore("files"));
+    request.onsuccess = () => {
+      const db = request.result;
+      const transaction = db.transaction("files", mode);
+      transaction.addEventListener("complete", () => db.close());
+      transaction.addEventListener("abort", () => db.close());
+      resolve(transaction.objectStore("files"));
+    };
   });
 }
 export async function saveFile(key: "wallpaper" | "font", file: Blob | null) {
   const files = await store("readwrite");
   await new Promise((resolve, reject) => {
-    const request = file ? files.put(file, key) : files.delete(key);
-    request.onsuccess = resolve;
-    request.onerror = () => reject(request.error);
+    const transaction = files.transaction;
+    transaction.oncomplete = resolve;
+    transaction.onabort = () => reject(transaction.error ?? new Error("File could not be saved."));
+    transaction.onerror = () => reject(transaction.error);
+    if (file) files.put(file, key);
+    else files.delete(key);
   });
+  window.dispatchEvent(new CustomEvent(APPEARANCE_FILE_EVENT, { detail: key }));
 }
 export async function readFile(key: "wallpaper" | "font") {
   const files = await store("readonly");

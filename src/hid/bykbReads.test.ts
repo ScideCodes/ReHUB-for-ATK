@@ -116,6 +116,20 @@ it("rejects a BYKB collection that only exposes report ID 0, as the source SDK d
   expect(device.open).not.toHaveBeenCalled();
 });
 
+it("selects the nonzero BYKB output report when report 0 appears first", async () => {
+  const device = fakeBykb(bykb[0]);
+  device.collections[0].outputReports.unshift({ reportId: 0 });
+  const client = new KeyboardClient(bykb[0]);
+  try {
+    await client.connect(true);
+    const snapshot = await client.snapshot(() => {}, { scope: "base" });
+    expect(snapshot.settings.pollingRate).toBe(8000);
+    expect(device.sendReport.mock.calls.every(([reportId]) => reportId === 6)).toBe(true);
+  } finally {
+    await client.close();
+  }
+});
+
 // Frames captured from the source BYKB SDK driving a recording fake device (report ID 6), incl. their checksums.
 it("plans BYKB writes byte-identical to the source SDK trace", async () => {
   const { bykbWritePlan, sealBykbFrame } = await import("../protocol/keyboards/bykb");

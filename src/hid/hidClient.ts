@@ -78,6 +78,9 @@ export class HidClient {
   readonly diagnostics = new DeviceDiagnostics("mouse");
   private device: IHidDevice | HIDDevice | null = null;
   private isMock = false;
+  private generation = 0;
+  private reconnecting = false;
+  private connecting = 0;
   private pendingTransfers: Array<{
     commandId: number;
     eepromAddress?: number;
@@ -136,16 +139,25 @@ export class HidClient {
   public getDeviceInfo(): DeviceInfo {
     return { ...this.deviceInfo };
   }
+  public get sessionGeneration(): number {
+    return this.generation;
+  }
 
   public async connectMock(
     cid = 1,
     mid = 4,
     model?: DeviceDefinition,
   ): Promise<DeviceInfo> {
+    const generation = this.generation + 1;
     await this.disconnect();
+    if (generation !== this.generation) throw new Error("Mouse connection cancelled");
     this.isMock = true;
     const mock = new MockHidDevice(cid, mid, model);
     await mock.open();
+    if (generation !== this.generation) {
+      await mock.close();
+      throw new Error("Mouse connection cancelled");
+    }
     this.device = mock;
     this.diagnostics.attach(mock, "mock");
     this.device.oninputreport = this.handleInputReport.bind(this);
@@ -155,6 +167,8 @@ export class HidClient {
   }
 
   public async connectHardware(selected?: HIDDevice): Promise<DeviceInfo> {
+    const requestedGeneration = this.generation;
+    this.connecting++;
     try {
       if (typeof navigator === "undefined" || !navigator.hid) {
         throw new Error(
@@ -165,6 +179,7 @@ export class HidClient {
       const devices = selected
         ? [selected]
         : await navigator.hid.requestDevice({ filters: mouseFilters() });
+      if (requestedGeneration !== this.generation) throw new Error("Mouse connection cancelled");
       if (!devices || devices.length === 0) {
         throw new Error("No device selected");
       }
@@ -177,9 +192,15 @@ export class HidClient {
         throw new Error(
           `Select a supported mouse HID collection: ${mouseHidLabel(dev)}. Protocol unverified; use the local demo.`,
         );
+      const generation = this.generation + 1;
       await this.disconnect();
+      if (generation !== this.generation) throw new Error("Mouse connection cancelled");
       this.isMock = false;
       if (!dev.opened) await dev.open();
+      if (generation !== this.generation) {
+        if (this.device !== dev && dev.opened) await dev.close();
+        throw new Error("Mouse connection cancelled");
+      }
       this.device = dev;
       this.diagnostics.attach(dev, "hardware");
       this.device!.oninputreport = this.handleInputReport.bind(this);
@@ -189,13 +210,19 @@ export class HidClient {
     } catch (error) {
       this.diagnostics.error(error);
       throw error;
+    } finally {
+      this.connecting--;
     }
   }
 
   public async autoReconnect(): Promise<boolean> {
     if (typeof navigator === "undefined" || !navigator.hid) return false;
+    if (this.device || this.reconnecting || this.connecting) return false;
+    const generation = this.generation;
+    this.reconnecting = true;
     try {
       const devices = await navigator.hid.getDevices();
+      if (generation !== this.generation || this.device) return false;
       const match = devices.find(
         (d) =>
           mouseEndpointSupportsReal(d.vendorId, d.productId) &&
@@ -205,21 +232,19 @@ export class HidClient {
       );
 
       if (match) {
-        if (!match.opened) await match.open();
-        this.device = match;
-        this.diagnostics.attach(match, "hardware");
-        this.isMock = false;
-        this.device!.oninputreport = this.handleInputReport.bind(this);
-        await this.identifyDevice();
+        await this.connectHardware(match);
         return true;
       }
     } catch (e) {
       console.warn("Auto-reconnect error:", e);
+    } finally {
+      this.reconnecting = false;
     }
     return false;
   }
 
   public async disconnect(): Promise<void> {
+    this.generation++;
     const device = this.device;
     this.device = null;
     clearUntestedMouseWrites();
@@ -230,12 +255,7 @@ export class HidClient {
         new Error("Device disconnected before the command completed."),
       );
     }
-    if (device) {
-      device.oninputreport = null;
-      try {
-        if (device.opened) await device.close();
-      } catch { /* Optional reads retain defaults; transport failures remain in diagnostics. */ }
-    }
+    if (device) device.oninputreport = null;
     this.isMock = false;
     this.deviceInfo = {
       connected: false,
@@ -256,6 +276,11 @@ export class HidClient {
       onboardSlot: 0,
     };
     this.onStatusChange?.(this.deviceInfo);
+    if (device) {
+      try {
+        if (device.opened) await device.close();
+      } catch { /* A removed device may already be closed. */ }
+    }
   }
 
   private handleInputReport(e: { reportId: number; data: DataView }) {
@@ -394,6 +419,12 @@ export class HidClient {
 
   public async identifyDevice(): Promise<DeviceInfo> {
     if (!this.device) throw new Error("Device not connected");
+    const device = this.device;
+    const generation = this.generation;
+    const ensureSession = () => {
+      if (this.device !== device || this.generation !== generation)
+        throw new Error("Mouse connection cancelled");
+    };
 
     let vid = this.device.vendorId;
     let pid = this.device.productId;
@@ -428,8 +459,10 @@ export class HidClient {
         .join(".")
         .toUpperCase();
     } catch (e) {
+      ensureSession();
       console.warn("Could not read CID/MID:", e);
     }
+    ensureSession();
 
     // Source: demoMode.store-CXKd1LXo.js: tK; filter-B6RHekbD.js: ra
     // When connected to a receiver, runtime identity maps CID/MID to the paired mouse model.
@@ -462,8 +495,10 @@ export class HidClient {
       isCharging = batResp.getUint8(6) === 1;
       voltageMv = (batResp.getUint8(7) << 8) | batResp.getUint8(8);
     } catch (e) {
+      ensureSession();
       console.warn("Could not read battery:", e);
     }
+    ensureSession();
 
     try {
       // 3. Versions
@@ -471,7 +506,8 @@ export class HidClient {
         buildPacket(CompxOpcode.GetMouseVersion),
       );
       fwMouse = `${fwMouseResp.getUint8(5).toString(16)}.${fwMouseResp.getUint8(6).toString(16).padStart(2, "0")}`;
-    } catch { /* Optional reads retain defaults; transport failures remain in diagnostics. */ }
+    } catch { ensureSession(); /* Optional reads retain defaults; transport failures remain in diagnostics. */ }
+    ensureSession();
 
     if (isDongle) {
       try {
@@ -479,14 +515,16 @@ export class HidClient {
           buildPacket(CompxOpcode.GetDongleVersion),
         );
         fwDongle = `${fwDongleResp.getUint8(5).toString(16)}.${fwDongleResp.getUint8(6).toString(16).padStart(2, "0")}`;
-      } catch { /* Optional reads retain defaults; transport failures remain in diagnostics. */ }
+      } catch { ensureSession(); /* Optional reads retain defaults; transport failures remain in diagnostics. */ }
+      ensureSession();
 
       try {
         const rfResp = await this.transfer(
           buildPacket(CompxOpcode.GetWirelessMouseOnline),
         );
         rfOnline = rfResp.getUint8(5) === 1;
-      } catch { /* Optional reads retain defaults; transport failures remain in diagnostics. */ }
+      } catch { ensureSession(); /* Optional reads retain defaults; transport failures remain in diagnostics. */ }
+      ensureSession();
     }
 
     try {
@@ -495,14 +533,16 @@ export class HidClient {
         buildPacket(CompxOpcode.GetCurrentConfig),
       );
       onboardSlot = slotResp.getUint8(5);
-    } catch { /* Optional reads retain defaults; transport failures remain in diagnostics. */ }
+    } catch { ensureSession(); /* Optional reads retain defaults; transport failures remain in diagnostics. */ }
+    ensureSession();
 
     let connectType: number | undefined;
     try {
       // 5. Connect type (source Wt.getMouseInfo); trusted only when the reply repeats this mouse's CID/MID.
       const info = await this.transfer(createMouseInfoQuery(crypto.getRandomValues(new Uint8Array(4))));
       if (info.getUint8(9) === cid && info.getUint8(10) === mid && info.getUint8(11) <= 8) connectType = info.getUint8(11);
-    } catch { /* Optional reads retain defaults; transport failures remain in diagnostics. */ }
+    } catch { ensureSession(); /* Optional reads retain defaults; transport failures remain in diagnostics. */ }
+    ensureSession();
 
     // Model name resolution
     let name =

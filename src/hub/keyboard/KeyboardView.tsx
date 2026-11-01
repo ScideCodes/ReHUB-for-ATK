@@ -139,7 +139,7 @@ export function KeyboardView(viewProps: KeyboardViewProps) {
           </button>
         ))}
       </nav>
-      <div className="fd-section" key={section}>
+      <div className="fd-section" key={`${section}:${store.activeId}`}>
       {section === "light" && <LightSection {...props} />}
       {section === "trigger" && <TriggerSection {...props} />}
       {section === "keys" && <KeysSection {...props} />}

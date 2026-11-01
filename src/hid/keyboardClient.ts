@@ -168,7 +168,7 @@ export class KeyboardClient {
       }
       this.device = device;
       // BYKB SDK E(): first output report ID of the device's collection; 0 is rejected.
-      this.reportId = fixedId ?? collection(device)!.outputReports![0].reportId!;
+      this.reportId = fixedId ?? collection(device)!.outputReports!.find((report) => report.reportId !== 0)!.reportId!;
       this.diagnostics.attach(device, "hardware");
       this.readCache.clear();
       this.lastSnapshot = null;

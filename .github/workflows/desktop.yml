@@ -16,6 +16,7 @@ on:
       - 'electron-builder.yml'
       - '.github/workflows/desktop.yml'
   push:
+    branches: [desktop-source]
     tags: ['v*']
 
 permissions:
@@ -47,6 +48,10 @@ jobs:
           CSC_IDENTITY_AUTO_DISCOVERY: 'false'
       - name: Packaged application smoke
         run: node scripts/packaged-smoke.mjs "release/win-unpacked/ReHUB for ATK.exe"
+      - name: Installer directory safety fixtures
+        run: npm run test:desktop
+        env:
+          REHUB_REQUIRE_NSIS_TEST: '1'
       - name: Checksums
         shell: pwsh
         run: |

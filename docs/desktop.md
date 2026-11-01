@@ -50,7 +50,7 @@ npm run desktop:dist
 node scripts/packaged-smoke.mjs
 ```
 
-`desktop:dev` builds the site and opens it in Electron using `rehub://app/`; it does not require Vite to stay running. Rebuild/relaunch after editing. Browser development remains `npm run dev`.
+`desktop:dev` builds the internal renderer and opens it in Electron using `rehub://app/`; it does not require Vite to stay running. Rebuild/relaunch after editing. `npm run dev` is an alias for this desktop flow. No standalone browser launcher is distributed.
 
 `desktop:pack` builds an unpacked application under `release/win-unpacked`. `desktop:dist` builds the NSIS installer in `release/`. The icon is original generated artwork; regenerate with `node scripts/generate-desktop-icon.mjs`.
 

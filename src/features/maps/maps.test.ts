@@ -120,6 +120,20 @@ describe("offline map editor", () => {
 });
 
 describe("versioned map files", () => {
+  it("rejects duplicate button and stage identities before imported maps can be applied", () => {
+    const duplicateButtons = makeMap("a");
+    duplicateButtons.settings.buttons[1] = structuredClone(duplicateButtons.settings.buttons[0]);
+    expect(() => parseMapFile(JSON.stringify([duplicateButtons]))).toThrow(/invalid settings/);
+    const duplicateStages = makeMap("a");
+    duplicateStages.settings.dpiStages[1].stage = 0;
+    expect(() => parseMapFile(JSON.stringify([duplicateStages]))).toThrow(/invalid settings/);
+    const missingButtons = makeMap("a");
+    missingButtons.settings.buttons = [];
+    expect(() => parseMapFile(JSON.stringify([missingButtons]))).toThrow(/invalid settings/);
+    const impreciseTimer = makeMap("a");
+    impreciseTimer.settings.sleepTime = 61;
+    expect(() => parseMapFile(JSON.stringify([impreciseTimer]))).toThrow(/invalid settings/);
+  });
   it("roundtrips all settings and migrates existing array exports", () => {
     const maps = [makeMap("a"), makeMap("b")];
     maps[0].settings.sensorPowerMode = "LP";

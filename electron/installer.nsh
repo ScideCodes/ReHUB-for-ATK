@@ -1,6 +1,18 @@
 !include "FileFunc.nsh"
 !include "nsDialogs.nsh"
 
+!macro rehubValidateInstallDir
+  ReadRegStr $R0 SHELL_CONTEXT "${INSTALL_REGISTRY_KEY}" "InstallLocation"
+  Push $R0
+  Call RehubInstallDirectoryIsSafe
+  Pop $R0
+  ${If} $R0 != "1"
+    MessageBox MB_OK|MB_ICONSTOP "Choose an empty folder named ${APP_FILENAME}. Setup will not install into a folder containing unrelated files." /SD IDOK
+    SetErrorLevel 2
+    Quit
+  ${EndIf}
+!macroend
+
 !ifdef BUILD_UNINSTALLER
   Var rehubRemoveData
 !endif
@@ -92,6 +104,7 @@
 !macroend
 
 !macro customHeader
+  !include "${PROJECT_DIR}\electron\installer-safety.nsh"
   ShowInstDetails hide
   ShowUninstDetails hide
 !macroend
@@ -116,6 +129,13 @@
 !macro customUnInstall
   SetDetailsPrint both
   DetailPrint "Removing ReHUB from $INSTDIR"
+  ${IfNot} ${isUpdated}
+    ; Electron uses the explicit AppUserModelID or its product-name fallback.
+    DeleteRegValue HKCU "Software\Microsoft\Windows\CurrentVersion\Run" "${APP_ID}"
+    DeleteRegValue HKCU "Software\Microsoft\Windows\CurrentVersion\Explorer\StartupApproved\Run" "${APP_ID}"
+    DeleteRegValue HKCU "Software\Microsoft\Windows\CurrentVersion\Run" "electron.app.${PRODUCT_NAME}"
+    DeleteRegValue HKCU "Software\Microsoft\Windows\CurrentVersion\Explorer\StartupApproved\Run" "electron.app.${PRODUCT_NAME}"
+  ${EndIf}
   DetailPrint "Removing application shortcuts and Windows uninstall registration."
   ${If} $rehubRemoveData == "1"
     DetailPrint "Removing saved desktop profiles, settings and cached data."

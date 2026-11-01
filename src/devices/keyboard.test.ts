@@ -163,16 +163,16 @@ describe("isolated keyboard mock", () => {
     ).toBe(false);
     expect(() => new KeyboardMock(DEVICE_REGISTRY[0])).toThrow(/keyboard/);
   });
-  it("rejects reordered matrix keys in imported ATK68 maps", async () => {
+  it("rejects reordered matrix keys and mislabeled layouts in imported maps", async () => {
     const { KeyboardBackupSchema } = await import("../store/keyboardStore");
     const settings = createKeyboardSettings();
     [settings.keys[0], settings.keys[1]] = [settings.keys[1], settings.keys[0]];
-    // Settings alone may belong to any layout; an ATK68 map must keep the writer's matrix order.
+    // Settings alone may belong to any layout; a map must match its declared layout's matrix order.
     expect(KeyboardSettingsSchema.safeParse(settings).success).toBe(true);
     const backup = (layout?: string) => ({ kind: "atk-keyboard-maps", version: 1, maps: [{ id: "a", name: "A", ...(layout && { layout }), settings }] });
     expect(KeyboardBackupSchema.safeParse(backup()).success).toBe(false);
     expect(KeyboardBackupSchema.safeParse(backup("atk68")).success).toBe(false);
-    expect(KeyboardBackupSchema.safeParse(backup("hex80")).success).toBe(true);
+    expect(KeyboardBackupSchema.safeParse(backup("hex80")).success).toBe(false);
   });
   it("rejects duplicate matrix positions", () => {
     const settings = createKeyboardSettings();

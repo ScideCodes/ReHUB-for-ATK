@@ -3,7 +3,6 @@ import { persist } from "zustand/middleware";
 import { z } from "zod";
 import {
   createKeyboardSettings,
-  isAtk68Order,
   KeyboardSettingsSchema,
   type KeyboardSettings,
 } from "../devices/keyboardSettings";
@@ -19,8 +18,13 @@ const MapSchema = z
     settings: KeyboardSettingsSchema,
   })
   .refine(
-    (m) => m.layout !== ATK68_LAYOUT_KEY || isAtk68Order(m.settings),
-    "ATK68 map must follow the ATK68 matrix order",
+    (m) => {
+      const keys = rowsForLayout(m.layout).flat();
+      return m.settings.keys.length === keys.length && keys.every((key, index) =>
+        m.settings.keys[index].row === key.index[0] && m.settings.keys[index].col === key.index[1],
+      );
+    },
+    "Keyboard map must follow its layout's matrix order",
   );
 export const KeyboardBackupSchema = z
   .object({
@@ -46,7 +50,7 @@ type State = {
   remove: (id?: string) => void;
   undo: () => void;
   redo: () => void;
-  importMaps: (value: unknown) => void;
+  importMaps: (value: unknown, layout?: string) => void;
   /** Selects a map of this layout for the keyboard being opened, creating a default one if none exists. */
   useLayout: (layout: string) => void;
 };
@@ -170,11 +174,15 @@ export const useKeyboardStore = create<State>()(
           future: s.future.slice(1),
         });
       },
-      importMaps(value) {
+      importMaps(value, layout) {
         const parsed = KeyboardBackupSchema.parse(value);
+        const selected = layout
+          ? parsed.maps.find((map) => map.layout === layout)
+          : parsed.maps[0];
+        if (!selected) throw new Error("Backup has no maps for this keyboard layout.");
         set({
           maps: parsed.maps,
-          activeId: parsed.maps[0].id,
+          activeId: selected.id,
           past: [],
           future: [],
         });

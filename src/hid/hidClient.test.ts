@@ -27,6 +27,61 @@ afterEach(async () => {
 });
 
 describe("HID report routing", () => {
+  it("changes the connection generation even when reconnecting the same mouse", async () => {
+    await client.connectHardware(device as unknown as HIDDevice);
+    const generation = client.sessionGeneration;
+    await client.disconnect();
+    await client.connectHardware(device as unknown as HIDDevice);
+    expect(client.sessionGeneration).toBeGreaterThan(generation);
+  });
+  it("does not replace an active mouse when another supported endpoint connects", async () => {
+    await client.connectHardware(device as unknown as HIDDevice);
+    const other = new MockHidDevice();
+    const open = vi.spyOn(other, "open");
+    vi.mocked(navigator.hid.getDevices).mockResolvedValue([other] as unknown as HIDDevice[]);
+    expect(await client.autoReconnect()).toBe(false);
+    expect(open).not.toHaveBeenCalled();
+    expect(device.opened).toBe(true);
+    expect(device.oninputreport).toBeTypeOf("function");
+  });
+  it("coalesces hotplug discovery and cancels discovery on disconnect", async () => {
+    device.opened = false;
+    let discovered!: (value: HIDDevice[]) => void;
+    vi.mocked(navigator.hid.getDevices).mockImplementation(() => new Promise((resolve) => { discovered = resolve; }));
+    const reconnect = client.autoReconnect();
+    expect(await client.autoReconnect()).toBe(false);
+    await client.disconnect();
+    discovered([device] as unknown as HIDDevice[]);
+    expect(await reconnect).toBe(false);
+    expect(device.opened).toBe(false);
+    expect(navigator.hid.getDevices).toHaveBeenCalledOnce();
+  });
+  it("closes an opening device if the connection is cancelled before open resolves", async () => {
+    device.opened = false;
+    let finishOpen!: () => void;
+    vi.spyOn(device, "open").mockImplementation(() => new Promise<void>((resolve) => {
+      finishOpen = () => { device.opened = true; resolve(); };
+    }));
+    const connecting = client.connectHardware(device as unknown as HIDDevice);
+    const rejected = expect(connecting).rejects.toThrow(/cancelled/);
+    await vi.waitFor(() => expect(device.open).toHaveBeenCalledOnce());
+    await client.disconnect();
+    finishOpen();
+    await rejected;
+    expect(device.opened).toBe(false);
+    expect(client.getDeviceInfo().connected).toBe(false);
+  });
+  it("never publishes connected status after disconnect interrupts identification", async () => {
+    vi.mocked(client.identifyDevice).mockRestore();
+    vi.spyOn(device, "sendReport").mockResolvedValue();
+    const connecting = client.connectHardware(device as unknown as HIDDevice);
+    const rejected = expect(connecting).rejects.toThrow(/cancelled/);
+    await vi.waitFor(() => expect(device.sendReport).toHaveBeenCalledOnce());
+    await client.disconnect();
+    await rejected;
+    expect(client.getDeviceInfo().connected).toBe(false);
+    expect(device.opened).toBe(false);
+  });
   it("identifies the selected mouse collection without opening a second picker", async () => {
     await client.connectHardware(device as unknown as HIDDevice);
     expect(device.opened).toBe(true);

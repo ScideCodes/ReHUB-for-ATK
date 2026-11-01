@@ -1,28 +1,28 @@
-# Contributing to Re-HUB for ATK
+# Contributing
 
-Thanks for helping out! Real-hardware reports are the most valuable contribution right now. Use the **Hardware test report** issue template.
+Development takes place on the public `desktop-source` branch. The default `main` branch contains download documentation.
 
-## Setup
+## Development
 
-```bash
+```powershell
+git clone --branch desktop-source https://github.com/ScideCodes/ReHUB-for-ATK.git
+cd ReHUB-for-ATK
 npm ci
 npm run dev
 ```
 
-Use demo mode for UI work: it never touches hardware.
+Use demo mode for interface work. It never opens physical devices.
 
-## Before you open a pull request
+## Pull requests
 
-- `npx tsc --noEmit`, `npm run lint` and `npm test` must pass. Run `npm run test:devices` when you touch device or protocol code.
-- Add a test for new logic. Bug fixes need a test that fails without the fix.
-- Keep changes focused: one concern per pull request.
+- Target `desktop-source` and keep changes focused.
+- Run type checking, lint, application tests, desktop tests, and `npm audit --audit-level=moderate`.
+- Run `npm run test:devices` for protocol changes, and the packaged smoke check for Electron or packaging changes.
+- Include a failing-before/passing-after regression test for a bug fix.
+- Describe what changed and any checks that could not be completed.
 
-## Ground rules for device code
+## Device changes
 
-- **Never invent protocol data.** Opcodes, layouts and capabilities must come from the original driver's source. Cite where they come from in the pull request.
-- **Never weaken a safety gate:** identity checks, `validateOutgoing`, per-family validators, EEPROM checks, write readback, the permanent DFU block, and the exclusion of `FF02` boot endpoints.
-- New write paths start in the opt-in "untested" tier until someone confirms them on real hardware.
+Never invent protocol data. Cite the original driver's source or reproducible device observations. Keep identity checks, outgoing-packet validation, readback checks, firmware-command blocks, and bootloader exclusions intact. New hardware writes remain unverified until tested on the relevant device under [HARDWARE_TEST.md](HARDWARE_TEST.md).
 
-## Style
-
-TypeScript strict, ESLint clean, and match the surrounding code. Comment the *why*, not the *what*.
+For ordinary support, use the app's reviewed device-report flow or GitHub Issues. Report vulnerabilities privately using [SECURITY.md](SECURITY.md).

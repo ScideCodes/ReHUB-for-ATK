@@ -16,6 +16,6 @@ Include steps to reproduce, the affected device family, and the redacted diagnos
 
 ## Desktop releases
 
-Download installers only from this repository's GitHub Releases. The current Windows installer is unsigned. Compare `Get-FileHash -Algorithm SHA256 .\ReHUB-Setup-1.5.0-x64.exe` with the accompanying `SHA256SUMS.txt` before running it. A checksum verifies that the download matches the published artifact; it does not replace publisher signing or code review.
+Download installers only from this repository's GitHub Releases. The current Windows installer is unsigned. Compare `Get-FileHash -Algorithm SHA256 .\ReHUB-Setup-1.5.1-x64.exe` with the accompanying `SHA256SUMS.txt` before running it. A checksum verifies that the download matches the published artifact; it does not replace publisher signing or code review.
 
-Desktop releases require a clean `npm audit --audit-level=moderate`, automated tests, and a packaged application smoke check. These checks cannot establish that all vulnerabilities are absent. See [the 1.5.0 security review](docs/security-review-1.5.0.md) for scope and limitations.
+Desktop releases require a clean `npm audit --audit-level=moderate`, automated tests, and a packaged application smoke check. These checks cannot establish that all vulnerabilities are absent. See [the 1.5.1 code review](docs/audit-1.5.1.md) for scope and limitations.

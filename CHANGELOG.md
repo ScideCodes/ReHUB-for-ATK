@@ -2,10 +2,28 @@
 
 All notable changes to Re-HUB for ATK. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions follow [Semantic Versioning](https://semver.org/).
 
-## [Unreleased]
+## [1.5.1] - 2026-11-01
+
+### Changed
+- ReHUB is now distributed as a Windows desktop application. The default branch is a download/documentation page, and complete buildable source is preserved on the public `desktop-source` branch and release source archives.
+- Removed standalone browser launchers, static-site preview commands, and the broken legacy screenshot command. `npm run dev` now opens the desktop application.
+- Rewrote repository, contribution, and support documentation around the desktop distribution.
 
 ### Fixed
 - The ATK help center button now opens `https://www.atk.store/pages/contact/?ref=xStore`, including from the Windows desktop app.
+- Supported-device hotplug cannot replace an active mouse session, and cancelled discovery/open/identification cannot revive a disconnected session.
+- Queued commands remain bound to the session that created them, including disconnect/reconnect of the same device.
+- Mouse configuration import rejects missing/duplicate buttons, invalid DPI stage identities, and timer values hardware cannot represent. Long deep-sleep settings preserve the independently supported standby timer.
+- BYKB keyboards select the valid nonzero output report when report zero is listed first.
+- Keyboard reset, backup import, and numeric shortcuts preserve the current device layout. Imported key matrices must match the selected layout and key order.
+- Recording shortcuts and unsaved macro editor state cannot leak into another keyboard map.
+- Mouse button remapping exposes its explicit save action on the current device screen.
+- Replacing a custom wallpaper or font refreshes the displayed asset, and failed local asset saves are handled.
+- Setup rejects unrelated nonempty folders before replacing an installation. Uninstall removes ReHUB's login startup registration while updates preserve it.
+
+### Verification
+- Repeated segment review, independent cross-review, and new failing-before/passing-after regression checks cover the fixes. The Windows workflow also executes compiled installer-directory safety fixtures after packaging.
+- Hardware, clean-machine installation, and destructive user-profile removal require separate validation; automated checks use mocks or temporary fixture folders.
 
 ## [1.5.0] - 2026-11-01
 
@@ -104,6 +122,7 @@ All notable changes to Re-HUB for ATK. The format follows [Keep a Changelog](htt
 - First public release: an unofficial, open-source, local-first WebHID configurator for ATK mice and keyboards, with read-back-verified writes, a demo mode, offline maps, diagnostics, light and dark themes, and a README, launch film, CI and contribution guides.
 
 [1.5.0]: https://github.com/ScideCodes/ReHUB-for-ATK/compare/v1.4.1...v1.5.0
+[1.5.1]: https://github.com/ScideCodes/ReHUB-for-ATK/compare/v1.5.0...v1.5.1
 [1.4.1]: https://github.com/ScideCodes/ReHUB-for-ATK/compare/v1.4.0...v1.4.1
 [1.4.0]: https://github.com/ScideCodes/ReHUB-for-ATK/compare/v1.3.2...v1.4.0
 [1.3.2]: https://github.com/ScideCodes/ReHUB-for-ATK/compare/v1.3.1...v1.3.2

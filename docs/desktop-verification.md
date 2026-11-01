@@ -1,6 +1,15 @@
 # Desktop verification — 2026-11-01
 
-## Release validation
+## 1.5.1 validation
+
+- 734 application tests across 71 files passed on the final tree. Eight desktop tests passed, including a compiled NSIS fixture covering nine installation-directory cases.
+- The complete device matrix passed: 342 mock device/profile scenarios across both mouse and keyboard matrix files.
+- Full ESLint and TypeScript checks, production renderer build, NSIS installer/uninstaller packaging, and hardened packaged smoke passed.
+- Development Electron smoke and renderer/report accessibility checks passed at 1440, 1100 and 900 pixels in both themes, with zero reported accessibility violations and no hardware commands.
+- Full dependency audit reported zero known vulnerabilities. Redacted history and staged-diff secret scans are required before publication.
+- Segment review and independent second-pass findings/fixes are recorded in [audit-1.5.1.md](audit-1.5.1.md).
+
+## 1.5.0 validation history
 
 - 712 application tests passed across 67 files, using the threads pool on this Windows workstation (the default fork pool stalled before reporting tests). Seven desktop policy/installer tests and targeted lint passed.
 - Production TypeScript/Vite build and NSIS installer/uninstaller packaging passed with electron-builder 26.18.1 and the pinned dependency overrides.

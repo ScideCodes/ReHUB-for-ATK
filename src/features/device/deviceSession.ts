@@ -281,7 +281,10 @@ export function createPacketQueue(
   let lastWrite = 0;
   return (input: Uint8Array, context: SendOptions = {}) => {
     const packet = new Uint8Array(input);
+    const connection = options.connectionKey?.();
     const run = async () => {
+      if (options.connectionKey && connection !== options.connectionKey())
+        throw new Error("The device connection changed during this command.");
       validateOutgoing(packet, options.safe(), options.hardware(), context);
       if (
         options.canWrite &&
@@ -290,7 +293,6 @@ export function createPacketQueue(
         !isMouseInfoQuery(packet)
       )
         throw new Error("Generic mode: settings writes are disabled.");
-      const connection = options.connectionKey?.();
       for (let attempt = 0; attempt <= 3; attempt += 1) {
         await (options.wait ?? wait)(
           Math.max(0, 20 - (Date.now() - lastWrite)),
@@ -375,7 +377,7 @@ export function installDeviceBridge() {
     canWrite: () => isKnownDevice() && isMouseSessionVerified(),
     connectionKey: () => {
       const info = hidClient.getDeviceInfo();
-      return `${info.connected}:${info.vendorId}:${info.productId}:${info.serial}`;
+      return `${hidClient.sessionGeneration}:${info.connected}:${info.vendorId}:${info.productId}:${info.serial}`;
     },
     log: appendLog,
   });
@@ -770,7 +772,7 @@ export function buildApplyPlan(
   unavailable: readonly (keyof DeviceSettings)[] = [],
   sensor: string | null = "PAW3950Ultra",
 ) {
-  const effective = clone(target);
+  const effective = DeviceSettingsSchema.parse(target);
   const buttonOrder = ["left", "right", "middle", "side1", "side2", "bottom"];
   effective.buttons.sort(
     (a, b) => buttonOrder.indexOf(a.id) - buttonOrder.indexOf(b.id),
@@ -904,8 +906,10 @@ export function buildApplyPlan(
   }
   // Source setMouseSleepTime also writes the st block with sensor sleep on and the same time (sensorSleepTime = sleepTime).
   if (effective.sleepTime !== previous.sleepTime && !unavailable.includes("sensorSleepTime")) {
-    effective.sensorSleepEnabled = true;
-    effective.sensorSleepTime = effective.sleepTime;
+    if (DeviceSettingsSchema.shape.sensorSleepTime.safeParse(effective.sleepTime).success) {
+      effective.sensorSleepEnabled = true;
+      effective.sensorSleepTime = effective.sleepTime;
+    } else skipped.push("Deep sleep was updated; the standby timer keeps its independently supported value.");
   }
   const changed = (keys: (keyof DeviceSettings)[]) =>
     keys.some((key) => different(effective[key], previous[key]));
@@ -1042,6 +1046,8 @@ export async function applySettingsToDevice(
     ? holdUnsupportedForModel(DeviceSettingsSchema.parse(settings), store.activeSettings, info.cid, info.mid, info.connectType)
     : { target: DeviceSettingsSchema.parse(settings), held: [] };
   const target = held.target;
+  if (!target.dpiStages.length || target.activeDpiStage >= target.dpiStages.length)
+    throw new Error("Choose an active DPI stage from the available stages before applying.");
   // Competitive MAX is offered by the source only on CID 1 mice (CID 2 needs a server firmware threshold).
   if (!info.isMock && !untested && target.sensorPowerMode === "MAX" && info.cid !== 1 && store.activeSettings.sensorPowerMode !== "MAX") {
     target.sensorPowerMode = store.activeSettings.sensorPowerMode;

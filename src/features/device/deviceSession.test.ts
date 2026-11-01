@@ -74,6 +74,26 @@ describe("HID console safety", () => {
 });
 
 describe("serialized HID queue", () => {
+  it("rejects a queued packet when the device changes before its turn", async () => {
+    let connection = "mouse-a";
+    let finish!: (value: DataView) => void;
+    const send = vi.fn(() => new Promise<DataView>((resolve) => { finish = resolve; }));
+    const queue = createPacketQueue(send, {
+      safe: () => true,
+      hardware: () => false,
+      connectionKey: () => connection,
+      wait: immediate,
+    });
+    const first = queue(buildPacket(4));
+    const queued = queue(buildPacket(7, 0, 1, [1]));
+    const rejected = expect(queued).rejects.toThrow(/connection changed/);
+    await vi.waitFor(() => expect(send).toHaveBeenCalledOnce());
+    connection = "mouse-b";
+    finish(response(buildPacket(4)));
+    await first;
+    await rejected;
+    expect(send).toHaveBeenCalledOnce();
+  });
   it("allows only one command in flight and paces consecutive writes", async () => {
     let active = 0;
     let maximum = 0;
@@ -158,6 +178,20 @@ describe("serialized HID queue", () => {
 });
 
 describe("map apply planning", () => {
+  it("keeps long deep-sleep timers from generating invalid standby settings", () => {
+    const previous = DeviceSettingsSchema.parse({});
+    const target = { ...previous, sleepTime: 900 };
+    const plan = buildApplyPlan(target, previous, false);
+    expect(DeviceSettingsSchema.safeParse(plan.effectiveSettings).success).toBe(true);
+    expect(plan.effectiveSettings.sensorSleepTime).toBe(previous.sensorSleepTime);
+    expect(plan.packets.map((packet) => (packet[2] << 8) | packet[3])).toEqual([169]);
+    expect(plan.skipped.join(" ")).toMatch(/standby/);
+  });
+  it("rejects timers the ten-second hardware units cannot represent exactly", () => {
+    const settings = DeviceSettingsSchema.parse({});
+    for (const key of ["sleepTime", "sensorSleepTime"] as const)
+      expect(() => buildApplyPlan({ ...settings, [key]: 61 }, settings, false)).toThrow();
+  });
   it("sends no packets for identical settings", () => {
     const settings = DeviceSettingsSchema.parse({});
     expect(buildApplyPlan(settings, settings, false).packets).toEqual([]);

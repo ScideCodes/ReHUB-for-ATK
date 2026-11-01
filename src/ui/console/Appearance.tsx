@@ -3,6 +3,7 @@ import { Palette } from "lucide-react";
 import { Button, Dialog, Segmented, Slider, ThemeToggle } from "../index";
 import {
   WALLPAPERS,
+  APPEARANCE_FILE_EVENT,
   checkUpload,
   readFile,
   saveFile,
@@ -20,12 +21,26 @@ export function AppearanceLayer() {
   useEffect(() => {
     if (appearance.wallpaper !== "custom") return setCustom(null);
     let url: string | null = null;
-    void readFile("wallpaper").then((blob) => {
-      if (!blob) return;
-      url = URL.createObjectURL(blob);
-      setCustom(url);
-    });
+    let generation = 0;
+    const load = () => {
+      const current = ++generation;
+      void readFile("wallpaper").then((blob) => {
+        if (current !== generation) return;
+        if (url) URL.revokeObjectURL(url);
+        url = blob ? URL.createObjectURL(blob) : null;
+        setCustom(url);
+      }).catch(() => {
+        if (current === generation) setCustom(null);
+      });
+    };
+    const saved = (event: Event) => {
+      if ((event as CustomEvent).detail === "wallpaper") load();
+    };
+    load();
+    window.addEventListener(APPEARANCE_FILE_EVENT, saved);
     return () => {
+      generation++;
+      window.removeEventListener(APPEARANCE_FILE_EVENT, saved);
       if (url) URL.revokeObjectURL(url);
     };
   }, [appearance.wallpaper]);
@@ -33,11 +48,29 @@ export function AppearanceLayer() {
     const root = document.documentElement;
     root.dataset.uiFont = appearance.font;
     if (appearance.font !== "custom") return;
-    void readFile("font").then(async (blob) => {
-      if (!blob) return;
-      const face = new FontFace(CUSTOM_FONT, await blob.arrayBuffer());
-      document.fonts.add(await face.load());
-    });
+    let generation = 0;
+    let loaded: FontFace | null = null;
+    const load = () => {
+      const current = ++generation;
+      void readFile("font").then(async (blob) => {
+        if (!blob || current !== generation) return;
+        const face = await new FontFace(CUSTOM_FONT, await blob.arrayBuffer()).load();
+        if (current !== generation) return;
+        if (loaded) document.fonts.delete(loaded);
+        document.fonts.add(face);
+        loaded = face;
+      }).catch(() => {});
+    };
+    const saved = (event: Event) => {
+      if ((event as CustomEvent).detail === "font") load();
+    };
+    load();
+    window.addEventListener(APPEARANCE_FILE_EVENT, saved);
+    return () => {
+      generation++;
+      window.removeEventListener(APPEARANCE_FILE_EVENT, saved);
+      if (loaded) document.fonts.delete(loaded);
+    };
   }, [appearance.font]);
   const preset = WALLPAPERS.find((paper) => paper.id === appearance.wallpaper);
   const src = preset ? `/themes/${preset.file}` : custom;

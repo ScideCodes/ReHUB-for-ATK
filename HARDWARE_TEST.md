@@ -3,7 +3,7 @@
 Status: **not run on physical devices**. Fake HID checks prove application flow and packet/readback handling only.
 
 ## Preparation
-- Use a Chromium browser over localhost. Run `npm run dev` from the project and open the printed local URL.
+- Use the Windows desktop application. For source builds, run `npm run dev` from the `desktop-source` checkout; it opens ReHUB directly.
 - Close atk-hub.exe, hub.atk.pro and other configurators that could hold the HID collection.
 - Keep Safe Mode on. Back up maps with the existing export action. Never select a boot/FF02 collection, pair, flash firmware, calibrate or reset during this checklist.
 - Test one device at a time. Record app version, browser version, connection type and pass/fail locally. Copied diagnostics deliberately omit device names, serials and payloads; do not add them when sharing.

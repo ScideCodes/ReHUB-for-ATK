@@ -285,10 +285,11 @@ export function KeyboardWorkspace({
   }, [mode, settings, device]);
   useEffect(() => {
     const key = (e: KeyboardEvent) => {
+      if (e.defaultPrevented) return;
       const target = e.target as HTMLElement;
       if (
         target.closest(
-          "input,textarea,select,[contenteditable=true],.keyboard-recording,[role=dialog],[role=listbox],[role=menu],[role=combobox]",
+          "input,textarea,select,[contenteditable=true],.keyboard-recording,.hk-recorder,[role=dialog],[role=listbox],[role=menu],[role=combobox]",
         )
       )
         return;
@@ -297,7 +298,7 @@ export function KeyboardWorkspace({
         history(e.shiftKey ? "redo" : "undo");
       }
       if (!e.ctrlKey && !e.metaKey && /^[1-9]$/.test(e.key)) {
-        const next = store.maps[+e.key - 1];
+        const next = store.maps.filter((map) => map.layout === layoutFor(device).key)[+e.key - 1];
         if (next) {
           e.preventDefault();
           store.select(next.id);
@@ -583,7 +584,7 @@ export function KeyboardWorkspace({
         title="Import keyboard maps"
         description="Replace your keyboard maps with this validated backup? Mouse maps are unchanged."
         onConfirm={() => {
-          store.importMaps(importValue);
+          store.importMaps(importValue, layoutFor(device).key);
           setImportValue(null);
         }}
         confirmLabel="Replace keyboard maps"
@@ -614,7 +615,7 @@ export function KeyboardWorkspace({
             : "This simulates the calibration lifecycle without sending hardware commands."
         }
         onConfirm={() => {
-          if (confirm === "defaults") store.edit(createKeyboardSettings());
+          if (confirm === "defaults") store.edit(createKeyboardSettings(layoutFor(device).rows));
           else {
             mock.current?.startCalibration();
             setCalibrating(true);

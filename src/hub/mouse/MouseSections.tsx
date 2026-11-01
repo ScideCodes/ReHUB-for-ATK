@@ -39,6 +39,7 @@ import { NumBox, OptionRow, Seg, Slider, Switch, Tip } from "../controls";
 import { SlotChip } from "../Sidebar";
 import { actionLabel, DEFAULT_LABELS, KEYBOARD_OPTIONS, SYSTEM_GROUPS, type ActionOption } from "./buttonActions";
 import { useMouseMacros, type MouseMacro } from "./macroStore";
+import { ButtonSave } from "../../ui/liquid/LiveControls";
 
 function useMouseImage() {
   const info = useConfigStore((s) => s.deviceInfo);
@@ -115,6 +116,7 @@ export function KeyChangeSection() {
         <button type="button" className="h-btn" onClick={() => editSetting("buttons", defaults)}>
           Restore Default
         </button>
+        <ButtonSave />
       </div>
       {selected && (
         <ActionDrawer

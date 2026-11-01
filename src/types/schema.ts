@@ -74,15 +74,18 @@ export const DeviceSettingsSchema = z.object({
   rollingDelay: z.number().int().min(0).max(50).default(10),
 
   // Power & Sleep
-  sleepTime: z.number().int().min(10).max(900).default(60), // seconds
+  sleepTime: z.number().int().min(10).max(900).multipleOf(10).default(60), // seconds, stored in units of 10
   sensorSleepEnabled: z.boolean().default(true),
-  sensorSleepTime: z.number().int().min(10).max(300).default(60),
+  sensorSleepTime: z.number().int().min(10).max(300).multipleOf(10).default(60),
 
   // DPI
   activeDpiStage: z.number().int().min(0).max(7).default(1),
   dpiButtonEnabled: z.boolean().default(true),
   // Factory defaults: zod 4 only shallow-copies a default value, so nested objects would be shared between parses.
-  dpiStages: z.array(DpiStageSchema).default(() => [
+  dpiStages: z.array(DpiStageSchema).max(8).refine(
+    (stages) => stages.every((stage, index) => stage.stage === index),
+    "DPI stage IDs must match their positions.",
+  ).default(() => [
     { stage: 0, xDpi: 400, yDpi: 400, color: "#ef4444", enabled: true },
     { stage: 1, xDpi: 800, yDpi: 800, color: "#FF6A1A", enabled: true },
     { stage: 2, xDpi: 1600, yDpi: 1600, color: "#10b981", enabled: true },
@@ -93,7 +96,10 @@ export const DeviceSettingsSchema = z.object({
   dongleRgbMode: z.number().int().min(0).max(3).default(1), // 0: Off, 1: Polling, 2: Battery, 3: Low Battery
 
   // Buttons
-  buttons: z.array(ButtonActionSchema).default((): z.infer<typeof ButtonActionSchema>[] => [
+  buttons: z.array(ButtonActionSchema).length(6).refine(
+    (buttons) => new Set(buttons.map((button) => button.id)).size === 6,
+    "Each mouse button must appear exactly once.",
+  ).default((): z.infer<typeof ButtonActionSchema>[] => [
     {
       id: "left",
       label: "Left Click",
