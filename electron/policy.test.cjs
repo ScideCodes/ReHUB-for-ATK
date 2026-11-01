@@ -63,4 +63,8 @@ test("chooser exposes no serials and excludes boot collections", () => {
     safeDevices([{ ...device, collections: [{ usagePage: 0xff02 }] }]).length,
     0,
   );
+  assert.equal(
+    safeDevices([{ ...device, collections: [{ usagePage: 1, children: [{ usagePage: 0xff02 }] }] }]).length,
+    0,
+  );
 });

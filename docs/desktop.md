@@ -10,7 +10,7 @@ Minimize uses the normal Windows taskbar. In Settings > Desktop app, optionally 
 
 Device access requires choosing a device; no automatic blanket HID permissions. Electron retains permission for the current window lifetime. You may need to select the device again after restarting. Existing saved browser settings are separate from the desktop profile; export/import maps to transfer them.
 
-**Check for updates** contacts GitHub Releases only when clicked. If a newer stable version exists, the app provides a GitHub download link; download and run the installer yourself. There is no updater service, silent download or background telemetry. Installation preserves the desktop profile in Electron's userData directory. Uninstall retains that profile so reinstalling can restore your maps/preferences.
+**Check for updates** contacts GitHub Releases only when clicked. If a newer stable version exists, the app provides a GitHub download link; download and run the installer yourself. There is no updater service, silent download or background telemetry. Installation preserves the desktop profile in Electron's userData directory. Uninstall retains that profile by default; the removal checkbox deletes it if selected.
 
 The current local build is unsigned. Windows may display an unknown-publisher warning. Verify the release source and SHA-256 checksum; code signing is separate from the open-source build and requires the maintainer's signing credentials. No credentials are embedded in the app.
 
@@ -47,6 +47,7 @@ npm run test:desktop
 npm run test:desktop:smoke
 npm run test:support:browser
 npm run desktop:dist
+node scripts/packaged-smoke.mjs
 ```
 
 `desktop:dev` builds the site and opens it in Electron using `rehub://app/`; it does not require Vite to stay running. Rebuild/relaunch after editing. Browser development remains `npm run dev`.
@@ -62,7 +63,9 @@ The Windows desktop workflow builds artifacts on relevant pull requests, version
 - External navigation only opens allowlisted HTTPS destinations in the user's browser. No remote pages execute inside the app.
 - Chromium's HID blocklist and all existing protocol permission, identity, outgoing-packet and readback guards remain intact.
 - Chooser permissions and packet inspection are distinct: report collection never connects or probes unknown hardware.
+- Packaged security fuses disable Node-mode startup, Node options injection and Node inspector arguments, enforce ASAR-only application loading, and validate embedded ASAR integrity.
+- Dependency overrides address build-tool advisories; Windows packaging and the hardened executable are smoke-tested. See [the release security review](security-review-1.5.0.md).
 
 ## Verification limits
 
-Unit tests and automated Electron smoke checks use metadata/fake interfaces and never write physical hardware. A passing installer build is not physical-device certification. Test the installer on a clean Windows machine before publishing a release, and perform the existing hardware checklist separately with the relevant devices.
+Unit tests and automated Electron smoke checks use metadata/fake interfaces and never write physical hardware. A passing installer build is not physical-device certification. This release has not completed a clean-machine install/uninstall cycle; perform that validation and the existing hardware checklist separately before relying on it for a particular device.

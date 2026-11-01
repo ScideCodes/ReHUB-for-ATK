@@ -75,7 +75,7 @@
     "acorn": "8.19.0",
     "autoprefixer": "^10.4.20",
     "electron": "45.2.1",
-    "electron-builder": "26.18.0",
+    "electron-builder": "26.18.1",
     "eslint": "10.13.0",
     "globals": "17.13.0",
     "happy-dom": "^21.0.3",
@@ -89,5 +89,13 @@
     "vite": "^6.2.0",
     "vitest": "^4.1.12"
   },
-  "main": "electron/main.cjs"
+  "main": "electron/main.cjs",
+  "overrides": {
+    "minimatch": "11.0.3",
+    "@electron/asar": {
+      ".": "4.3.1",
+      "glob": "14.0.3"
+    },
+    "@electron/universal": "3.0.6"
+  }
 }

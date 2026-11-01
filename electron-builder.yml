@@ -12,6 +12,12 @@ files:
   - package.json
   - LICENSE
 asar: true
+electronFuses:
+  runAsNode: false
+  enableNodeOptionsEnvironmentVariable: false
+  enableNodeCliInspectArguments: false
+  enableEmbeddedAsarIntegrityValidation: true
+  onlyLoadAppFromAsar: true
 beforePack: scripts/installer-details.mjs
 win:
   target:

@@ -1,4 +1,12 @@
-# Desktop verification — 2026-10-31
+# Desktop verification — 2026-11-01
+
+## Release validation
+
+- 712 application tests passed across 67 files, using the threads pool on this Windows workstation (the default fork pool stalled before reporting tests). Seven desktop policy/installer tests and targeted lint passed.
+- Production TypeScript/Vite build and NSIS installer/uninstaller packaging passed with electron-builder 26.18.1 and the pinned dependency overrides.
+- Development Electron smoke passed. Hardened packaged smoke passed: actual fuse values, secure custom origin, isolated renderer, HID availability, desktop preferences, report preview and public-issue consent.
+- Full npm audit and production-only audit reported zero known vulnerabilities. Gitleaks history scan found no secrets after documenting one exact historical protocol-prose false positive.
+- The source, release notes, Setup executable, and checksum are prepared for GitHub publication. The limits below remain applicable.
 
 ReHUB 1.5.0, Electron 45.2.1, Windows x64. Based on public repository commit e578b31.
 
@@ -38,7 +46,7 @@ npx playwright install chromium
 npm run test:support:browser
 npm run test:desktop:smoke
 npx electron-builder --win nsis --x64 --publish never
-node scripts/desktop-smoke.mjs "release/win-unpacked/ReHUB for ATK.exe"
+node scripts/packaged-smoke.mjs "release/win-unpacked/ReHUB for ATK.exe"
 ```
 
 Machine-readable smoke/browser evidence and screenshots are generated under ignored `audit/desktop/`. The Windows desktop workflow publishes the installer, checksum and test evidence as workflow artifacts, without creating a release.

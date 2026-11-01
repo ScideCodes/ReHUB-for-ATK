@@ -2,6 +2,26 @@
 
 All notable changes to Re-HUB for ATK. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.5.0] - 2026-11-01
+
+### Added
+- Windows x64 desktop installer: opens ReHUB directly without Node.js, npm, a separate browser, or a local server.
+- Optional close-to-tray and launch-at-login settings, device picker, and manual GitHub release checks.
+- Setup offers install/update or uninstall, with a live **Show details** log and a bundled uninstaller.
+- Uninstall asks whether to delete desktop profiles, settings, and cached data. Keeping data is the default; browser storage and exported files are untouched.
+- Community device reports collect VID/PID and HID report-layout metadata without opening the device or sending commands. Review and download the report or open a prefilled public GitHub issue with explicit consent.
+- Windows packaging workflow and SHA-256 checksums for downloadable installers.
+
+### Security
+- Sandboxed renderer, context isolation, validated IPC senders, restricted custom protocol, restrictive content policy, and allowlisted external HTTPS links.
+- Packaged Electron disables RunAsNode, Node options environment injection, and Node inspector arguments, and requires integrity-validated `app.asar` code.
+- Device picker excludes bootloader collections at every nesting level.
+- Updated packaging tooling and pinned transitive security fixes for minimatch and glob; release validation requires a clean npm vulnerability audit.
+
+### Notes
+- The Windows installer is unsigned. Review the release source and verify its SHA-256 checksum.
+- Automated tests use fake devices. Physical hardware writes and a clean-machine install/uninstall cycle have not been certified.
+
 ## [1.4.1] - 2026-10-31
 
 ### Fixed
@@ -78,6 +98,7 @@ All notable changes to Re-HUB for ATK. The format follows [Keep a Changelog](htt
 ### Added
 - First public release: an unofficial, open-source, local-first WebHID configurator for ATK mice and keyboards, with read-back-verified writes, a demo mode, offline maps, diagnostics, light and dark themes, and a README, launch film, CI and contribution guides.
 
+[1.5.0]: https://github.com/ScideCodes/ReHUB-for-ATK/compare/v1.4.1...v1.5.0
 [1.4.1]: https://github.com/ScideCodes/ReHUB-for-ATK/compare/v1.4.0...v1.4.1
 [1.4.0]: https://github.com/ScideCodes/ReHUB-for-ATK/compare/v1.3.2...v1.4.0
 [1.3.2]: https://github.com/ScideCodes/ReHUB-for-ATK/compare/v1.3.1...v1.3.2
