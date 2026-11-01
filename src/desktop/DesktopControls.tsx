@@ -60,7 +60,7 @@ export function DesktopDeviceChooser() {
                 onChange={() => setSelected(d.deviceId)}
               />
               <span>
-                {d.name}
+                {d.name === "Wireless mouse 8k dongle-H" || (d.vendorId === 0x373b && (d.productId === 0x11d8 || d.productId === 0x11cc || d.productId === 0x12cc)) ? "ATK Frost Zero Extreme" : d.name}
                 <br />
                 <small>
                   VID {d.vendorId.toString(16).padStart(4, "0")} / PID{" "}

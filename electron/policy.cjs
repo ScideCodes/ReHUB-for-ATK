@@ -50,6 +50,27 @@ function externalUrl(value) {
     return null;
   }
 }
+let knownNames = {};
+try {
+  knownNames = require("./deviceNames.json");
+} catch {
+  knownNames = {};
+}
+
+function getDeviceDisplayName(d) {
+  const vid = Number(d.vendorId || 0);
+  const pid = Number(d.productId || 0);
+  const key = `0x${vid.toString(16).toLowerCase()}:0x${pid.toString(16).toLowerCase()}`;
+  if (knownNames[key]) return knownNames[key];
+  if (vid === 0x373b && (pid === 0x11d8 || pid === 0x11cc || pid === 0x12cc)) {
+    return "ATK Frost Zero Extreme";
+  }
+  if (typeof d.name === "string" && /dongle-h/i.test(d.name)) {
+    return "ATK Frost Zero Extreme";
+  }
+  return String(d.name || "HID device").slice(0, 120);
+}
+
 function safeDevices(devices) {
   const hasBootCollection = (collections = []) =>
     collections.some((c) => c.usagePage === 0xff02 || hasBootCollection(c.children));
@@ -65,9 +86,9 @@ function safeDevices(devices) {
     .filter((d) => !hasBootCollection(d.collections) || hasConfigCollection(d.collections))
     .map((d) => ({
       deviceId: d.deviceId,
-      name: String(d.name || "HID device").slice(0, 120),
+      name: getDeviceDisplayName(d),
       vendorId: d.vendorId,
       productId: d.productId,
     }));
 }
-module.exports = { isAppUrl, assetPath, externalUrl, safeDevices };
+module.exports = { isAppUrl, assetPath, externalUrl, safeDevices, getDeviceDisplayName };

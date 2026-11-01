@@ -7359,24 +7359,26 @@
     "reportId": 8,
     "colorways": [
       {
-        "name": "Orange Translucent",
-        "hex": "#F68641",
-        "id": "orange-translucent",
-        "image": "/devices/artwork/orange-transparent-082f64fa39.webp"
+        "name": "Ice translucent",
+        "hex": "#BDC9E2",
+        "id": "ice"
       },
       {
-        "name": "Ice Translucent",
-        "hex": "#BDC9E2",
-        "id": "ice-translucent",
-        "image": "/devices/artwork/ice-transparent-b14197c36a.webp"
+        "name": "Black",
+        "hex": "#000000",
+        "id": "black"
+      },
+      {
+        "name": "Orange",
+        "hex": "#F68641",
+        "id": "orange"
       }
     ],
     "images": [
-      "/devices/artwork/orange-transparent-082f64fa39.webp",
-      "/devices/artwork/ice-transparent-b14197c36a.webp"
-    ],
-    "cid": 1,
-    "mid": 4
+      "/devices/artwork/ice-transparent-70ba1c544b.webp",
+      "/devices/artwork/black-transparent-50c4b4214d.webp",
+      "/devices/artwork/orange-transparent-082f64fa39.webp"
+    ]
   },
   {
     "id": "wireless-mouse-8k-dongle-l-11d9",
@@ -7695,7 +7697,7 @@
       "dongleLed"
     ],
     "hardwareAccess": "verified",
-    "name": "Wireless mouse 8k dongle-H",
+    "name": "ATK Frost Zero Extreme",
     "VID": "0x373B",
     "PID": "0x12CC",
     "usagePage": 65284,
@@ -7718,7 +7720,11 @@
         "id": "orange"
       }
     ],
-    "images": []
+    "images": [
+      "/devices/artwork/ice-transparent-70ba1c544b.webp",
+      "/devices/artwork/black-transparent-50c4b4214d.webp",
+      "/devices/artwork/orange-transparent-082f64fa39.webp"
+    ]
   },
   {
     "id": "flow-7-11b3",

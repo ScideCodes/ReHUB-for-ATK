@@ -75,3 +75,15 @@ test("chooser exposes no serials and excludes boot collections", () => {
     0,
   );
 });
+
+test("chooser maps dongle and known device names to model names", () => {
+  const dongle = {
+    deviceId: "dongle-1",
+    name: "Wireless mouse 8k dongle-H",
+    vendorId: 0x373b,
+    productId: 0x11d8,
+  };
+  const list = safeDevices([dongle]);
+  assert.equal(list.length, 1);
+  assert.equal(list[0].name, "ATK Frost Zero Extreme");
+});

@@ -38,10 +38,10 @@ export function resolveDeviceName(
   mid: number,
   isMock: boolean = false,
 ): string {
-  if (cid === 1 && mid === 4) return "ATK ZERO EX";
+  if (cid === 1 && mid === 4) return "ATK Frost Zero Extreme";
   const found = findDeviceSpec(cid, mid);
   if (found) return found.name;
-  if (isMock) return "ATK ZERO EX (Mock Device)";
+  if (isMock) return "ATK Frost Zero Extreme (Mock Device)";
   if (cid > 0 || mid > 0) return `ATK Mouse (${cid}.${mid})`;
   return "ATK Universal Wireless Mouse";
 }
@@ -60,7 +60,7 @@ export interface ShowcaseDevice {
 export const SHOWCASE_DEVICES: readonly ShowcaseDevice[] = [
   {
     id: "zero-ex",
-    name: "ATK ZERO EX",
+    name: "ATK Frost Zero Extreme",
     family: "zero",
     sensor: "PAW3950 Ultra",
     cid: 1,

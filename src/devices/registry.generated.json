@@ -3319,7 +3319,7 @@
       "dongleLed"
     ],
     "hardwareAccess": "verified",
-    "name": "ATK ZERO EX",
+    "name": "ATK Frost Zero Extreme",
     "VID": "0x373B",
     "PID": "0x11CC",
     "usagePage": 65284,
@@ -7351,7 +7351,7 @@
       "dongleLed"
     ],
     "hardwareAccess": "verified",
-    "name": "Wireless mouse 8k dongle-H",
+    "name": "ATK Frost Zero Extreme",
     "VID": "0x373B",
     "PID": "0x11D8",
     "usagePage": 65284,
@@ -7374,7 +7374,11 @@
         "id": "orange"
       }
     ],
-    "images": []
+    "images": [
+      "/devices/artwork/ice-transparent-70ba1c544b.webp",
+      "/devices/artwork/black-transparent-50c4b4214d.webp",
+      "/devices/artwork/orange-transparent-082f64fa39.webp"
+    ]
   },
   {
     "id": "wireless-mouse-8k-dongle-l-11d9",
@@ -7693,7 +7697,7 @@
       "dongleLed"
     ],
     "hardwareAccess": "verified",
-    "name": "Wireless mouse 8k dongle-H",
+    "name": "ATK Frost Zero Extreme",
     "VID": "0x373B",
     "PID": "0x12CC",
     "usagePage": 65284,
@@ -7716,7 +7720,11 @@
         "id": "orange"
       }
     ],
-    "images": []
+    "images": [
+      "/devices/artwork/ice-transparent-70ba1c544b.webp",
+      "/devices/artwork/black-transparent-50c4b4214d.webp",
+      "/devices/artwork/orange-transparent-082f64fa39.webp"
+    ]
   },
   {
     "id": "flow-7-11b3",
