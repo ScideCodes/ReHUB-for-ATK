@@ -94,7 +94,6 @@ export function Toast({
   }, []);
   useEffect(() => {
     if (
-      tone === "error" ||
       duration <= 0 ||
       hovered ||
       focused ||

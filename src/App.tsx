@@ -50,8 +50,6 @@ export function App() {
     color: number,
     mock: boolean,
   ) {
-    if (useDeviceSession.getState().busy)
-      throw new Error("Wait for the current mouse operation.");
     if (device.kind === "keyboard") {
       // Configs are per keyboard model: switch to (or create) a map for this keyboard's key layout.
       useKeyboardStore.getState().useLayout(layoutFor(device).key);
@@ -110,15 +108,17 @@ export function App() {
           current.vendorId === Number(device.VID) &&
           current.productId === Number(device.PID)
         )
-          // Already connected: open the page now and re-read in the background (deviceOperation keeps it serialized).
-          void deviceOperation(async () => {
-            await refreshDevice();
-          }).catch((error) =>
-            useConfigStore.getState().setToast({
-              message: error instanceof Error ? error.message : String(error),
-              type: "error",
-            }),
-          );
+          // Already connected: open the page now and re-read in the background if not already busy.
+          if (!useDeviceSession.getState().busy) {
+            void deviceOperation(async () => {
+              await refreshDevice();
+            }).catch((error) =>
+              useConfigStore.getState().setToast({
+                message: error instanceof Error ? error.message : String(error),
+                type: "error",
+              }),
+            );
+          }
         else {
           const authorized = (await navigator.hid?.getDevices()) ?? [];
           const selected = authorized.find(
