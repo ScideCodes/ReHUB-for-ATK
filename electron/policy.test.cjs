@@ -36,6 +36,10 @@ test("assets stay inside dist and reject malformed paths", () => {
     assert.equal(assetPath(root, url), null);
 });
 test("external links are explicit HTTPS destinations", () => {
+  assert.equal(
+    externalUrl("https://www.atk.store/pages/contact/?ref=xStore"),
+    "https://www.atk.store/pages/contact/?ref=xStore",
+  );
   assert.ok(
     externalUrl(
       "https://github.com/ScideCodes/ReHUB-for-ATK/issues/new?body=hello",
@@ -47,6 +51,9 @@ test("external links are explicit HTTPS destinations", () => {
     "https://github.com/other/repo",
     "https://user@github.com/ScideCodes/ReHUB-for-ATK",
     "javascript:alert(1)",
+    "https://www.atk.store.evil/pages/contact/?ref=xStore",
+    "https://www.atk.store/other-page",
+    "https://www.yuque.com/yunyanyingraorenjian/atk",
   ])
     assert.equal(externalUrl(url), null);
 });

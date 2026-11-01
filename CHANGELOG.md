@@ -2,6 +2,11 @@
 
 All notable changes to Re-HUB for ATK. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions follow [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Fixed
+- The ATK help center button now opens `https://www.atk.store/pages/contact/?ref=xStore`, including from the Windows desktop app.
+
 ## [1.5.0] - 2026-11-01
 
 ### Added

@@ -43,8 +43,8 @@ function externalUrl(value) {
         (u.pathname === "/ScideCodes/ReHUB-for-ATK" ||
           u.pathname.startsWith("/ScideCodes/ReHUB-for-ATK/"))) ||
       u.hostname === "hub.atk.pro" ||
-      (u.hostname === "www.yuque.com" &&
-        u.pathname.startsWith("/yunyanyingraorenjian/atk"));
+      (u.hostname === "www.atk.store" &&
+        u.pathname === "/pages/contact/");
     return allowed ? u.href : null;
   } catch {
     return null;

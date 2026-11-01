@@ -90,7 +90,7 @@ export function SettingsPage({ onBack }: { onBack: () => void }) {
         <p className="h-desc">
           Use a 2.4G receiver or a cable connection; Bluetooth is not recognized. The desktop app includes WebHID. For the web version, use Chrome, Edge, Brave or Opera.
         </p>
-        <a className="h-btn" href="https://www.yuque.com/yunyanyingraorenjian/atk" target="_blank" rel="noopener noreferrer">
+        <a className="h-btn" href="https://www.atk.store/pages/contact/?ref=xStore" target="_blank" rel="noopener noreferrer">
           ATK help center
         </a>
       </section>
