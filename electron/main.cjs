@@ -9,6 +9,7 @@ const {
   ipcMain,
   shell,
   dialog,
+  screen,
 } = require("electron");
 const fs = require("node:fs/promises");
 const path = require("node:path");
@@ -144,12 +145,14 @@ async function start() {
     app.getPath("userData"),
     "desktop-preferences.json",
   );
+  let initialBounds = null;
   try {
     const p = JSON.parse(await fs.readFile(prefPath, "utf8"));
     preferences = {
       closeToTray: p.closeToTray === true,
       launchAtLogin: p.launchAtLogin === true,
     };
+    if (p.windowBounds) initialBounds = p.windowBounds;
   } catch {
     /* first launch */
   }
@@ -172,11 +175,26 @@ async function start() {
       return new Response("Not found", { status: 404 });
     }
   });
+  let defaultWidth = 1480;
+  let defaultHeight = 960;
+  try {
+    const primaryDisplay = screen?.getPrimaryDisplay();
+    if (primaryDisplay?.workArea) {
+      const { width: w, height: h } = primaryDisplay.workArea;
+      defaultWidth = Math.min(1480, Math.max(1200, Math.round(w * 0.85)));
+      defaultHeight = Math.min(960, Math.max(760, Math.round(h * 0.88)));
+    }
+  } catch {
+    defaultWidth = 1480;
+    defaultHeight = 960;
+  }
+
   window = new BrowserWindow({
-    width: 1280,
-    height: 850,
-    minWidth: 900,
-    minHeight: 650,
+    width: defaultWidth,
+    height: defaultHeight,
+    minWidth: 1024,
+    minHeight: 700,
+    center: true,
     show: false,
     title: "ReHUB for ATK",
     backgroundColor: "#161616",
@@ -190,6 +208,31 @@ async function start() {
       webviewTag: false,
     },
   });
+
+  if (initialBounds) {
+    try {
+      if (initialBounds.isMaximized) {
+        window.maximize();
+      } else if (
+        typeof initialBounds.width === "number" &&
+        typeof initialBounds.height === "number"
+      ) {
+        const displays = screen.getAllDisplays();
+        const isVisible = displays.some((d) => {
+          const { x, y, width, height } = d.bounds;
+          return (
+            initialBounds.x >= x &&
+            initialBounds.x + initialBounds.width <= x + width + 50 &&
+            initialBounds.y >= y &&
+            initialBounds.y + initialBounds.height <= y + height + 50
+          );
+        });
+        if (isVisible) {
+          window.setBounds(initialBounds);
+        }
+      }
+    } catch {}
+  }
   const session = window.webContents.session;
   const permitted = (permission) =>
     permission === "hid" || permission === "clipboard-sanitized-write";
@@ -333,7 +376,20 @@ async function start() {
   );
   tray.on("double-click", show);
   Menu.setApplicationMenu(null);
+  const saveWindowBounds = async () => {
+    if (!window || window.isDestroyed()) return;
+    try {
+      const isMax = window.isMaximized();
+      const bounds = isMax ? null : window.getBounds();
+      const next = {
+        ...preferences,
+        windowBounds: isMax ? { isMaximized: true } : { ...bounds, isMaximized: false },
+      };
+      await fs.writeFile(prefPath, JSON.stringify(next), "utf8");
+    } catch {}
+  };
   window.on("close", (event) => {
+    void saveWindowBounds();
     if (!quitting && preferences.closeToTray && !tray.isDestroyed()) {
       event.preventDefault();
       window.hide();
@@ -349,6 +405,7 @@ else {
   app.on("second-instance", show);
   app.on("before-quit", () => {
     quitting = true;
+    void saveWindowBounds();
     chooser.cancel();
   });
   app.on("window-all-closed", () => app.quit());
