@@ -3144,19 +3144,22 @@ button.fd-badge {
 }
 .hub-badge {
   position: absolute;
-  top: 2px;
-  right: 1px;
-  min-width: 16px;
-  height: 16px;
-  padding: 0 4px;
+  top: -4px;
+  right: -5px;
+  min-width: 15px;
+  height: 15px;
+  padding: 0 3px;
   border-radius: 999px;
   background: var(--color-error, #e5484d);
   color: #fff;
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 700;
-  line-height: 16px;
+  line-height: 15px;
   text-align: center;
-  box-shadow: 0 0 0 2px rgb(var(--base-background-color));
+  box-shadow: 0 0 0 1.5px rgb(var(--base-background-color));
+  pointer-events: none;
+  font-variant-numeric: tabular-nums;
+  z-index: 2;
 }
 .hub-messages {
   padding: 10px;
