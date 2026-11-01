@@ -1,21 +1,15 @@
 # Security policy
 
-Re-HUB talks to USB devices, so we take reports seriously, especially anything that could send an unintended HID report, bypass an identity or readback check, or reach firmware/boot commands.
+Report vulnerabilities privately through [GitHub Security Advisories](https://github.com/ScideCodes/ReHUB-for-ATK/security/advisories/new). Do not publish exploit details or sensitive diagnostics in ordinary issues.
 
-## Reporting
+Include the ReHUB version, affected component, reproduction steps, and redacted evidence. Never include device serials, keystrokes, passwords, access tokens, or private configuration files.
 
-Please **do not open a public issue.** Use GitHub's private advisory form instead:
-https://github.com/ScideCodes/ReHUB-for-ATK/security/advisories/new
+## Downloads
 
-Include steps to reproduce, the affected device family, and the redacted diagnostics report if relevant. You can expect an acknowledgement within a week.
+Obtain Setup only from this repository's Releases and verify it against the accompanying `SHA256SUMS.txt`. The installer is currently unsigned. A matching checksum establishes that a download matches the published artifact; it is not a substitute for code review or publisher signing.
 
-## Scope
+## Source and scope
 
-- In scope: this repository's code, including the WebHID transport, packet validators, write planners, file import, Electron bridge, and Windows installer/uninstaller.
-- Out of scope: ATK's own firmware, apps and services.
+The complete application source is available on the public [`desktop-source`](https://github.com/ScideCodes/ReHUB-for-ATK/tree/desktop-source) branch. The scope includes Electron, local storage/imports, device transports, packet validators, and installation/removal. ATK's firmware, stores, and services are maintained independently.
 
-## Desktop releases
-
-Download installers only from this repository's GitHub Releases. The current Windows installer is unsigned. Compare `Get-FileHash -Algorithm SHA256 .\ReHUB-Setup-1.5.0-x64.exe` with the accompanying `SHA256SUMS.txt` before running it. A checksum verifies that the download matches the published artifact; it does not replace publisher signing or code review.
-
-Desktop releases require a clean `npm audit --audit-level=moderate`, automated tests, and a packaged application smoke check. These checks cannot establish that all vulnerabilities are absent. See [the 1.5.0 security review](docs/security-review-1.5.0.md) for scope and limitations.
+See the [1.5.1 review and verification record](https://github.com/ScideCodes/ReHUB-for-ATK/blob/desktop-source/docs/audit-1.5.1.md) for reviewed segments and limits. Automated scans and fake-device tests do not certify physical hardware behavior or guarantee the absence of vulnerabilities.
