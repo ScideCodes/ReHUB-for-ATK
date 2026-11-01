@@ -1,3 +1,4 @@
+import { DesktopDeviceChooser } from './desktop/DesktopControls';
 import { mouseEndpointSupportsReal } from "./devices/mouseProtocols";
 
 import { ErrorBoundary, ToastProvider } from "./ui";
@@ -180,6 +181,7 @@ export function App() {
     <ErrorBoundary>
       <ToastProvider onError={notifyError}>
         <div className="hub hub-toastfix">
+          <DesktopDeviceChooser />
           <Wallpaper />
           <Header
             tabs={tabs}

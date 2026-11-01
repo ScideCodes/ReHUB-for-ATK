@@ -11,5 +11,11 @@ Include steps to reproduce, the affected device family, and the redacted diagnos
 
 ## Scope
 
-- In scope: this repository's code, including the WebHID transport, packet validators, write planners and file import.
+- In scope: this repository's code, including the WebHID transport, packet validators, write planners, file import, Electron bridge, and Windows installer/uninstaller.
 - Out of scope: ATK's own firmware, apps and services.
+
+## Desktop releases
+
+Download installers only from this repository's GitHub Releases. The current Windows installer is unsigned. Compare `Get-FileHash -Algorithm SHA256 .\ReHUB-Setup-1.5.0-x64.exe` with the accompanying `SHA256SUMS.txt` before running it. A checksum verifies that the download matches the published artifact; it does not replace publisher signing or code review.
+
+Desktop releases require a clean `npm audit --audit-level=moderate`, automated tests, and a packaged application smoke check. These checks cannot establish that all vulnerabilities are absent. See [the 1.5.0 security review](docs/security-review-1.5.0.md) for scope and limitations.

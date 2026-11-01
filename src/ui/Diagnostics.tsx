@@ -1,3 +1,4 @@
+import { DeviceReportButton } from '../support/DeviceReportDialog';
 import { useState, useSyncExternalStore } from "react";
 import { Activity, Copy } from "lucide-react";
 import { version } from "../../package.json";
@@ -87,6 +88,7 @@ function DiagnosticsContent({
             ? "Could not copy. Allow clipboard access and try again."
             : "Copy report keeps protocol headers; payloads and device names are removed."}
       </p>
+      <DeviceReportButton diagnostics={() => source.report(identity, mode)} />
       <dl className="diagnostics-identity" aria-label="HID identity">
         <div>
           <dt>VID / PID</dt>

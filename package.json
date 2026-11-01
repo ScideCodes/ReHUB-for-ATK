@@ -1,7 +1,7 @@
 {
   "name": "re-hub-for-atk",
   "private": true,
-  "version": "1.4.1",
+  "version": "1.5.0",
   "description": "Unofficial, open-source, local-first WebHID configurator for ATK mice and keyboards.",
   "license": "MIT",
   "author": "Scide",
@@ -24,7 +24,7 @@
     "typescript"
   ],
   "engines": {
-    "node": ">=20"
+    "node": ">=22.12.0"
   },
   "type": "module",
   "scripts": {
@@ -43,7 +43,13 @@
     "registry:generate": "node scripts/generate-registry.mjs",
     "layouts:generate": "node scripts/generate-keyboard-layouts.mjs",
     "prebuild": "npm run registry:generate",
-    "audit:colors": "node scripts/color-audit.mjs"
+    "audit:colors": "node scripts/color-audit.mjs",
+    "desktop:dev": "npm run build && electron .",
+    "desktop:pack": "npm run build && electron-builder --dir --win --x64",
+    "desktop:dist": "npm run build && electron-builder --win nsis --x64 --publish never",
+    "test:desktop": "node --test electron/*.test.cjs",
+    "test:desktop:smoke": "node scripts/desktop-smoke.mjs",
+    "test:support:browser": "node scripts/support-smoke.mjs"
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.3.0",
@@ -68,6 +74,8 @@
     "@vitejs/plugin-react": "^4.3.4",
     "acorn": "8.19.0",
     "autoprefixer": "^10.4.20",
+    "electron": "45.2.1",
+    "electron-builder": "26.18.1",
     "eslint": "10.13.0",
     "globals": "17.13.0",
     "happy-dom": "^21.0.3",
@@ -80,5 +88,14 @@
     "typescript-eslint": "8.72.0",
     "vite": "^6.2.0",
     "vitest": "^4.1.12"
+  },
+  "main": "electron/main.cjs",
+  "overrides": {
+    "minimatch": "11.0.3",
+    "@electron/asar": {
+      ".": "4.3.1",
+      "glob": "14.0.3"
+    },
+    "@electron/universal": "3.0.6"
   }
 }

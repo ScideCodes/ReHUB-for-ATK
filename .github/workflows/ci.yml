@@ -14,16 +14,21 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
       - run: npm ci
+      - run: npm audit --audit-level=moderate
       - name: Type-check
         run: npx tsc --noEmit
       - name: Lint
         run: npx eslint src
       - name: Unit and integration tests
         run: npm test
+      - name: Desktop policy tests
+        run: npm run test:desktop
       - name: Build
         run: npm run build

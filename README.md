@@ -57,13 +57,31 @@ Also included:
 - **Nine languages:** English, 简体中文, 繁體中文, 한국어, 日本語, Deutsch, Français, Русский and Türkçe, remembered between visits.
 - **Interface:** light and dark themes, background wallpapers on every screen, and a colourway picker per device.
 
+## Windows desktop app
+
+The desktop build opens ReHUB in its own window with no Node.js, terminal, browser setup or local server. It includes a device picker, optional close-to-tray and launch-at-login settings, and a manual GitHub update check.
+
+[**Download ReHUB Setup 1.5.0 for Windows x64**](https://github.com/ScideCodes/ReHUB-for-ATK/releases/download/v1.5.0/ReHUB-Setup-1.5.0-x64.exe) · [Release notes and SHA-256 checksum](https://github.com/ScideCodes/ReHUB-for-ATK/releases/tag/v1.5.0) · [Build from source](docs/desktop.md)
+
+Run Setup to install, update, or uninstall. **Show details** displays installation progress. Uninstall asks whether to keep or delete desktop profiles, settings, and cached data; keeping them is the default. The installer is unsigned, so Windows may show an unknown-publisher warning. Verify the source and checksum before running it.
+
+**Help improve device support:** use **Help support my device** in the header, Settings or Diagnostics. ReHUB collects identifiers and report-layout metadata without sending device commands. Review the report, then download it or open a prefilled public GitHub issue. GitHub sign-in is required; nothing is submitted automatically. [Desktop and device-report guide](docs/desktop.md).
+
 ## 🚀 Quick start
 
-You need two things:
+For the source/browser version, you need two things:
 - **Node.js:** download the **LTS** version from [nodejs.org](https://nodejs.org) and install it with the default options.
 - **A Chromium-based browser:** Chrome, Edge, Brave or Opera. Firefox and Safari don't support WebHID.
 
-### Windows: easiest way
+### Windows desktop: easiest way
+
+1. [Download ReHUB Setup](https://github.com/ScideCodes/ReHUB-for-ATK/releases/download/v1.5.0/ReHUB-Setup-1.5.0-x64.exe).
+2. Run it and choose **Install / update ReHUB for ATK**.
+3. Open **ReHUB for ATK** from the Start menu or desktop shortcut.
+
+The desktop version includes everything it needs. Node.js and a separate browser are only required for the source/browser setup below.
+
+### Windows: run the browser version from source
 
 1. On this page, click the green **Code** button, then **Download ZIP**.
 2. Right-click the downloaded ZIP, choose **Extract All…**, and open the extracted folder.
@@ -72,7 +90,7 @@ You need two things:
 The first start installs everything, which takes about a minute. After that your browser opens Re-HUB automatically.
 Keep the black window open while you use Re-HUB, and close it to stop. Next time, just double-click `start.bat` again.
 
-> If Windows asks for confirmation ("Windows protected your PC" or a security warning), click **More info** → **Run anyway**, or **Run**. `start.bat` is a short text file you can open in Notepad to check first.
+> Review the downloaded source before running it. `start.bat` is a short text file you can inspect in Notepad.
 
 ### macOS and Linux
 
