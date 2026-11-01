@@ -53,8 +53,16 @@ function externalUrl(value) {
 function safeDevices(devices) {
   const hasBootCollection = (collections = []) =>
     collections.some((c) => c.usagePage === 0xff02 || hasBootCollection(c.children));
+  const hasConfigCollection = (collections = []) =>
+    collections.some(
+      (c) =>
+        c.usagePage === 0xff04 ||
+        c.usagePage === 0xff00 ||
+        c.usagePage === 0xff01 ||
+        hasConfigCollection(c.children),
+    );
   return devices
-    .filter((d) => !hasBootCollection(d.collections))
+    .filter((d) => !hasBootCollection(d.collections) || hasConfigCollection(d.collections))
     .map((d) => ({
       deviceId: d.deviceId,
       name: String(d.name || "HID device").slice(0, 120),
