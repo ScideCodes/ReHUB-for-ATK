@@ -1,7 +1,7 @@
 <div align="center">
 
 <a href="https://www.youtube.com/watch?v=ck-0Ct8F_g4" title="Watch the ReHUB showcase on YouTube">
-  <img src="https://files.catbox.moe/h2os2d.png" alt="ReHUB for ATK — rebuilt in the open" width="100%" />
+  <img src="https://raw.githubusercontent.com/ScideCodes/ReHUB-for-ATK/main/docs/media/hero.png" alt="ReHUB for ATK — rebuilt in the open" width="100%" />
 </a>
 
 # ReHUB for ATK
@@ -47,8 +47,8 @@ ReHUB brings mouse and keyboard configuration into one desktop app — device-sp
 
 <div align="center">
 
-<a href="https://files.catbox.moe/jb6ccu.png">
-  <img src="https://files.catbox.moe/jb6ccu.png" alt="ReHUB home screen — device dashboard showing ATK F1 Ultimate 2.0, ATK RS6, and ATK x QK Hex80" width="100%" />
+<a href="https://raw.githubusercontent.com/ScideCodes/ReHUB-for-ATK/main/docs/media/home.png">
+  <img src="https://raw.githubusercontent.com/ScideCodes/ReHUB-for-ATK/main/docs/media/home.png" alt="ReHUB home screen — device dashboard showing ATK F1 Ultimate 2.0, ATK RS6, and ATK x QK Hex80" width="100%" />
 </a>
 
 *Device dashboard — pick your hardware and jump straight into configuration.*
@@ -60,28 +60,28 @@ ReHUB brings mouse and keyboard configuration into one desktop app — device-sp
 <table>
   <tr>
     <td width="50%" valign="top">
-      <a href="https://files.catbox.moe/g7cb1d.png">
-        <img src="https://files.catbox.moe/g7cb1d.png" alt="Mouse DPI stage editor with per-stage sensitivity sliders" width="100%" />
+      <a href="https://raw.githubusercontent.com/ScideCodes/ReHUB-for-ATK/main/docs/media/dpi-1.png">
+        <img src="https://raw.githubusercontent.com/ScideCodes/ReHUB-for-ATK/main/docs/media/dpi-1.png" alt="Mouse DPI stage editor with per-stage sensitivity sliders" width="100%" />
       </a>
       <br /><b>DPI stages</b><br />Per-stage sensitivity and colors, with independent X/Y values where the device supports it.
     </td>
     <td width="50%" valign="top">
-      <a href="https://files.catbox.moe/gch1cm.png">
-        <img src="https://files.catbox.moe/gch1cm.png" alt="Polling rate selector showing 8K selected, with sensor sampling options" width="100%" />
+      <a href="https://raw.githubusercontent.com/ScideCodes/ReHUB-for-ATK/main/docs/media/poll-8K.png">
+        <img src="https://raw.githubusercontent.com/ScideCodes/ReHUB-for-ATK/main/docs/media/poll-8K.png" alt="Polling rate selector showing 8K selected, with sensor sampling options" width="100%" />
       </a>
       <br /><b>Polling and sensor</b><br />Polling rates up to 8K and sensor firmware options for the ATK F1 device family.
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <a href="https://files.catbox.moe/qsk0m3.png">
-        <img src="https://files.catbox.moe/qsk0m3.png" alt="Mouse button assignment editor with labeled callouts on the device render" width="100%" />
+      <a href="https://raw.githubusercontent.com/ScideCodes/ReHUB-for-ATK/main/docs/media/keys-assigned.png">
+        <img src="https://raw.githubusercontent.com/ScideCodes/ReHUB-for-ATK/main/docs/media/keys-assigned.png" alt="Mouse button assignment editor with labeled callouts on the device render" width="100%" />
       </a>
       <br /><b>Button assignments</b><br />Mouse actions, keyboard shortcuts, DPI cycling, and config switching per button.
     </td>
     <td width="50%" valign="top">
-      <a href="https://files.catbox.moe/s99gwh.png">
-        <img src="https://files.catbox.moe/s99gwh.png" alt="Keyboard lighting editor with lighting effects, brightness, and per-key color picker" width="100%" />
+      <a href="https://raw.githubusercontent.com/ScideCodes/ReHUB-for-ATK/main/docs/media/kb-light.png">
+        <img src="https://raw.githubusercontent.com/ScideCodes/ReHUB-for-ATK/main/docs/media/kb-light.png" alt="Keyboard lighting editor with lighting effects, brightness, and per-key color picker" width="100%" />
       </a>
       <br /><b>Keyboard workspace</b><br />Lighting effects, key remapping, trigger travel, rapid trigger, and per-key RGB where supported.
     </td>
