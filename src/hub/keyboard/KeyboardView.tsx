@@ -846,7 +846,7 @@ function OtherSection({ device, color, setColor, mode, firmware, resetMap }: Sec
       <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
         <div className="h-card hm-other">
           <strong>Keyboard Firmware Version {firmware ? `V${firmware}` : ""}</strong>
-          <span>{firmware ? `Latest Version V${firmware}` : mode === "hardware" ? "Reading firmware…" : "Firmware is read when the keyboard is connected"}</span>
+          <span>{firmware ? <>Latest Version {`V${firmware}`}</> : mode === "hardware" ? "Reading firmware…" : "Firmware is read when the keyboard is connected"}</span>
         </div>
         <div className="h-card hm-other row">
           <span>

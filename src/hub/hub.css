@@ -67,7 +67,8 @@ body {
   color: var(--color-text-primary-85);
   background: var(--color-background-basic);
   user-select: none;
-  overflow: hidden;
+  /* clip, not hidden: focusing an element must never scroll the whole app sideways out of reach. */
+  overflow: clip;
 }
 .hub *,
 .hub *::before,
@@ -2592,6 +2593,22 @@ html.dark .h-dd[data-tone="hero"] .h-dd-trigger {
 .fd-panel[data-wide] {
   width: 960px;
 }
+/* Below 1268px the 960px panel ran past the window edge; keep it beside the device tile instead. */
+@media (max-width: 1267px) {
+  .fd-panel[data-wide] {
+    left: 288px;
+    width: auto;
+  }
+}
+@media (max-width: 1180px) {
+  .fd-dock button {
+    padding: 0 10px;
+    font-size: 13px;
+  }
+  .fd-dock button svg {
+    display: none;
+  }
+}
 .fd-stage:has(~ .fd-panel[data-wide]) {
   inset: 0 980px 96px 0;
 }
@@ -3246,4 +3263,11 @@ button.fd-badge {
   background: var(--tint);
   border-color: #6fcf8f;
   color: #0b3d1e;
+}
+
+/* Narrow windows: the wide panel's two-column parameter grid no longer fits, so stack it. Must follow the 1fr 1fr rule. */
+@media (max-width: 1267px) {
+  .fd-panel[data-wide] .fd-panel-body [style*="grid-template-columns: 581px"] {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
 }

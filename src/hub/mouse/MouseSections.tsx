@@ -828,7 +828,7 @@ export function ConfigSection({ onImport, onNew, onExport }: { onImport: () => v
           </div>
         ))}
         <p style={{ margin: "20px 0 12px", color: "var(--color-text-head-100)" }}>
-          Computer Config <small style={{ color: "var(--color-text-hint-60)", marginLeft: 6 }}>Stored locally on the computer.Temporarily occupies last onboard slot when applied</small>
+          Computer Config <small style={{ color: "var(--color-text-hint-60)", marginLeft: 6 }}>Stored locally on the computer. Temporarily occupies last onboard slot when applied</small>
         </p>
         {maps.length === 0 ? (
           <div className="h-grid-bg" style={{ height: 180, display: "grid", placeItems: "center" }}>
@@ -918,8 +918,8 @@ export function OtherSection() {
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: 8, paddingTop: 0 }}>
         <div className="h-card hm-other">
-          <strong>Firmware Version V{info.firmwareMouse || "—"}</strong>
-          <span>Latest VersionV {info.firmwareMouse || "—"}</span>
+          <strong>Firmware Version {info.firmwareMouse ? `V${info.firmwareMouse}` : "—"}</strong>
+          <span>Latest Version {info.firmwareMouse ? `V${info.firmwareMouse}` : "—"}</span>
         </div>
         <div className="h-card hm-other row">
           <strong>Pair Receiver</strong>

@@ -4,7 +4,7 @@ import { spawn } from "node:child_process";
 import { mkdirSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 
-const widths = (process.env.ATK_AUDIT_WIDTHS ?? "1440,1100,900")
+const widths = (process.env.ATK_AUDIT_WIDTHS ?? "1440,1100,1024,900")
   .split(",")
   .map(Number);
 const output = resolve(process.env.ATK_AUDIT_OUTPUT ?? "audit/phase1");
@@ -102,6 +102,10 @@ async function scan(page, screen, width, theme) {
     pageOverflow: await page.evaluate(() => ({
       horizontal: document.documentElement.scrollWidth > innerWidth,
       vertical: document.documentElement.scrollHeight > innerHeight,
+      // .hub clips its overflow, so content wider than the window is silently cut off.
+      clipped: [...document.querySelectorAll(".hub")].some(
+        (hub) => hub.scrollWidth > hub.clientWidth + 1,
+      ),
     })),
   });
   console.log(
@@ -221,6 +225,11 @@ try {
     throw new Error(`Unexpected audit state count: ${report.cases.length}`);
   if (report.cases.some((test) => test.violations.length))
     throw new Error("Browser audit found accessibility violations");
+  const clipped = report.cases.filter((test) => test.pageOverflow.clipped);
+  if (clipped.length)
+    throw new Error(
+      `Content runs past the window edge: ${clipped.map((test) => `${test.screen}@${test.width}`).join(", ")}`,
+    );
   if (
     report.errors.length ||
     report.console.some((entry) => entry.type === "error")
