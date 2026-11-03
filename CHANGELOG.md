@@ -23,7 +23,7 @@ All notable changes to ReHUB for ATK. The format follows [Keep a Changelog](http
 - The app no longer requests a missing `/favicon.ico`; it uses the bundled app icon.
 - **At the minimum window size (1024 px) the DPI, Parameter and Configuration panels ran off the right edge.** A fixed 960 px panel width overrode the narrow layout, so the second DPI column, sensor rotation and the **New** button were cut off. The panel now sits beside the device tile, and the parameter grid stacks into one column below 1268 px.
 - **Clicking a control could slide the whole app sideways with no way back.** The app root hid its overflow, so moving focus to a cut-off control scrolled the header and device tile off-screen. The root now clips instead.
-- **The bottom section dock was cut off below 1180 px** ("Other settings" hidden, active highlight misplaced). It now drops its icons and tightens spacing to fit.
+- **The bottom section dock was cut off below about 1300 px** ("Other settings" hidden, active highlight misplaced). It now drops its icons and tightens spacing below 1320 px, and fits in English, German, Russian, French and Turkish down to 1024 px.
 - "Latest VersionV 3.01" now reads "Latest Version V3.01", and an unknown firmware shows "—" instead of "V—".
 - The mouse Computer Config note was missing a space ("computer.Temporarily").
 - 21 interface strings stayed in English in every other language, including the sleep-time and calibration help text, the advanced-key names and descriptions (DKS, MT, TGL, SOCD), firmware labels, **Help support my device** and several button tooltips. They now have translations for all eight languages.
@@ -34,7 +34,7 @@ All notable changes to ReHUB for ATK. The format follows [Keep a Changelog](http
 - New regression test: selecting a mouse that is not connected starts a connection (fails before the fix, passes after).
 - Six unit tests that still expected the old model name were updated. Results: 735 unit tests, 342 mock-device scenarios, 8 desktop tests and the support-flow browser smoke all pass; the browser accessibility audit reports 0 axe violations across 90 screen, width and theme combinations.
 - An exploratory pass drove every demo device and section in all nine languages at 1024, 1180 and 1280 px, clicking each safe control and checking for page errors, console errors, off-screen controls, clipped text and untranslated strings. It found the layout and translation defects above.
-- The browser audit now also runs at 1024 px, the app's minimum window width, and fails when content runs past the window edge (fails before the layout fix, passes after).
+- The browser audit now also runs at 1024 and 1240 px and fails when content, including the section dock, runs past the window edge at any width the desktop window allows (fails before the layout fixes, passes after).
 - Not run here: the Electron desktop and packaged smoke tests (no Electron binary or Windows host), and `scripts/open-flow-cls.mjs`, which still targets a retired home screen and is not part of CI.
 
 ## [1.5.1] - 2026-11-01

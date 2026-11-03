@@ -4,7 +4,7 @@ import { spawn } from "node:child_process";
 import { mkdirSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 
-const widths = (process.env.ATK_AUDIT_WIDTHS ?? "1440,1100,1024,900")
+const widths = (process.env.ATK_AUDIT_WIDTHS ?? "1440,1240,1100,1024,900")
   .split(",")
   .map(Number);
 const output = resolve(process.env.ATK_AUDIT_OUTPUT ?? "audit/phase1");
@@ -102,8 +102,8 @@ async function scan(page, screen, width, theme) {
     pageOverflow: await page.evaluate(() => ({
       horizontal: document.documentElement.scrollWidth > innerWidth,
       vertical: document.documentElement.scrollHeight > innerHeight,
-      // .hub clips its overflow, so content wider than the window is silently cut off.
-      clipped: [...document.querySelectorAll(".hub")].some(
+      // .hub clips its overflow and the dock hides its scrollbar, so too-wide content is silently cut off.
+      clipped: [...document.querySelectorAll(".hub, nav.fd-dock")].some(
         (hub) => hub.scrollWidth > hub.clientWidth + 1,
       ),
     })),
@@ -225,7 +225,8 @@ try {
     throw new Error(`Unexpected audit state count: ${report.cases.length}`);
   if (report.cases.some((test) => test.violations.length))
     throw new Error("Browser audit found accessibility violations");
-  const clipped = report.cases.filter((test) => test.pageOverflow.clipped);
+  // The desktop window cannot be narrower than 1024px (electron/main.cjs minWidth).
+  const clipped = report.cases.filter((test) => test.width >= 1024 && test.pageOverflow.clipped);
   if (clipped.length)
     throw new Error(
       `Content runs past the window edge: ${clipped.map((test) => `${test.screen}@${test.width}`).join(", ")}`,

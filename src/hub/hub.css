@@ -2600,7 +2600,8 @@ html.dark .h-dd[data-tone="hero"] .h-dd-trigger {
     width: auto;
   }
 }
-@media (max-width: 1180px) {
+/* Full dock labels need about 1300px; compact it below that so the last section never hides off-edge. */
+@media (max-width: 1320px) {
   .fd-dock button {
     padding: 0 10px;
     font-size: 13px;
