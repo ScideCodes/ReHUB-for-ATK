@@ -4,16 +4,17 @@ import { createRoot } from "react-dom/client";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { AppearanceLayer } from "./Appearance";
 import { WallpaperPage } from "../../hub/Pages";
-import { APPEARANCE_FILE_EVENT, readFile, saveFile, setAppearance } from "./appearanceStore";
+import { APPEARANCE_FILE_EVENT, checkDecodes, readFile, saveFile, setAppearance } from "./appearanceStore";
 
 vi.mock("./appearanceStore", async (original) => ({
   ...await original<typeof import("./appearanceStore")>(),
-  readFile: vi.fn(), saveFile: vi.fn(),
+  readFile: vi.fn(), saveFile: vi.fn(), checkDecodes: vi.fn(),
 }));
 let host: HTMLDivElement, root: ReturnType<typeof createRoot>;
 beforeEach(() => {
   vi.stubGlobal("IS_REACT_ACT_ENVIRONMENT", true);
   vi.clearAllMocks();
+  vi.mocked(checkDecodes).mockResolvedValue(null);
   setAppearance({ wallpaper: "custom", font: "store" });
   vi.spyOn(URL, "createObjectURL").mockReturnValueOnce("blob:first").mockReturnValueOnce("blob:second");
   vi.spyOn(URL, "revokeObjectURL").mockImplementation(() => {});
@@ -54,6 +55,17 @@ it("shows a failed wallpaper save without changing the selected wallpaper", asyn
   Object.defineProperty(input, "files", { configurable: true, value: [new File(["image"], "paper.png", { type: "image/png" })] });
   await act(async () => input.dispatchEvent(new Event("change", { bubbles: true })));
   expect(host.querySelector('[role="alert"]')!.textContent).toContain("Image could not be saved");
+  expect(JSON.parse(localStorage.getItem("atk-hub-appearance")!).wallpaper).toBe("none");
+});
+it("rejects an image that cannot be decoded without saving it", async () => {
+  setAppearance({ wallpaper: "none" });
+  vi.mocked(checkDecodes).mockResolvedValue("This image could not be read. Try another file.");
+  await act(async () => root.render(<WallpaperPage onBack={() => {}} />));
+  const input = host.querySelector<HTMLInputElement>('input[type="file"]')!;
+  Object.defineProperty(input, "files", { configurable: true, value: [new File(["garbage"], "paper.png", { type: "image/png" })] });
+  await act(async () => input.dispatchEvent(new Event("change", { bubbles: true })));
+  expect(host.querySelector('[role="alert"]')!.textContent).toContain("could not be read");
+  expect(saveFile).not.toHaveBeenCalled();
   expect(JSON.parse(localStorage.getItem("atk-hub-appearance")!).wallpaper).toBe("none");
 });
 it("reloads replacement custom fonts and removes the previous face", async () => {

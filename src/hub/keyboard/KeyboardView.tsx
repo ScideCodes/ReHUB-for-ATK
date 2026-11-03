@@ -577,7 +577,7 @@ function AdvancedSection({ device, settings, edit, notice, layout }: SectionProp
 }
 
 /* ---------------- Axial Alignment ---------------- */
-// The official driver can recalibrate switches; Re-HUB does not send calibration commands to hardware.
+// The official driver can recalibrate switches; ReHUB does not send calibration commands to hardware.
 const OFFICIAL_DRIVER = "https://hub.atk.pro/";
 // Same green as the legend swatch.
 const CALIBRATED = "#b7ebc8";
@@ -627,7 +627,7 @@ function AxialSection({ settings, mode, calibrating, onCalibrate, notice, layout
       ) : (
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 12, maxWidth: 620, textAlign: "center" }}>
           <p style={{ margin: 0, lineHeight: "21px", color: "var(--color-text-head-100)" }}>
-            Switch calibration is not available in Re-HUB yet.
+            Switch calibration is not available in ReHUB yet.
           </p>
           <p className="h-desc" style={{ margin: 0 }}>
             Calibration rewrites the travel data stored on the keyboard, and those commands have not been tested on real hardware.
@@ -801,7 +801,7 @@ function ConfigSection({ busy, exportMaps, importMaps, layout }: SectionProps) {
             <span className="hm-slot-icon"><SlotChip n={slot + 1} /></span>
             <div className="hm-slot" data-active={slot === 0}>
               Config File{slot + 1}
-              {slot === 0 && <span className="hm-applying">Applying</span>}
+              {slot === 0 && <span className="hm-applying">In use</span>}
               <span style={{ flex: 1 }} />
               <FileText size={16} />
             </div>
@@ -813,7 +813,7 @@ function ConfigSection({ busy, exportMaps, importMaps, layout }: SectionProps) {
         {store.maps.filter((m) => m.layout === layout.key).map((map) => (
           <div key={map.id} className="hm-slot" data-active={map.id === store.activeId} style={{ marginBottom: 8 }}>
             <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{map.name}</span>
-            {map.id === store.activeId && <span className="hm-applying">Applying</span>}
+            {map.id === store.activeId && <span className="hm-applying">In use</span>}
             <span style={{ flex: 1 }} />
             {batch ? (
               <button type="button" className="h-btn danger" style={{ height: 26 }} disabled={store.maps.filter((m) => m.layout === layout.key).length <= 1} onClick={() => store.remove(map.id)}>Delete</button>

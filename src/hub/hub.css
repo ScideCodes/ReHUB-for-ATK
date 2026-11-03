@@ -878,6 +878,11 @@ html.dark .h-switch[aria-checked="true"]::after {
   top: auto !important;
   bottom: 24px !important;
 }
+/* Device pages float a section dock at the bottom; keep toasts above it so they never cover its buttons. */
+/* Toasts are portaled to <body>. */
+body:has(nav.fd-dock) .hub-toast-viewport {
+  bottom: 92px;
+}
 
 /* ---------- home ---------- */
 .hub-home {

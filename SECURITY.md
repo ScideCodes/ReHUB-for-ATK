@@ -1,6 +1,6 @@
 # Security policy
 
-Re-HUB talks to USB devices, so we take reports seriously, especially anything that could send an unintended HID report, bypass an identity or readback check, or reach firmware/boot commands.
+ReHUB talks to USB devices, so we take reports seriously, especially anything that could send an unintended HID report, bypass an identity or readback check, or reach firmware/boot commands.
 
 ## Reporting
 

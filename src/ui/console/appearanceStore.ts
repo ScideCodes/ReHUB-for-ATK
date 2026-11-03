@@ -65,6 +65,17 @@ export function checkUpload(file: { name: string; size: number; type: string }, 
     : "Unsupported format. Please use woff2, woff, ttf, or otf.";
 }
 
+/** Rejects files that pass the type check but cannot be decoded, so a broken upload never replaces a working one. */
+export async function checkDecodes(file: Blob, kind: "image" | "font"): Promise<string | null> {
+  try {
+    if (kind === "image") (await createImageBitmap(file)).close();
+    else await new FontFace("ATK Hub Upload Check", await file.arrayBuffer()).load();
+    return null;
+  } catch {
+    return kind === "image" ? "This image could not be read. Try another file." : "Font load failed. Please try another format or file.";
+  }
+}
+
 let state: Appearance = DEFAULT_APPEARANCE;
 let loaded = false;
 const listeners = new Set<() => void>();

@@ -33,8 +33,8 @@ describe("language and translator", () => {
     setLanguage("fr");
     expect(translate("Settings")).toBe("Paramètres");
     expect(translate("  Settings  ")).toBe("  Paramètres  ");
-    expect(translate("Firmware updates are not available\n      in Re-HUB.")).toBe(
-      "Les mises à jour du firmware ne sont pas disponibles dans Re-HUB.",
+    expect(translate("Firmware updates are not available\n      in ReHUB.")).toBe(
+      "Les mises à jour du firmware ne sont pas disponibles dans ReHUB.",
     );
     expect(translate("ATK F1 Ultimate 2.0")).toBeUndefined();
   });

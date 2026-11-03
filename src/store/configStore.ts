@@ -5,10 +5,13 @@ import {
   DeviceSettings,
   DeviceSettingsSchema,
   SettingsMap,
+  SettingsMapSchema,
   DeviceDefinition,
 } from "../types/schema";
 import { hidClient } from "../hid/hidClient";
-import { parseMapFile } from "../features/maps/mapFiles";
+
+const STORAGE_KEY = "atk-webhid-config-storage";
+import { parseMapFile, validateMaps } from "../features/maps/mapFiles";
 
 const DEFAULT_SETTINGS: DeviceSettings = DeviceSettingsSchema.parse({});
 
@@ -451,7 +454,7 @@ export const useConfigStore = create<ConfigState>()(
       };
     },
     {
-      name: "atk-webhid-config-storage",
+      name: STORAGE_KEY,
       storage: createJSONStorage<Pick<ConfigState, "maps" | "activeMapId">>(() =>
         typeof window !== "undefined"
           ? localStorage
@@ -465,6 +468,27 @@ export const useConfigStore = create<ConfigState>()(
         maps: state.maps,
         activeMapId: state.activeMapId,
       }),
+      // Saved maps are untrusted input: a corrupt entry must not crash every start.
+      merge: (persisted, current) => {
+        const saved = persisted as Partial<Pick<ConfigState, "maps" | "activeMapId">> | undefined;
+        if (!saved?.maps) return current;
+        try {
+          const maps = validateMaps(SettingsMapSchema.array().min(1).parse(saved.maps));
+          const activeMapId = maps.some((m) => m.id === saved.activeMapId)
+            ? saved.activeMapId!
+            : maps[0].id;
+          return { ...current, maps, activeMapId };
+        } catch {
+          try {
+            // Keep the unreadable data so it can be recovered; defaults overwrite the main key on next save.
+            const raw = localStorage.getItem(STORAGE_KEY);
+            if (raw) localStorage.setItem(`${STORAGE_KEY}.invalid`, raw);
+          } catch {
+            /* storage unavailable */
+          }
+          return current;
+        }
+      },
     },
   ),
 );

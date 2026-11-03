@@ -28,6 +28,16 @@ All notable changes to ReHUB for ATK. The format follows [Keep a Changelog](http
 - The mouse Computer Config note was missing a space ("computer.Temporarily").
 - 21 interface strings stayed in English in every other language, including the sleep-time and calibration help text, the advanced-key names and descriptions (DKS, MT, TGL, SOCD), firmware labels, **Help support my device** and several button tooltips. They now have translations for all eight languages.
 
+- **A corrupt saved mouse-map list crashed the app on every start.** Saved maps were loaded from browser storage without validation. They are now checked on load; invalid data falls back to the default maps and the original is kept under `atk-webhid-config-storage.invalid` for recovery.
+- **A broken image or font file could be set as the wallpaper or UI font.** Files that pass the type check but cannot be decoded now show "This image could not be read. Try another file." (or the font error) and are not saved.
+- **Error toasts covered the section dock** on device pages. They now appear above it.
+- The configuration lists marked the active map and onboard slot with a permanent "Applying" badge, which read like an operation in progress. It now says **In use**.
+- The wallpaper page showed background blur in `%`; it is in `px`.
+- The font note claimed "Default (OPPO Sans + HarmonyOS)"; neither font is bundled. It now says **Default (Manrope)**.
+- The interface said "Re-HUB" in several places (Settings, firmware and calibration notes); it now says ReHUB everywhere, like the window title and installer.
+- Upload and import error messages were English in every language; they are now translated.
+- A mouse command that timed out could remove a different pending command with the same opcode from the wait list, so a late reply could resolve the wrong request. Each command now removes only its own entry.
+
 ### Verification
 - CI now lints the whole repository (`npm run lint`), including `electron/`, which is where the quit-time ReferenceError went unnoticed.
 - The bundle audit (`npm run audit:bundle`) failed on every build because its allowlist predated the keyboard layout and DPI table datasets. It now blocks raw extraction inputs by name instead.

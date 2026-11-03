@@ -821,7 +821,7 @@ export function ConfigSection({ onImport, onNew, onExport }: { onImport: () => v
             </span>
             <div className="hm-slot" data-active={slot === (info.onboardSlot ?? 0)}>
               Config File{slot + 1}
-              {slot === (info.onboardSlot ?? 0) && <span className="hm-applying">Applying</span>}
+              {slot === (info.onboardSlot ?? 0) && <span className="hm-applying">In use</span>}
               <span style={{ flex: 1 }} />
               <FileText size={16} aria-label="Onboard file" />
             </div>
@@ -851,7 +851,7 @@ export function ConfigSection({ onImport, onNew, onExport }: { onImport: () => v
                 />
               )}
               <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{map.name}</span>
-              {map.id === activeMapId && <span className="hm-applying">Applying</span>}
+              {map.id === activeMapId && <span className="hm-applying">In use</span>}
               <span style={{ flex: 1 }} />
               {!batch && map.id !== activeMapId && (
                 <button type="button" className="h-btn" style={{ height: 26 }} onClick={() => void hub.selectMap(map.id, true)}>

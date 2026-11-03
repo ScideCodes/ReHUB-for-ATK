@@ -377,11 +377,13 @@ export class HidClient {
         this.diagnostics.finish(performance.now() - sentAt, error);
         reject(error);
       };
-      const timeoutId = setTimeout(() => {
-        const i = this.pendingTransfers.findIndex(
-          (t) => t.commandId === commandId,
-        );
+      // Remove this transfer's own entry: another pending one may share the opcode.
+      const drop = () => {
+        const i = this.pendingTransfers.indexOf(entry);
         if (i !== -1) this.pendingTransfers.splice(i, 1);
+      };
+      const timeoutId = setTimeout(() => {
+        drop();
         rejectTransfer(
           new Error(
             `Timeout waiting for response to opcode 0x${commandId.toString(16)}`,
@@ -389,7 +391,7 @@ export class HidClient {
         );
       }, timeoutMs);
 
-      this.pendingTransfers.push({
+      const entry: (typeof this.pendingTransfers)[number] = {
         commandId,
         eepromAddress:
           commandId === CompxOpcode.GetEEPROM
@@ -403,14 +405,12 @@ export class HidClient {
         },
         reject: rejectTransfer,
         timeoutId,
-      });
+      };
+      this.pendingTransfers.push(entry);
 
       this.diagnostics.frame("out", REPORT_ID, packet);
       this.device!.sendReport(REPORT_ID, new Uint8Array(packet)).catch((err) => {
-        const i = this.pendingTransfers.findIndex(
-          (t) => t.commandId === commandId,
-        );
-        if (i !== -1) this.pendingTransfers.splice(i, 1);
+        drop();
         clearTimeout(timeoutId);
         rejectTransfer(err);
       });
