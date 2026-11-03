@@ -1,6 +1,33 @@
 # Changelog
 
-All notable changes to Re-HUB for ATK. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions follow [Semantic Versioning](https://semver.org/).
+All notable changes to ReHUB for ATK. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions follow [Semantic Versioning](https://semver.org/).
+
+## [Unreleased]
+
+### Changed
+- The ATK ZERO EX and its 8K Dongle-H receiver are now shown as **ATK Frost Zero Extreme** everywhere: device picker, home cards, mouse page, help text, mock device and the hardware checklist.
+- The window opens at a size that fits the screen and remembers its last position, size and maximized state.
+- The notification badge sits clear of the bell icon.
+- The "Store (Rubik)" font preset is now **Default (Manrope)**. Rubik was never bundled, so that preset silently fell back to Segoe UI in some panels.
+
+### Fixed
+- **Selecting a mouse that was not already connected did nothing.** A missing pair of braces attached the "connect" branch to the wrong `if`, so a new mouse never connected, and an already-connected busy mouse was reconnected mid-operation instead.
+- **Opening a different mouse during a save or read showed the wrong device.** The device page now refuses with "Wait for the current mouse operation." instead of labelling the old session with the new model.
+- **Quitting the desktop app threw a ReferenceError** (`saveWindowBounds is not defined`), so the window position was not saved on quit.
+- **Changing close-to-tray or launch-at-login erased the saved window position.** Preferences and window bounds are now written together, synchronously, so a close and a quit can no longer interleave two writes of the same file.
+- Saved window bounds with missing or non-numeric coordinates are ignored instead of being passed to the window.
+- **Packaged builds showed raw HID names in the device picker.** `electron/deviceNames.json` was not included in the installer, so every model-name lookup silently failed. The renderer's duplicate hard-coded name mapping is removed.
+- **Mouse finishes were missing when no model was selected.** The default finish list looked the mouse up by its old name and found nothing.
+- A receiver paired with the Frost Zero Extreme reported the old model name after connecting.
+- Keyboard map exports are named `atk-keyboard-maps.json` instead of `atk68-keyboard-maps.json` for every keyboard.
+- The app no longer requests a missing `/favicon.ico`; it uses the bundled app icon.
+
+### Verification
+- CI now lints the whole repository (`npm run lint`), including `electron/`, which is where the quit-time ReferenceError went unnoticed.
+- The bundle audit (`npm run audit:bundle`) failed on every build because its allowlist predated the keyboard layout and DPI table datasets. It now blocks raw extraction inputs by name instead.
+- New regression test: selecting a mouse that is not connected starts a connection (fails before the fix, passes after).
+- Six unit tests that still expected the old model name were updated. Results: 735 unit tests, 342 mock-device scenarios, 8 desktop tests and the support-flow browser smoke all pass; the browser accessibility audit reports 0 axe violations across 90 screen, width and theme combinations.
+- Not run here: the Electron desktop and packaged smoke tests (no Electron binary or Windows host), and `scripts/open-flow-cls.mjs`, which still targets a retired home screen and is not part of CI.
 
 ## [1.5.1] - 2026-11-01
 
@@ -121,8 +148,9 @@ All notable changes to Re-HUB for ATK. The format follows [Keep a Changelog](htt
 ### Added
 - First public release: an unofficial, open-source, local-first WebHID configurator for ATK mice and keyboards, with read-back-verified writes, a demo mode, offline maps, diagnostics, light and dark themes, and a README, launch film, CI and contribution guides.
 
-[1.5.0]: https://github.com/ScideCodes/ReHUB-for-ATK/compare/v1.4.1...v1.5.0
+[Unreleased]: https://github.com/ScideCodes/ReHUB-for-ATK/compare/v1.5.1...desktop-source
 [1.5.1]: https://github.com/ScideCodes/ReHUB-for-ATK/compare/v1.5.0...v1.5.1
+[1.5.0]: https://github.com/ScideCodes/ReHUB-for-ATK/compare/v1.4.1...v1.5.0
 [1.4.1]: https://github.com/ScideCodes/ReHUB-for-ATK/compare/v1.4.0...v1.4.1
 [1.4.0]: https://github.com/ScideCodes/ReHUB-for-ATK/compare/v1.3.2...v1.4.0
 [1.3.2]: https://github.com/ScideCodes/ReHUB-for-ATK/compare/v1.3.1...v1.3.2

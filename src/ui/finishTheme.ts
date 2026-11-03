@@ -136,7 +136,7 @@ export function getDeviceFinishes(
       ? MOUSE_DEVICES.find((d) => d.cid === cid && d.mid === mid)
       : undefined) ??
     MOUSE_DEVICES.find((d) => d.name === spec?.name) ??
-    MOUSE_DEVICES.find((d) => d.name === "ATK ZERO EX");
+    MOUSE_DEVICES.find((d) => d.cid === 1 && d.mid === 4);
   const options = new Map<MouseFinish, DeviceFinishOption>();
   for (const color of device?.colorways ?? []) {
     const value = colorwayFinish(color.id ?? color.name),

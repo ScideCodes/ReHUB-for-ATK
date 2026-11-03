@@ -96,9 +96,9 @@ try {
         assert(await page.getByText(/Unsupported HID device/).isVisible());
         assert.equal(await page.locator(".device-home-connected").count(), 0);
       } else {
-        for (const model of ["ATK 68 V2 Pro", "ATK ZERO EX"]) {
+        for (const model of ["ATK 68 V2 Pro", "ATK Frost Zero Extreme"]) {
           let releaseWorkspace;
-          if (width === 1440 && model === "ATK ZERO EX")
+          if (width === 1440 && model === "ATK Frost Zero Extreme")
             await page.route("**/MouseWorkspace-*.js", (route) => {
               releaseWorkspace = () => route.continue();
             });
@@ -117,7 +117,7 @@ try {
           await picker
             .getByRole("button", { name: "Mock device", exact: true })
             .click();
-          if (width === 1440 && model === "ATK ZERO EX") {
+          if (width === 1440 && model === "ATK Frost Zero Extreme") {
             await page.locator(".workspace-loading-skeleton").waitFor();
             assert.equal(
               await page.locator(".workspace-loading-skeleton > span").count(),

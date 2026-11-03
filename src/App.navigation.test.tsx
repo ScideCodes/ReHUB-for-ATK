@@ -104,3 +104,26 @@ it("keeps the mouse connected through keyboard selection and both home routes", 
     useConfigStore.setState({ deviceInfo: previous });
   }
 });
+it("connects a supported mouse that is not already connected", async () => {
+  vi.stubGlobal("IS_REACT_ACT_ENVIRONMENT", true);
+  vi.stubGlobal("navigator", { hid: { getDevices: vi.fn().mockResolvedValue([]) } });
+  const previous = useConfigStore.getState().deviceInfo;
+  useConfigStore.setState({ deviceInfo: { ...previous, connected: false } });
+  const host = document.createElement("div"),
+    root = createRoot(host);
+  document.body.append(host);
+  try {
+    await import("./hub/mouse/MousePage");
+    await act(async () => { root.render(<App />); await new Promise(resolve => setTimeout(resolve, 20)); });
+    await act(async () => {
+      [...host.querySelectorAll("button")].find((b) => b.textContent === "Mouse")!.click();
+      await new Promise(resolve => setTimeout(resolve, 20));
+    });
+    expect(calls.connect).toHaveBeenCalledTimes(1);
+    expect(calls.refresh).not.toHaveBeenCalled();
+  } finally {
+    await act(async () => root.unmount());
+    host.remove();
+    useConfigStore.setState({ deviceInfo: previous });
+  }
+});

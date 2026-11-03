@@ -172,7 +172,7 @@ describe("saved device cards", () => {
       productId: 0x11d8,
       cid: 1,
       mid: 4,
-      name: "ATK ZERO EX",
+      name: "ATK Frost Zero Extreme",
     });
     await act(async () => root.render(<DeviceHomePage onSelect={vi.fn()} />));
     const connect = [...host.querySelectorAll("button")].find(
@@ -181,10 +181,10 @@ describe("saved device cards", () => {
     await act(async () => connect.click());
     expect(hidClient.connectHardware).toHaveBeenCalledWith(hid);
     const card = host.querySelector(".device-home-connected")!;
-    expect(card.querySelector("strong")?.textContent).toBe("ATK ZERO EX");
+    expect(card.querySelector("strong")?.textContent).toBe("ATK Frost Zero Extreme");
     expect(card.querySelector("img")).not.toBeNull();
     expect(getRememberedDevices()[0].deviceId).toBe(endpoint.id);
-    expect(getRememberedDevices()[0].displayName).toBe("ATK ZERO EX");
+    expect(getRememberedDevices()[0].displayName).toBe("ATK Frost Zero Extreme");
     useConfigStore.setState({ deviceInfo: original });
   });
   it("clamps stale color indexes and forgets a saved card", async () => {

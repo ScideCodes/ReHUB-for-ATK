@@ -135,7 +135,7 @@ export function LightingTab() {
         </p>
       )}
       <div className="lg-lighting-notes">
-        <p>Mouse lighting is not available on ZERO EX.</p>
+        <p>Mouse lighting is not available on the Frost Zero Extreme.</p>
         <p>
           Firmware controls indicator colors and the low-battery threshold.
           Preview shows the selected mode.

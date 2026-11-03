@@ -210,7 +210,7 @@ export function AppearanceButton() {
               hideLabel
               value={appearance.font}
               options={[
-                { value: "store", label: "Store (Rubik)" },
+                { value: "store", label: "Default (Manrope)" },
                 { value: "system", label: "System UI" },
                 { value: "custom", label: "Custom" },
               ]}

@@ -31,7 +31,7 @@ afterEach(async () => {
 });
 
 it("changes the photo for every ZERO EX finish without sending hardware commands", async () => {
-  const device = DEVICE_REGISTRY.find((d) => d.name === "ATK ZERO EX")!;
+  const device = DEVICE_REGISTRY.find((d) => d.name === "ATK Frost Zero Extreme")!;
   useConfigStore.setState({
     selectedDevice: device,
     deviceInfo: { ...original.deviceInfo, isMock: true, cid: 1, mid: 4 },

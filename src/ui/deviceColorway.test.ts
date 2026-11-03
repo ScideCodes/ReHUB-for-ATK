@@ -10,7 +10,7 @@ afterEach(() => {
 
 it("restores independent keyboard and mouse colours after storage rehydration", async () => {
   const keyboard = DEVICE_REGISTRY.find((d) => d.name === "ATK RS6")!;
-  const mouse = DEVICE_REGISTRY.find((d) => d.name === "ATK ZERO EX")!;
+  const mouse = DEVICE_REGISTRY.find((d) => d.name === "ATK Frost Zero Extreme")!;
   useDeviceColorway.getState().select(keyboard, 1);
   useDeviceColorway.getState().select(mouse, 2);
   const saved = localStorage.getItem("atk-hub-mouse-colorways")!;
@@ -23,7 +23,7 @@ it("restores independent keyboard and mouse colours after storage rehydration", 
 });
 
 it("keeps legacy card colours when no preference exists and clamps invalid indices", () => {
-  const mouse = DEVICE_REGISTRY.find((d) => d.name === "ATK ZERO EX")!;
+  const mouse = DEVICE_REGISTRY.find((d) => d.name === "ATK Frost Zero Extreme")!;
   expect(selectedColorIndex(mouse, {}, 2)).toBe(2);
   expect(selectedColorIndex(mouse, {}, 100)).toBe(mouse.colorways!.length - 1);
   expect(selectedColorIndex(mouse, {}, -1)).toBe(0);

@@ -25,7 +25,7 @@ jobs:
       - name: Type-check
         run: npx tsc --noEmit
       - name: Lint
-        run: npx eslint src
+        run: npm run lint
       - name: Unit and integration tests
         run: npm test
       - name: Desktop policy tests

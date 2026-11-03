@@ -4,7 +4,7 @@ import { CompxOpcode, CompxAddress } from "../protocol/constants";
 import { buildPacket, createGetEepromPacket } from "../protocol/codec";
 
 describe("Mock WebHID Device Adapter", () => {
-  it("correctly simulates GetMouseCIDMID returning ATK ZERO EX (cid=1, mid=4)", async () => {
+  it("correctly simulates GetMouseCIDMID returning ATK Frost Zero Extreme (cid=1, mid=4)", async () => {
     const mock = new MockHidDevice();
     let response: DataView | null = null;
 

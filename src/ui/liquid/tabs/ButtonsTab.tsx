@@ -99,7 +99,7 @@ export function ButtonsTab({ onDiff }: { onDiff?: () => void }) {
         </div>
       )}
       <p className="lg-footnote">
-        ZERO EX exposes five remappable buttons. Sequence actions require packet
+        Frost Zero Extreme exposes five remappable buttons. Sequence actions require packet
         verification on hardware.
       </p>
     </div>
