@@ -18,7 +18,7 @@ body:
     id: browser
     attributes:
       label: ReHUB version and Windows version
-      placeholder: e.g. ReHUB 1.5.3 on Windows 11
+      placeholder: e.g. ReHUB 1.6.0 on Windows 11, macOS 15 or Ubuntu 24.04
   - type: textarea
     id: diagnostics
     attributes:

@@ -1,4 +1,4 @@
-name: Windows desktop
+name: Desktop builds
 
 on:
   workflow_dispatch:
@@ -14,6 +14,7 @@ on:
       - 'scripts/packaged-smoke.mjs'
       - 'package*.json'
       - 'electron-builder.yml'
+      - 'electron/linux/**'
       - '.github/workflows/desktop.yml'
   push:
     branches: [desktop-source]
@@ -72,3 +73,72 @@ jobs:
           name: desktop-test-evidence
           path: audit/desktop/
           if-no-files-found: ignore
+
+  linux:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      # Ubuntu 24.04 blocks unprivileged user namespaces, which Chromium's sandbox needs for the unpacked test build.
+      # Installed .deb packages ship an AppArmor profile instead; this only affects the CI runner.
+      - run: sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
+      - run: npm ci
+      - run: npm run test:desktop
+      - run: npm test -- --pool=threads --maxWorkers=2
+      - run: npm run build
+      - run: npx playwright install --with-deps chromium
+      - run: xvfb-run -a npm run test:desktop:smoke
+      - run: npx electron-builder --linux AppImage deb --x64 --publish never
+      - name: Packaged application smoke
+        run: xvfb-run -a node scripts/packaged-smoke.mjs release/linux-unpacked/re-hub-for-atk
+      - name: Package contents
+        run: dpkg-deb -c release/ReHUB-*-linux-amd64.deb | grep -q 'usr/lib/udev/rules.d/70-rehub-atk.rules'
+      - name: Checksums
+        run: cd release && sha256sum ReHUB-*-linux-* > SHA256SUMS-linux.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ReHUB-Linux-x64
+          path: |
+            release/ReHUB-*-linux-*.AppImage
+            release/ReHUB-*-linux-*.deb
+            release/SHA256SUMS-linux.txt
+          if-no-files-found: error
+
+  macos:
+    runs-on: macos-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run test:desktop
+      - run: npm test -- --pool=threads --maxWorkers=2
+      - run: npm run build
+      - run: npx playwright install chromium
+      - run: npm run test:desktop:smoke
+      - run: npx electron-builder --mac dmg --universal --publish never
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+      - name: Packaged application smoke
+        run: node scripts/packaged-smoke.mjs "release/mac-universal/ReHUB for ATK.app/Contents/MacOS/ReHUB for ATK"
+      - name: Checksums
+        run: cd release && shasum -a 256 ReHUB-*-mac-*.dmg > SHA256SUMS-mac.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ReHUB-macOS-universal
+          path: |
+            release/ReHUB-*-mac-*.dmg
+            release/SHA256SUMS-mac.txt
+          if-no-files-found: error
+

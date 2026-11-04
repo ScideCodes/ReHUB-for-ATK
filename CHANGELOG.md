@@ -2,6 +2,21 @@
 
 All notable changes to ReHUB for ATK. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.6.0] - 2026-11-04
+
+### Added
+- **macOS app:** a universal `.dmg` that runs natively on Apple Silicon and Intel Macs. It carries an ad-hoc signature only, not an Apple Developer ID, so macOS asks you to approve it once in **System Settings → Privacy & Security → Open Anyway**.
+- **Linux app:** an x64 AppImage and a `.deb` package. The `.deb` installs a udev rule (`/usr/lib/udev/rules.d/70-rehub-atk.rules`) so the signed-in user can reach supported ATK devices without root. AppImage users install the same rule once; the README gives the two commands.
+- Launch at login now also works in the installed macOS app.
+- The desktop workflow builds and smoke-tests the macOS and Linux packages next to the Windows installer and publishes per-platform checksums (`SHA256SUMS-mac.txt`, `SHA256SUMS-linux.txt`).
+
+### Fixed
+- On macOS, Cmd+Q and the copy/paste shortcuts would not have worked because the app hid its menu bar. macOS now gets a minimal app, edit and window menu, and clicking the Dock icon reopens a window hidden to the tray.
+
+### Verification
+- The Linux package was built here and passed the packaged-app smoke test as a non-root user with the Chromium sandbox enabled: security fuses, secure origin, isolated renderer, HID API, preferences and the report flow. The `.deb` contents were checked for the udev rule, the sandbox helper and the AppArmor profile.
+- The macOS package is built and smoke-tested only in CI (`macos-latest`), and neither platform has been tested with real hardware yet.
+
 ## [1.5.3] - 2026-11-04
 
 First published build with the 1.5.2 changes below.
@@ -182,6 +197,7 @@ First published build with the 1.5.2 changes below.
 ### Added
 - First public release: an unofficial, open-source, local-first WebHID configurator for ATK mice and keyboards, with read-back-verified writes, a demo mode, offline maps, diagnostics, light and dark themes, and a README, launch film, CI and contribution guides.
 
+[1.6.0]: https://github.com/ScideCodes/ReHUB-for-ATK/compare/v1.5.2...v1.6.0
 [1.5.2]: https://github.com/ScideCodes/ReHUB-for-ATK/compare/v1.5.1...v1.5.2
 [1.5.1]: https://github.com/ScideCodes/ReHUB-for-ATK/compare/v1.5.0...v1.5.1
 [1.5.0]: https://github.com/ScideCodes/ReHUB-for-ATK/compare/v1.4.1...v1.5.0

@@ -18,6 +18,9 @@ const { pathToFileURL } = require("node:url");
 const { isAppUrl, assetPath, externalUrl } = require("./policy.cjs");
 const { DeviceChooser } = require("./chooser.cjs");
 const REPO = "https://github.com/ScideCodes/ReHUB-for-ATK";
+// Electron supports login items on Windows and macOS only.
+const loginItems =
+  app.isPackaged && (process.platform === "win32" || process.platform === "darwin");
 const CSP =
   "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' blob:; font-src 'self' data:; connect-src 'self'; object-src 'none'; frame-src 'none'; base-uri 'none'";
 protocol.registerSchemesAsPrivileged([
@@ -177,7 +180,7 @@ async function start() {
   } catch {
     /* first launch */
   }
-  if (app.isPackaged && process.platform === "win32")
+  if (loginItems)
     preferences.launchAtLogin = app.getLoginItemSettings().openAtLogin;
   const dist = path.join(app.getAppPath(), "dist");
   protocol.handle("rehub", async (request) => {
@@ -319,7 +322,7 @@ async function start() {
   handle("desktop:preferences", () => ({
     ...preferences,
     version: app.getVersion(),
-    canLaunchAtLogin: app.isPackaged && process.platform === "win32",
+    canLaunchAtLogin: loginItems,
   }));
   handle("desktop:set-preferences", async (input) => {
     if (
@@ -333,10 +336,7 @@ async function start() {
       throw new Error("Invalid preferences");
     const next = {
       closeToTray: input.closeToTray,
-      launchAtLogin:
-        app.isPackaged && process.platform === "win32"
-          ? input.launchAtLogin
-          : false,
+      launchAtLogin: loginItems ? input.launchAtLogin : false,
     };
     const previous = preferences;
     preferences = next;
@@ -346,15 +346,15 @@ async function start() {
       preferences = previous;
       throw error;
     }
-    if (app.isPackaged && process.platform === "win32")
+    if (loginItems)
       app.setLoginItemSettings({
         openAtLogin: next.launchAtLogin,
-        path: process.execPath,
+        ...(process.platform === "win32" ? { path: process.execPath } : {}),
       });
     return {
       ...preferences,
       version: app.getVersion(),
-      canLaunchAtLogin: app.isPackaged && process.platform === "win32",
+      canLaunchAtLogin: loginItems,
     };
   });
   handle("desktop:chooser", () => chooser.pending?.devices ?? null);
@@ -407,7 +407,16 @@ async function start() {
     ]),
   );
   tray.on("double-click", show);
-  Menu.setApplicationMenu(null);
+  // macOS needs an app menu for Cmd+Q and the clipboard shortcuts; other platforms hide it.
+  Menu.setApplicationMenu(
+    process.platform === "darwin"
+      ? Menu.buildFromTemplate([
+          { role: "appMenu" },
+          { role: "editMenu" },
+          { role: "windowMenu" },
+        ])
+      : null,
+  );
   window.on("close", (event) => {
     saveWindowBounds();
     if (!quitting && preferences.closeToTray && !tray.isDestroyed()) {
@@ -423,6 +432,8 @@ async function start() {
 if (!app.requestSingleInstanceLock()) app.quit();
 else {
   app.on("second-instance", show);
+  // macOS: clicking the Dock icon brings back a window hidden to the tray.
+  app.on("activate", show);
   app.on("before-quit", () => {
     quitting = true;
     saveWindowBounds();

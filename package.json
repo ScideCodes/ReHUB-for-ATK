@@ -1,8 +1,8 @@
 {
   "name": "re-hub-for-atk",
   "private": true,
-  "version": "1.5.3",
-  "description": "Unofficial open-source Windows desktop configurator for ATK mice and keyboards.",
+  "version": "1.6.0",
+  "description": "Unofficial open-source desktop configurator for ATK mice and keyboards on Windows, macOS and Linux.",
   "license": "MIT",
   "author": "Scide",
   "homepage": "https://github.com/ScideCodes/ReHUB-for-ATK#readme",
@@ -45,6 +45,8 @@
     "desktop:dev": "npm run build && electron .",
     "desktop:pack": "npm run build && electron-builder --dir --win --x64",
     "desktop:dist": "npm run build && electron-builder --win nsis --x64 --publish never",
+    "desktop:dist:mac": "npm run build && electron-builder --mac dmg --universal --publish never",
+    "desktop:dist:linux": "npm run build && electron-builder --linux AppImage deb --x64 --publish never",
     "test:desktop": "node --test electron/*.test.cjs",
     "test:desktop:smoke": "node scripts/desktop-smoke.mjs",
     "test:support:browser": "node scripts/support-smoke.mjs"
@@ -88,6 +90,7 @@
     "vitest": "^4.1.12"
   },
   "main": "electron/main.cjs",
+  "desktopName": "re-hub-for-atk.desktop",
   "overrides": {
     "minimatch": "11.0.3",
     "@electron/asar": {

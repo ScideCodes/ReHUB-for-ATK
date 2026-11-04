@@ -159,10 +159,10 @@ export function DesktopSettings() {
             disabled={!prefs?.canLaunchAtLogin || busy}
             onChange={(e) => void update("launchAtLogin", e.target.checked)}
           />
-          Launch ReHUB when I sign in to Windows
+          Launch ReHUB when I sign in
         </label>
         {prefs && !prefs.canLaunchAtLogin && (
-          <p>Launch at login is available in the installed Windows app.</p>
+          <p>Launch at login is available in the installed app on Windows and macOS.</p>
         )}
         <p>
           Update checks contact GitHub only when you click below. Updates are
