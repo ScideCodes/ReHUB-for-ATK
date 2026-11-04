@@ -2,7 +2,7 @@
 
 All notable changes to ReHUB for ATK. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions follow [Semantic Versioning](https://semver.org/).
 
-## [Unreleased]
+## [1.5.2] - 2026-11-04
 
 ### Changed
 - **New LOD height illustration** in the mouse Parameter panel: a side view of the mouse lifted above the desk, with the sensor beam and a dimension marker showing the selected height. The gap grows across the sensor's full range (it used to move about 4 px), and the drawing follows the light/dark theme and the colourway accent. It is an original drawing, not artwork taken from the ATK driver.
@@ -169,7 +169,7 @@ All notable changes to ReHUB for ATK. The format follows [Keep a Changelog](http
 ### Added
 - First public release: an unofficial, open-source, local-first WebHID configurator for ATK mice and keyboards, with read-back-verified writes, a demo mode, offline maps, diagnostics, light and dark themes, and a README, launch film, CI and contribution guides.
 
-[Unreleased]: https://github.com/ScideCodes/ReHUB-for-ATK/compare/v1.5.1...desktop-source
+[1.5.2]: https://github.com/ScideCodes/ReHUB-for-ATK/compare/v1.5.1...v1.5.2
 [1.5.1]: https://github.com/ScideCodes/ReHUB-for-ATK/compare/v1.5.0...v1.5.1
 [1.5.0]: https://github.com/ScideCodes/ReHUB-for-ATK/compare/v1.4.1...v1.5.0
 [1.4.1]: https://github.com/ScideCodes/ReHUB-for-ATK/compare/v1.4.0...v1.4.1
