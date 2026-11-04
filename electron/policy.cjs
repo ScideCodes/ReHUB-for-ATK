@@ -122,4 +122,20 @@ function installerUrl(release, version, repo) {
   const asset = (release.assets ?? []).find((a) => a?.name === `ReHUB-Setup-${version}-x64.exe`);
   return externalUrl(asset?.browser_download_url) ?? `${repo}/releases/tag/v${version}`;
 }
-module.exports = { isAppUrl, assetPath, externalUrl, safeDevices, getDeviceDisplayName, hidGrants, granted, newerRelease, installerUrl };
+/** Allowlisted download links for the release's installer and checksum file, or null when either is missing. */
+function updateAssets(release, version) {
+  const find = (name) => externalUrl((release.assets ?? []).find((a) => a?.name === name)?.browser_download_url);
+  const file = `ReHUB-Setup-${version}-x64.exe`;
+  const installer = find(file);
+  const sums = find("SHA256SUMS.txt");
+  return installer && sums ? { file, installer, sums } : null;
+}
+/** The SHA-256 listed for `file` in a SHA256SUMS.txt ("<hex>  <name>" lines), lower-case, or null. */
+function checksumFor(sums, file) {
+  for (const line of String(sums).split(/\r?\n/)) {
+    const m = /^([0-9a-fA-F]{64}) [ *]?(.+)$/.exec(line.trim());
+    if (m && m[2].trim() === file) return m[1].toLowerCase();
+  }
+  return null;
+}
+module.exports = { isAppUrl, assetPath, externalUrl, safeDevices, getDeviceDisplayName, hidGrants, granted, newerRelease, installerUrl, updateAssets, checksumFor };

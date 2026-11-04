@@ -123,3 +123,24 @@ test("update check finds newer stable releases and the installer link", () => {
   assert.equal(installerUrl({ assets: [{ name: "ReHUB-Setup-1.5.6-x64.exe", browser_download_url: "https://evil.example/x.exe" }] }, "1.5.6", repo), `${repo}/releases/tag/v1.5.6`);
   assert.equal(installerUrl({}, "1.5.6", repo), `${repo}/releases/tag/v1.5.6`);
 });
+
+test("self-update needs allowlisted installer and checksum assets, and reads SHA256SUMS lines", () => {
+  const { updateAssets, checksumFor } = require("./policy.cjs");
+  const base = "https://github.com/ScideCodes/ReHUB-for-ATK/releases/download/v1.5.7/";
+  const assets = [
+    { name: "ReHUB-Setup-1.5.7-x64.exe", browser_download_url: `${base}ReHUB-Setup-1.5.7-x64.exe` },
+    { name: "SHA256SUMS.txt", browser_download_url: `${base}SHA256SUMS.txt` },
+  ];
+  assert.deepEqual(updateAssets({ assets }, "1.5.7"), {
+    file: "ReHUB-Setup-1.5.7-x64.exe",
+    installer: `${base}ReHUB-Setup-1.5.7-x64.exe`,
+    sums: `${base}SHA256SUMS.txt`,
+  });
+  assert.equal(updateAssets({ assets: assets.slice(0, 1) }, "1.5.7"), null);
+  assert.equal(updateAssets({ assets: [{ ...assets[0], browser_download_url: "https://evil.example/a.exe" }, assets[1]] }, "1.5.7"), null);
+  const hash = "A".repeat(64);
+  assert.equal(checksumFor(`${hash}  ReHUB-Setup-1.5.7-x64.exe\r\n`, "ReHUB-Setup-1.5.7-x64.exe"), "a".repeat(64));
+  assert.equal(checksumFor(`${hash} *ReHUB-Setup-1.5.7-x64.exe`, "ReHUB-Setup-1.5.7-x64.exe"), "a".repeat(64));
+  assert.equal(checksumFor(`${hash}  other.exe`, "ReHUB-Setup-1.5.7-x64.exe"), null);
+  assert.equal(checksumFor("garbage", "x"), null);
+});

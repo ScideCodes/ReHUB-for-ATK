@@ -12,6 +12,7 @@ contextBridge.exposeInMainWorld("rehubDesktop", {
   },
   checkUpdates: () => ipcRenderer.invoke("desktop:check-updates"),
   getUpdate: () => ipcRenderer.invoke("desktop:update"),
+  installUpdate: () => ipcRenderer.invoke("desktop:install-update"),
   onUpdate: (listener) => {
     const handler = (_event, value) => listener(value);
     ipcRenderer.on("desktop:update", handler);

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Download } from "lucide-react";
 import { Dialog } from "../ui/Dialog";
+import { useToast } from "../ui";
 import type { DesktopDevice, DesktopPreferences, DesktopUpdate } from "./bridge";
 
 export function DesktopDeviceChooser() {
@@ -213,6 +214,9 @@ export function DesktopSettings() {
 /** Discord-style top-bar button: shown only while a newer release is available. */
 export function DesktopUpdateButton() {
   const [update, setUpdate] = useState<DesktopUpdate | null>(null);
+  const [asking, setAsking] = useState(false);
+  const [installing, setInstalling] = useState(false);
+  const { toast } = useToast();
   useEffect(() => {
     const api = window.rehubDesktop;
     if (!api?.onUpdate) return;
@@ -221,17 +225,53 @@ export function DesktopUpdateButton() {
     return unsubscribe;
   }, []);
   if (!update) return null;
+  async function install() {
+    setAsking(false);
+    setInstalling(true);
+    try {
+      // Resolves just before ReHUB quits; the installer then runs silently and reopens the new version.
+      await window.rehubDesktop!.installUpdate();
+    } catch (error) {
+      setInstalling(false);
+      const message = error instanceof Error ? error.message.replace(/^.*Error: /, "") : String(error);
+      toast({ title: message, tone: "error" });
+    }
+  }
+  const tip = installing ? "Updating…" : "Update ready";
   return (
-    <div className="hub-tip" data-tip="Update ready">
-      <a
-        className="hub-icon-btn hub-update-btn"
-        href={update.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={`Download ReHUB ${update.version}`}
-      >
-        <Download size={20} strokeWidth={2} />
-      </a>
-    </div>
+    <>
+      <div className="hub-tip" data-tip={tip}>
+        {update.canInstall ? (
+          <button
+            type="button"
+            className="hub-icon-btn hub-update-btn"
+            aria-label={installing ? `Updating to ReHUB ${update.version}` : `Update to ReHUB ${update.version}`}
+            data-busy={installing || undefined}
+            disabled={installing}
+            onClick={() => setAsking(true)}
+          >
+            <Download size={20} strokeWidth={2} />
+          </button>
+        ) : (
+          <a
+            className="hub-icon-btn hub-update-btn"
+            href={update.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Download ReHUB ${update.version}`}
+          >
+            <Download size={20} strokeWidth={2} />
+          </a>
+        )}
+      </div>
+      <Dialog
+        open={asking}
+        onClose={() => setAsking(false)}
+        title={`Update to ReHUB ${update.version}?`}
+        description="ReHUB downloads the update, restarts and reopens by itself."
+        confirmLabel="Update"
+        onConfirm={() => void install()}
+      />
+    </>
   );
 }

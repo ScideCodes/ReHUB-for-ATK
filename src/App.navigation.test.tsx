@@ -24,6 +24,8 @@ vi.mock("./ui/finishTheme", () => ({
 vi.mock("./ui", () => ({
   ErrorBoundary: ({ children }: { children: ReactNode }) => children,
   ToastProvider: ({ children }: { children: ReactNode }) => children,
+  useToast: () => ({ toast: () => undefined }),
+  Dialog: () => null,
 }));
 vi.mock("./hub/mouse/MousePage", () => ({ default: () => null }));
 vi.mock("./ui/keyboard/KeyboardWorkspace", () => ({ KeyboardWorkspace: () => null }));

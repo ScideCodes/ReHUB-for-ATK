@@ -3417,3 +3417,13 @@ button.fd-badge {
 @media (prefers-reduced-motion: reduce) {
   .hub-icon-btn.hub-update-btn { animation: none; }
 }
+.hub-icon-btn.hub-update-btn[data-busy] {
+  cursor: progress;
+  animation: hub-update-pulse 1.2s ease-in-out infinite;
+}
+@keyframes hub-update-pulse {
+  50% { opacity: 0.45; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hub-icon-btn.hub-update-btn[data-busy] { animation: none; }
+}

@@ -4,7 +4,7 @@ export type DesktopDevice = {
   vendorId: number;
   productId: number;
 };
-export type DesktopUpdate = { version: string; url: string };
+export type DesktopUpdate = { version: string; url: string; canInstall: boolean };
 export type DesktopPreferences = {
   closeToTray: boolean;
   launchAtLogin: boolean;
@@ -26,6 +26,7 @@ declare global {
       ): () => void;
       checkUpdates(): Promise<{ message: string; url?: string }>;
       getUpdate(): Promise<DesktopUpdate | null>;
+      installUpdate(): Promise<void>;
       onUpdate(listener: (update: DesktopUpdate) => void): () => void;
       disconnect(): Promise<void>;
       saveReport(text: string): Promise<boolean>;

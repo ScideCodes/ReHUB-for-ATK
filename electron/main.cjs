@@ -13,6 +13,8 @@ const {
 } = require("electron");
 const fs = require("node:fs/promises");
 const { writeFileSync } = require("node:fs");
+const { createHash } = require("node:crypto");
+const { spawn } = require("node:child_process");
 const path = require("node:path");
 const { pathToFileURL } = require("node:url");
 const {
@@ -23,6 +25,8 @@ const {
   granted,
   newerRelease,
   installerUrl,
+  updateAssets,
+  checksumFor,
 } = require("./policy.cjs");
 const { DeviceChooser } = require("./chooser.cjs");
 const REPO = "https://github.com/ScideCodes/ReHUB-for-ATK";
@@ -169,9 +173,9 @@ async function checkUpdates() {
       };
     const url = installerUrl(release, latest, REPO);
     if (update?.version !== latest) {
-      update = { version: latest, url };
+      update = { version: latest, url, assets: updateAssets(release, latest) };
       if (window && !window.isDestroyed())
-        window.webContents.send("desktop:update", update);
+        window.webContents.send("desktop:update", publicUpdate());
     }
     return {
       message: `ReHUB ${latest} is available. Download the installer from GitHub Releases.`,
@@ -184,6 +188,39 @@ async function checkUpdates() {
       url: `${REPO}/releases`,
     };
   }
+}
+const publicUpdate = () =>
+  update && { version: update.version, url: update.url, canInstall: canSelfUpdate() && !!update.assets };
+const canSelfUpdate = () => app.isPackaged && process.platform === "win32";
+let installing = null;
+// Download the installer, check it against the release's SHA256SUMS.txt, then run it silently
+// (electron-builder NSIS: --updated /S reuses the install folder, --force-run reopens ReHUB) and quit.
+function installUpdate() {
+  if (!update?.assets || !canSelfUpdate())
+    throw new Error("Download this update from GitHub Releases instead.");
+  installing ??= (async () => {
+    const { file, installer, sums } = update.assets;
+    const fetchOk = async (url) => {
+      const response = await net.fetch(url, { signal: AbortSignal.timeout(10 * 60 * 1000) });
+      if (!response.ok) throw new Error("Could not download the update.");
+      return response;
+    };
+    const expected = checksumFor(await (await fetchOk(sums)).text(), file);
+    if (!expected) throw new Error("The update has no checksum. Download it from GitHub Releases.");
+    const data = Buffer.from(await (await fetchOk(installer)).arrayBuffer());
+    if (createHash("sha256").update(data).digest("hex") !== expected)
+      throw new Error("The downloaded update is damaged. Try again later.");
+    const dir = await fs.mkdtemp(path.join(app.getPath("temp"), "rehub-update-"));
+    const target = path.join(dir, file);
+    await fs.writeFile(target, data);
+    spawn(target, ["--updated", "/S", "--force-run"], { detached: true, stdio: "ignore" }).unref();
+    quitting = true;
+    setTimeout(() => app.quit(), 300);
+  })().catch((error) => {
+    installing = null;
+    throw error;
+  });
+  return installing;
 }
 async function start() {
   prefPath = path.join(app.getPath("userData"), "desktop-preferences.json");
@@ -416,7 +453,8 @@ async function start() {
   });
   handle("desktop:disconnect", disconnect);
   handle("desktop:check-updates", checkUpdates);
-  handle("desktop:update", () => update);
+  handle("desktop:update", publicUpdate);
+  handle("desktop:install-update", installUpdate);
   handle("desktop:save-report", async (text) => {
     if (
       typeof text !== "string" ||

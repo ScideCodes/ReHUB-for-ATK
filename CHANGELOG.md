@@ -2,6 +2,18 @@
 
 All notable changes to ReHUB for ATK. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.5.7] - 2026-11-04
+
+### Added
+- **One-click updates.** Clicking the green update button now asks "Update to ReHUB x.y.z?" with **Update** and **Cancel**. **Update** downloads the new installer in the background, checks it against the release's SHA-256 checksum, installs it silently (no setup window) and reopens ReHUB on the new version. A failed download or checksum mismatch installs nothing and shows an error.
+- Settings and cached data are kept across the update, as with a normal reinstall.
+
+### Notes
+- Version 1.5.6 can only open the download page, so install 1.5.7 manually once. Later releases then update from inside the app.
+
+### Verification
+- Typecheck, lint, 741 application tests, 12 desktop tests (including the installer/checksum lookup), the desktop smoke test and the packaged-app smoke test pass. The dialog and busy state were checked with a simulated update. The download and checksum code was checked against the published 1.5.6 release.
+
 ## [1.5.6] - 2026-11-04
 
 ### Added
