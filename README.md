@@ -10,12 +10,12 @@
 
 A local Windows desktop configurator for ATK mice and keyboards.
 
-![Version](https://img.shields.io/badge/download-v1.5.5-ff6900)
+![Version](https://img.shields.io/badge/download-v1.5.6-ff6900)
 ![Windows x64](https://img.shields.io/badge/Windows-x64-0078D4?logo=windows&logoColor=white)
 ![License: MIT](https://img.shields.io/badge/license-MIT-ff6900.svg)
 ![Tests](https://img.shields.io/badge/tests-734%20passing-2ea44f)
 
-### [⬇ Download Windows Setup v1.5.5](https://github.com/ScideCodes/ReHUB-for-ATK/releases/download/v1.5.5/ReHUB-Setup-1.5.5-x64.exe)
+### [⬇ Download Windows Setup v1.5.6](https://github.com/ScideCodes/ReHUB-for-ATK/releases/download/v1.5.6/ReHUB-Setup-1.5.6-x64.exe)
 
 [▶ Video showcase](#video-showcase) · [Screenshots](#screenshots) · [Features](#features) · [Install](#install) · [Source code](#open-source) · [Changelog](CHANGELOG.md)
 
@@ -99,7 +99,7 @@ ReHUB brings mouse and keyboard configuration into one desktop app — device-sp
 | 🖱 **Mouse configuration** | DPI stages, polling, sensor settings, button assignments, and power options where supported. |
 | ⌨ **Keyboard configuration** | Lighting, remapping, trigger travel, and rapid trigger for supported device families. |
 | 💾 **Local profiles** | Edit, duplicate, import, and export configurations entirely on your computer. |
-| 🖥 **Desktop controls** | Device picker, close-to-tray, launch-at-login, and manual release checks. |
+| 🖥 **Desktop controls** | Device picker, close-to-tray, launch-at-login, and a top-bar update button when a new release is out. |
 | 🔍 **Diagnostics and demo mode** | Inspect redacted device diagnostics or explore the full interface without hardware. |
 | 🎨 **Appearance** | Light and dark themes, custom backgrounds, device colors, and nine interface languages. |
 | 📋 **Community reports** | Review device identifiers and descriptor metadata before sharing a support report. |
@@ -110,7 +110,7 @@ ReHUB brings mouse and keyboard configuration into one desktop app — device-sp
 
 Support is granted per device family and identity. Some models support verified writes, some require explicit consent for untested writes, and others remain read-only or demo-only. Firmware flashing and bootloader interfaces are blocked.
 
-The 1.5.5 release passed **741 application tests**, **342 mock device scenarios**, and **10 desktop tests**, including compiled installer safety fixtures. Automated checks do not certify physical hardware behavior.
+The 1.5.6 release passed **741 application tests**, **342 mock device scenarios**, and **11 desktop tests**, including compiled installer safety fixtures. Automated checks do not certify physical hardware behavior.
 
 → [Review record](https://github.com/ScideCodes/ReHUB-for-ATK/blob/desktop-source/docs/audit-1.5.1.md) · [Mouse access notes](https://github.com/ScideCodes/ReHUB-for-ATK/blob/desktop-source/MOUSE_ACCESS.md) · [Hardware checklist](https://github.com/ScideCodes/ReHUB-for-ATK/blob/desktop-source/HARDWARE_TEST.md)
 
@@ -118,17 +118,17 @@ The 1.5.5 release passed **741 application tests**, **342 mock device scenarios*
 
 ## Install
 
-1. **[Download ReHUB Setup 1.5.5 for Windows x64](https://github.com/ScideCodes/ReHUB-for-ATK/releases/download/v1.5.5/ReHUB-Setup-1.5.5-x64.exe)**
+1. **[Download ReHUB Setup 1.5.6 for Windows x64](https://github.com/ScideCodes/ReHUB-for-ATK/releases/download/v1.5.6/ReHUB-Setup-1.5.6-x64.exe)**
 2. Run Setup and choose **Install / update ReHUB for ATK**.
 3. Open ReHUB, close other configurators using the device, and select your device in the picker.
 
 The installer is currently unsigned. Always download from this repository's [Releases](https://github.com/ScideCodes/ReHUB-for-ATK/releases/latest) and verify the checksum against the accompanying `SHA256SUMS.txt`:
 
 ```powershell
-Get-FileHash -Algorithm SHA256 .\ReHUB-Setup-1.5.5-x64.exe
+Get-FileHash -Algorithm SHA256 .\ReHUB-Setup-1.5.6-x64.exe
 ```
 
-**Updates:** use the app's manual release check or download the latest Setup.  
+**Updates:** a green download button appears in the top bar when a new release is out (automatic check can be turned off in Settings), or download the latest Setup.  
 **Uninstall:** run Setup → **Uninstall**, or use Windows **Settings → Apps → Installed apps**. Saved profiles and settings are kept by default; exported files are outside desktop cleanup.
 
 ---
