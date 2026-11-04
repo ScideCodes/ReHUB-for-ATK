@@ -29,6 +29,7 @@ import { mouseModelFeatures } from "../../devices/mouseProtocols";
 import { editSetting, editSettings } from "../../features/maps/mapSession";
 import { DeviceSettingsSchema, type ButtonAction, type PollingRate } from "../../types/schema";
 import { lodOptions } from "../../protocol/codec";
+import { LodIllustration } from "./LodIllustration";
 import { restoreFactory } from "../../features/device/deviceSession";
 import { closeHeldKeys, serializeRecording, readRecording, type RecordedKey } from "../../ui/liquid/macros";
 import { useMouseColorway, selectedColorIndex } from "../../ui/mouseColorway";
@@ -678,12 +679,8 @@ export function ParameterSection() {
               )}
             </div>
           </div>
-          <div style={{ width: 180, display: "grid", placeItems: "center", background: "var(--color-card)" }} aria-hidden="true">
-            <svg width="140" height="60" viewBox="0 0 140 60">
-              <ellipse cx="70" cy={22 - settings.lod * 4} rx="36" ry="10" fill="none" stroke="currentColor" strokeWidth="2" />
-              <line x1="70" y1={32 - settings.lod * 4} x2="70" y2="44" stroke="currentColor" strokeWidth="2" />
-              <line x1="0" y1="46" x2="140" y2="46" stroke="currentColor" strokeDasharray="2 3" />
-            </svg>
+          <div className="hm-lod-figure">
+            <LodIllustration lod={settings.lod} min={Math.min(...lods)} max={Math.max(...lods)} />
           </div>
         </div>
         )}

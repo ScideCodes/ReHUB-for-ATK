@@ -75,10 +75,9 @@ function DeviceReportDialog({
     setSelecting(true);
     setStatus("");
     try {
-      const options = {
-        filters: [],
-        exclusionFilters: [{ usagePage: 0xff02 }],
-      };
+      // No exclusion filter: it would hide operational mice that also expose a bootloader collection.
+      // inspectDevice drops those collections and refuses bootloader-only devices without opening anything.
+      const options = { filters: [] };
       const devices = await navigator.hid.requestDevice(options);
       if (devices.length) {
         setDevice(inspectDevices(devices));

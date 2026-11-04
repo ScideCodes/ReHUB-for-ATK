@@ -5,6 +5,7 @@ All notable changes to ReHUB for ATK. The format follows [Keep a Changelog](http
 ## [Unreleased]
 
 ### Changed
+- **New LOD height illustration** in the mouse Parameter panel: a side view of the mouse lifted above the desk, with the sensor beam and a dimension marker showing the selected height. The gap grows across the sensor's full range (it used to move about 4 px), and the drawing follows the light/dark theme and the colourway accent. It is an original drawing, not artwork taken from the ATK driver.
 - The ATK ZERO EX and its 8K Dongle-H receiver are now shown as **ATK Frost Zero Extreme** everywhere: device picker, home cards, mouse page, help text, mock device and the hardware checklist.
 - The window opens at a size that fits the screen and remembers its last position, size and maximized state.
 - The notification badge sits clear of the bell icon.
@@ -37,6 +38,8 @@ All notable changes to ReHUB for ATK. The format follows [Keep a Changelog](http
 - The interface said "Re-HUB" in several places (Settings, firmware and calibration notes); it now says ReHUB everywhere, like the window title and installer.
 - Upload and import error messages were English in every language; they are now translated.
 - A mouse command that timed out could remove a different pending command with the same opcode from the wait list, so a late reply could resolve the wrong request. Each command now removes only its own entry.
+
+- **Mice that also expose a bootloader interface could not create a support report**, although they connect normally (for example the Frost Zero Extreme receiver). The report picker hid them and the report builder refused them. Reports now leave bootloader collections out and refuse only devices that expose nothing else.
 
 ### Verification
 - CI now lints the whole repository (`npm run lint`), including `electron/`, which is where the quit-time ReferenceError went unnoticed.

@@ -3277,3 +3277,72 @@ button.fd-badge {
     grid-template-columns: minmax(0, 1fr) !important;
   }
 }
+
+/* LOD height illustration: mouse side view lifted above the desk by the selected distance. */
+.hm-lod-figure {
+  flex: 0 0 196px;
+  display: grid;
+  place-items: center;
+  background: var(--color-card);
+}
+.hm-lod-art {
+  overflow: visible;
+}
+.hm-lod-art .surface {
+  stroke: var(--color-border-16);
+  stroke-width: 1.5;
+  stroke-dasharray: 3 3;
+}
+.hm-lod-art .lift {
+  transition: transform 0.25s var(--ease-out, ease-out);
+}
+.hm-lod-art .body {
+  fill: var(--color-panel);
+  stroke: var(--color-text-primary-65);
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+}
+.hm-lod-art .seam,
+.hm-lod-art .guide {
+  fill: none;
+  stroke: var(--color-border-16);
+  stroke-width: 1;
+  stroke-linecap: round;
+}
+.hm-lod-art .guide {
+  stroke-dasharray: 2 2;
+}
+.hm-lod-art .wheel {
+  fill: var(--color-text-hint-60);
+}
+.hm-lod-art .foot {
+  fill: var(--color-text-hint-60);
+}
+.hm-lod-art .sensor,
+.hm-lod-art .spot {
+  fill: var(--color-brand-primary);
+}
+.hm-lod-art .spot {
+  opacity: 0.25;
+}
+.hm-lod-art .beam {
+  stroke: var(--color-brand-primary);
+  stroke-width: 1.5;
+  stroke-dasharray: 2 2;
+}
+.hm-lod-art .measure line {
+  stroke: var(--color-text-primary-65);
+  stroke-width: 1.2;
+  stroke-linecap: round;
+}
+.hm-lod-art .value {
+  fill: var(--color-text-head-100);
+  font-size: 10px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hm-lod-art .lift {
+    transition: none;
+  }
+}
