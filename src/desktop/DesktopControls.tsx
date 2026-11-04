@@ -177,8 +177,8 @@ export function DesktopSettings() {
           Check GitHub for new versions automatically
         </label>
         <p>
-          Update checks only ask GitHub for the latest release. When one is newer, a green download button appears in the
-          top bar. Updates are installed manually.
+          Update checks only ask GitHub for the latest release. When one is newer, a green update button appears in the top
+          bar. Nothing is downloaded until you confirm the update.
         </p>
         <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
           <button

@@ -2,6 +2,16 @@
 
 All notable changes to ReHUB for ATK. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.5.8] - 2026-11-04
+
+### Fixed
+- **A mouse that was asleep when opened stayed "ATK Universal Wireless Mouse" and read-only.** Only its receiver answered, and reopening it from Home kept that session. Reopening it now connects again, so once the mouse is awake it shows the right model, battery, firmware and settings.
+- Settings → Desktop app still said updates are installed manually. It now describes the one-click update.
+
+### Verification
+- Found by testing the installed app by hand on real hardware (ATK Frost Zero Extreme over 2.4G, ATK68 V2 Pro wired). All mouse and keyboard tabs, theme switching and the manual update check were checked there. The 1.5.4 → 1.5.7 silent update was run for real: no setup window, and ReHUB reopened on 1.5.7.
+- Typecheck, lint, 742 application tests (including a new failing-before/passing-after check), 12 desktop tests, the desktop smoke test and the packaged-app smoke test pass.
+
 ## [1.5.7] - 2026-11-04
 
 ### Added

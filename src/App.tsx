@@ -17,6 +17,7 @@ import {
   deviceOperation,
   refreshDevice,
   disconnectDevice,
+  isMouseSessionReadable,
 } from "./features/device/deviceSession";
 import { DEVICE_REGISTRY } from "./devices/registry";
 import { ATK_DEVICE_CATALOG } from "./features/device/deviceCatalog";
@@ -105,12 +106,12 @@ export function App() {
         useMouseColorway.getState().select(device, selectedColorIndex(device, useMouseColorway.getState().colors, color));
       } else {
         const current = useConfigStore.getState().deviceInfo;
-        if (
+        const same =
           current.connected &&
           !current.isMock &&
           current.vendorId === Number(device.VID) &&
-          current.productId === Number(device.PID)
-        ) {
+          current.productId === Number(device.PID);
+        if (same && isMouseSessionReadable()) {
           // Already connected: open the page now and re-read in the background if not already busy.
           if (!useDeviceSession.getState().busy) {
             void deviceOperation(async () => {
@@ -125,6 +126,8 @@ export function App() {
         } else {
           if (useDeviceSession.getState().busy)
             throw new Error("Wait for the current mouse operation.");
+          // Only the receiver answered last time (mouse asleep): reconnect so the mouse is identified again.
+          if (same) await disconnectDevice();
           const authorized = (await navigator.hid?.getDevices()) ?? [];
           const selected = authorized.find(
             (d) =>

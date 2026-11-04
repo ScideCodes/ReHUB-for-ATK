@@ -9,11 +9,13 @@ const calls = vi.hoisted(() => ({
   disconnect: vi.fn(),
   connect: vi.fn(),
   refresh: vi.fn(),
+  readable: vi.fn(() => true),
 }));
 vi.mock("./features/device/deviceSession", () => ({
   disconnectDevice: calls.disconnect,
   connectDevice: calls.connect,
   refreshDevice: calls.refresh,
+  isMouseSessionReadable: () => calls.readable(),
   deviceOperation: (run: () => Promise<void>) => run(),
   useDeviceSession: { getState: () => ({ busy: false }) },
 }));
@@ -124,6 +126,35 @@ it("connects a supported mouse that is not already connected", async () => {
     expect(calls.connect).toHaveBeenCalledTimes(1);
     expect(calls.refresh).not.toHaveBeenCalled();
   } finally {
+    await act(async () => root.unmount());
+    host.remove();
+    useConfigStore.setState({ deviceInfo: previous });
+  }
+});
+it("reconnects an open mouse that only answered as its receiver", async () => {
+  vi.stubGlobal("IS_REACT_ACT_ENVIRONMENT", true);
+  vi.stubGlobal("navigator", { hid: { getDevices: vi.fn().mockResolvedValue([]) } });
+  calls.readable.mockReturnValue(false);
+  const mouse = DEVICE_REGISTRY.find((d) => d.kind === "mouse" && d.cid === 1 && d.mid === 4)!;
+  const previous = useConfigStore.getState().deviceInfo;
+  useConfigStore.setState({
+    deviceInfo: { ...previous, connected: true, isMock: false, vendorId: Number(mouse.VID), productId: Number(mouse.PID), cid: 0, mid: 0 },
+  });
+  const host = document.createElement("div"),
+    root = createRoot(host);
+  document.body.append(host);
+  try {
+    await import("./hub/mouse/MousePage");
+    await act(async () => { root.render(<App />); await new Promise(resolve => setTimeout(resolve, 20)); });
+    await act(async () => {
+      [...host.querySelectorAll("button")].find((b) => b.textContent === "Mouse")!.click();
+      await new Promise(resolve => setTimeout(resolve, 20));
+    });
+    expect(calls.disconnect).toHaveBeenCalledTimes(1);
+    expect(calls.connect).toHaveBeenCalledTimes(1);
+    expect(calls.refresh).not.toHaveBeenCalled();
+  } finally {
+    calls.readable.mockReturnValue(true);
     await act(async () => root.unmount());
     host.remove();
     useConfigStore.setState({ deviceInfo: previous });
