@@ -10,12 +10,12 @@
 
 A local Windows desktop configurator for ATK mice and keyboards.
 
-![Version](https://img.shields.io/badge/download-v1.5.4-ff6900)
+![Version](https://img.shields.io/badge/download-v1.5.5-ff6900)
 ![Windows x64](https://img.shields.io/badge/Windows-x64-0078D4?logo=windows&logoColor=white)
 ![License: MIT](https://img.shields.io/badge/license-MIT-ff6900.svg)
 ![Tests](https://img.shields.io/badge/tests-734%20passing-2ea44f)
 
-### [⬇ Download Windows Setup v1.5.4](https://github.com/ScideCodes/ReHUB-for-ATK/releases/download/v1.5.4/ReHUB-Setup-1.5.4-x64.exe)
+### [⬇ Download Windows Setup v1.5.5](https://github.com/ScideCodes/ReHUB-for-ATK/releases/download/v1.5.5/ReHUB-Setup-1.5.5-x64.exe)
 
 [▶ Video showcase](#video-showcase) · [Screenshots](#screenshots) · [Features](#features) · [Install](#install) · [Source code](#open-source) · [Changelog](CHANGELOG.md)
 
@@ -110,7 +110,7 @@ ReHUB brings mouse and keyboard configuration into one desktop app — device-sp
 
 Support is granted per device family and identity. Some models support verified writes, some require explicit consent for untested writes, and others remain read-only or demo-only. Firmware flashing and bootloader interfaces are blocked.
 
-The 1.5.4 release passed **740 application tests**, **342 mock device scenarios**, and **10 desktop tests**, including compiled installer safety fixtures. Automated checks do not certify physical hardware behavior.
+The 1.5.5 release passed **741 application tests**, **342 mock device scenarios**, and **10 desktop tests**, including compiled installer safety fixtures. Automated checks do not certify physical hardware behavior.
 
 → [Review record](https://github.com/ScideCodes/ReHUB-for-ATK/blob/desktop-source/docs/audit-1.5.1.md) · [Mouse access notes](https://github.com/ScideCodes/ReHUB-for-ATK/blob/desktop-source/MOUSE_ACCESS.md) · [Hardware checklist](https://github.com/ScideCodes/ReHUB-for-ATK/blob/desktop-source/HARDWARE_TEST.md)
 
@@ -118,14 +118,14 @@ The 1.5.4 release passed **740 application tests**, **342 mock device scenarios*
 
 ## Install
 
-1. **[Download ReHUB Setup 1.5.4 for Windows x64](https://github.com/ScideCodes/ReHUB-for-ATK/releases/download/v1.5.4/ReHUB-Setup-1.5.4-x64.exe)**
+1. **[Download ReHUB Setup 1.5.5 for Windows x64](https://github.com/ScideCodes/ReHUB-for-ATK/releases/download/v1.5.5/ReHUB-Setup-1.5.5-x64.exe)**
 2. Run Setup and choose **Install / update ReHUB for ATK**.
 3. Open ReHUB, close other configurators using the device, and select your device in the picker.
 
 The installer is currently unsigned. Always download from this repository's [Releases](https://github.com/ScideCodes/ReHUB-for-ATK/releases/latest) and verify the checksum against the accompanying `SHA256SUMS.txt`:
 
 ```powershell
-Get-FileHash -Algorithm SHA256 .\ReHUB-Setup-1.5.4-x64.exe
+Get-FileHash -Algorithm SHA256 .\ReHUB-Setup-1.5.5-x64.exe
 ```
 
 **Updates:** use the app's manual release check or download the latest Setup.  

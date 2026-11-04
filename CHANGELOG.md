@@ -2,6 +2,15 @@
 
 All notable changes to Re-HUB for ATK. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.5.5] - 2026-11-04
+
+### Fixed
+- **"Wait for the current device operation." stayed on screen forever** after opening a mouse that was already being read. The start-up reconnect no longer runs, or fails, while another mouse operation owns the session.
+- Error notifications now close on their own after 8 seconds instead of staying until dismissed. The message center still keeps them.
+
+### Verification
+- Typecheck, lint, 741 application tests (including a new failing-before/passing-after check), 10 desktop tests, the desktop smoke test and the packaged-app smoke test pass. Physical hardware was not tested.
+
 ## [1.5.4] - 2026-11-04
 
 ### Added
