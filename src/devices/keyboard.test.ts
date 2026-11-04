@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { displayName } from "./registry";
 import { DeviceDefinitionSchema } from "../types/schema";
 import {
   DEVICE_REGISTRY,
@@ -115,6 +116,8 @@ describe("keyboard registry", () => {
     const kb = findByVidPid("0x373b", "0x1048");
     expect(kb).toBeDefined();
     expect(kb?.name).toBe("ATK 68 V2 Pro");
+    expect(displayName(kb!.name)).toBe("ATK68 V2 Pro");
+    expect(displayName("ATK 680 X")).toBe("ATK 680 X");
 
     const filters = requestDeviceFilters();
     expect(filters.length).toBe(DEVICE_REGISTRY.length);

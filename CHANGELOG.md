@@ -5,6 +5,9 @@ All notable changes to ReHUB for ATK. The format follows [Keep a Changelog](http
 ## [Unreleased]
 
 ### Fixed
+- Device names and titles used a Times New Roman fallback on Windows. They now use the app font.
+- The ATK68 V2 Pro is named "ATK68 V2 Pro" everywhere. The tab and the keyboard page used to say "ATK 68 V2 Pro".
+- Opening a device from Home now shows **Connecting…** on its card, with a pulsing image, until the page opens.
 - After **Check for updates** finds a release that ReHUB can install itself, Settings now points to the green update button. It no longer says to download the installer from GitHub Releases or shows an "Open GitHub Releases" button.
 
 ## [1.5.8] - 2026-11-04

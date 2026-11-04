@@ -23,7 +23,7 @@ import {
   Zap,
 } from "lucide-react";
 import type { DeviceDefinition } from "../../types/schema";
-import { supports } from "../../devices/registry";
+import { displayName, supports } from "../../devices/registry";
 import { LIGHT_MODES, type AdvancedAction, type KeyboardSettings } from "../../devices/keyboardSettings";
 import { useKeyboardStore } from "../../store/keyboardStore";
 import { DevicePreview } from "../../ui/DevicePreview";
@@ -113,7 +113,7 @@ export function KeyboardView(viewProps: KeyboardViewProps) {
     <div className="hub-body fd fdk" data-testid="keyboard-view" aria-busy={props.busy}>
       <aside className="fd-pop fd-device" aria-label="Device">
         <span className="cap">Device</span>
-        <strong>{device.name}</strong>
+        <strong>{displayName(device.name)}</strong>
         <span className="fd-meta">
           {props.mode === "mock" && <>100% · </>}
           {props.mode === "offline" ? "Not connected" : "Wired"}

@@ -4,7 +4,7 @@ import { hidClient } from "../hid/hidClient";
 import { mouseEndpointSupportsReal } from "../devices/mouseProtocols";
 import { useConfigStore } from "../store/configStore";
 import type { DeviceDefinition } from "../types/schema";
-import { DEVICE_REGISTRY } from "../devices/registry";
+import { DEVICE_REGISTRY, displayName } from "../devices/registry";
 import { verifiedKeyboardProfile } from "../devices/keyboardProtocols";
 import { DevicePreview } from "../ui/DevicePreview";
 import { selectedColorIndex, useDeviceColorway } from "../ui/deviceColorway";
@@ -112,6 +112,8 @@ export function Home({
   onOpen: (item: HomeItem, mock: boolean) => Promise<void>;
 }) {
   const [items, setItems] = useState<HomeItem[]>(remembered);
+  // Opening a mouse can take seconds; show which card is connecting.
+  const [opening, setOpening] = useState<string | null>(null);
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
   const colors = useDeviceColorway((s) => s.colors);
@@ -180,6 +182,7 @@ export function Home({
 
   async function open(item: HomeItem, mock: boolean) {
     setBusy(true);
+    setOpening(item.id);
     setError("");
     try {
       await onOpen(item, mock);
@@ -187,6 +190,7 @@ export function Home({
       setError(err instanceof Error ? err.message : String(err));
     } finally {
       setBusy(false);
+      setOpening(null);
     }
   }
 
@@ -225,7 +229,7 @@ export function Home({
         {list.map(withModel).map((item) => ({
           ...item, color: selectedColorIndex(item.model ?? item.device, colors, item.color),
         })).map((item, index) => (
-          <div key={item.id} className="hub-device-card" data-kind={item.device.kind} style={{ ["--i" as string]: index }}>
+          <div key={item.id} className="hub-device-card" data-kind={item.device.kind} data-opening={opening === item.id || undefined} aria-busy={opening === item.id || undefined} style={{ ["--i" as string]: index }}>
             <button
               type="button"
               className="cover"
@@ -237,7 +241,7 @@ export function Home({
               <DevicePreview device={item.model ?? item.device} color={item.color} />
             </button>
             <div className="info">
-              <div className="name" title={(item.model ?? item.device).name}>{(item.model ?? item.device).name.replace(/^ATK 68/, "ATK68")}</div>
+              <div className="name" title={displayName((item.model ?? item.device).name)}>{displayName((item.model ?? item.device).name)}</div>
               <div className="status">
                 <span>
                   {item.device.usagePage !== undefined && item.model ? <Wifi size={16} /> : <Cable size={16} />}
@@ -246,7 +250,7 @@ export function Home({
                       <BatteryFull size={18} /> {demo ? 100 : info.batteryLevel}%
                     </>
                   )}
-                  {!demo && !item.connected && <em>Not connected</em>}
+                  {opening === item.id ? <em>Connecting…</em> : !demo && !item.connected && <em>Not connected</em>}
                 </span>
                 <span className="tools" aria-hidden="true">
                   <Palette size={16} />

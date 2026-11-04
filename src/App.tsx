@@ -19,7 +19,7 @@ import {
   disconnectDevice,
   isMouseSessionReadable,
 } from "./features/device/deviceSession";
-import { DEVICE_REGISTRY } from "./devices/registry";
+import { DEVICE_REGISTRY, displayName } from "./devices/registry";
 import { ATK_DEVICE_CATALOG } from "./features/device/deviceCatalog";
 import { selectedColorIndex, useMouseColorway } from "./ui/mouseColorway";
 import { useConfigStore } from "./store/configStore";
@@ -164,7 +164,7 @@ export function App() {
     setActive("home");
   }
 
-  const deviceTab = screen.kind === "home" ? null : { id: "device", label: screen.kind === "keyboard" ? screen.device.name : (useConfigStore.getState().selectedDevice?.name ?? useConfigStore.getState().deviceInfo.name) };
+  const deviceTab = screen.kind === "home" ? null : { id: "device", label: screen.kind === "keyboard" ? displayName(screen.device.name) : (useConfigStore.getState().selectedDevice?.name ?? useConfigStore.getState().deviceInfo.name) };
   const tabs = [
     ...(deviceTab ? [deviceTab] : []),
     ...pages.map((id) => ({ id, label: id === "settings" ? "Settings" : "Background Wallpaper" })),

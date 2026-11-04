@@ -13,6 +13,9 @@ export const DEVICE_REGISTRY: DeviceDefinition[] = [
   ...KEYBOARD_DEVICES,
 ];
 
+// The source data spells ATK68 models "ATK 68"; ATK sells them as "ATK68".
+export const displayName = (name: string) => name.replace(/^ATK 68(?= )/, "ATK68");
+
 export const ATK68: DeviceDefinition =
   DEVICE_REGISTRY.find(
     (d) => d.VID.toUpperCase() === "0X373B" && d.PID.toUpperCase() === "0X1048",

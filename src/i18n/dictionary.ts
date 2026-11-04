@@ -32,6 +32,7 @@ export const DICTIONARY: Record<string, Row> = {
     "驅動無法識別藍牙連接，請使用 2.4G 接收器或有線連接",
     "Sürücü Bluetooth bağlantısını tanıyamaz. Lütfen 2.4G alıcı veya kablo kullanın",
   ],
+  "Connecting…": ["正在连接…", "연결 중…", "Подключение…", "接続中…", "Verbindung wird hergestellt…", "Connexion…", "正在連接…", "Bağlanıyor…"],
   "Not connected": ["未连接", "연결되지 않음", "Не подключено", "未接続", "Nicht verbunden", "Non connecté", "未連接", "Bağlı değil"],
 
   // Device panel
