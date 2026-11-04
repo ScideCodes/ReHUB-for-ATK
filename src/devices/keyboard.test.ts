@@ -110,7 +110,7 @@ describe("keyboard registry", () => {
   it("finds devices by VID/PID and builds filters for every entry", () => {
     const mouse = findByVidPid("0x373B", "0x11CC");
     expect(mouse).toBeDefined();
-    expect(mouse?.name).toBe("ATK ZERO EX");
+    expect(mouse?.name).toBe("ATK Frost Zero Extreme");
 
     const kb = findByVidPid("0x373b", "0x1048");
     expect(kb).toBeDefined();

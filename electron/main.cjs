@@ -12,6 +12,7 @@ const {
   screen,
 } = require("electron");
 const fs = require("node:fs/promises");
+const { writeFileSync } = require("node:fs");
 const path = require("node:path");
 const { pathToFileURL } = require("node:url");
 const { isAppUrl, assetPath, externalUrl } = require("./policy.cjs");
@@ -42,6 +43,28 @@ let window,
   tray,
   quitting = false;
 let preferences = { closeToTray: false, launchAtLogin: false };
+let windowBounds = null;
+let prefPath = null;
+// Synchronous so close and quit cannot interleave two writes of the same file.
+function writePreferences() {
+  if (!prefPath) return;
+  writeFileSync(
+    prefPath,
+    JSON.stringify({ ...preferences, ...(windowBounds ? { windowBounds } : {}) }),
+    "utf8",
+  );
+}
+function saveWindowBounds() {
+  if (!window || window.isDestroyed()) return;
+  try {
+    windowBounds = window.isMaximized()
+      ? { isMaximized: true }
+      : { ...window.getBounds(), isMaximized: false };
+    writePreferences();
+  } catch {
+    /* bounds are a convenience; never block closing */
+  }
+}
 const chooser = new DeviceChooser((devices) => {
   if (window && !window.isDestroyed())
     window.webContents.send("desktop:chooser-changed", devices);
@@ -141,10 +164,7 @@ async function checkUpdates() {
   }
 }
 async function start() {
-  const prefPath = path.join(
-    app.getPath("userData"),
-    "desktop-preferences.json",
-  );
+  prefPath = path.join(app.getPath("userData"), "desktop-preferences.json");
   let initialBounds = null;
   try {
     const p = JSON.parse(await fs.readFile(prefPath, "utf8"));
@@ -152,7 +172,8 @@ async function start() {
       closeToTray: p.closeToTray === true,
       launchAtLogin: p.launchAtLogin === true,
     };
-    if (p.windowBounds) initialBounds = p.windowBounds;
+    if (p.windowBounds && typeof p.windowBounds === "object")
+      windowBounds = initialBounds = p.windowBounds;
   } catch {
     /* first launch */
   }
@@ -214,8 +235,9 @@ async function start() {
       if (initialBounds.isMaximized) {
         window.maximize();
       } else if (
-        typeof initialBounds.width === "number" &&
-        typeof initialBounds.height === "number"
+        ["x", "y", "width", "height"].every((k) =>
+          Number.isFinite(initialBounds[k]),
+        )
       ) {
         const displays = screen.getAllDisplays();
         const isVisible = displays.some((d) => {
@@ -228,10 +250,13 @@ async function start() {
           );
         });
         if (isVisible) {
-          window.setBounds(initialBounds);
+          const { x, y, width, height } = initialBounds;
+          window.setBounds({ x, y, width, height });
         }
       }
-    } catch {}
+    } catch {
+      /* fall back to the default centered size */
+    }
   }
   const session = window.webContents.session;
   const permitted = (permission) =>
@@ -312,13 +337,19 @@ async function start() {
           ? input.launchAtLogin
           : false,
     };
-    await fs.writeFile(prefPath, JSON.stringify(next), "utf8");
+    const previous = preferences;
+    preferences = next;
+    try {
+      writePreferences();
+    } catch (error) {
+      preferences = previous;
+      throw error;
+    }
     if (app.isPackaged && process.platform === "win32")
       app.setLoginItemSettings({
         openAtLogin: next.launchAtLogin,
         path: process.execPath,
       });
-    preferences = next;
     return {
       ...preferences,
       version: app.getVersion(),
@@ -376,20 +407,8 @@ async function start() {
   );
   tray.on("double-click", show);
   Menu.setApplicationMenu(null);
-  const saveWindowBounds = async () => {
-    if (!window || window.isDestroyed()) return;
-    try {
-      const isMax = window.isMaximized();
-      const bounds = isMax ? null : window.getBounds();
-      const next = {
-        ...preferences,
-        windowBounds: isMax ? { isMaximized: true } : { ...bounds, isMaximized: false },
-      };
-      await fs.writeFile(prefPath, JSON.stringify(next), "utf8");
-    } catch {}
-  };
   window.on("close", (event) => {
-    void saveWindowBounds();
+    saveWindowBounds();
     if (!quitting && preferences.closeToTray && !tray.isDestroyed()) {
       event.preventDefault();
       window.hide();
@@ -405,7 +424,7 @@ else {
   app.on("second-instance", show);
   app.on("before-quit", () => {
     quitting = true;
-    void saveWindowBounds();
+    saveWindowBounds();
     chooser.cancel();
   });
   app.on("window-all-closed", () => app.quit());

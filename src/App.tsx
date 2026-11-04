@@ -59,6 +59,9 @@ export function App() {
         !mock &&
         !mouseEndpointSupportsReal(Number(device.VID), Number(device.PID));
       if (mock || demo) {
+        // connectDevice ignores calls while busy; refuse instead of showing the wrong device.
+        if (useDeviceSession.getState().busy)
+          throw new Error("Wait for the current mouse operation.");
         const nameLower = device.name.toLowerCase();
         let matched = ATK_DEVICE_CATALOG.find(
           (s) => s.name.toLowerCase() === nameLower,
@@ -107,7 +110,7 @@ export function App() {
           !current.isMock &&
           current.vendorId === Number(device.VID) &&
           current.productId === Number(device.PID)
-        )
+        ) {
           // Already connected: open the page now and re-read in the background if not already busy.
           if (!useDeviceSession.getState().busy) {
             void deviceOperation(async () => {
@@ -119,7 +122,9 @@ export function App() {
               }),
             );
           }
-        else {
+        } else {
+          if (useDeviceSession.getState().busy)
+            throw new Error("Wait for the current mouse operation.");
           const authorized = (await navigator.hid?.getDevices()) ?? [];
           const selected = authorized.find(
             (d) =>

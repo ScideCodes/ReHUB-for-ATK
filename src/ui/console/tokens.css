@@ -16,7 +16,7 @@
   --cx-ok: #1f7a4d;
   --cx-error: #de2a2a;
   --cx-warning: #a35d00;
-  --cx-font-ui: Rubik, "Segoe UI", system-ui, sans-serif;
+  --cx-font-ui: "Manrope Variable", "Segoe UI", system-ui, sans-serif;
   --cx-font-display: "New York", "Iowan Old Style", "Apple Garamond", Baskerville,
     "Times New Roman", Times, serif;
   --cx-radius: 8px;
@@ -222,5 +222,5 @@
   --cx-font-ui: system-ui, "Segoe UI", sans-serif;
 }
 :root[data-ui-font="custom"] .cx {
-  --cx-font-ui: "ATK Hub Custom", Rubik, "Segoe UI", system-ui, sans-serif;
+  --cx-font-ui: "ATK Hub Custom", "Manrope Variable", "Segoe UI", system-ui, sans-serif;
 }

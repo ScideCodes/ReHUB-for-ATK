@@ -6,6 +6,7 @@ import { AppearanceLayer } from "../ui/console/Appearance";
 import {
   WALLPAPERS,
   checkUpload,
+  checkDecodes,
   saveFile,
   setAppearance,
   useAppearance,
@@ -32,7 +33,7 @@ function PageFrame({ onBack, children }: { onBack: () => void; children: React.R
   );
 }
 
-// The official driver can flash firmware; Re-HUB never sends bootloader commands.
+// The official driver can flash firmware; ReHUB never sends bootloader commands.
 const OFFICIAL_DRIVER = "https://hub.atk.pro/";
 
 export function SettingsPage({ onBack }: { onBack: () => void }) {
@@ -75,10 +76,10 @@ export function SettingsPage({ onBack }: { onBack: () => void }) {
       </section>
       <section className="hp-card">
         <h2>Firmware Tools</h2>
-        <p className="h-desc">Firmware updates are not available in Re-HUB.</p>
+        <p className="h-desc">Firmware updates are not available in ReHUB.</p>
         <p className="h-desc">
           Updating firmware puts the device into bootloader (DFU) mode, and a failed or interrupted write there can leave it unusable.
-          Re-HUB permanently blocks those commands until they have been tested on real hardware.
+          ReHUB permanently blocks those commands until they have been tested on real hardware.
         </p>
         <p className="h-desc">To update firmware, use the official ATK web driver, then come back here for your settings.</p>
         <a className="h-btn primary hp-link" href={OFFICIAL_DRIVER} target="_blank" rel="noopener noreferrer">
@@ -95,12 +96,12 @@ export function SettingsPage({ onBack }: { onBack: () => void }) {
         </a>
       </section>
       <section className="hp-card">
-        <h2>About Re-HUB</h2>
+        <h2>About ReHUB</h2>
         <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
           <span className="hub-logo" style={{ pointerEvents: "none" }}>
             <AtkLogo />
           </span>
-          <span className="h-desc">Re-HUB for ATK · unofficial open-source WebHID configurator · no telemetry</span>
+          <span className="h-desc">ReHUB for ATK · unofficial open-source WebHID configurator · no telemetry</span>
         </div>
       </section>
     </PageFrame>
@@ -141,7 +142,7 @@ export function WallpaperPage({ onBack }: { onBack: () => void }) {
               <strong>ALL FOR GAMING</strong>
               <span>Born for Gaming</span>
             </div>
-            <p className="h-desc" style={{ textAlign: "center" }}>Default (OPPO Sans + HarmonyOS)</p>
+            <p className="h-desc" style={{ textAlign: "center" }}>Default (Manrope)</p>
           </section>
         </div>
         <div>
@@ -149,7 +150,7 @@ export function WallpaperPage({ onBack }: { onBack: () => void }) {
             <h2><ImagePlus size={16} /> Custom Background Effects</h2>
             <div className="hp-two">
               <div className="hp-effect">
-                <span>Background Blur <b>{appearance.blur}%</b></span>
+                <span>Background Blur <b>{appearance.blur}px</b></span>
                 <Slider
                   label="Background Blur"
                   value={appearance.blur}
@@ -202,7 +203,7 @@ export function WallpaperPage({ onBack }: { onBack: () => void }) {
               const file = event.currentTarget.files?.[0];
               event.currentTarget.value = "";
               if (!file) return;
-              const problem = checkUpload(file, "image");
+              const problem = checkUpload(file, "image") ?? (await checkDecodes(file, "image"));
               if (problem) return setError(problem);
               setError("");
               try {

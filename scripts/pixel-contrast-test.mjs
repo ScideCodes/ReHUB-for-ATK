@@ -506,7 +506,7 @@ async function run() {
             .getByRole("button", { name: "Back to device list", exact: true })
             .click();
           await scan("Home/Saved", "home");
-          await openMock("ATK ZERO EX");
+          await openMock("ATK Frost Zero Extreme");
           // Original driver's mouse sections (Power lives in Parameter Settings).
           for (const tab of [
             "Key Change Settings",

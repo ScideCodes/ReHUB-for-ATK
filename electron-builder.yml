@@ -6,6 +6,7 @@ directories:
 files:
   - dist/**/*
   - electron/*.cjs
+  - electron/deviceNames.json
   - '!electron/*.test.cjs'
   - electron/icon.png
   - electron/icon.ico

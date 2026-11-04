@@ -128,7 +128,7 @@ try {
       .click();
   }
   await audit("Home", ".device-home");
-  await mock("ATK ZERO EX");
+  await mock("ATK Frost Zero Extreme");
   await page.locator(".liquid-app").waitFor();
   await audit("Mouse", ".liquid-app");
   await page

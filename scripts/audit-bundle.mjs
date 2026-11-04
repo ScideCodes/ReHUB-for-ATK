@@ -55,17 +55,11 @@ await build({
             .filter((module) => /^src\/devices\/.*\.json$/.test(module.id))
             .map((module) => ({ ...module, chunk: chunk.file })),
         );
-        const allowed = new Set([
-          "mice.json",
-          "devices.json",
-          "sourceMouseProtocols.json",
-          "mouseModels.generated.json",
-          "layoutPreviews.json",
-          "atk68Layout.json",
-        ]);
+        // Raw extraction inputs stay out of the app; generated runtime datasets may load lazily.
+        const raw = /^(source(?!MouseProtocols)\w*|deviceRegistry\.source|vendorArtwork)\.json$/;
         for (const data of deviceData) {
           assert(
-            allowed.has(data.id.split("/").at(-1)),
+            !raw.test(data.id.split("/").at(-1)),
             `Unexpected device extraction input in runtime bundle: ${data.id}`,
           );
           assert(

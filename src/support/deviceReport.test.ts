@@ -47,6 +47,15 @@ describe("community device reports", () => {
       inspectDevice({ collections: [{ usagePage: 0xff02 }] } as HIDDevice),
     ).toThrow(/boot/i);
   });
+  it("omits an auxiliary boot collection but reports the operational interface", () => {
+    const metadata = inspectDevice({
+      vendorId: 0x373b,
+      productId: 0x11d8,
+      collections: [{ usagePage: 0xff02 }, { usagePage: 0xff04, usage: 2 }],
+    } as unknown as HIDDevice);
+    expect(metadata.collections).toHaveLength(1);
+    expect(metadata.collections[0].usagePage).toBe(0xff04);
+  });
   it("allowlists diagnostics fields and labels simulations", () => {
     const report = createReport(
       {

@@ -24,7 +24,7 @@ const explanations = [
   "Save a keyboard or media sequence. Hardware writes are unverified.",
   "Save a repeated sequence. Hardware writes are unverified.",
   "Assign the device’s polling-rate switch action.",
-  "This lighting action is not supported by the ZERO EX.",
+  "This lighting action is not supported by the Frost Zero Extreme.",
   "Assign the device’s onboard profile switch action.",
   "Assign the device’s DPI lock action.",
   "Scroll up or down with a button press.",
@@ -101,7 +101,7 @@ export function ButtonActionEditor({
           label,
           description: explanations[value],
           disabled: value === 8,
-          disabledReason: value === 8 ? "Unsupported by ZERO EX" : undefined,
+          disabledReason: value === 8 ? "Unsupported by Frost Zero Extreme" : undefined,
         }))}
         onValueChange={(keyClass) => {
           const [keyValue1, keyValue2] = initialValues[keyClass];
@@ -251,7 +251,7 @@ export function ButtonActionEditor({
       )}
       {action.keyClass === 8 && (
         <p className="setting-reason">
-          Chandeliers is unsupported by the ZERO EX.
+          Chandeliers is unsupported by the Frost Zero Extreme.
         </p>
       )}
       {action.keyClass === 11 && (

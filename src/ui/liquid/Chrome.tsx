@@ -21,7 +21,7 @@ export function ConsoleHeader({ onDevices }: { onDevices?: () => void }) {
   const info = useConfigStore((state) => state.deviceInfo);
   return (
     <ConsoleTopBar
-      device={info.name || "ATK ZERO EX"}
+      device={info.name || "ATK Frost Zero Extreme"}
       onBack={onDevices}
       actions={
         <>
@@ -91,7 +91,7 @@ export function DevicePanel({
         >
           <div className="lg-device-heading">
             <div className="lg-device-name">
-              <h2>{info.name || "ATK ZERO EX"}</h2>
+              <h2>{info.name || "ATK Frost Zero Extreme"}</h2>
               <span
                 className="lg-status-dot" role="img"
                 data-connected={info.connected}

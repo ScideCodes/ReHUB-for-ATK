@@ -10,7 +10,7 @@ export class MockHidDevice {
   opened = true;
   vendorId = 0x373b;
   productId = 0x11d8;
-  productName = "ATK ZERO EX (Virtual Mock)";
+  productName = "ATK Frost Zero Extreme (Virtual Mock)";
   serialNumber = "5420E4DB5AEF";
   model?: DeviceDefinition;
   collections = [

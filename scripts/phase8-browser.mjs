@@ -36,7 +36,7 @@ try {
       width: 1440,
       height: 900,
       theme: "light",
-      model: "ATK ZERO EX",
+      model: "ATK Frost Zero Extreme",
       screen: "mouse",
       tab: "DPI",
     },

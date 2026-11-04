@@ -294,7 +294,7 @@ export function DeviceTools() {
         help={
           info.connected
             ? info.isMock
-              ? "Simulated ZERO EX"
+              ? "Simulated Frost Zero Extreme"
               : info.name
             : "USB or 8K Dongle-H"
         }

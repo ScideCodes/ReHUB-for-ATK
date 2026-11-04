@@ -210,7 +210,7 @@ it("maps a receiver to its paired model via runtime CID/MID query or keeps unkno
   pairedDongle.productId = 0x11d8;
   const infoPaired = await client.connectHardware(pairedDongle as unknown as HIDDevice);
   expect(infoPaired.connectionMode).toBe("wireless_dongle");
-  expect(infoPaired.name).toBe("ATK ZERO EX");
+  expect(infoPaired.name).toBe("ATK Frost Zero Extreme");
   expect(verifiedMouseIdentity(0x373b, 0x11d8, 1, 4)).toBe(true);
   await client.disconnect();
 

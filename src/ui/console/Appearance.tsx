@@ -6,6 +6,7 @@ import {
   APPEARANCE_FILE_EVENT,
   checkUpload,
   readFile,
+  checkDecodes,
   saveFile,
   setAppearance,
   useAppearance,
@@ -96,7 +97,7 @@ export function AppearanceButton() {
   const font = useRef<HTMLInputElement>(null);
   async function upload(file: File | undefined, kind: "image" | "font") {
     if (!file) return;
-    const problem = checkUpload(file, kind);
+    const problem = checkUpload(file, kind) ?? (await checkDecodes(file, kind));
     setError(problem ?? "");
     if (problem) return;
     try {
@@ -210,7 +211,7 @@ export function AppearanceButton() {
               hideLabel
               value={appearance.font}
               options={[
-                { value: "store", label: "Store (Rubik)" },
+                { value: "store", label: "Default (Manrope)" },
                 { value: "system", label: "System UI" },
                 { value: "custom", label: "Custom" },
               ]}

@@ -29,6 +29,7 @@ import { mouseModelFeatures } from "../../devices/mouseProtocols";
 import { editSetting, editSettings } from "../../features/maps/mapSession";
 import { DeviceSettingsSchema, type ButtonAction, type PollingRate } from "../../types/schema";
 import { lodOptions } from "../../protocol/codec";
+import { LodIllustration } from "./LodIllustration";
 import { restoreFactory } from "../../features/device/deviceSession";
 import { closeHeldKeys, serializeRecording, readRecording, type RecordedKey } from "../../ui/liquid/macros";
 import { useMouseColorway, selectedColorIndex } from "../../ui/mouseColorway";
@@ -678,12 +679,8 @@ export function ParameterSection() {
               )}
             </div>
           </div>
-          <div style={{ width: 180, display: "grid", placeItems: "center", background: "var(--color-card)" }} aria-hidden="true">
-            <svg width="140" height="60" viewBox="0 0 140 60">
-              <ellipse cx="70" cy={22 - settings.lod * 4} rx="36" ry="10" fill="none" stroke="currentColor" strokeWidth="2" />
-              <line x1="70" y1={32 - settings.lod * 4} x2="70" y2="44" stroke="currentColor" strokeWidth="2" />
-              <line x1="0" y1="46" x2="140" y2="46" stroke="currentColor" strokeDasharray="2 3" />
-            </svg>
+          <div className="hm-lod-figure">
+            <LodIllustration lod={settings.lod} min={Math.min(...lods)} max={Math.max(...lods)} />
           </div>
         </div>
         )}
@@ -821,14 +818,14 @@ export function ConfigSection({ onImport, onNew, onExport }: { onImport: () => v
             </span>
             <div className="hm-slot" data-active={slot === (info.onboardSlot ?? 0)}>
               Config File{slot + 1}
-              {slot === (info.onboardSlot ?? 0) && <span className="hm-applying">Applying</span>}
+              {slot === (info.onboardSlot ?? 0) && <span className="hm-applying">In use</span>}
               <span style={{ flex: 1 }} />
               <FileText size={16} aria-label="Onboard file" />
             </div>
           </div>
         ))}
         <p style={{ margin: "20px 0 12px", color: "var(--color-text-head-100)" }}>
-          Computer Config <small style={{ color: "var(--color-text-hint-60)", marginLeft: 6 }}>Stored locally on the computer.Temporarily occupies last onboard slot when applied</small>
+          Computer Config <small style={{ color: "var(--color-text-hint-60)", marginLeft: 6 }}>Stored locally on the computer. Temporarily occupies last onboard slot when applied</small>
         </p>
         {maps.length === 0 ? (
           <div className="h-grid-bg" style={{ height: 180, display: "grid", placeItems: "center" }}>
@@ -851,7 +848,7 @@ export function ConfigSection({ onImport, onNew, onExport }: { onImport: () => v
                 />
               )}
               <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{map.name}</span>
-              {map.id === activeMapId && <span className="hm-applying">Applying</span>}
+              {map.id === activeMapId && <span className="hm-applying">In use</span>}
               <span style={{ flex: 1 }} />
               {!batch && map.id !== activeMapId && (
                 <button type="button" className="h-btn" style={{ height: 26 }} onClick={() => void hub.selectMap(map.id, true)}>
@@ -918,8 +915,8 @@ export function OtherSection() {
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: 8, paddingTop: 0 }}>
         <div className="h-card hm-other">
-          <strong>Firmware Version V{info.firmwareMouse || "—"}</strong>
-          <span>Latest VersionV {info.firmwareMouse || "—"}</span>
+          <strong>Firmware Version {info.firmwareMouse ? `V${info.firmwareMouse}` : "—"}</strong>
+          <span>Latest Version {info.firmwareMouse ? `V${info.firmwareMouse}` : "—"}</span>
         </div>
         <div className="h-card hm-other row">
           <strong>Pair Receiver</strong>

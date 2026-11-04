@@ -10,7 +10,7 @@ const server = spawn(
   { windowsHide: true, stdio: "ignore" },
 );
 const devices = [
-  { model: "ATK ZERO EX", root: ".liquid-app" },
+  { model: "ATK Frost Zero Extreme", root: ".liquid-app" },
   { model: "ATK 68 V2 Pro", root: ".keyboard-workspace" },
 ];
 const failures = [];

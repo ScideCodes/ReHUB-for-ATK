@@ -38,11 +38,8 @@ function mapReports(reports: readonly HIDReportInfo[] = []): ReportLayout[] {
 function mapCollections(
   items: readonly HIDCollectionInfo[] = [],
 ): Collection[] {
-  return items.map((c) => {
-    if (c.usagePage === 0xff02)
-      throw new Error(
-        "Bootloader interfaces cannot be selected. Choose the normal device interface.",
-      );
+  // Bootloader (0xff02) collections are never described; operational mice may expose one beside their config interface.
+  return items.filter((c) => c.usagePage !== 0xff02).map((c) => {
     return {
       usagePage: c.usagePage,
       usage: c.usage,
@@ -58,6 +55,10 @@ export function inspectDevice(
   device: Pick<HIDDevice, "vendorId" | "productId" | "collections">,
 ): DeviceMetadata {
   const collections = mapCollections(device.collections);
+  if (device.collections?.length && !collections.length)
+    throw new Error(
+      "Bootloader interfaces cannot be selected. Choose the normal device interface.",
+    );
   return {
     vendorId: hex(device.vendorId),
     productId: hex(device.productId),

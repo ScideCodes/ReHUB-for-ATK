@@ -497,7 +497,7 @@ export function KeyboardWorkspace({
     );
     const a = document.createElement("a");
     a.href = url;
-    a.download = "atk68-keyboard-maps.json";
+    a.download = "atk-keyboard-maps.json";
     a.click();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
