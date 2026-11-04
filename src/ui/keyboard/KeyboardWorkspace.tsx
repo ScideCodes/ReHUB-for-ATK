@@ -570,9 +570,16 @@ export function KeyboardWorkspace({
           try {
             if (chosen.size > 4_000_000)
               throw new Error("Keyboard backup exceeds 4 MB");
-            setImportValue(
-              KeyboardBackupSchema.parse(JSON.parse(await chosen.text())),
-            );
+            let data: unknown;
+            try {
+              data = JSON.parse(await chosen.text());
+            } catch {
+              throw new Error("The file is not valid JSON.");
+            }
+            const parsed = KeyboardBackupSchema.safeParse(data);
+            if (!parsed.success)
+              throw new Error("This file is not a ReHUB keyboard backup.");
+            setImportValue(parsed.data);
           } catch (error) {
             report(error);
           }

@@ -11,11 +11,11 @@ Include steps to reproduce, the affected device family, and the redacted diagnos
 
 ## Scope
 
-- In scope: this repository's code, including the WebHID transport, packet validators, write planners, file import, Electron bridge, and Windows installer/uninstaller.
+- In scope: this repository's code, including the WebHID transport, packet validators, write planners, file import, Electron bridge, Windows installer/uninstaller, and the macOS and Linux packages (including the Linux udev rule).
 - Out of scope: ATK's own firmware, apps and services.
 
 ## Desktop releases
 
-Download installers only from this repository's GitHub Releases. The current Windows installer is unsigned. Compare `Get-FileHash -Algorithm SHA256 .\ReHUB-Setup-1.5.1-x64.exe` with the accompanying `SHA256SUMS.txt` before running it. A checksum verifies that the download matches the published artifact; it does not replace publisher signing or code review.
+Download installers only from this repository's GitHub Releases. The Windows installer and macOS app are currently unsigned. Before running a download, compare its SHA-256 hash with the matching checksum file: `Get-FileHash -Algorithm SHA256 .\ReHUB-Setup-<version>-x64.exe` against `SHA256SUMS.txt` on Windows, `shasum -a 256 ReHUB-<version>-mac-universal.dmg` against `SHA256SUMS-mac.txt` on macOS, or `sha256sum ReHUB-<version>-linux-*` against `SHA256SUMS-linux.txt` on Linux. A checksum verifies that the download matches the published artifact; it does not replace publisher signing or code review.
 
 Desktop releases require a clean `npm audit --audit-level=moderate`, automated tests, and a packaged application smoke check. These checks cannot establish that all vulnerabilities are absent. See [the 1.5.1 code review](docs/audit-1.5.1.md) for scope and limitations.

@@ -38,3 +38,29 @@ nsis:
   deleteAppDataOnUninstall: false
   license: LICENSE
 publish: null
+mac:
+  target:
+    - target: dmg
+      arch: [universal]
+  icon: electron/icon-1024.png
+  category: public.app-category.utilities
+  # Unsigned release: ad-hoc signature only, so Apple Silicon can run it. Users approve it once in Privacy & Security.
+  identity: '-'
+dmg:
+  artifactName: ReHUB-${version}-mac-${arch}.${ext}
+linux:
+  target:
+    - target: AppImage
+      arch: [x64]
+    - target: deb
+      arch: [x64]
+  icon: electron/icon-1024.png
+  category: Utility
+  syncDesktopName: true
+  synopsis: Configurator for ATK mice and keyboards
+  maintainer: ReHUB contributors (https://github.com/ScideCodes/ReHUB-for-ATK)
+  artifactName: ReHUB-${version}-linux-${arch}.${ext}
+deb:
+  # Ship the USB access rule as a package file so electron-builder's own install scripts stay unchanged.
+  fpm:
+    - electron/linux/70-rehub-atk.rules=/usr/lib/udev/rules.d/70-rehub-atk.rules

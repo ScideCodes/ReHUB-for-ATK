@@ -1,0 +1,6 @@
+# ReHUB for ATK: let the signed-in user talk to supported ATK devices through hidraw.
+# Installed by the .deb package; AppImage users copy it to /etc/udev/rules.d/ once.
+# The 70- prefix runs before 73-seat-late.rules, which applies the uaccess tag.
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="373b", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3554", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1a81", TAG+="uaccess"

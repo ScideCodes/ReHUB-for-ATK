@@ -1,12 +1,12 @@
 # ReHUB desktop
 
-The Windows desktop app bundles the built web interface and Electron. End users do not need Node.js, npm, a separate browser or a local server. The source and packaging configuration are in this repository under the MIT license; bundled dependencies retain their own licenses.
+The desktop app (Windows, macOS and Linux) bundles the built web interface and Electron. End users do not need Node.js, npm, a separate browser or a local server. The source and packaging configuration are in this repository under the MIT license; bundled dependencies retain their own licenses.
 
 ## Install and use
 
 Download `ReHUB-Setup-<version>-x64.exe` from the release assets when published. The installer supports per-user installation, an installation folder choice, and Start menu/desktop shortcuts. Open ReHUB and choose your device in its device picker. Close the official configurator first. Bluetooth is not supported by the existing configurator.
 
-Minimize uses the normal Windows taskbar. In Settings > Desktop app, optionally enable **Keep running in the system tray when I close the window** or **Launch ReHUB when I sign in to Windows**. Both are off by default. The tray menu can reopen ReHUB, disconnect devices and reload (after confirmation), open GitHub, or quit. Quit closes the app and its device connections. Disconnect/reload discards unsaved changes; finish any ongoing save first.
+Minimize uses the normal taskbar or Dock. In Settings > Desktop app, optionally enable **Keep running in the system tray when I close the window** or **Launch ReHUB when I sign in** (Windows and macOS). Both are off by default. The tray menu can reopen ReHUB, disconnect devices and reload (after confirmation), open GitHub, or quit. Quit closes the app and its device connections. Disconnect/reload discards unsaved changes; finish any ongoing save first.
 
 Device access requires choosing a device; no automatic blanket HID permissions. Electron retains permission for the current window lifetime. You may need to select the device again after restarting. Existing saved browser settings are separate from the desktop profile; export/import maps to transfer them.
 
@@ -38,7 +38,7 @@ VID/PID identify interfaces, not necessarily the mouse attached to a shared rece
 
 ## Develop and build
 
-Requires Node.js 22.12+ for desktop tooling. Windows x64 is the packaged target.
+Requires Node.js 22.12+ for desktop tooling. Packaged targets: Windows x64 (NSIS installer), macOS universal (`.dmg`, ad-hoc signed) and Linux x64 (AppImage and `.deb`). Build each on its own platform.
 
 ```sh
 npm ci
@@ -54,7 +54,7 @@ node scripts/packaged-smoke.mjs
 
 `desktop:pack` builds an unpacked application under `release/win-unpacked`. `desktop:dist` builds the NSIS installer in `release/`. The icon is original generated artwork; regenerate with `node scripts/generate-desktop-icon.mjs`.
 
-The Windows desktop workflow builds artifacts on relevant pull requests, version tags and manual dispatches. It does **not** automatically publish a release. Download its installer/checksum artifact and attach it to a reviewed GitHub Release. Builds without signing credentials remain unsigned.
+The desktop workflow builds Windows, macOS and Linux artifacts on relevant pull requests, version tags and manual dispatches. It does **not** automatically publish a release. Download each platform's package and checksum artifact and attach them to a reviewed GitHub Release. Builds without signing credentials remain unsigned.
 
 ## Security boundaries
 

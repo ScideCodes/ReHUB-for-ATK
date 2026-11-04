@@ -406,14 +406,20 @@ export function installDeviceBridge() {
       appendLog("warning", data, "Incoming checksum mismatch; push accepted.");
     pushFlags |= data[5] ?? 0;
     if (pushRefresh) clearTimeout(pushRefresh);
-    pushRefresh = setTimeout(() => {
+    const flush = () => {
+      // An apply or read in progress already reads back what it changes; refresh after it ends.
+      if (useDeviceSession.getState().busy) {
+        pushRefresh = setTimeout(flush, 250);
+        return;
+      }
       const flags = pushFlags;
       pushFlags = 0;
       if (useConfigStore.getState().deviceInfo.connected)
         void refreshDevice(flags).catch((error) =>
           appendLog("error", undefined, String(error)),
         );
-    }, 80);
+    };
+    pushRefresh = setTimeout(flush, 80);
   };
 }
 export async function sendPacket(packet: Uint8Array, options?: SendOptions) {

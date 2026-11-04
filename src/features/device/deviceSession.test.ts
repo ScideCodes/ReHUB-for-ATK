@@ -439,3 +439,29 @@ describe("physical device snapshots", () => {
     expect(useConfigStore.getState().activeSettings.sensorSleepTime).toBe(60);
   });
 });
+
+describe("device push reports", () => {
+  it("defers the push-triggered refresh until the current operation ends", async () => {
+    const { connectDevice, installDeviceBridge } = await import("./deviceSession");
+    await connectDevice(true, 1, 4);
+    installDeviceBridge();
+    const identify = vi.spyOn(hidClient, "identifyDevice");
+    vi.useFakeTimers();
+    try {
+      useDeviceSession.setState({ busy: true });
+      const push = new Uint8Array(16);
+      push[0] = 0x0a;
+      push[5] = 4; // identity changed
+      push[15] = calcChecksum(REPORT_ID, push.subarray(0, 15));
+      hidClient.onPushReport?.(0x0a, push);
+      await vi.advanceTimersByTimeAsync(1000);
+      expect(identify).not.toHaveBeenCalled();
+      useDeviceSession.setState({ busy: false });
+      await vi.advanceTimersByTimeAsync(300);
+      expect(identify).toHaveBeenCalled();
+    } finally {
+      vi.useRealTimers();
+      identify.mockRestore();
+    }
+  });
+});

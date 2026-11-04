@@ -18,6 +18,9 @@ const { pathToFileURL } = require("node:url");
 const { isAppUrl, assetPath, externalUrl } = require("./policy.cjs");
 const { DeviceChooser } = require("./chooser.cjs");
 const REPO = "https://github.com/ScideCodes/ReHUB-for-ATK";
+// Electron supports login items on Windows and macOS only.
+const loginItems =
+  app.isPackaged && (process.platform === "win32" || process.platform === "darwin");
 const CSP =
   "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' blob:; font-src 'self' data:; connect-src 'self'; object-src 'none'; frame-src 'none'; base-uri 'none'";
 protocol.registerSchemesAsPrivileged([
@@ -57,9 +60,8 @@ function writePreferences() {
 function saveWindowBounds() {
   if (!window || window.isDestroyed()) return;
   try {
-    windowBounds = window.isMaximized()
-      ? { isMaximized: true }
-      : { ...window.getBounds(), isMaximized: false };
+    // Normal bounds survive maximize/minimize, so un-maximizing restores the user's size.
+    windowBounds = { ...window.getNormalBounds(), isMaximized: window.isMaximized() };
     writePreferences();
   } catch {
     /* bounds are a convenience; never block closing */
@@ -177,7 +179,7 @@ async function start() {
   } catch {
     /* first launch */
   }
-  if (app.isPackaged && process.platform === "win32")
+  if (loginItems)
     preferences.launchAtLogin = app.getLoginItemSettings().openAtLogin;
   const dist = path.join(app.getAppPath(), "dist");
   protocol.handle("rehub", async (request) => {
@@ -232,9 +234,7 @@ async function start() {
 
   if (initialBounds) {
     try {
-      if (initialBounds.isMaximized) {
-        window.maximize();
-      } else if (
+      if (
         ["x", "y", "width", "height"].every((k) =>
           Number.isFinite(initialBounds[k]),
         )
@@ -254,6 +254,7 @@ async function start() {
           window.setBounds({ x, y, width, height });
         }
       }
+      if (initialBounds.isMaximized) window.maximize();
     } catch {
       /* fall back to the default centered size */
     }
@@ -319,7 +320,7 @@ async function start() {
   handle("desktop:preferences", () => ({
     ...preferences,
     version: app.getVersion(),
-    canLaunchAtLogin: app.isPackaged && process.platform === "win32",
+    canLaunchAtLogin: loginItems,
   }));
   handle("desktop:set-preferences", async (input) => {
     if (
@@ -333,10 +334,7 @@ async function start() {
       throw new Error("Invalid preferences");
     const next = {
       closeToTray: input.closeToTray,
-      launchAtLogin:
-        app.isPackaged && process.platform === "win32"
-          ? input.launchAtLogin
-          : false,
+      launchAtLogin: loginItems ? input.launchAtLogin : false,
     };
     const previous = preferences;
     preferences = next;
@@ -346,15 +344,15 @@ async function start() {
       preferences = previous;
       throw error;
     }
-    if (app.isPackaged && process.platform === "win32")
+    if (loginItems)
       app.setLoginItemSettings({
         openAtLogin: next.launchAtLogin,
-        path: process.execPath,
+        ...(process.platform === "win32" ? { path: process.execPath } : {}),
       });
     return {
       ...preferences,
       version: app.getVersion(),
-      canLaunchAtLogin: app.isPackaged && process.platform === "win32",
+      canLaunchAtLogin: loginItems,
     };
   });
   handle("desktop:chooser", () => chooser.pending?.devices ?? null);
@@ -383,9 +381,10 @@ async function start() {
       filters: [{ name: "Device report", extensions: ["txt"] }],
     });
     if (result.canceled || !result.filePath) return false;
-    if (path.extname(result.filePath).toLowerCase() !== ".txt")
-      throw new Error("Save the report as a .txt file.");
-    await fs.writeFile(result.filePath, text, "utf8");
+    // GTK and some macOS dialogs do not append the filter's extension to a typed name.
+    const ext = path.extname(result.filePath).toLowerCase();
+    if (ext && ext !== ".txt") throw new Error("Save the report as a .txt file.");
+    await fs.writeFile(ext ? result.filePath : `${result.filePath}.txt`, text, "utf8");
     return true;
   });
   const icon = nativeImage.createFromPath(path.join(__dirname, "icon.png"));
@@ -407,12 +406,23 @@ async function start() {
     ]),
   );
   tray.on("double-click", show);
-  Menu.setApplicationMenu(null);
+  // macOS needs an app menu for Cmd+Q and the clipboard shortcuts; other platforms hide it.
+  Menu.setApplicationMenu(
+    process.platform === "darwin"
+      ? Menu.buildFromTemplate([
+          { role: "appMenu" },
+          { role: "editMenu" },
+          { role: "windowMenu" },
+        ])
+      : null,
+  );
   window.on("close", (event) => {
     saveWindowBounds();
     if (!quitting && preferences.closeToTray && !tray.isDestroyed()) {
       event.preventDefault();
-      window.hide();
+      // Many Linux desktops (stock GNOME) show no tray icon, so keep the window reachable from the dock.
+      if (process.platform === "linux") window.minimize();
+      else window.hide();
     }
   });
   window.once("ready-to-show", () => {
@@ -423,6 +433,8 @@ async function start() {
 if (!app.requestSingleInstanceLock()) app.quit();
 else {
   app.on("second-instance", show);
+  // macOS: clicking the Dock icon brings back a window hidden to the tray.
+  app.on("activate", show);
   app.on("before-quit", () => {
     quitting = true;
     saveWindowBounds();
