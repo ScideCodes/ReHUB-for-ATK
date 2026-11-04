@@ -21,10 +21,8 @@ import {
   initializeDevice,
   isKnownDevice,
   refreshDevice,
-  setAutoReconnecting,
   useDeviceSession,
 } from "../features/device/deviceSession";
-import { hidClient } from "../hid/hidClient";
 import {
   clone,
   flushMaps,
@@ -199,35 +197,13 @@ export function HubProvider({ children }: { children: ReactNode }) {
     const onVisibility = () => {
       if (document.hidden) flushMaps();
     };
-    const onConnect = (event: HIDConnectionEvent) => {
-      if (
-        event.device.vendorId === 0x3554 &&
-        event.device.collections.some(
-          (collection) =>
-            collection.usagePage === 0xff04 && collection.usage === 2,
-        ) &&
-        !hidClient.getDeviceInfo().connected
-      )
-        void run(() =>
-          deviceOperation(async () => {
-            setAutoReconnecting(true);
-            try {
-              if (await hidClient.autoReconnect()) await refreshDevice();
-            } finally {
-              setAutoReconnecting(false);
-            }
-          }),
-        );
-    };
     window.addEventListener("hashchange", onHash);
     window.addEventListener("beforeunload", flushMaps);
     document.addEventListener("visibilitychange", onVisibility);
-    navigator.hid?.addEventListener("connect", onConnect);
     return () => {
       window.removeEventListener("hashchange", onHash);
       window.removeEventListener("beforeunload", flushMaps);
       document.removeEventListener("visibilitychange", onVisibility);
-      navigator.hid?.removeEventListener("connect", onConnect);
       flushMaps();
     };
   }, []);

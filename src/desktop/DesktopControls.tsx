@@ -14,8 +14,16 @@ export function DesktopDeviceChooser() {
       setSelected((id) => (items?.some((d) => d.deviceId === id) ? id : ""));
       setError("");
     };
-    const unsubscribe = api.onChooser(update);
-    void api.getChooser().then(update);
+    let pushed = false;
+    const unsubscribe = api.onChooser((items) => {
+      pushed = true;
+      update(items);
+    });
+    // A push that arrives first is newer than this initial snapshot.
+    void api
+      .getChooser()
+      .then((items) => !pushed && update(items))
+      .catch(() => undefined);
     return unsubscribe;
   }, []);
   async function choose(id: string) {

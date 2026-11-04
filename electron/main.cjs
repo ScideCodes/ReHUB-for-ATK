@@ -309,8 +309,9 @@ async function start() {
   );
   window.webContents.on(
     "did-start-navigation",
-    (_event, _url, _inPlace, mainFrame) => {
-      if (mainFrame) chooser.cancel();
+    (_event, _url, inPlace, mainFrame) => {
+      // Hash routing and history.replaceState are in-place; only a real page load invalidates a pending chooser.
+      if (mainFrame && !inPlace) chooser.cancel();
     },
   );
   window.webContents.on("render-process-gone", () => chooser.cancel());

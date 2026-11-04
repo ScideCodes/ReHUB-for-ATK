@@ -73,7 +73,7 @@ const MODES: [id: number, name: string, icon: string][] = [
   [7, "Fluttering Ribbons", "run"], [8, "Laser", "dot"], [9, "Pinwheel", "flowers"], [11, "Vortex", "flowers"],
   [13, "Spectral Cycle", "flowers"], [14, "Streamer", "wave"], [19, "Colorful Swirls", "wave"], [23, "Double Vortex", "flower"],
   [25, "Christmas", "stream"], [26, "Spectrum Breathing", "rain"], [28, "Spectrum Float", "scan"], [30, "Digital Rain", "together"],
-  [31, "Single Light Up", "flash"], [36, "Crucifix", "self"], [39, "指尖涟漪", "music"],
+  [31, "Single Light Up", "flash"], [36, "Crucifix", "self"], [39, "Fingertip Ripple", "music"],
 ];
 const MODE_ICONS = import.meta.glob<string>("./light-icons/*.svg", { eager: true, query: "?url", import: "default" });
 

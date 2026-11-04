@@ -1242,9 +1242,6 @@ let autoReconnecting = false;
 export function isAutoReconnecting() {
   return autoReconnecting;
 }
-export function setAutoReconnecting(value: boolean) {
-  autoReconnecting = value;
-}
 
 export function initializeDevice() {
   installDeviceBridge();

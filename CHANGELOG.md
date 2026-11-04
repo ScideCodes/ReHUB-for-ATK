@@ -2,6 +2,19 @@
 
 All notable changes to ReHUB for ATK. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.5.3] - 2026-11-04
+
+First published build with the 1.5.2 changes below.
+
+### Fixed
+- The **Fingertip Ripple** keyboard lighting mode showed its Chinese source name (指尖涟漪) in every language. It now has an English name and translations for all eight languages.
+- The desktop device picker could close by itself when the app updated its address (switching maps rewrites the `#/map/...` hash). Only a real page load now cancels a pending device selection.
+- The desktop device picker could show a stale device list when its initial request returned after a live update, and a failed initial request raised an unhandled rejection.
+- Removed a duplicate mouse hotplug handler that only matched one of the two ATK vendor IDs. The HID client already reconnects every supported mouse and refreshes its settings.
+
+### Verification
+- Typecheck, lint, 740 application tests, 8 desktop tests and the desktop smoke test pass. Physical hardware was not tested.
+
 ## [1.5.2] - 2026-11-04
 
 ### Changed
