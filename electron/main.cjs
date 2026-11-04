@@ -177,6 +177,8 @@ async function checkUpdates() {
       if (window && !window.isDestroyed())
         window.webContents.send("desktop:update", publicUpdate());
     }
+    if (publicUpdate().canInstall)
+      return { message: `ReHUB ${latest} is available. Click the green update button in the top bar to install it.` };
     return {
       message: `ReHUB ${latest} is available. Download the installer from GitHub Releases.`,
       url,

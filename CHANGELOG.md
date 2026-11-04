@@ -2,6 +2,11 @@
 
 All notable changes to ReHUB for ATK. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions follow [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Fixed
+- After **Check for updates** finds a release that ReHUB can install itself, Settings now points to the green update button. It no longer says to download the installer from GitHub Releases or shows an "Open GitHub Releases" button.
+
 ## [1.5.8] - 2026-11-04
 
 ### Fixed
