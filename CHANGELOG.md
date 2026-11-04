@@ -12,9 +12,15 @@ All notable changes to ReHUB for ATK. The format follows [Keep a Changelog](http
 
 ### Fixed
 - On macOS, Cmd+Q and the copy/paste shortcuts would not have worked because the app hid its menu bar. macOS now gets a minimal app, edit and window menu, and clicking the Dock icon reopens a window hidden to the tray.
+- **Saving a device report failed on Linux and macOS** when you typed a name without `.txt`; those save dialogs do not add the extension. The report is now saved as `<name>.txt`; other extensions are still refused.
+- **Close-to-tray on Linux could hide the window with no way back**: stock GNOME and several other desktops show no tray icon. On Linux, closing now minimizes the window instead.
+- **The window forgot its size after being maximized**, and quitting while minimized could save an off-screen position. ReHUB now saves the window's normal size and position plus whether it was maximized.
+- **A device status report arriving during a save started a full read-back in the middle of it**, briefly showing half-applied values. The read-back now waits until the save or read in progress ends.
+- **Importing a file that is not a keyboard backup showed a raw validation dump** as the error. It now says "This file is not a ReHUB keyboard backup." or "The file is not valid JSON.", translated.
 
 ### Verification
 - The Linux package was built here and passed the packaged-app smoke test as a non-root user with the Chromium sandbox enabled: security fuses, secure origin, isolated renderer, HID API, preferences and the report flow. The `.deb` contents were checked for the udev rule, the sandbox helper and the AppArmor profile.
+- The desktop smoke test (Electron dev build) also passes on Linux, and now accepts minimize-instead-of-hide there. A new unit test checks that a status push during a busy operation is deferred (fails before the fix).
 - The macOS package is built and smoke-tested only in CI (`macos-latest`), and neither platform has been tested with real hardware yet.
 
 ## [1.5.3] - 2026-11-04

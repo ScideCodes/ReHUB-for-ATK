@@ -60,9 +60,8 @@ function writePreferences() {
 function saveWindowBounds() {
   if (!window || window.isDestroyed()) return;
   try {
-    windowBounds = window.isMaximized()
-      ? { isMaximized: true }
-      : { ...window.getBounds(), isMaximized: false };
+    // Normal bounds survive maximize/minimize, so un-maximizing restores the user's size.
+    windowBounds = { ...window.getNormalBounds(), isMaximized: window.isMaximized() };
     writePreferences();
   } catch {
     /* bounds are a convenience; never block closing */
@@ -235,9 +234,7 @@ async function start() {
 
   if (initialBounds) {
     try {
-      if (initialBounds.isMaximized) {
-        window.maximize();
-      } else if (
+      if (
         ["x", "y", "width", "height"].every((k) =>
           Number.isFinite(initialBounds[k]),
         )
@@ -257,6 +254,7 @@ async function start() {
           window.setBounds({ x, y, width, height });
         }
       }
+      if (initialBounds.isMaximized) window.maximize();
     } catch {
       /* fall back to the default centered size */
     }
@@ -383,9 +381,10 @@ async function start() {
       filters: [{ name: "Device report", extensions: ["txt"] }],
     });
     if (result.canceled || !result.filePath) return false;
-    if (path.extname(result.filePath).toLowerCase() !== ".txt")
-      throw new Error("Save the report as a .txt file.");
-    await fs.writeFile(result.filePath, text, "utf8");
+    // GTK and some macOS dialogs do not append the filter's extension to a typed name.
+    const ext = path.extname(result.filePath).toLowerCase();
+    if (ext && ext !== ".txt") throw new Error("Save the report as a .txt file.");
+    await fs.writeFile(ext ? result.filePath : `${result.filePath}.txt`, text, "utf8");
     return true;
   });
   const icon = nativeImage.createFromPath(path.join(__dirname, "icon.png"));
@@ -421,7 +420,9 @@ async function start() {
     saveWindowBounds();
     if (!quitting && preferences.closeToTray && !tray.isDestroyed()) {
       event.preventDefault();
-      window.hide();
+      // Many Linux desktops (stock GNOME) show no tray icon, so keep the window reachable from the dock.
+      if (process.platform === "linux") window.minimize();
+      else window.hide();
     }
   });
   window.once("ready-to-show", () => {

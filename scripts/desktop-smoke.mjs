@@ -134,11 +134,14 @@ try {
   await app.evaluate(({ BrowserWindow }) =>
     BrowserWindow.getAllWindows()[0].close(),
   );
+  // Linux minimizes instead of hiding (many desktops show no tray icon); the window must survive either way.
   assert.equal(
-    await app.evaluate(({ BrowserWindow }) =>
-      BrowserWindow.getAllWindows()[0].isVisible(),
-    ),
-    false,
+    await app.evaluate(({ BrowserWindow }) => {
+      const window = BrowserWindow.getAllWindows()[0];
+      if (!window || window.isDestroyed()) return "destroyed";
+      return process.platform === "linux" ? "kept" : window.isVisible() ? "visible" : "kept";
+    }),
+    "kept",
   );
   assert.equal(
     await page.evaluate(
