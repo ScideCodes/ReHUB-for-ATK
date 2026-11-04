@@ -91,4 +91,22 @@ function safeDevices(devices) {
       productId: d.productId,
     }));
 }
-module.exports = { isAppUrl, assetPath, externalUrl, safeDevices, getDeviceDisplayName };
+// Devices the user picked, re-granted on the next launch so the app reconnects without asking again.
+// shortcut: keyed by VID/PID only (the chooser exposes no serial), so a second unit of the same model is also allowed.
+const MAX_GRANTS = 64;
+const isId = (n) => Number.isInteger(n) && n > 0 && n <= 0xffff;
+function hidGrants(value) {
+  if (!Array.isArray(value)) return [];
+  const seen = new Set();
+  return value
+    .filter((g) => g && isId(g.vendorId) && isId(g.productId))
+    .map((g) => ({ vendorId: g.vendorId, productId: g.productId }))
+    .filter((g) => {
+      const key = `${g.vendorId}:${g.productId}`;
+      return !seen.has(key) && seen.add(key);
+    })
+    .slice(-MAX_GRANTS);
+}
+const granted = (grants, device) =>
+  !!device && grants.some((g) => g.vendorId === device.vendorId && g.productId === device.productId);
+module.exports = { isAppUrl, assetPath, externalUrl, safeDevices, getDeviceDisplayName, hidGrants, granted };

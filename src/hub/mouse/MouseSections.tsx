@@ -680,7 +680,7 @@ export function ParameterSection() {
             </div>
           </div>
           <div className="hm-lod-figure">
-            <LodIllustration lod={settings.lod} min={Math.min(...lods)} max={Math.max(...lods)} />
+            <LodIllustration lod={settings.lod} />
           </div>
         </div>
         )}

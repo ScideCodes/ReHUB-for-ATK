@@ -15,7 +15,7 @@ const fs = require("node:fs/promises");
 const { writeFileSync } = require("node:fs");
 const path = require("node:path");
 const { pathToFileURL } = require("node:url");
-const { isAppUrl, assetPath, externalUrl } = require("./policy.cjs");
+const { isAppUrl, assetPath, externalUrl, hidGrants, granted } = require("./policy.cjs");
 const { DeviceChooser } = require("./chooser.cjs");
 const REPO = "https://github.com/ScideCodes/ReHUB-for-ATK";
 const CSP =
@@ -45,6 +45,16 @@ let window,
 let preferences = { closeToTray: false, launchAtLogin: false };
 let windowBounds = null;
 let prefPath = null;
+let grantsPath = null;
+let grants = [];
+function saveGrants(next) {
+  grants = hidGrants(next);
+  try {
+    writeFileSync(grantsPath, JSON.stringify(grants), "utf8");
+  } catch {
+    /* still granted for this session */
+  }
+}
 // Synchronous so close and quit cannot interleave two writes of the same file.
 function writePreferences() {
   if (!prefPath) return;
@@ -179,6 +189,12 @@ async function start() {
   }
   if (app.isPackaged && process.platform === "win32")
     preferences.launchAtLogin = app.getLoginItemSettings().openAtLogin;
+  grantsPath = path.join(app.getPath("userData"), "hid-devices.json");
+  try {
+    grants = hidGrants(JSON.parse(await fs.readFile(grantsPath, "utf8")));
+  } catch {
+    /* no devices chosen yet */
+  }
   const dist = path.join(app.getAppPath(), "dist");
   protocol.handle("rehub", async (request) => {
     const file = assetPath(dist, request.url);
@@ -286,7 +302,27 @@ async function start() {
       callback("");
       return;
     }
-    chooser.start(details.deviceList, callback);
+    chooser.start(details.deviceList, (id, device) => {
+      if (device && !granted(grants, device)) saveGrants([...grants, device]);
+      callback(id);
+    });
+  });
+  // Re-grant previously chosen devices after a restart, so getDevices() and auto-reconnect find them.
+  session.setDevicePermissionHandler(
+    (details) =>
+      details.deviceType === "hid" &&
+      isAppUrl(details.origin) &&
+      granted(grants, details.device),
+  );
+  session.on("hid-device-revoked", (_event, details) => {
+    if (granted(grants, details.device))
+      saveGrants(
+        grants.filter(
+          (g) =>
+            g.vendorId !== details.device.vendorId ||
+            g.productId !== details.device.productId,
+        ),
+      );
   });
   session.on("hid-device-added", (_event, details) => {
     if (details.frame === window.webContents.mainFrame)

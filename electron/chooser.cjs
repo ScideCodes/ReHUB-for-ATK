@@ -30,9 +30,9 @@ class DeviceChooser {
     if (!this.pending) return false;
     if (id !== "" && !this.pending.devices.some((d) => d.deviceId === id))
       return false;
-    const { callback } = this.pending;
+    const { callback, devices } = this.pending;
     this.pending = null;
-    callback(id);
+    callback(id, devices.find((d) => d.deviceId === id));
     this.emit();
     return true;
   }

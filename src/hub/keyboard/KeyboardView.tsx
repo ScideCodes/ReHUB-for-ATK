@@ -33,6 +33,7 @@ import { Dropdown, NumBox, OptionRow, Seg, Slider, Switch } from "../controls";
 import { Board, caption, wasdKeys } from "./Board";
 import { layoutFor, layoutIndexes, type BoardLayout } from "../../devices/keyboardLayouts";
 import { ColorWheel } from "./ColorWheel";
+import { TravelDemo } from "./TravelDemo";
 
 export type KeyboardViewProps = {
   device: DeviceDefinition;
@@ -302,9 +303,14 @@ function TriggerSection({ device, settings, edit, notice, layout }: SectionProps
         <div className="hk-trigger">
           <div className="hk-demo">
             <span className="hk-label">Trigger Effect Demo</span>
-            <div className="hk-travel" aria-hidden="true">
-              <div style={{ top: `${(first.actuation / 3.3) * 100}%` }}>{first.actuation.toFixed(3)}mm</div>
-            </div>
+            <TravelDemo
+              value={first.actuation}
+              min={0.1}
+              max={3.3}
+              step={0.01}
+              disabled={none || !supports(device, "actuation")}
+              onCommit={(v) => each((k) => void (k.actuation = v))}
+            />
           </div>
           {supports(device, "actuation") && (
             <div>

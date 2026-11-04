@@ -87,3 +87,24 @@ test("chooser maps dongle and known device names to model names", () => {
   assert.equal(list.length, 1);
   assert.equal(list[0].name, "ATK Frost Zero Extreme");
 });
+
+test("HID grants keep valid unique VID/PID pairs and match devices by them", () => {
+  const { hidGrants, granted } = require("./policy.cjs");
+  const grants = hidGrants([
+    { vendorId: 0x373b, productId: 0x109c, serialNumber: "x" },
+    { vendorId: 0x373b, productId: 0x109c },
+    { vendorId: 0, productId: 1 },
+    { vendorId: "1", productId: 2 },
+    null,
+    { vendorId: 0x3554, productId: 0xf5d5 },
+  ]);
+  assert.deepEqual(grants, [
+    { vendorId: 0x373b, productId: 0x109c },
+    { vendorId: 0x3554, productId: 0xf5d5 },
+  ]);
+  assert.deepEqual(hidGrants("nope"), []);
+  assert.equal(hidGrants(Array.from({ length: 80 }, (_, i) => ({ vendorId: 1, productId: i + 1 }))).length, 64);
+  assert.equal(granted(grants, { vendorId: 0x373b, productId: 0x109c }), true);
+  assert.equal(granted(grants, { vendorId: 0x373b, productId: 0x1 }), false);
+  assert.equal(granted(grants, undefined), false);
+});

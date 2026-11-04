@@ -1690,22 +1690,6 @@ html[data-ui-font="custom"] .hub {
   padding-top: 28px;
   background: var(--color-card);
 }
-.hk-travel {
-  position: relative;
-  width: 24px;
-  height: 220px;
-  margin-top: 12px;
-  background: rgba(var(--base-color), 0.06);
-}
-.hk-travel div {
-  position: absolute;
-  left: 24px;
-  padding-left: 14px;
-  border-top: 1px solid var(--color-text-hint-60);
-  font-size: 11px;
-  color: var(--color-text-hint-60);
-  white-space: nowrap;
-}
 .hk-row-ctl {
   display: flex;
   justify-content: space-between;
@@ -2584,9 +2568,6 @@ html.dark .h-dd[data-tone="hero"] .h-dd-trigger {
 .hk-trigger > div:not(.hk-demo) {
   padding-top: 22px;
 }
-.hk-travel {
-  height: 150px;
-}
 .hk-picker {
   gap: 5px;
 }
@@ -2919,8 +2900,7 @@ html.dark .h-num .spin button + button {
   display: flow-root;
 }
 /* Absolutely placed labels shrink-to-fit; keep them on one line despite overflow-wrap: anywhere. */
-.hm-ticks span,
-.hk-travel div {
+.hm-ticks span {
   white-space: nowrap;
   overflow-wrap: normal;
 }
@@ -2995,9 +2975,9 @@ html.dark .fd-badge {
 
 /* ---------- Light Setting: original ATK markup/CSS (hub.atk.pro 3.2.29 ConfigPage, keyboard and colour picker) ---------- */
 /* Original base-background-color equals our --base-color in both themes, so its rgba(...) tokens map onto --base-color. */
-/* The mode column grows past the original 356px on wider screens so names fit. */
+/* The mode column takes the width the longest effect name needs (capped so the colour picker keeps its room). */
 .hk-light {
-  grid-template-columns: minmax(0, clamp(356px, 32vw, 460px)) 1px minmax(0, 1fr) 1px minmax(0, 1fr);
+  grid-template-columns: fit-content(56%) 1px minmax(180px, 1fr) 1px minmax(250px, 1fr);
 }
 .hk-light .hk-label {
   margin: 0;
@@ -3012,6 +2992,13 @@ html.dark .fd-badge {
   gap: 6px;
   margin-top: 8px;
 }
+/* Narrow windows: two columns of effect names, so they still fit on one line. */
+@media (max-width: 1279px) {
+  .hk-modes,
+  .fdk .hk-modes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
 .hk-modes button,
 .fdk .hk-modes button {
   height: auto;
@@ -3024,12 +3011,13 @@ html.dark .fd-badge {
   font-size: 13px;
   line-height: normal;
 }
-/* Long effect names wrap onto a second line instead of being cut off with an ellipsis. */
+/* Effect names stay on one line; only a window too narrow for the longest name shortens it (full name in the tooltip). */
 .hk-modes button span {
   flex: 1;
   min-width: 0;
-  white-space: normal;
-  overflow-wrap: break-word;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   text-align: left;
   line-height: 1.2;
 }
@@ -3278,71 +3266,130 @@ button.fd-badge {
   }
 }
 
-/* LOD height illustration: mouse side view lifted above the desk by the selected distance. */
+/* LOD height: original ATK atk-mouse-locd (mouse icon above a dotted desk line, ruler showing the lift). */
 .hm-lod-figure {
-  flex: 0 0 196px;
-  display: grid;
-  place-items: center;
+  flex: 0 0 150px;
+  align-self: stretch;
+  margin-left: 5px;
   background: var(--color-card);
 }
 .hm-lod-art {
-  overflow: visible;
+  position: relative;
+  height: 100%;
+  min-height: 130px;
+  color: var(--color-text-primary-85);
 }
-.hm-lod-art .surface {
-  stroke: var(--color-border-16);
-  stroke-width: 1.5;
-  stroke-dasharray: 3 3;
+.hm-lod-art .mouse {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  transition: bottom 0.25s var(--ease-out, ease-out);
 }
-.hm-lod-art .lift {
-  transition: transform 0.25s var(--ease-out, ease-out);
+.hm-lod-art .ruler {
+  position: absolute;
+  left: 50%;
+  bottom: 22px;
+  border-left: 2px solid var(--color-text-primary-85);
+  transition: height 0.25s var(--ease-out, ease-out);
 }
-.hm-lod-art .body {
-  fill: var(--color-panel);
-  stroke: var(--color-text-primary-65);
-  stroke-width: 1.5;
-  stroke-linejoin: round;
+.hm-lod-art .ruler::before,
+.hm-lod-art .ruler::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  border-bottom: 2px solid var(--color-text-primary-85);
+  transform: translate(-55%);
 }
-.hm-lod-art .seam,
-.hm-lod-art .guide {
-  fill: none;
-  stroke: var(--color-border-16);
-  stroke-width: 1;
-  stroke-linecap: round;
+.hm-lod-art .ruler::before {
+  bottom: 0;
 }
-.hm-lod-art .guide {
-  stroke-dasharray: 2 2;
-}
-.hm-lod-art .wheel {
-  fill: var(--color-text-hint-60);
-}
-.hm-lod-art .foot {
-  fill: var(--color-text-hint-60);
-}
-.hm-lod-art .sensor,
-.hm-lod-art .spot {
-  fill: var(--color-brand-primary);
-}
-.hm-lod-art .spot {
-  opacity: 0.25;
-}
-.hm-lod-art .beam {
-  stroke: var(--color-brand-primary);
-  stroke-width: 1.5;
-  stroke-dasharray: 2 2;
-}
-.hm-lod-art .measure line {
-  stroke: var(--color-text-primary-65);
-  stroke-width: 1.2;
-  stroke-linecap: round;
-}
-.hm-lod-art .value {
-  fill: var(--color-text-head-100);
-  font-size: 10px;
-  font-weight: 600;
-  font-variant-numeric: tabular-nums;
+.hm-lod-art .line {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  border-bottom: 3px dotted var(--color-border-16);
 }
 @media (prefers-reduced-motion: reduce) {
-  .hm-lod-art .lift {
+  .hm-lod-art .mouse,
+  .hm-lod-art .ruler {
     transition: none;
   }
+}
+
+/* Trigger Effect Demo: original ATK atk-travel-axis (switch, ruler, vertical travel handle). */
+.hk-axis {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+}
+.hk-axis[data-disabled] {
+  opacity: 0.5;
+}
+.hk-axis-scale {
+  position: relative;
+  display: flex;
+  gap: 8px;
+  height: 120px;
+  padding-right: 64px;
+}
+.hk-axis-ruler {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  line-height: 0;
+  text-align: right;
+  font-size: 8px;
+  color: var(--color-text-hint-60);
+  font-variant-numeric: tabular-nums;
+}
+.hk-axis-handle {
+  writing-mode: vertical-lr;
+  appearance: none;
+  width: 24px;
+  height: 100%;
+  margin: 0;
+  background: rgba(var(--base-color), 0.08);
+  cursor: pointer;
+}
+.hk-axis-handle:disabled {
+  cursor: not-allowed;
+}
+.hk-axis-handle::-webkit-slider-thumb {
+  appearance: none;
+  width: 30px;
+  height: 2px;
+  border: 0;
+  background: var(--color-brand-primary);
+  transform: translateX(3px);
+}
+.hk-axis-handle:focus-visible {
+  outline: 2px solid var(--color-brand-primary);
+  outline-offset: 2px;
+}
+.hk-axis-value {
+  position: absolute;
+  right: 0;
+  transform: translateY(-50%);
+  font-size: 10px;
+  color: var(--color-brand-primary);
+  white-space: nowrap;
+  pointer-events: none;
+}
+.hk-switch {
+  position: relative;
+  width: 100px;
+  height: 97px;
+  overflow: hidden;
+}
+.hk-switch img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  user-select: none;
 }

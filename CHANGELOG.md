@@ -2,6 +2,22 @@
 
 All notable changes to ReHUB for ATK. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.5.4] - 2026-11-04
+
+### Added
+- **Trigger Effect Demo shows the key switch** from the original ATK hub: the switch stem sinks as the trigger travel deepens, next to a 0–3.3 mm ruler. Drag the handle to set the travel of the selected keys.
+- **Devices you picked are remembered across restarts.** The desktop app re-grants access to devices you selected before, so after closing and reopening ReHUB the home screen shows them as connected and the mouse reconnects without asking again. Removing a device's permission forgets it.
+
+### Changed
+- The mouse **LOD Height Tolerance** diagram now matches the original ATK hub: the mouse icon sits above a dotted desk line, 15 px per mm, with a ruler showing the selected height.
+
+### Fixed
+- Keyboard lighting effect names no longer wrap onto two lines. The effect list widens to fit the longest name and switches to two columns in narrow windows; the full name stays in the tooltip.
+- A keyboard you had already picked showed **Not connected** on the home screen after restarting the app, even though it opened. Its access is now kept, so the card shows its real state.
+
+### Verification
+- Typecheck, lint, 740 application tests, 10 desktop tests, the desktop smoke test and the packaged-app smoke test pass. Physical hardware was not tested, including reconnecting after a restart.
+
 ## [1.5.3] - 2026-11-04
 
 First published build with the 1.5.2 changes below.
