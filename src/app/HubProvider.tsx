@@ -94,7 +94,8 @@ export function HubProvider({ children }: { children: ReactNode }) {
       await action();
       if (success) toast({ title: success, tone: "success" });
     } catch (error) {
-      toast({ title: errorMessage(error), tone: "error", duration: 0 });
+      // Errors close on their own like other toasts; the message center keeps them.
+      toast({ title: errorMessage(error), tone: "error", duration: 8000 });
     }
   }
   async function applySnapshot(snapshot: DeviceSettings, customTitle?: string) {

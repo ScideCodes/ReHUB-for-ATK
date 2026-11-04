@@ -1245,6 +1245,8 @@ export function isAutoReconnecting() {
 
 export function initializeDevice() {
   installDeviceBridge();
+  // Another operation (opening or reading the mouse) already owns the session: nothing to reconnect.
+  if (!initialization && useDeviceSession.getState().busy) return Promise.resolve();
   if (!initialization)
     initialization = deviceOperation(async () => {
       autoReconnecting = true;

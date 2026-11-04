@@ -1,7 +1,7 @@
 {
   "name": "re-hub-for-atk",
   "private": true,
-  "version": "1.5.4",
+  "version": "1.5.5",
   "description": "Unofficial open-source Windows desktop configurator for ATK mice and keyboards.",
   "license": "MIT",
   "author": "Scide",
