@@ -3393,3 +3393,27 @@ button.fd-badge {
   height: 100%;
   user-select: none;
 }
+
+/* Update button: Discord's green "update ready" download icon, shown only while an update is available. */
+.hub-icon-btn.hub-update-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  color: #23a55a;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  animation: hub-update-in 0.3s var(--ease-out, ease-out);
+}
+.hub-icon-btn.hub-update-btn:hover {
+  color: #2dc770;
+  background: rgba(35, 165, 90, 0.14);
+}
+.hub-icon-btn.hub-update-btn:focus-visible {
+  outline: 2px solid #23a55a;
+  outline-offset: 1px;
+}
+@keyframes hub-update-in {
+  from { opacity: 0; transform: scale(0.6); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hub-icon-btn.hub-update-btn { animation: none; }
+}

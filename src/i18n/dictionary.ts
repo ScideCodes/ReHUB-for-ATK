@@ -236,6 +236,7 @@ export const DICTIONARY: Record<string, Row> = {
   "Digital Rain": ["数字雨", "디지털 레인", "Цифровой дождь", "デジタルレイン", "Digitaler Regen", "Pluie numérique", "數字雨", "Dijital yağmur"],
   "Single Light Up": ["单点亮起", "단일 점등", "Подсветка нажатия", "単一点灯", "Einzelne Taste", "Touche allumée", "單點亮起", "Tekli yanma"],
   Crucifix: ["十字", "십자", "Крест", "クロス", "Kreuz", "Croix", "十字", "Haç"],
+  "Update ready": ["更新已就绪", "업데이트 준비됨", "Обновление готово", "アップデート準備完了", "Update bereit", "Mise à jour prête", "更新已就緒", "Güncelleme hazır"],
   "Fingertip Ripple": ["指尖涟漪", "손끝 물결", "Рябь от касания", "指先の波紋", "Fingerspitzen-Welle", "Ondulation au toucher", "指尖漣漪", "Parmak ucu dalgası"],
   "Lamp Effect Setting": ["灯效设置", "조명 효과 설정", "Настройка подсветки", "ライト効果設定", "Lichteffekt-Einstellungen", "Réglages de l'effet", "燈效設定", "Işık efekti ayarı"],
   Brightness: ["亮度", "밝기", "Яркость", "明るさ", "Helligkeit", "Luminosité", "亮度", "Parlaklık"],

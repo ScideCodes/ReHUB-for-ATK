@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
+import { Download } from "lucide-react";
 import { Dialog } from "../ui/Dialog";
-import type { DesktopDevice, DesktopPreferences } from "./bridge";
+import type { DesktopDevice, DesktopPreferences, DesktopUpdate } from "./bridge";
 
 export function DesktopDeviceChooser() {
   const [devices, setDevices] = useState<DesktopDevice[] | null>(null);
@@ -101,7 +102,7 @@ export function DesktopSettings() {
       .catch(() => setStatus("Could not load desktop settings."));
   }, []);
   if (!window.rehubDesktop) return null;
-  async function update(key: "closeToTray" | "launchAtLogin", value: boolean) {
+  async function update(key: "closeToTray" | "launchAtLogin" | "autoUpdate", value: boolean) {
     if (!prefs) return;
     const previous = prefs;
     setPrefs({ ...prefs, [key]: value });
@@ -111,6 +112,7 @@ export function DesktopSettings() {
         await window.rehubDesktop!.setPreferences({
           closeToTray: prefs.closeToTray,
           launchAtLogin: prefs.launchAtLogin,
+          autoUpdate: prefs.autoUpdate,
           [key]: value,
         }),
       );
@@ -164,9 +166,18 @@ export function DesktopSettings() {
         {prefs && !prefs.canLaunchAtLogin && (
           <p>Launch at login is available in the installed Windows app.</p>
         )}
+        <label className="report-check">
+          <input
+            type="checkbox"
+            checked={prefs?.autoUpdate ?? true}
+            disabled={!prefs || busy}
+            onChange={(e) => void update("autoUpdate", e.target.checked)}
+          />
+          Check GitHub for new versions automatically
+        </label>
         <p>
-          Update checks contact GitHub only when you click below. Updates are
-          installed manually.
+          Update checks only ask GitHub for the latest release. When one is newer, a green download button appears in the
+          top bar. Updates are installed manually.
         </p>
         <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
           <button
@@ -196,5 +207,31 @@ export function DesktopSettings() {
         )}
       </div>
     </section>
+  );
+}
+
+/** Discord-style top-bar button: shown only while a newer release is available. */
+export function DesktopUpdateButton() {
+  const [update, setUpdate] = useState<DesktopUpdate | null>(null);
+  useEffect(() => {
+    const api = window.rehubDesktop;
+    if (!api?.onUpdate) return;
+    const unsubscribe = api.onUpdate(setUpdate);
+    void api.getUpdate().then((value) => value && setUpdate(value)).catch(() => undefined);
+    return unsubscribe;
+  }, []);
+  if (!update) return null;
+  return (
+    <div className="hub-tip" data-tip="Update ready">
+      <a
+        className="hub-icon-btn hub-update-btn"
+        href={update.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`Download ReHUB ${update.version}`}
+      >
+        <Download size={20} strokeWidth={2} />
+      </a>
+    </div>
   );
 }

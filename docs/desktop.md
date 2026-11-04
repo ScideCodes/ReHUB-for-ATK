@@ -10,7 +10,7 @@ Minimize uses the normal Windows taskbar. In Settings > Desktop app, optionally 
 
 Device access requires choosing a device; no automatic blanket HID permissions. Electron retains permission for the current window lifetime. You may need to select the device again after restarting. Existing saved browser settings are separate from the desktop profile; export/import maps to transfer them.
 
-**Check for updates** contacts GitHub Releases only when clicked. If a newer stable version exists, the app provides a GitHub download link; download and run the installer yourself. There is no updater service, silent download or background telemetry. Installation preserves the desktop profile in Electron's userData directory. Uninstall retains that profile by default; the removal checkbox deletes it if selected.
+ReHUB asks GitHub Releases for the latest version shortly after starting and every 6 hours (turn this off in Settings → Desktop app), and **Check for updates** checks on demand. When a newer stable version exists, a green download button appears in the top bar; it opens the installer download, which you run yourself. Only the release lookup is sent; there is no silent download, updater service or telemetry. Installation preserves the desktop profile in Electron's userData directory. Uninstall retains that profile by default; the removal checkbox deletes it if selected.
 
 The current local build is unsigned. Windows may display an unknown-publisher warning. Verify the release source and SHA-256 checksum; code signing is separate from the open-source build and requires the maintainer's signing credentials. No credentials are embedded in the app.
 

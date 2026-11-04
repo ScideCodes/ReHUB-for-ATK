@@ -11,6 +11,12 @@ contextBridge.exposeInMainWorld("rehubDesktop", {
     return () => ipcRenderer.removeListener("desktop:chooser-changed", handler);
   },
   checkUpdates: () => ipcRenderer.invoke("desktop:check-updates"),
+  getUpdate: () => ipcRenderer.invoke("desktop:update"),
+  onUpdate: (listener) => {
+    const handler = (_event, value) => listener(value);
+    ipcRenderer.on("desktop:update", handler);
+    return () => ipcRenderer.removeListener("desktop:update", handler);
+  },
   disconnect: () => ipcRenderer.invoke("desktop:disconnect"),
   saveReport: (text) => ipcRenderer.invoke("desktop:save-report", text),
 });

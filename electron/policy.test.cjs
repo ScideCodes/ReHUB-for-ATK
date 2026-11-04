@@ -108,3 +108,18 @@ test("HID grants keep valid unique VID/PID pairs and match devices by them", () 
   assert.equal(granted(grants, { vendorId: 0x373b, productId: 0x1 }), false);
   assert.equal(granted(grants, undefined), false);
 });
+
+test("update check finds newer stable releases and the installer link", () => {
+  const { newerRelease, installerUrl } = require("./policy.cjs");
+  assert.equal(newerRelease("v1.5.6", "1.5.5"), "1.5.6");
+  assert.equal(newerRelease("v1.10.0", "1.9.9"), "1.10.0");
+  assert.equal(newerRelease("v1.5.5", "1.5.5"), null);
+  assert.equal(newerRelease("v1.5.4", "1.5.5"), null);
+  assert.equal(newerRelease("v2.0.0-beta", "1.5.5"), null);
+  assert.equal(newerRelease(undefined, "1.5.5"), null);
+  const repo = "https://github.com/ScideCodes/ReHUB-for-ATK";
+  const good = `${repo}/releases/download/v1.5.6/ReHUB-Setup-1.5.6-x64.exe`;
+  assert.equal(installerUrl({ assets: [{ name: "ReHUB-Setup-1.5.6-x64.exe", browser_download_url: good }] }, "1.5.6", repo), good);
+  assert.equal(installerUrl({ assets: [{ name: "ReHUB-Setup-1.5.6-x64.exe", browser_download_url: "https://evil.example/x.exe" }] }, "1.5.6", repo), `${repo}/releases/tag/v1.5.6`);
+  assert.equal(installerUrl({}, "1.5.6", repo), `${repo}/releases/tag/v1.5.6`);
+});

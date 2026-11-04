@@ -1,3 +1,4 @@
+import { DesktopUpdateButton } from "../desktop/DesktopControls";
 import { DeviceReportButton } from '../support/DeviceReportDialog';
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import {
@@ -259,6 +260,7 @@ export function Header({
         </PopIcon>
         <DeviceReportButton compact />
         <MessageCenter />
+        <DesktopUpdateButton />
         <div className="hub-tip" data-tip="Settings">
           <button type="button" className="hub-icon-btn" aria-label="Settings" onClick={() => onOpenPage("settings")}>
             <Settings size={20} strokeWidth={1.6} />

@@ -109,4 +109,17 @@ function hidGrants(value) {
 }
 const granted = (grants, device) =>
   !!device && grants.some((g) => g.vendorId === device.vendorId && g.productId === device.productId);
-module.exports = { isAppUrl, assetPath, externalUrl, safeDevices, getDeviceDisplayName, hidGrants, granted };
+/** The stable x.y.z in a GitHub release tag when it is newer than `current`, else null. */
+function newerRelease(tag, current) {
+  const latest = /^v?(\d+\.\d+\.\d+)$/.exec(tag ?? "")?.[1];
+  if (!latest) return null;
+  const now = String(current).split(".").map(Number);
+  const diff = latest.split(".").map(Number).reduce((r, n, i) => r || Math.sign(n - (now[i] || 0)), 0);
+  return diff > 0 ? latest : null;
+}
+/** Direct link to the release's Windows installer, or the release page when the asset is missing or off-repo. */
+function installerUrl(release, version, repo) {
+  const asset = (release.assets ?? []).find((a) => a?.name === `ReHUB-Setup-${version}-x64.exe`);
+  return externalUrl(asset?.browser_download_url) ?? `${repo}/releases/tag/v${version}`;
+}
+module.exports = { isAppUrl, assetPath, externalUrl, safeDevices, getDeviceDisplayName, hidGrants, granted, newerRelease, installerUrl };

@@ -2,6 +2,15 @@
 
 All notable changes to ReHUB for ATK. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions follow [Semantic Versioning](https://semver.org/).
 
+## [1.5.6] - 2026-11-04
+
+### Added
+- **Update button in the top bar.** When a newer release is out, a green download button (styled like Discord's) appears next to Settings. Click it to download the new installer, then run it to update.
+- ReHUB checks GitHub for a new release shortly after starting and every 6 hours. Turn this off with **Check GitHub for new versions automatically** in Settings → Desktop app; **Check for updates** still works on demand. Only the release lookup is sent: nothing is downloaded or installed without you.
+
+### Verification
+- Typecheck, lint, 741 application tests, 11 desktop tests (including version comparison and installer-link checks), the desktop smoke test and the packaged-app smoke test pass. The button was checked against a simulated newer release; it first appears for real once 1.5.7 or later is published.
+
 ## [1.5.5] - 2026-11-04
 
 ### Fixed

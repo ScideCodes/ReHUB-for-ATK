@@ -14,7 +14,7 @@ ReHUB is distributed as a Windows x64 desktop application. React and Vite build 
 
 - Mouse configuration and keyboard configuration where supported by each device family.
 - Local profiles, configuration import/export, diagnostics, and a demo mode that does not access hardware.
-- Device picker, optional close-to-tray and launch-at-login settings, and manual release checks.
+- Device picker, optional close-to-tray and launch-at-login settings, and GitHub release checks with a top-bar update button.
 - Setup install/update/uninstall choices, installation details, and optional removal of desktop settings.
 - User-reviewed community device reports containing interface identifiers and descriptor metadata.
 

@@ -15,7 +15,15 @@ const fs = require("node:fs/promises");
 const { writeFileSync } = require("node:fs");
 const path = require("node:path");
 const { pathToFileURL } = require("node:url");
-const { isAppUrl, assetPath, externalUrl, hidGrants, granted } = require("./policy.cjs");
+const {
+  isAppUrl,
+  assetPath,
+  externalUrl,
+  hidGrants,
+  granted,
+  newerRelease,
+  installerUrl,
+} = require("./policy.cjs");
 const { DeviceChooser } = require("./chooser.cjs");
 const REPO = "https://github.com/ScideCodes/ReHUB-for-ATK";
 const CSP =
@@ -42,7 +50,10 @@ if (smoke)
 let window,
   tray,
   quitting = false;
-let preferences = { closeToTray: false, launchAtLogin: false };
+let preferences = { closeToTray: false, launchAtLogin: false, autoUpdate: true };
+// Newest release found by a check, shown as the header update button until the app restarts on it.
+let update = null;
+const UPDATE_INTERVAL = 6 * 60 * 60 * 1000;
 let windowBounds = null;
 let prefPath = null;
 let grantsPath = null;
@@ -146,24 +157,25 @@ async function checkUpdates() {
       };
     if (!response.ok) throw new Error("GitHub unavailable");
     const release = await response.json();
-    const latest = /^v?(\d+\.\d+\.\d+)$/.exec(release.tag_name ?? "")?.[1];
-    if (!latest)
+    if (!/^v?\d+\.\d+\.\d+$/.test(release.tag_name ?? ""))
       return {
         message: "Check GitHub Releases for available downloads.",
         url: `${REPO}/releases`,
       };
-    const currentParts = app.getVersion().split(".").map(Number);
-    const newer =
-      latest
-        .split(".")
-        .map(Number)
-        .reduce((result, n, i) => result || Math.sign(n - currentParts[i]), 0) >
-      0;
+    const latest = newerRelease(release.tag_name, app.getVersion());
+    if (!latest)
+      return {
+        message: `You are using ReHUB ${app.getVersion()}. No newer stable release was found.`,
+      };
+    const url = installerUrl(release, latest, REPO);
+    if (update?.version !== latest) {
+      update = { version: latest, url };
+      if (window && !window.isDestroyed())
+        window.webContents.send("desktop:update", update);
+    }
     return {
-      message: newer
-        ? `ReHUB ${latest} is available. Download the installer from GitHub Releases.`
-        : `You are using ReHUB ${app.getVersion()}. No newer stable release was found.`,
-      ...(newer ? { url: `${REPO}/releases/latest` } : {}),
+      message: `ReHUB ${latest} is available. Download the installer from GitHub Releases.`,
+      url,
     };
   } catch {
     return {
@@ -181,6 +193,7 @@ async function start() {
     preferences = {
       closeToTray: p.closeToTray === true,
       launchAtLogin: p.launchAtLogin === true,
+      autoUpdate: p.autoUpdate !== false,
     };
     if (p.windowBounds && typeof p.windowBounds === "object")
       windowBounds = initialBounds = p.windowBounds;
@@ -362,8 +375,9 @@ async function start() {
       !input ||
       typeof input.closeToTray !== "boolean" ||
       typeof input.launchAtLogin !== "boolean" ||
+      typeof input.autoUpdate !== "boolean" ||
       Object.keys(input).some(
-        (k) => !["closeToTray", "launchAtLogin"].includes(k),
+        (k) => !["closeToTray", "launchAtLogin", "autoUpdate"].includes(k),
       )
     )
       throw new Error("Invalid preferences");
@@ -373,6 +387,7 @@ async function start() {
         app.isPackaged && process.platform === "win32"
           ? input.launchAtLogin
           : false,
+      autoUpdate: input.autoUpdate,
     };
     const previous = preferences;
     preferences = next;
@@ -401,6 +416,7 @@ async function start() {
   });
   handle("desktop:disconnect", disconnect);
   handle("desktop:check-updates", checkUpdates);
+  handle("desktop:update", () => update);
   handle("desktop:save-report", async (text) => {
     if (
       typeof text !== "string" ||
@@ -454,6 +470,12 @@ async function start() {
   window.once("ready-to-show", () => {
     if (!smoke) show();
   });
+  // Background release check (GitHub only, nothing is downloaded): shortly after start, then every 6 hours.
+  if (!smoke) {
+    const background = () => preferences.autoUpdate && void checkUpdates();
+    setTimeout(background, 15000);
+    setInterval(background, UPDATE_INTERVAL);
+  }
   await window.loadURL("rehub://app/");
 }
 if (!app.requestSingleInstanceLock()) app.quit();
